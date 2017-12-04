@@ -1,43 +1,6 @@
 <?php
 //header("Content-Type: application/rss+xml; charset=UTF-8");
-
-/*
-header("Content-Type: application/xml; charset=UTF-8");
-include"inc/config.php";
-include"inc/lang.php";
-$lg='ar';
-include"inc/function.php";
-$St= getSet();
-    $rssfeed = '<?xml version="1.0" encoding="UTF-8"?>';
-    $rssfeed .= '<rss version="2.0">';
-    $rssfeed .= '<channel>';
-    $rssfeed .= '<title>My RSS feed</title>';
-    $rssfeed .= '<link>http://www.mywebsite.com</link>';
-    $rssfeed .= '<description>This is an example RSS feed</description>';
-    $rssfeed .= '<language>en-us</language>';
-    $rssfeed .= '<copyright>Copyright (C) 2009 mywebsite.com</copyright>';
-    $query = "SELECT * FROM posts where type != '7' ORDER BY date DESC";
-    $result = mysql_query($query) or die ("Could not execute query");
-    while($row = mysql_fetch_array($result)) {
-        extract($row);
-
-        $rssfeed .= '<item>';
-        //$rssfeed .= '<title>' . $text . '</title>';
-        $rssfeed .= '<description>' .html_entity_decode(stripslashes(str_replace('n','',limit_str($text,5))),ENT_QUOTES). '</description>';
-        $rssfeed .= '<link>' . Upost($id) . '</link>';
-       // $rssfeed .= '<pubDate>' . date("D, d M Y H:i:s O", strtotime($date)) . '</pubDate>';
-        $rssfeed .= '</item>';
-    }
-
-    $rssfeed .= '</channel>';
-    $rssfeed .= '</rss>';
-
-    echo $rssfeed;
-    */
-include"inc/config.php";
-include"inc/lang.php";
-$lg='ar';
-include"inc/function.php";
+include "inc.php";
 $St= getSet();
 ?>
 <?xml version="1.0" encoding="utf-8"?>
@@ -108,22 +71,26 @@ $post =  Sel('posts',"where  id=".$s->video_msg);
 }
 $p = Selaa('video','where id='.$post->vid);
 
- $msg =  Rstr($post->text,'r','');
- $postb['message'] = Rstr(Rstr($msg,'nedalkhe','nedalkher'),'quani','qurani');
+/* $msg =  Rstr($post->text,'r','');        */
+ /*$postb['message'] = Rstr(Rstr($msg,'nedalkhe','nedalkher'),'quani','qurani'); */
+ if($Werd){
+ $postb['message']= "الورد اليومى
+   ";
+      }
+   $postb['message'] .= html_entity_decode(stripslashes(str_replace('\n','
+        ',$post->text)));
+   $postb['message'] .="
+  خدمة التنبيه بالرسائل القصيره ==> http://m.me/Ned2.Al5er";
 if($gtype != "video"){
 	/*
    $postb['message'] .="
-
        #".str_replace(" ",'_',$St->title)." اشترك الان => ".$St->url; */
 $app = "http://play.google.com/store/apps/details?id=com.mo3tasm.quran";
 $app = "https://goo.gl/E3A9Vu";
 $title="الورد القرآني";
-   $postb['message'] .="
+  /* $postb['message'] .="
 
-       #".str_replace(" ",'_',$title)." اشترك الان => ".$app;
-
-  $postb['message'] .="
-اشترك الان فى خدمة التنبيه بالرسائل القصيره => http://m.me/Ned2.Al5er";
+       #".str_replace(" ",'_',$title)." اشترك الان => ".$app;*/
                       }
  ?>
          <item>
