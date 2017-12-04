@@ -56,12 +56,12 @@ UpDate('share',"video_msg",$post->id);
     UpDate('share',"werd_id",$post->id);
     $link =  Uimgur($post->link);
     if($link[0]){
-    UpDate('posts',"link",$link[1]," where id="$post->id);
+    UpDate('posts',"link",$link[1]," where id=".$post->id);
     }
 
 }
 UpDate($po,"msg",1,' where id='.$post->id);
-UpDate($po,"send",1,' where id='.$post->id);  
+UpDate($po,"send",1,' where id='.$post->id);
 }
 $s = Sel("share");
 if($gtype == "quran"){
