@@ -1,10 +1,8 @@
 <?php
 //header("Content-Type: application/rss+xml; charset=UTF-8");
-die("test");
 include "inc.php";
 $St= getSet();
 ?>
-
 <rss xmlns:a10="http://www.w3.org/2005/Atom" version="2.0">
 <channel xmlns:media="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
 <title><?=$St->title?></title>
