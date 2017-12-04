@@ -80,8 +80,12 @@ $post =  Sel('posts',"where  id=".$s->video_msg);
 $p = Selaa('video','where id='.$post->vid);
 }
  if($Werd){
+
  $postb['message1']= "الورد اليومى
    ";
+   if(!isv("msg",1)){
+ $postb['message']= "الورد اليومى
+   ";  }
       }
    $postb['message'] .= html_entity_decode(stripslashes(str_replace('\n','
         ',$post->text)));
