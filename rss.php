@@ -80,7 +80,7 @@ $post =  Sel('posts',"where  id=".$s->video_msg);
 $p = Selaa('video','where id='.$post->vid);
 }
  if($Werd){
- $postb['message']= "الورد اليومى
+ $postb['message1']= "الورد اليومى
    ";
       }
    $postb['message'] .= html_entity_decode(stripslashes(str_replace('\n','
@@ -109,7 +109,7 @@ if($s->fb_link != ""){
          <title><?=$St->title?></title>
 <?php }else{ ?>
          <title><?=html_entity_decode(stripslashes(str_replace('\n','
-        ',$postb['message'])))?></title>
+        ',$postb['message1'])))?></title>
  <?php  } ?>
    <description>
          <?=html_entity_decode(stripslashes(str_replace('\n','
