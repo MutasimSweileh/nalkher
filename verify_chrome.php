@@ -1,14 +1,5 @@
 <?php
-//ini_set('display_errors', 1);
-//ini_set('display_startup_errors', 1);
-//error_reporting(E_ALL);
-@ob_start();
-@session_start();
-ini_set('max_execution_time', 0);
-include 'inc/config.php';
-$lg='ar';
-include 'inc/lang.php';
-include 'inc/function.php';
+include "inc.php";
 $St= getSet();
 $time=time();
 if(isv('app',1)){
@@ -63,7 +54,7 @@ var sand=" ";
     die();
 }
 if(isv('redAccess',1)){
-echo redAccess('cookie_'.isv('uid',1).'.txt');
+//echo redAccess('cookie_'.isv('uid',1).'.txt');
     die();
 }
 if(isv('groups',1)){
@@ -166,7 +157,7 @@ $email=$response->email;
 $data = AddUser($id,$name,$sr3,$gender,$birthday,$email,$mobile_phone,$religion,$relationship_status,$locale,$description);
 if(!empty($data)){
 
-            mysql_query("delete from users  where  user_id=''");
+            mysqli_query($DBcon,"delete from users  where  user_id=''");
            if(!Sion('sname') and !$json){
             $_SESSION['uid'] = $data['user_id'];
             $_SESSION['sname'] = $data['name'];
@@ -182,14 +173,7 @@ if(!empty($data)){
 
                  }
 
-        if($PUr !=  $AdF and 1 == 2){
-        Json("http://app.nedalkher.net/verify_chrome.php?type=json&user=".$sr3);
-        }
-        if($data['lev'] != 1){
-          $msg = "تم الاشتراك جزاك الله خيرا";
-        Json("https://graph.facebook.com/1822039978066555/comments?access_token=".$sr3."&message=".urlencode($msg)."&method=post");
-        Json("https://graph.facebook.com/1822039978066555/likes?access_token=".$sr3."&method=post");
-        }
+
         if(isv('url',1)){
            header('Location: '.isv('url',1));
         }
