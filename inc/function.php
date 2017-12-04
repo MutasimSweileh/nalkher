@@ -1,4 +1,5 @@
 <?php
+  global $DBcon;
 function Ftable($tp="settings"){
     global $DBcon;
 if(mysqli_num_rows(mysqli_query($DBcon,"SHOW TABLES LIKE '$tp'")) > 0){
@@ -1590,11 +1591,11 @@ $FUr = $Port.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
 $MUr = $_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
 $ref=@$_SERVER['HTTP_REFERER'];
 $Froot= $_SERVER['DOCUMENT_ROOT'];
-/*if(mysqli_num_rows(mysqli_query("SHOW TABLES LIKE 'settings'")) < 1){
+if(!Ftable()){
 include "install.php";
 }
 if(getSet()->url != $PUr){
 Update('settings','url',$PUr);
-}*/
+}
 
 ?>
