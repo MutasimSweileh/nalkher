@@ -63,6 +63,7 @@ UpDate('share',"video_msg",$post->id);
 }
 UpDate($po,"msg",1,' where id='.$post->id);
 UpDate($po,"send",1,' where id='.$post->id);
+
 }
 $s = Sel("share");
 if($gtype == "quran"){
