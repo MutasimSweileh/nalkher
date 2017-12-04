@@ -64,6 +64,7 @@ UpDate('share',"video_msg",$post->id);
 UpDate($po,"msg",1,' where id='.$post->id);
 UpDate($po,"send",1,' where id='.$post->id);
 }
+if($St->zapier == 1 || isv("msg",1)){
 $s = Sel("share");
 if($gtype == "quran"){
 if(!$Werd){
@@ -77,6 +78,7 @@ $post =  Sel('posts',"where  id=".$s->video_id);
 $post =  Sel('posts',"where  id=".$s->video_msg);
 }
 $p = Selaa('video','where id='.$post->vid);
+}
  if($Werd){
  $postb['message']= "الورد اليومى
    ";
@@ -112,7 +114,6 @@ $p = Selaa('video','where id='.$post->vid);
          <text></text>
          <link></link>
          </buttom>
-
          </item>
  </channel>
  </rss>

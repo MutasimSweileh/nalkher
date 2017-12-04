@@ -1597,5 +1597,5 @@ include "install.php";
 if(getSet()->url != $PUr){
 //Update('settings','url',$PUr);
 }
- echo $_SERVER['HTTPS'];
+
 ?>

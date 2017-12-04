@@ -23,7 +23,7 @@ UpDate('settings','last_id_guran',$json[0]['id']);
 
 
 }
-if(isv("post")){
+if(isv("post")  && $St->zapier == 0){
 
     if(last_share($rnd,$St->last_share) or isv("post") == "test"){
    $users = array(1426100954327128,1762976253974690);
@@ -79,6 +79,7 @@ if(isv("post")){
   خدمة التنبيه بالرسائل القصيره ==> http://m.me/Ned2.Al5er";
   UpDate("posts","send",1,"where id=".$post->id);
   UpDate("posts","msg",1,"where id=".$post->id);
+  UpDate('share',"werd_id",$post->id);
   UpDate('settings','last_share_werd',time());
   for($i=0;$i<count($users);$i++){
            $userb= $users[$i];
