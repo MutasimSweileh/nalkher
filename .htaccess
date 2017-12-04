@@ -78,4 +78,5 @@ RewriteRule ^admin/status([0-9]+).html$ ?app=admin&type=status&id=$1
 
 
 
-
+# PHP error handling for development servers
+php_flag display_errors 1
