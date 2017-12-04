@@ -54,7 +54,8 @@ UpDate('share',"video_msg",$post->id);
 }else{
     UpDate('share',"werd_msg",time());
     UpDate('share',"werd_id",$post->id);
-    $link =  Uimgur($post->link);
+
+     $link =  Uimgur($post->link);
     if($link[0]){
     UpDate('posts',"link",$link[1]," where id=".$post->id);
     }
@@ -88,10 +89,6 @@ $p = Selaa('video','where id='.$post->vid);
  ?>
          <item>
 <?php
-     $link =  Uimgur($post->link);
-    if($link[0]){
-    UpDate('posts',"link",$link[1]," where id=".$post->id);
-    }
  if($gtype != "video"){
   ?>
          <link><?=$post->link?></link>
