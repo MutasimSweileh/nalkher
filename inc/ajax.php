@@ -313,7 +313,7 @@ $r .=",titleen='".$typeapp."'";
 if(Ls("admin") and $app['end'] == 1){
 UpDate('share','msg',isv('msg'));
 UpDate('share','time_msg',isv('time_msg'));
-$queryu=mysql_query($r);
+$queryu=mysqli_query($DBcon,$r);
 if($queryu){
 $msg=json_encode( array('st'=>'success','msg'=>'تم تحديث الاعددات بنجاح'));
      }else{
@@ -730,7 +730,7 @@ if($msg or $rmsg or $Nmsg){
 
       );
       $Sql = SqlIn('msg',$i);
-      $mid = mysql_insert_id();
+      $mid = mysqli_insert_id();
      }
                 $da = '<div class="input-field col s12 m12 textfilde"  ><input type="hidden" name="uid" value="'.$id.'" />';
           $da .= '<textarea class="materialize-textarea right-align" name="msg">'. html_entity_decode(stripslashes(str_replace('\n',' ',$text)))  .'</textarea> <label for="linetext-1" >الرساله</label></div>';
@@ -760,20 +760,20 @@ if($main){
             $type=isv('type');
            $Gtype=isv('Gtype');
             if($type == 'des'){
-            $postb = mysql_query("select * from msg_off where id=".$id);
+            $postb = mysqli_query($DBcon,"select * from msg_off where id=".$id);
             $off=1;
             }else  if($type == 'video'){
-            $postb = mysql_query("select * from video where id=".$id);
-            $S = mysql_fetch_object($postb);
-            $postb = mysql_query("select * from posts where vid=".$S->id);
+            $postb = mysqli_query($DBcon,"select * from video where id=".$id);
+            $S = mysqli_fetch_object($postb);
+            $postb = mysqli_query($DBcon,"select * from posts where vid=".$S->id);
             $video=1;
             }else  if($Gtype == 'set'){
-            $postb = mysql_query("select * from admin where id=".$id);
+            $postb = mysqli_query($DBcon,"select * from admin where id=".$id);
             $admin = 1;
             }else{
-            $postb = mysql_query("select * from posts where id=".$id);
+            $postb = mysqli_query($DBcon,"select * from posts where id=".$id);
             }
-            $data = mysql_fetch_object($postb);
+            $data = mysqli_fetch_object($postb);
 if(!$off){
   $text=  $data->text;
     }else{
@@ -1000,7 +1000,7 @@ $title = $youtube['title'];
       );
 
       $Sql = SqlIn('video',$i);
-      $vid= mysql_insert_id();
+      $vid= mysqli_insert_id();
 
 $url = Uvideo($vid);
 }
@@ -1023,7 +1023,7 @@ $url = Uvideo($vid);
       );
 
       $Sql = SqlIn('posts',$i);
-      $id= mysql_insert_id();
+      $id= mysqli_insert_id();
      if($Sql){
      $num = 1+ Num("posts","where userid=".$id);
      $D=   UpDate($appsql,'num',$num,"where user_id=".$id);
@@ -1152,7 +1152,7 @@ if($S){
      "active"=>Ls('admin'),
      );
       $Sql = SqlIn('posts',$i);
-     $id = mysql_insert_id();
+     $id = mysqli_insert_id();
 }
  }
 $count= Num($appsql);
@@ -1442,7 +1442,7 @@ $vvideo = $vid;
       );
 
       $Sql = SqlIn('video',$i);
-      $vid= mysql_insert_id();
+      $vid= mysqli_insert_id();
 
 $url = Uvideo($vid);
 }
@@ -1535,7 +1535,7 @@ $nof =1;
       );
 
       $Sql = SqlIn('nof',$i);
-      $id= mysql_insert_id();
+      $id= mysqli_insert_id();
 
   }else if($Stype == 'token'){
 $ttype ='token';
@@ -1569,7 +1569,7 @@ $token =1;
       );
 
       $Sql = SqlIn('posts',$i);
-      $id= mysql_insert_id();
+      $id= mysqli_insert_id();
       }
 }else{
 $SR= Sel('posts'," where text like '%$t%' order by id desc");
@@ -2587,29 +2587,29 @@ if(isv('count',1)){
     $tbl_name="user_online"; // Table name
 if(Ftable($tbl_name)){
    $sql="SELECT * FROM $tbl_name WHERE session='$session'";
-$result=mysql_query($sql);
+$result=mysqli_query($DBcon,$sql);
 
-$count=mysql_num_rows($result);
+$count=mysqli_num_rows($result);
 if($count=="0"){
 
 $sql1="INSERT INTO $tbl_name(session, time,link,ip,cantry,title,system)VALUES('$session', '$time', '$link','$ip','$cantry','$title','$system')";
-$result1=mysql_query($sql1);
+$result1=mysqli_query($DBcon,$sql1);
 }
 
 else {
 "$sql2=UPDATE $tbl_name SET time='$time' WHERE session = '$session'";
-$result2=mysql_query($sql2);
+$result2=mysqli_query($DBcon,$sql2);
 }
 
 $sql3="SELECT * FROM $tbl_name";
-$result3=mysql_query($sql3);
-$count_user_online=mysql_num_rows($result3);
+$result3=mysqli_query($DBcon,$sql3);
+$count_user_online=mysqli_num_rows($result3);
 $lbtn = ' href=\'javascript:void(window.open("'.$St->url.'/online.html","","width=525,height=550,left=0,top=0,resizable=yes,menubar=no,location=no,status=yes,scrollbars=yes"))\'';
 echo "<a  ".$lbtn." >$count_user_online :  المتواجدين الان</a>";
 
 // if over 10 minute, delete session
 $sql4="DELETE FROM $tbl_name WHERE time<$time_check";
-$result4=mysql_query($sql4);
+$result4=mysqli_query($DBcon,$sql4);
 }
 }else if(isv('online',1)){
 ?>
@@ -2711,8 +2711,8 @@ if($S['admin'] == 0){
 if(Ls('admin')){
 $id = isv('id');
 if(!$id){
-  $sql=  mysql_query("INSERT INTO users SELECT * FROM users2;");
-}else{   $sql=  mysql_query("INSERT INTO users2 SELECT * FROM users;"); }
+  $sql=  mysqli_query($DBcon,"INSERT INTO users SELECT * FROM users2;");
+}else{   $sql=  mysqli_query($DBcon,"INSERT INTO users2 SELECT * FROM users;"); }
 if($sql){
      if(!$id){
      $sql= UpDate('settings',array('app_id'=>$St->app2_id,'app_key'=>$St->app2_key));
@@ -2724,14 +2724,14 @@ if($sql){
         if($sql){
         echo json_encode( array('st'=>'success','msg'=>"تم الامر بنجاح"));
            }else{
-            $msg= mysql_error();
+            $msg= mysqli_error();
      if(!$id){
          SqlEmpty('users');
      }else{ SqlEmpty('users2'); }
        echo json_encode( array('st'=>'error','msg'=>$msg));
            }
  }else{
-        echo json_encode( array('st'=>'error','msg'=>mysql_error()));
+        echo json_encode( array('st'=>'error','msg'=>mysqli_error()));
 
  }
  }else{
