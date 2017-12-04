@@ -1,5 +1,6 @@
 <?php
 //header("Content-Type: application/rss+xml; charset=UTF-8");
+die("test");
 include "inc.php";
 $St= getSet();
 ?>
@@ -20,7 +21,6 @@ $Werd = isv("werd",1);
 if($gtype == "d"){
 UpDate('share',"quran_msg",null);
 }
-die("test");
 if (TimeShare($gtype)){
 if($St->blog == 1){$blog =4;}else{$blog =7;}
 $blog =0;
