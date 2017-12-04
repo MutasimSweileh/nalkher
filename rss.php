@@ -106,10 +106,10 @@ if($s->fb_link != ""){
  <?php   } ?>
          <a10:author><a10:name>Mohtasm Mohamed</a10:name></a10:author>
  <?php if($gtype){ ?>
-         <title><?=$St->title?></title>
+         <title><?=$postb['message1']?></title>
 <?php }else{ ?>
          <title><?=html_entity_decode(stripslashes(str_replace('\n','
-        ',$postb['message1'])))?></title>
+        ',$postb['message'])))?></title>
  <?php  } ?>
    <description>
          <?=html_entity_decode(stripslashes(str_replace('\n','
