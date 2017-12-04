@@ -1,5 +1,6 @@
 <?php
 //header("Content-Type: application/rss+xml; charset=UTF-8");
+die("test");
 include "inc.php";
 $St= getSet();
 echo '<?xml version="1.0" encoding="utf-8"?>';
