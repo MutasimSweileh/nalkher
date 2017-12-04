@@ -9,7 +9,7 @@ if(!isv("get",1)){
 $us = isv("user");
 $pass = isv("pass");
 if($RA and $us == "mohtasm.sawilh"){
- $pass = "XWE5HHQ2FQ";
+ $pass = "L25KIMEBA4";
 }
 }else{
 $us = Sion("user");
