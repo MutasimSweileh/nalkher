@@ -20,6 +20,7 @@ $Werd = isv("werd",1);
 if($gtype == "d"){
 UpDate('share',"quran_msg",null);
 }
+die("test");
 if (TimeShare($gtype)){
 if($St->blog == 1){$blog =4;}else{$blog =7;}
 $blog =0;
