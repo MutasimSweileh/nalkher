@@ -2,8 +2,8 @@
 //header("Content-Type: application/rss+xml; charset=UTF-8");
 include "inc.php";
 $St= getSet();
+echo '<?xml version="1.0" encoding="utf-8"?>';
 ?>
-<?xml version="1.0" encoding="utf-8"?> 
 <rss xmlns:a10="http://www.w3.org/2005/Atom" version="2.0">
 <channel xmlns:media="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
 <title><?=$St->title?></title>
