@@ -87,7 +87,7 @@ $p = Selaa('video','where id='.$post->vid);
   خدمة التنبيه بالرسائل القصيره ==> http://m.me/Ned2.Al5er";
 
  ?>
-         <item>
+ <item>
 <?php
  if($gtype != "video"){
   ?>
