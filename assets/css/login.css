@@ -1,0 +1,57 @@
+  .loginFly, .signupFly {
+    position: relative;
+    -webkit-transition: all .5s;
+    -moz-transition: all .5s;
+    -o-transition: all .5s;
+    -ms-transition: all .5s;
+    transition: all .5s;
+  }
+  .card-content {
+    overflow: auto;
+  }
+  .card .card-action {
+    border-top: 0;
+  }
+  .card-action > a {
+    color: #00796b !important;
+  }
+  .card-title {
+    color: #4db6ac !important;
+  }
+  /* label color */
+
+  .input-field label {
+    color: #4db6ac;
+  }
+  /* label focus color */
+
+  .input-field input[type=text]:focus + label, .input-field input[type=password]:focus + label, .input-field input[type=email]:focus + label {
+    color: #4db6ac;
+  }
+  input[type=text], input[type=password], input[type=email] {
+    border-bottom: 1px solid #4db6ac;
+  }
+  /* label underline focus color */
+
+  .input-field input[type=text]:focus, .input-field input[type=password]:focus, .input-field input[type=email]:focus {
+    border-bottom: 1px solid #4db6ac;
+    box-shadow: 0 1px 0 0 #4db6ac;
+  }
+  /* icon prefix focus color */
+
+  .input-field .prefix.active {
+    color: #4db6ac;
+  }
+  input[type=text]:focus:not([readonly]), input[type=password]:focus:not([readonly]), input[type=email]:focus:not([readonly]) {
+    border-bottom: 1px solid #4db6ac;
+    box-shadow: 0 1px 0 0 #4db6ac;
+  }
+  @media (max-width: 380px) {
+    
+  }
+  @media (max-width: 600px) {
+
+  }
+  @media (min-width: 600px) {
+
+  }
