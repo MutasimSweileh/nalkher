@@ -11,13 +11,16 @@ $St= getSet();
 <description><?=$St->description?></description>
 <language>ar-EG</language>
 <image><url><?=$St->logo?></url><title><?=$St->title?></title><link><?=$St->url?></link></image>
-<?php  $orderby = "order by rand()";  $date = time(); $rand= rand(1,9999999999999);
+<?php
+$orderby = "order by rand()";
+$date = time();
+$rand= rand(1,9999999999999);
 $gtype = isv("type",1);
 $Werd = isv("werd",1);
 if($gtype == "d"){
 UpDate('share',"quran_msg",null);
 }
-if (TimeShare($gtype) and !in_array(date('D',time()),$app['block_days']) or TimeShare($gtype) and  $app['active_days']){
+if (TimeShare($gtype)){
 if($St->blog == 1){$blog =4;}else{$blog =7;}
 $blog =0;
 $po = 'posts';
@@ -28,7 +31,7 @@ $blog =8;
 $blog =6;
 $orderby = "order by id asc";
 }
-$po = "quran";
+$po = "posts";
 }else if($gtype == "video"){
 $blog =7;
 }
@@ -59,9 +62,9 @@ UpDate($po,"msg",1,' where id='.$post->id);
 $s = Sel("share");
 if($gtype == "quran"){
 if(!$Werd){
-$post =  Sel('quran',"where  id=".$s->quran_id);
+$post =  Sel('posts',"where  id=".$s->quran_id);
 }else{
-$post =  Sel('quran',"where  id=".$s->werd_id);
+$post =  Sel('posts',"where  id=".$s->werd_id);
 }
 }else if($gtype == "video"){
 $post =  Sel('posts',"where  id=".$s->video_id);
