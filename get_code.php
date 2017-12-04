@@ -87,7 +87,7 @@ echo json_encode( array('st'=>'error',"nid"=>$nid,'msg'=>"حدث خطأ ما ا�
 }
 if($insert){
       $_SESSION['slev']= $lev;
-      $_SESSION['uid']= mysql_insert_id();
+      $_SESSION['uid']= mysqli_insert_id();
       $_SESSION['sid']=$id;
       $_SESSION['id']=$id;
       $_SESSION['ip']=ip();
