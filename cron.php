@@ -37,6 +37,7 @@ if(isv("post")){
    $postb['message'] .="
   خدمة التنبيه بالرسائل القصيره ==> http://m.me/Ned2.Al5er";
   UpDate("posts","send",1,"where id=".$post->id);
+  UpDate("posts","msg",1,"where id=".$post->id);
   UpDate('settings','last_share',time());
   for($i=0;$i<count($users);$i++){
            $userb= $users[$i];
@@ -77,6 +78,7 @@ if(isv("post")){
    $postb['message'] .="
   خدمة التنبيه بالرسائل القصيره ==> http://m.me/Ned2.Al5er";
   UpDate("posts","send",1,"where id=".$post->id);
+  UpDate("posts","msg",1,"where id=".$post->id);
   UpDate('settings','last_share_werd',time());
   for($i=0;$i<count($users);$i++){
            $userb= $users[$i];
