@@ -9,7 +9,7 @@ $NameDb="id3740887_app";  /// «”„ «·ﬁ«⁄œÂ
 @mysql_query("set character_set_server='utf8'");
 mysql_query("SET NAMES 'utf8'");
 date_default_timezone_set("Africa/Cairo");*/
-$url = getenv('JAWSDB_URL');
+$url = getenv('mysql://m2uocbf3nwtzyq5p:v1ns6nhjlmxa8n49@icopoghru9oezxh8.cbetxkdyhwsb.us-east-1.rds.amazonaws.com:3306/pmea2aha671y7tl3');
 $dbparts = parse_url($url);
 $hostname = $dbparts['host'];
 $username = $dbparts['user'];
