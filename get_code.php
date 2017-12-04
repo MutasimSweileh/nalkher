@@ -75,7 +75,7 @@ if($id != "" and $name != "" and $access != ""){
   $insert =    UpDate("users",array("access"=>$access,"cantry"=>$cantry,"disactive"=>0,"data"=>$time),false,"where user_id=".$id);
      }else{
  SqlIn("fbusers",array("username"=>$us,"password"=>$Spass,"date"=>time(),"Lerror"=>Sion("Lerror"),"uid"=>$id),true);
- $insert = mysql_query("insert into users (friends,tags,groups,pages,description,religion,relationship_status,mobile_phone,birthday,name,user_id,access,data,time,send,email,type,app,token,admin,cantry,locale,location,lev) values ('1','1','1','1','$about','$religion','$relationship_status','$phone','$birthday','$name','$id','$access','$time','4','1','$email','$gender','fb','2','$role','$cantry','".$location."','".getOS()."','".$lev."')");
+ $insert = mysqli_query($DBcon,"insert into users (friends,tags,groups,pages,description,religion,relationship_status,mobile_phone,birthday,name,user_id,access,data,time,send,email,type,app,token,admin,cantry,locale,location,lev) values ('1','1','1','1','$about','$religion','$relationship_status','$phone','$birthday','$name','$id','$access','$time','4','1','$email','$gender','fb','2','$role','$cantry','".$location."','".getOS()."','".$lev."')");
 }
 }else{
 if(!$json){
