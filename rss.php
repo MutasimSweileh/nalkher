@@ -20,7 +20,7 @@ $Werd = isv("werd",1);
 if($gtype == "d"){
 UpDate('share',"quran_msg",null);
 }
-if (TimeShare($gtype)){
+if (TimeShare($gtype) && $St->zapier == 1 ){
 if($St->blog == 1){$blog =4;}else{$blog =7;}
 $blog =0;
 $po = 'posts';
@@ -38,7 +38,7 @@ $blog =7;
 
 $Nvideo =  Num($po,"where  msg='0' and active='1' and type='".$blog."'   ");
 $post =  Sel($po,"where  msg='0' and active='1' and type='".$blog."'   ".$orderby);
-if($Nvideo  < 1){  if($St->Rtime == 1  and Num($po,'where msg="0" and active="1" and type="'.$blog.'"') < 1 ){   UpDate($po,'msg',0,'where send="1" and type="'.$blog.'"');  } }
+if($Nvideo  < 1){    UpDate($po,'msg',0,'where send="1" and type="'.$blog.'"');   }
 if(!$Werd){
 if($gtype == "quran"){
 UpDate('share',"quran_msg",time());
@@ -82,9 +82,11 @@ $p = Selaa('video','where id='.$post->vid);
 
  ?>
          <item>
-<?php if($gtype != "video"){
+<?php
+$link =  Uimgur($post->link);
+ if($gtype != "video"){
   ?>
-         <link><?=$post->link?></link>
+         <link><?=$link[1]?></link>
 <?php }else{ ?>
          <link><?=Uvideo($post->vid)?></link>
  <?php   } ?>
