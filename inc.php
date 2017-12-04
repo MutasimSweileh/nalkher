@@ -2,7 +2,7 @@
 @ob_start();
 @session_start();
 $lg='ar';
-//include "inc/config.php";
+include "inc/SqlLite.php";
 include"inc/lang.php";
 include "inc/function.php";
 include_once 'src/facebook.php';
