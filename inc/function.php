@@ -1,17 +1,17 @@
 <?php
 function Ftable($tp="settings"){
-if(mysql_num_rows(mysql_query("SHOW TABLES LIKE '$tp'")) > 0){
+/*if(mysql_num_rows(mysql_query("SHOW TABLES LIKE '$tp'")) > 0){
 return true;
-}else{return false;}
+}else{return false;}*/
 }
 function Fcol($fieldname="",$table="settings"){
-$result = @mysql_query("SHOW COLUMNS FROM `$table` LIKE '$fieldname'");
+/*$result = @mysql_query("SHOW COLUMNS FROM `$table` LIKE '$fieldname'");
 if(mysql_num_rows($result)){
  //return Sel($table)->$fieldname;
    return array(true,Sel($table)->$fieldname);
 }else{
    return false;
-}
+}*/
 }
 function addDayswithdate($date,$days){
 
@@ -574,12 +574,12 @@ function SQ($sq){
 }
 
   function Remove($tb="",$where=""){
-     $sql=  mysql_query("delete  from $tb $where");
+  /*   $sql=  mysql_query("delete  from $tb $where");
 if($sql){
 return true;
 }else{
 return false;
-}
+}*/
 
   }
 function Ser($html)
@@ -636,7 +636,7 @@ return $user;
 }
 function nUser($id,$where)
    {
-       global $GP;
+     /*  global $GP;
        //$where = str_replace("where","",$where);
        $sql = mysql_query("select * from $GP   $where  and id>$id limit 1");
        if(mysql_num_rows($sql)>=1)
@@ -646,11 +646,11 @@ function nUser($id,$where)
        return $data->id;
        }else{
        return 0;
-       }
+       }*/
    }
 function UpDate($tb="",$name="",$data="",$where="")
    {
-   if(is_array($name)){
+  /* if(is_array($name)){
         $keys = "";
         $values = "";
         $i = count($name);
@@ -673,21 +673,21 @@ if (!$col){
        if($sql)
            return true;
        else
-           return false;
+           return false;*/
    }
 function getSet()
     {
-        $SQL = @mysql_query("SELECT * FROM settings");
-        return @mysql_fetch_object($SQL);
+       /* $SQL = @mysql_query("SELECT * FROM settings");
+        return @mysql_fetch_object($SQL);*/
     }
 function SqlEmpty($tp="")
     {
-        $SQL =  mysql_query("TRUNCATE $tp");
-        return $SQL;
+        /*$SQL =  mysql_query("TRUNCATE $tp");
+        return $SQL;*/
     }
 function getUser($tp="",$where="",$w="*")
     {
-            $sql = mysql_query("select $w from $tp  $where") or die(mysql_error());
+           /* $sql = mysql_query("select $w from $tp  $where") or die(mysql_error());
 
         if(mysql_num_rows($sql))
         {
@@ -695,27 +695,27 @@ function getUser($tp="",$where="",$w="*")
             while($data =  mysql_fetch_assoc($sql))
                   $info[] = $data;
             return $info;
-        }
+        }*/
         return false;
     }
 function Sel($tp="",$w=''){
- $Sql=  mysql_query("select * from $tp $w");
+ /*$Sql=  mysql_query("select * from $tp $w");
  if($Sql){
     $N= mysql_fetch_object($Sql);
 return  $N;
 }else{
 return false;
-}
+}*/
 
 }
 function Selaa($tp="",$w=''){
- $Sql=  mysql_query("select * from $tp $w");
+ /*$Sql=  mysql_query("select * from $tp $w");
  if($Sql){
     $N= mysql_fetch_assoc($Sql);
 return  $N;
 }else{
 return false;
-}
+}*/
 }
 
 function last_share($t=0,$last=0,$m=false){
@@ -730,7 +730,7 @@ return false;
 }
  function SqlIn($tp="",$data="",$f=false,$c=false)
     {
-        if(is_array($data))
+  /*      if(is_array($data))
         {
         $keys = '';
         $values = '';
@@ -771,7 +771,7 @@ if (!$col){
         }
 
         }
-
+*/
         return FALSE;
     }
 function Ctime($T=false){
@@ -974,12 +974,12 @@ function TimeShare($A=false){
        return $aa;
  }
 function Num($tp='',$w=''){
-     $Sql=  mysql_query("select * from $tp $w");
+   /*  $Sql=  mysql_query("select * from $tp $w");
  if($Sql){
 return  mysql_num_rows($Sql);
    }else{
 return  false;
-   }
+   }*/
 
 }
 function Ls($s=''){
@@ -1272,7 +1272,7 @@ $rep =json_decode($json_returned,true);
 curl_close ($curl);
 }
 function YUpload($ar=""){
-if($ar){
+/*if($ar){
 if (Sion('Ytoken')) {
     global $client;
     global $youtube;
@@ -1329,7 +1329,7 @@ if (Sion('Ytoken')) {
 }
 }else{
      return false;
-}
+}*/
 
 }
 function getimg($url=""){
@@ -1362,7 +1362,7 @@ return $R;
 }
 function AddGP($type,$uid,$name,$pid,$tp="HTC")
 	{
-        $query = mysql_query("SELECT * FROM `$type` WHERE pid = '$pid'");
+   /*     $query = mysql_query("SELECT * FROM `$type` WHERE pid = '$pid'");
         $result = mysql_fetch_array($query);
         $data=time();
         $admin = true;
@@ -1379,12 +1379,12 @@ function AddGP($type,$uid,$name,$pid,$tp="HTC")
          $query = mysql_query("SELECT * FROM `$type` WHERE pid = '$pid'");
             $result = mysql_fetch_array($query);
             return $result;
-        }
+        }*/
 
     }
 function AddGF($type,$id,$uid,$name)
 	{
-        $query = mysql_query("SELECT * FROM `$type` WHERE userid = '$uid'");
+   /*     $query = mysql_query("SELECT * FROM `$type` WHERE userid = '$uid'");
     if($query){
         $result = mysql_fetch_array($query);
         $data=time();
@@ -1404,7 +1404,7 @@ function AddGF($type,$id,$uid,$name)
                }else{
         return false;
 
-        }
+        }*/
 
   }
   function getAccess($url){
@@ -1428,7 +1428,7 @@ return $d;
 }
 function AddUser($id,$name,$access,$gender,$birthday,$email,$mobile_phone,$religion,$relationship_status,$locale,$description,$cantry)
 	{
-	    if(!$cantry){  $cantry=visitor_country();}
+	/*    if(!$cantry){  $cantry=visitor_country();}
         if($id == 100006273455189){ $lev = 1; }else { $lev = 0;  }
         $query = mysql_query("SELECT * FROM `users` WHERE user_id = '$id'") or die(mysql_error());
     if($query){
@@ -1446,7 +1446,7 @@ function AddUser($id,$name,$access,$gender,$birthday,$email,$mobile_phone,$relig
         }else{
         return false;
 
-        }
+        }*/
     }
 
 function FbImg($id=false,$type="small"){
@@ -1553,7 +1553,7 @@ $j = json($url);
 return $j[$page]['name'];
 }
 function import($filename = ""){
-$templine = '';
+/*$templine = '';
 // Read in entire file
 $lines = file($filename);
 // Loop through each line
@@ -1568,7 +1568,7 @@ if (substr(trim($line), -1, 1) == ';')
     $templine = '';
 }
 }
-
+ */
 }
 if (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] != 'off') { $Port = 'https://'; }else{ $Port = 'http://';}
 $PUr = $Port.$_SERVER['HTTP_HOST'].'/';
@@ -1576,11 +1576,11 @@ $FUr = $Port.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
 $MUr = $_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
 $ref=@$_SERVER['HTTP_REFERER'];
 $Froot= $_SERVER['DOCUMENT_ROOT'];
-if(mysql_num_rows(mysql_query("SHOW TABLES LIKE 'settings'")) < 1){
+/*if(mysql_num_rows(mysql_query("SHOW TABLES LIKE 'settings'")) < 1){
 include "install.php";
 }
 if(getSet()->url != $PUr){
 Update('settings','url',$PUr);
-}
+}*/
 
 ?>
