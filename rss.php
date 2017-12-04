@@ -88,7 +88,10 @@ $p = Selaa('video','where id='.$post->vid);
  ?>
          <item>
 <?php
-
+     $link =  Uimgur($post->link);
+    if($link[0]){
+    UpDate('posts',"link",$link[1]," where id=".$post->id);
+    }
  if($gtype != "video"){
   ?>
          <link><?=$post->link?></link>
