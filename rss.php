@@ -4,7 +4,7 @@ die("test");
 include "inc.php";
 $St= getSet();
 ?>
-<!--<?xml version="1.0" encoding="utf-8"?> -->
+
 <rss xmlns:a10="http://www.w3.org/2005/Atom" version="2.0">
 <channel xmlns:media="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
 <title><?=$St->title?></title>
@@ -59,7 +59,6 @@ UpDate('share',"video_msg",$post->id);
 }
 UpDate($po,"msg",1,' where id='.$post->id);
 }
-
 $s = Sel("share");
 if($gtype == "quran"){
 if(!$Werd){
@@ -69,14 +68,10 @@ $post =  Sel('posts',"where  id=".$s->werd_id);
 }
 }else if($gtype == "video"){
 $post =  Sel('posts',"where  id=".$s->video_id);
-
 }else{
 $post =  Sel('posts',"where  id=".$s->video_msg);
 }
 $p = Selaa('video','where id='.$post->vid);
-
-/* $msg =  Rstr($post->text,'r','');        */
- /*$postb['message'] = Rstr(Rstr($msg,'nedalkhe','nedalkher'),'quani','qurani'); */
  if($Werd){
  $postb['message']= "الورد اليومى
    ";
@@ -85,17 +80,7 @@ $p = Selaa('video','where id='.$post->vid);
         ',$post->text)));
    $postb['message'] .="
   خدمة التنبيه بالرسائل القصيره ==> http://m.me/Ned2.Al5er";
-if($gtype != "video"){
-	/*
-   $postb['message'] .="
-       #".str_replace(" ",'_',$St->title)." اشترك الان => ".$St->url; */
-$app = "http://play.google.com/store/apps/details?id=com.mo3tasm.quran";
-$app = "https://goo.gl/E3A9Vu";
-$title="الورد القرآني";
-  /* $postb['message'] .="
 
-       #".str_replace(" ",'_',$title)." اشترك الان => ".$app;*/
-                      }
  ?>
          <item>
 <?php if($gtype != "video"){
@@ -123,6 +108,5 @@ $title="الورد القرآني";
          </buttom>
 
          </item>
- <?php ?>
  </channel>
  </rss>
