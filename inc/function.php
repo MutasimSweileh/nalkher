@@ -1595,7 +1595,7 @@ if(!Ftable()){
 include "install.php";
 }
 if(getSet()->url != $PUr){
-Update('settings','url',$PUr);
+//Update('settings','url',$PUr);
 }
 
 ?>
