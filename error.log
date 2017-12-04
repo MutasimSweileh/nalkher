@@ -1,0 +1,298 @@
+good[Sun Sep 03 16:09:38.726831 2017] [:error] [pid 3139] [client 34.212.194.231:56333] PHP Notice:  Undefined index: HTTP_USER_AGENT in /var/www/v2/inc/function.php on line 684
+[Sun Sep 03 16:09:38.730508 2017] [:error] [pid 3135] [client 34.212.194.231:56334] PHP Notice:  Undefined index: Froot in /var/www/Wp/user.php on line 7
+[Sun Sep 03 16:09:38.732744 2017] [:error] [pid 3139] [client 34.212.194.231:56333] PHP Notice:  Undefined index: HTTP_USER_AGENT in /var/www/v2/inc/function.php on line 1071
+[Sun Sep 03 16:09:38.732757 2017] [:error] [pid 3139] [client 34.212.194.231:56333] PHP Notice:  Undefined index: HTTP_USER_AGENT in /var/www/v2/inc/function.php on line 1071
+[Sun Sep 03 16:09:38.994180 2017] [:error] [pid 3121] [client 156.216.59.215:58499] PHP Warning:  file_get_contents(http://ipinfo.io/156.216.59.215): failed to open stream: HTTP request failed! HTTP/1.0 429 Too Many Requests\r\n in /var/www/v2/inc/function.php on line 474
+[Sun Sep 03 16:09:38.994215 2017] [:error] [pid 3121] [client 156.216.59.215:58499] PHP Notice:  Trying to get property of non-object in /var/www/v2/inc/function.php on line 476
+[Sun Sep 03 16:09:39.168733 2017] [:error] [pid 3167] [client 109.253.205.170:49662] PHP Notice:  Undefined index: quran in /var/www/v2/json.php on line 11
+[Sun Sep 03 16:09:39.173183 2017] [:error] [pid 3142] [client 34.212.194.231:56336] PHP Notice:  Undefined index: Froot in /var/www/Wp/user.php on line 7
+[Sun Sep 03 16:09:39.175680 2017] [:error] [pid 3167] [client 109.253.205.170:49662] PHP Notice:  Undefined index: HTTP_X_REQUESTED_WITH in /var/www/v2/inc/function.php on line 1073
+[Sun Sep 03 16:09:39.228504 2017] [:error] [pid 3146] [client 41.104.70.79:48028] PHP Notice:  Undefined index: quran in /var/www/v2/json.php on line 11
+[Sun Sep 03 16:09:39.233132 2017] [:error] [pid 3162] [client 34.212.194.231:56337] PHP Notice:  Undefined index: Froot in /var/www/Wp/user.php on line 7
+[Sun Sep 03 16:09:39.235612 2017] [:error] [pid 3146] [client 41.104.70.79:48028] PHP Notice:  Undefined index: HTTP_X_REQUESTED_WITH in /var/www/v2/inc/function.php on line 1073
+[Sun Sep 03 16:09:39.582791 2017] [:error] [pid 3120] [client 37.238.195.103:26835] PHP Notice:  Undefined index: quran in /var/www/v2/json.php on line 11
+[Sun Sep 03 16:09:39.587228 2017] [:error] [pid 3149] [client 34.212.194.231:56340] PHP Notice:  Undefined index: Froot in /var/www/Wp/user.php on line 7
+[Sun Sep 03 16:09:39.589812 2017] [:error] [pid 3120] [client 37.238.195.103:26835] PHP Notice:  Undefined index: HTTP_X_REQUESTED_WITH in /var/www/v2/inc/function.php on line 1073
+[Sun Sep 03 16:09:39.617959 2017] [:error] [pid 3146] [client 41.104.70.79:48028] PHP Warning:  file_get_contents(http://ipinfo.io/41.104.70.79): failed to open stream: HTTP request failed! HTTP/1.0 429 Too Many Requests\r\n in /var/www/v2/inc/function.php on line 474
+[Sun Sep 03 16:09:39.617990 2017] [:error] [pid 3146] [client 41.104.70.79:48028] PHP Notice:  Trying to get property of non-object in /var/www/v2/inc/function.php on line 476
+[Sun Sep 03 16:09:39.967528 2017] [:error] [pid 3120] [client 37.238.195.103:26835] PHP Warning:  file_get_contents(http://ipinfo.io/37.238.195.103): failed to open stream: HTTP request failed! HTTP/1.0 429 Too Many Requests\r\n in /var/www/v2/inc/function.php on line 474
+[Sun Sep 03 16:09:39.967563 2017] [:error] [pid 3120] [client 37.238.195.103:26835] PHP Notice:  Trying to get property of non-object in /var/www/v2/inc/function.php on line 476
+[Sun Sep 03 16:09:40.750101 2017] [:error] [pid 3122] [client 87.49.147.238:8092] PHP Notice:  Undefined index: quran in /var/www/v2/json.php on line 11
+[Sun Sep 03 16:09:40.754558 2017] [:error] [pid 3124] [client 34.212.194.231:56343] PHP Notice:  Undefined index: Froot in /var/www/Wp/user.php on line 7
+[Sun Sep 03 16:09:40.756809 2017] [:error] [pid 3122] [client 87.49.147.238:8092] PHP Notice:  Undefined index: HTTP_X_REQUESTED_WITH in /var/www/v2/inc/function.php on line 1073
+[Sun Sep 03 16:09:40.773704 2017] [:error] [pid 3138] [client 156.195.204.209:60323] PHP Notice:  Undefined index: quran in /var/www/v2/json.php on line 11
+[Sun Sep 03 16:09:40.777821 2017] [:error] [pid 3135] [client 34.212.194.231:56345] PHP Notice:  Undefined index: Froot in /var/www/Wp/user.php on line 7
+[Sun Sep 03 16:09:40.779903 2017] [:error] [pid 3138] [client 156.195.204.209:60323] PHP Notice:  Undefined index: HTTP_X_REQUESTED_WITH in /var/www/v2/inc/function.php on line 1073
+[Sun Sep 03 16:09:41.028038 2017] [:error] [pid 3137] [client 41.233.30.93:39851] PHP Notice:  Undefined index: quran in /var/www/v2/json.php on line 11
+[Sun Sep 03 16:09:41.032487 2017] [:error] [pid 3139] [client 34.212.194.231:56346] PHP Notice:  Undefined index: Froot in /var/www/Wp/user.php on line 7
+[Sun Sep 03 16:09:41.034846 2017] [:error] [pid 3137] [client 41.233.30.93:39851] PHP Notice:  Undefined index: HTTP_X_REQUESTED_WITH in /var/www/v2/inc/function.php on line 1073
+[Sun Sep 03 16:09:41.125834 2017] [:error] [pid 3138] [client 156.195.204.209:60323] PHP Notice:  Undefined index: quran in /var/www/v2/json.php on line 11
+[Sun Sep 03 16:09:41.130267 2017] [:error] [pid 3144] [client 34.212.194.231:56349] PHP Notice:  Undefined index: Froot in /var/www/Wp/user.php on line 7
+[Sun Sep 03 16:09:41.132379 2017] [:error] [pid 3138] [client 156.195.204.209:60323] PHP Notice:  Undefined index: HTTP_X_REQUESTED_WITH in /var/www/v2/inc/function.php on line 1073
+[Sun Sep 03 16:09:41.146788 2017] [:error] [pid 3122] [client 87.49.147.238:8092] PHP Warning:  file_get_contents(http://ipinfo.io/87.49.147.238): failed to open stream: HTTP request failed! HTTP/1.0 429 Too Many Requests\r\n in /var/www/v2/inc/function.php on line 474
+[Sun Sep 03 16:09:41.146807 2017] [:error] [pid 3122] [client 87.49.147.238:8092] PHP Notice:  Trying to get property of non-object in /var/www/v2/inc/function.php on line 476
+[Sun Sep 03 16:09:41.419606 2017] [:error] [pid 3137] [client 41.233.30.93:39851] PHP Warning:  file_get_contents(http://ipinfo.io/41.233.30.93): failed to open stream: HTTP request failed! HTTP/1.0 429 Too Many Requests\r\n in /var/www/v2/inc/function.php on line 474
+[Sun Sep 03 16:09:41.419638 2017] [:error] [pid 3137] [client 41.233.30.93:39851] PHP Notice:  Trying to get property of non-object in /var/www/v2/inc/function.php on line 476
+[Sun Sep 03 16:09:41.517896 2017] [:error] [pid 3138] [client 156.195.204.209:60323] PHP Warning:  file_get_contents(http://ipinfo.io/156.195.204.209): failed to open stream: HTTP request failed! HTTP/1.0 429 Too Many Requests\r\n in /var/www/v2/inc/function.php on line 474
+[Sun Sep 03 16:09:41.517927 2017] [:error] [pid 3138] [client 156.195.204.209:60323] PHP Notice:  Trying to get property of non-object in /var/www/v2/inc/function.php on line 476
+[Sun Sep 03 16:09:41.596929 2017] [:error] [pid 3145] [client 41.140.4.222:16579] PHP Notice:  Undefined index: quran in /var/www/v2/json.php on line 11
+[Sun Sep 03 16:09:41.601277 2017] [:error] [pid 3142] [client 34.212.194.231:56353] PHP Notice:  Undefined index: Froot in /var/www/Wp/user.php on line 7
+[Sun Sep 03 16:09:41.603464 2017] [:error] [pid 3145] [client 41.140.4.222:16579] PHP Notice:  Undefined index: HTTP_X_REQUESTED_WITH in /var/www/v2/inc/function.php on line 1073
+[Sun Sep 03 16:09:41.775121 2017] [:error] [pid 3138] [client 156.195.204.209:60323] PHP Notice:  Undefined index: quran in /var/www/v2/json.php on line 11
+[Sun Sep 03 16:09:41.779440 2017] [:error] [pid 3162] [client 34.212.194.231:56355] PHP Notice:  Undefined index: Froot in /var/www/Wp/user.php on line 7
+[Sun Sep 03 16:09:41.781665 2017] [:error] [pid 3138] [client 156.195.204.209:60323] PHP Notice:  Undefined index: HTTP_X_REQUESTED_WITH in /var/www/v2/inc/function.php on line 1073
+[Sun Sep 03 16:09:41.983805 2017] [:error] [pid 3145] [client 41.140.4.222:16579] PHP Warning:  file_get_contents(http://ipinfo.io/41.140.4.222): failed to open stream: HTTP request failed! HTTP/1.0 429 Too Many Requests\r\n in /var/www/v2/inc/function.php on line 474
+[Sun Sep 03 16:09:41.983836 2017] [:error] [pid 3145] [client 41.140.4.222:16579] PHP Notice:  Trying to get property of non-object in /var/www/v2/inc/function.php on line 476
+[Sun Sep 03 16:09:42.468049 2017] [:error] [pid 3122] [client 87.49.147.238:8092] PHP Notice:  Undefined index: quran in /var/www/v2/json.php on line 11
+[Sun Sep 03 16:09:42.472443 2017] [:error] [pid 3149] [client 34.212.194.231:56357] PHP Notice:  Undefined index: Froot in /var/www/Wp/user.php on line 7
+[Sun Sep 03 16:09:42.474778 2017] [:error] [pid 3122] [client 87.49.147.238:8092] PHP Notice:  Undefined index: HTTP_X_REQUESTED_WITH in /var/www/v2/inc/function.php on line 1073
+[Sun Sep 03 16:09:42.796192 2017] [:error] [pid 3122] [client 87.49.147.238:8092] PHP Notice:  Undefined index: quran in /var/www/v2/json.php on line 11
+[Sun Sep 03 16:09:42.800494 2017] [:error] [pid 3131] [client 34.212.194.231:56358] PHP Notice:  Undefined index: Froot in /var/www/Wp/user.php on line 7
+[Sun Sep 03 16:09:42.802753 2017] [:error] [pid 3122] [client 87.49.147.238:8092] PHP Notice:  Undefined index: HTTP_X_REQUESTED_WITH in /var/www/v2/inc/function.php on line 1073
+[Sun Sep 03 16:09:43.182289 2017] [:error] [pid 3122] [client 87.49.147.238:8092] PHP Warning:  file_get_contents(http://ipinfo.io/87.49.147.238): failed to open stream: HTTP request failed! HTTP/1.0 429 Too Many Requests\r\n in /var/www/v2/inc/function.php on line 474
+[Sun Sep 03 16:09:43.182321 2017] [:error] [pid 3122] [client 87.49.147.238:8092] PHP Notice:  Trying to get property of non-object in /var/www/v2/inc/function.php on line 476
+[Sun Sep 03 16:09:43.542512 2017] [:error] [pid 3121] [client 156.216.59.215:58499] PHP Notice:  Undefined index: quran in /var/www/v2/json.php on line 11
+[Sun Sep 03 16:09:43.547031 2017] [:error] [pid 3124] [client 34.212.194.231:56361] PHP Notice:  Undefined index: Froot in /var/www/Wp/user.php on line 7
+[Sun Sep 03 16:09:43.549277 2017] [:error] [pid 3121] [client 156.216.59.215:58499] PHP Notice:  Undefined index: HTTP_X_REQUESTED_WITH in /var/www/v2/inc/function.php on line 1073
+[Sun Sep 03 16:09:43.929546 2017] [:error] [pid 3121] [client 156.216.59.215:58499] PHP Warning:  file_get_contents(http://ipinfo.io/156.216.59.215): failed to open stream: HTTP request failed! HTTP/1.0 429 Too Many Requests\r\n in /var/www/v2/inc/function.php on line 474
+[Sun Sep 03 16:09:43.929580 2017] [:error] [pid 3121] [client 156.216.59.215:58499] PHP Notice:  Trying to get property of non-object in /var/www/v2/inc/function.php on line 476
+[Sun Sep 03 16:09:44.279030 2017] [:error] [pid 3146] [client 41.104.70.79:48028] PHP Notice:  Undefined index: quran in /var/www/v2/json.php on line 11
+[Sun Sep 03 16:09:44.283390 2017] [:error] [pid 3135] [client 34.212.194.231:56364] PHP Notice:  Undefined index: Froot in /var/www/Wp/user.php on line 7
+[Sun Sep 03 16:09:44.285632 2017] [:error] [pid 3146] [client 41.104.70.79:48028] PHP Notice:  Undefined index: HTTP_X_REQUESTED_WITH in /var/www/v2/inc/function.php on line 1073
+[Sun Sep 03 16:09:44.583911 2017] [:error] [pid 3120] [client 37.238.195.103:26835] PHP Notice:  Undefined index: quran in /var/www/v2/json.php on line 11
+[Sun Sep 03 16:09:44.588060 2017] [:error] [pid 3139] [client 34.212.194.231:56365] PHP Notice:  Undefined index: Froot in /var/www/Wp/user.php on line 7
+[Sun Sep 03 16:09:44.590228 2017] [:error] [pid 3120] [client 37.238.195.103:26835] PHP Notice:  Undefined index: HTTP_X_REQUESTED_WITH in /var/www/v2/inc/function.php on line 1073
+[Sun Sep 03 16:09:44.606279 2017] [:error] [pid 3146] [client 41.104.70.79:48028] PHP Notice:  Undefined index: quran in /var/www/v2/json.php on line 11
+[Sun Sep 03 16:09:44.610241 2017] [:error] [pid 3144] [client 34.212.194.231:56367] PHP Notice:  Undefined index: Froot in /var/www/Wp/user.php on line 7
+[Sun Sep 03 16:09:44.612429 2017] [:error] [pid 3146] [client 41.104.70.79:48028] PHP Notice:  Undefined index: HTTP_X_REQUESTED_WITH in /var/www/v2/inc/function.php on line 1073
+[Sun Sep 03 16:09:44.791020 2017] [:error] [pid 3142] [client 109.253.205.170:49664] PHP Notice:  Undefined index: quran in /var/www/v2/json.php on line 11
+[Sun Sep 03 16:09:44.795235 2017] [:error] [pid 3162] [client 34.212.194.231:56369] PHP Notice:  Undefined index: Froot in /var/www/Wp/user.php on line 7
+[Sun Sep 03 16:09:44.797469 2017] [:error] [pid 3142] [client 109.253.205.170:49664] PHP Notice:  Undefined index: HTTP_X_REQUESTED_WITH in /var/www/v2/inc/function.php on line 1073
+[Sun Sep 03 16:09:44.972500 2017] [:error] [pid 3120] [client 37.238.195.103:26835] PHP Warning:  file_get_contents(http://ipinfo.io/37.238.195.103): failed to open stream: HTTP request failed! HTTP/1.0 429 Too Many Requests\r\n in /var/www/v2/inc/function.php on line 474
+[Sun Sep 03 16:09:44.972533 2017] [:error] [pid 3120] [client 37.238.195.103:26835] PHP Notice:  Trying to get property of non-object in /var/www/v2/inc/function.php on line 476
+[Sun Sep 03 16:09:44.996839 2017] [:error] [pid 3146] [client 41.104.70.79:48028] PHP Warning:  file_get_contents(http://ipinfo.io/41.104.70.79): failed to open stream: HTTP request failed! HTTP/1.0 429 Too Many Requests\r\n in /var/www/v2/inc/function.php on line 474
+[Sun Sep 03 16:09:44.996857 2017] [:error] [pid 3146] [client 41.104.70.79:48028] PHP Notice:  Trying to get property of non-object in /var/www/v2/inc/function.php on line 476
+[Sun Sep 03 16:09:46.017186 2017] [:error] [pid 3137] [client 41.233.30.93:39851] PHP Notice:  Undefined index: quran in /var/www/v2/json.php on line 11
+[Sun Sep 03 16:09:46.021984 2017] [:error] [pid 3149] [client 34.212.194.231:56372] PHP Notice:  Undefined index: Froot in /var/www/Wp/user.php on line 7
+[Sun Sep 03 16:09:46.024581 2017] [:error] [pid 3137] [client 41.233.30.93:39851] PHP Notice:  Undefined index: HTTP_X_REQUESTED_WITH in /var/www/v2/inc/function.php on line 1073
+[Sun Sep 03 16:09:46.239665 2017] [:error] [pid 3138] [client 156.195.204.209:60323] PHP Notice:  Undefined index: quran in /var/www/v2/json.php on line 11
+[Sun Sep 03 16:09:46.244327 2017] [:error] [pid 3131] [client 34.212.194.231:56374] PHP Notice:  Undefined index: Froot in /var/www/Wp/user.php on line 7
+[Sun Sep 03 16:09:46.246830 2017] [:error] [pid 3138] [client 156.195.204.209:60323] PHP Notice:  Undefined index: HTTP_X_REQUESTED_WITH in /var/www/v2/inc/function.php on line 1073
+[Sun Sep 03 16:09:46.413535 2017] [:error] [pid 3137] [client 41.233.30.93:39851] PHP Warning:  file_get_contents(http://ipinfo.io/41.233.30.93): failed to open stream: HTTP request failed! HTTP/1.0 429 Too Many Requests\r\n in /var/www/v2/inc/function.php on line 474
+[Sun Sep 03 16:09:46.413565 2017] [:error] [pid 3137] [client 41.233.30.93:39851] PHP Notice:  Trying to get property of non-object in /var/www/v2/inc/function.php on line 476
+[Sun Sep 03 16:09:46.594101 2017] [:error] [pid 3138] [client 156.195.204.209:60323] PHP Notice:  Undefined index: quran in /var/www/v2/json.php on line 11
+[Sun Sep 03 16:09:46.598694 2017] [:error] [pid 3124] [client 34.212.194.231:56376] PHP Notice:  Undefined index: Froot in /var/www/Wp/user.php on line 7
+[Sun Sep 03 16:09:46.601262 2017] [:error] [pid 3138] [client 156.195.204.209:60323] PHP Notice:  Undefined index: HTTP_X_REQUESTED_WITH in /var/www/v2/inc/function.php on line 1073
+[Sun Sep 03 16:09:46.988050 2017] [:error] [pid 3138] [client 156.195.204.209:60323] PHP Warning:  file_get_contents(http://ipinfo.io/156.195.204.209): failed to open stream: HTTP request failed! HTTP/1.0 429 Too Many Requests\r\n in /var/www/v2/inc/function.php on line 474
+[Sun Sep 03 16:09:46.988084 2017] [:error] [pid 3138] [client 156.195.204.209:60323] PHP Notice:  Trying to get property of non-object in /var/www/v2/inc/function.php on line 476
+[Sun Sep 03 16:09:48.540114 2017] [:error] [pid 3121] [client 156.216.59.215:58499] PHP Notice:  Undefined index: quran in /var/www/v2/json.php on line 11
+[Sun Sep 03 16:09:48.544644 2017] [:error] [pid 3135] [client 34.212.194.231:56379] PHP Notice:  Undefined index: Froot in /var/www/Wp/user.php on line 7
+[Sun Sep 03 16:09:48.547686 2017] [:error] [pid 3121] [client 156.216.59.215:58499] PHP Notice:  Undefined index: HTTP_X_REQUESTED_WITH in /var/www/v2/inc/function.php on line 1073
+[Sun Sep 03 16:09:48.932654 2017] [:error] [pid 3121] [client 156.216.59.215:58499] PHP Warning:  file_get_contents(http://ipinfo.io/156.216.59.215): failed to open stream: HTTP request failed! HTTP/1.0 429 Too Many Requests\r\n in /var/www/v2/inc/function.php on line 474
+[Sun Sep 03 16:09:48.932703 2017] [:error] [pid 3121] [client 156.216.59.215:58499] PHP Notice:  Trying to get property of non-object in /var/www/v2/inc/function.php on line 476
+[Sun Sep 03 16:09:48.986595 2017] [:error] [pid 3167] [client 41.140.4.222:16589] PHP Notice:  Undefined index: quran in /var/www/v2/json.php on line 11
+[Sun Sep 03 16:09:48.991194 2017] [:error] [pid 3139] [client 34.212.194.231:56382] PHP Notice:  Undefined index: Froot in /var/www/Wp/user.php on line 7
+[Sun Sep 03 16:09:48.993452 2017] [:error] [pid 3167] [client 41.140.4.222:16589] PHP Notice:  Undefined index: HTTP_X_REQUESTED_WITH in /var/www/v2/inc/function.php on line 1073
+[Sun Sep 03 16:09:49.180769 2017] [:error] [pid 3142] [client 109.253.205.170:49664] PHP Notice:  Undefined index: quran in /var/www/v2/json.php on line 11
+[Sun Sep 03 16:09:49.184986 2017] [:error] [pid 3144] [client 34.212.194.231:56383] PHP Notice:  Undefined index: Froot in /var/www/Wp/user.php on line 7
+[Sun Sep 03 16:09:49.187113 2017] [:error] [pid 3142] [client 109.253.205.170:49664] PHP Notice:  Undefined index: HTTP_X_REQUESTED_WITH in /var/www/v2/inc/function.php on line 1073
+[Sun Sep 03 16:09:49.230014 2017] [:error] [pid 3162] [client 87.49.147.238:22818] PHP Notice:  Undefined index: quran in /var/www/v2/json.php on line 11
+[Sun Sep 03 16:09:49.234115 2017] [:error] [pid 3149] [client 34.212.194.231:56384] PHP Notice:  Undefined index: Froot in /var/www/Wp/user.php on line 7
+[Sun Sep 03 16:09:49.236439 2017] [:error] [pid 3162] [client 87.49.147.238:22818] PHP Notice:  Undefined index: HTTP_X_REQUESTED_WITH in /var/www/v2/inc/function.php on line 1073
+[Sun Sep 03 16:09:49.341133 2017] [:error] [pid 3146] [client 41.104.70.79:48028] PHP Notice:  Undefined index: quran in /var/www/v2/json.php on line 11
+[Sun Sep 03 16:09:49.345267 2017] [:error] [pid 3131] [client 34.212.194.231:56386] PHP Notice:  Undefined index: Froot in /var/www/Wp/user.php on line 7
+[Sun Sep 03 16:09:49.347397 2017] [:error] [pid 3146] [client 41.104.70.79:48028] PHP Notice:  Undefined index: HTTP_X_REQUESTED_WITH in /var/www/v2/inc/function.php on line 1073
+[Sun Sep 03 16:09:49.465595 2017] [:error] [pid 3167] [client 41.140.4.222:16589] PHP Notice:  Undefined index: quran in /var/www/v2/json.php on line 11
+[Sun Sep 03 16:09:49.469998 2017] [:error] [pid 3124] [client 34.212.194.231:56388] PHP Notice:  Undefined index: Froot in /var/www/Wp/user.php on line 7
+[Sun Sep 03 16:09:49.472201 2017] [:error] [pid 3167] [client 41.140.4.222:16589] PHP Notice:  Undefined index: HTTP_X_REQUESTED_WITH in /var/www/v2/inc/function.php on line 1073
+[Sun Sep 03 16:09:49.522997 2017] [:error] [pid 3120] [client 37.238.195.103:26835] PHP Notice:  Undefined index: quran in /var/www/v2/json.php on line 11
+[Sun Sep 03 16:09:49.527214 2017] [:error] [pid 3135] [client 34.212.194.231:56390] PHP Notice:  Undefined index: Froot in /var/www/Wp/user.php on line 7
+[Sun Sep 03 16:09:49.529408 2017] [:error] [pid 3120] [client 37.238.195.103:26835] PHP Notice:  Undefined index: HTTP_X_REQUESTED_WITH in /var/www/v2/inc/function.php on line 1073
+[Sun Sep 03 16:09:49.616668 2017] [:error] [pid 3162] [client 87.49.147.238:22818] PHP Warning:  file_get_contents(http://ipinfo.io/87.49.147.238): failed to open stream: HTTP request failed! HTTP/1.0 429 Too Many Requests\r\n in /var/www/v2/inc/function.php on line 474
+[Sun Sep 03 16:09:49.616698 2017] [:error] [pid 3162] [client 87.49.147.238:22818] PHP Notice:  Trying to get property of non-object in /var/www/v2/inc/function.php on line 476
+[Sun Sep 03 16:09:49.725797 2017] [:error] [pid 3146] [client 41.104.70.79:48028] PHP Warning:  file_get_contents(http://ipinfo.io/41.104.70.79): failed to open stream: HTTP request failed! HTTP/1.0 429 Too Many Requests\r\n in /var/www/v2/inc/function.php on line 474
+[Sun Sep 03 16:09:49.725830 2017] [:error] [pid 3146] [client 41.104.70.79:48028] PHP Notice:  Trying to get property of non-object in /var/www/v2/inc/function.php on line 476
+[Sun Sep 03 16:09:49.849469 2017] [:error] [pid 3167] [client 41.140.4.222:16589] PHP Warning:  file_get_contents(http://ipinfo.io/41.140.4.222): failed to open stream: HTTP request failed! HTTP/1.0 429 Too Many Requests\r\n in /var/www/v2/inc/function.php on line 474
+[Sun Sep 03 16:09:49.849499 2017] [:error] [pid 3167] [client 41.140.4.222:16589] PHP Notice:  Trying to get property of non-object in /var/www/v2/inc/function.php on line 476
+[Sun Sep 03 16:09:49.914355 2017] [:error] [pid 3120] [client 37.238.195.103:26835] PHP Warning:  file_get_contents(http://ipinfo.io/37.238.195.103): failed to open stream: HTTP request failed! HTTP/1.0 429 Too Many Requests\r\n in /var/www/v2/inc/function.php on line 474
+[Sun Sep 03 16:09:49.914387 2017] [:error] [pid 3120] [client 37.238.195.103:26835] PHP Notice:  Trying to get property of non-object in /var/www/v2/inc/function.php on line 476
+[Sun Sep 03 16:09:50.239240 2017] [:error] [pid 3138] [client 156.195.204.209:60323] PHP Notice:  Undefined index: quran in /var/www/v2/json.php on line 11
+[Sun Sep 03 16:09:50.243807 2017] [:error] [pid 3122] [client 34.212.194.231:56396] PHP Notice:  Undefined index: Froot in /var/www/Wp/user.php on line 7
+[Sun Sep 03 16:09:50.246091 2017] [:error] [pid 3138] [client 156.195.204.209:60323] PHP Notice:  Undefined index: HTTP_X_REQUESTED_WITH in /var/www/v2/inc/function.php on line 1073
+[Sun Sep 03 16:09:51.038323 2017] [:error] [pid 3137] [client 41.233.30.93:39851] PHP Notice:  Undefined index: quran in /var/www/v2/json.php on line 11
+[Sun Sep 03 16:09:51.042622 2017] [:error] [pid 3139] [client 34.212.194.231:56397] PHP Notice:  Undefined index: Froot in /var/www/Wp/user.php on line 7
+[Sun Sep 03 16:09:51.044861 2017] [:error] [pid 3137] [client 41.233.30.93:39851] PHP Notice:  Undefined index: HTTP_X_REQUESTED_WITH in /var/www/v2/inc/function.php on line 1073
+[Sun Sep 03 16:09:51.439300 2017] [:error] [pid 3137] [client 41.233.30.93:39851] PHP Warning:  file_get_contents(http://ipinfo.io/41.233.30.93): failed to open stream: HTTP request failed! HTTP/1.0 429 Too Many Requests\r\n in /var/www/v2/inc/function.php on line 474
+[Sun Sep 03 16:09:51.439331 2017] [:error] [pid 3137] [client 41.233.30.93:39851] PHP Notice:  Trying to get property of non-object in /var/www/v2/inc/function.php on line 476
+[Sun Sep 03 16:09:51.468821 2017] [:error] [pid 3138] [client 156.195.204.209:60323] PHP Notice:  Undefined index: quran in /var/www/v2/json.php on line 11
+[Sun Sep 03 16:09:51.473154 2017] [:error] [pid 3144] [client 34.212.194.231:56400] PHP Notice:  Undefined index: Froot in /var/www/Wp/user.php on line 7
+[Sun Sep 03 16:09:51.475311 2017] [:error] [pid 3138] [client 156.195.204.209:60323] PHP Notice:  Undefined index: HTTP_X_REQUESTED_WITH in /var/www/v2/inc/function.php on line 1073
+[Sun Sep 03 16:09:51.602279 2017] [:error] [pid 3167] [client 41.140.4.222:16589] PHP Notice:  Undefined index: quran in /var/www/v2/json.php on line 11
+[Sun Sep 03 16:09:51.606586 2017] [:error] [pid 3149] [client 34.212.194.231:56402] PHP Notice:  Undefined index: Froot in /var/www/Wp/user.php on line 7
+[Sun Sep 03 16:09:51.608715 2017] [:error] [pid 3167] [client 41.140.4.222:16589] PHP Notice:  Undefined index: HTTP_X_REQUESTED_WITH in /var/www/v2/inc/function.php on line 1073
+[Sun Sep 03 16:09:51.862593 2017] [:error] [pid 3138] [client 156.195.204.209:60323] PHP Warning:  file_get_contents(http://ipinfo.io/156.195.204.209): failed to open stream: HTTP request failed! HTTP/1.0 429 Too Many Requests\r\n in /var/www/v2/inc/function.php on line 474
+[Sun Sep 03 16:09:51.862626 2017] [:error] [pid 3138] [client 156.195.204.209:60323] PHP Notice:  Trying to get property of non-object in /var/www/v2/inc/function.php on line 476
+[Sun Sep 03 16:09:51.993458 2017] [:error] [pid 3167] [client 41.140.4.222:16589] PHP Warning:  file_get_contents(http://ipinfo.io/41.140.4.222): failed to open stream: HTTP request failed! HTTP/1.0 429 Too Many Requests\r\n in /var/www/v2/inc/function.php on line 474
+[Sun Sep 03 16:09:51.993504 2017] [:error] [pid 3167] [client 41.140.4.222:16589] PHP Notice:  Trying to get property of non-object in /var/www/v2/inc/function.php on line 476
+[Sun Sep 03 16:09:52.524087 2017] [:error] [pid 3162] [client 87.49.147.238:22818] PHP Notice:  Undefined index: quran in /var/www/v2/json.php on line 11
+[Sun Sep 03 16:09:52.528267 2017] [:error] [pid 3131] [client 34.212.194.231:56406] PHP Notice:  Undefined index: Froot in /var/www/Wp/user.php on line 7
+[Sun Sep 03 16:09:52.530463 2017] [:error] [pid 3162] [client 87.49.147.238:22818] PHP Notice:  Undefined index: HTTP_X_REQUESTED_WITH in /var/www/v2/inc/function.php on line 1073
+[Sun Sep 03 16:09:52.910746 2017] [:error] [pid 3162] [client 87.49.147.238:22818] PHP Warning:  file_get_contents(http://ipinfo.io/87.49.147.238): failed to open stream: HTTP request failed! HTTP/1.0 429 Too Many Requests\r\n in /var/www/v2/inc/function.php on line 474
+[Sun Sep 03 16:09:52.910776 2017] [:error] [pid 3162] [client 87.49.147.238:22818] PHP Notice:  Trying to get property of non-object in /var/www/v2/inc/function.php on line 476
+[Sun Sep 03 16:09:53.551259 2017] [:error] [pid 3121] [client 156.216.59.215:58499] PHP Notice:  Undefined index: quran in /var/www/v2/json.php on line 11
+[Sun Sep 03 16:09:53.555497 2017] [:error] [pid 3124] [client 34.212.194.231:56409] PHP Notice:  Undefined index: Froot in /var/www/Wp/user.php on line 7
+[Sun Sep 03 16:09:53.557934 2017] [:error] [pid 3121] [client 156.216.59.215:58499] PHP Notice:  Undefined index: HTTP_X_REQUESTED_WITH in /var/www/v2/inc/function.php on line 1073
+[Sun Sep 03 16:09:53.940639 2017] [:error] [pid 3121] [client 156.216.59.215:58499] PHP Warning:  file_get_contents(http://ipinfo.io/156.216.59.215): failed to open stream: HTTP request failed! HTTP/1.0 429 Too Many Requests\r\n in /var/www/v2/inc/function.php on line 474
+[Sun Sep 03 16:09:53.940672 2017] [:error] [pid 3121] [client 156.216.59.215:58499] PHP Notice:  Trying to get property of non-object in /var/www/v2/inc/function.php on line 476
+[Sun Sep 03 16:09:54.179609 2017] [:error] [pid 3142] [client 109.253.205.170:49664] PHP Notice:  Undefined index: quran in /var/www/v2/json.php on line 11
+[Sun Sep 03 16:09:54.184098 2017] [:error] [pid 3135] [client 34.212.194.231:56412] PHP Notice:  Undefined index: Froot in /var/www/Wp/user.php on line 7
+[Sun Sep 03 16:09:54.186269 2017] [:error] [pid 3142] [client 109.253.205.170:49664] PHP Notice:  Undefined index: HTTP_X_REQUESTED_WITH in /var/www/v2/inc/function.php on line 1073
+[Sun Sep 03 16:09:54.196430 2017] [:error] [pid 3146] [client 41.104.70.79:48028] PHP Notice:  Undefined index: quran in /var/www/v2/json.php on line 11
+[Sun Sep 03 16:09:54.200396 2017] [:error] [pid 3145] [client 34.212.194.231:56413] PHP Notice:  Undefined index: Froot in /var/www/Wp/user.php on line 7
+[Sun Sep 03 16:09:54.203026 2017] [:error] [pid 3146] [client 41.104.70.79:48028] PHP Notice:  Undefined index: HTTP_X_REQUESTED_WITH in /var/www/v2/inc/function.php on line 1073
+[Sun Sep 03 16:09:54.578971 2017] [:error] [pid 3120] [client 37.238.195.103:26835] PHP Notice:  Undefined index: quran in /var/www/v2/json.php on line 11
+[Sun Sep 03 16:09:54.583196 2017] [:error] [pid 3122] [client 34.212.194.231:56416] PHP Notice:  Undefined index: Froot in /var/www/Wp/user.php on line 7
+[Sun Sep 03 16:09:54.586006 2017] [:error] [pid 3120] [client 37.238.195.103:26835] PHP Notice:  Undefined index: HTTP_X_REQUESTED_WITH in /var/www/v2/inc/function.php on line 1073
+[Sun Sep 03 16:09:54.587378 2017] [:error] [pid 3146] [client 41.104.70.79:48028] PHP Warning:  file_get_contents(http://ipinfo.io/41.104.70.79): failed to open stream: HTTP request failed! HTTP/1.0 429 Too Many Requests\r\n in /var/www/v2/inc/function.php on line 474
+[Sun Sep 03 16:09:54.587399 2017] [:error] [pid 3146] [client 41.104.70.79:48028] PHP Notice:  Trying to get property of non-object in /var/www/v2/inc/function.php on line 476
+[Sun Sep 03 16:09:54.965149 2017] [:error] [pid 3120] [client 37.238.195.103:26835] PHP Warning:  file_get_contents(http://ipinfo.io/37.238.195.103): failed to open stream: HTTP request failed! HTTP/1.0 429 Too Many Requests\r\n in /var/www/v2/inc/function.php on line 474
+[Sun Sep 03 16:09:54.965190 2017] [:error] [pid 3120] [client 37.238.195.103:26835] PHP Notice:  Trying to get property of non-object in /var/www/v2/inc/function.php on line 476
+[Sun Sep 03 16:09:55.426390 2017] [:error] [pid 3138] [client 156.195.204.209:60323] PHP Notice:  Undefined index: quran in /var/www/v2/json.php on line 11
+[Sun Sep 03 16:09:55.430745 2017] [:error] [pid 3139] [client 34.212.194.231:56419] PHP Notice:  Undefined index: Froot in /var/www/Wp/user.php on line 7
+[Sun Sep 03 16:09:55.433293 2017] [:error] [pid 3138] [client 156.195.204.209:60323] PHP Notice:  Undefined index: HTTP_X_REQUESTED_WITH in /var/www/v2/inc/function.php on line 1073
+[Sun Sep 03 16:09:55.811604 2017] [:error] [pid 3138] [client 156.195.204.209:60323] PHP Notice:  Undefined index: quran in /var/www/v2/json.php on line 11
+[Sun Sep 03 16:09:55.816175 2017] [:error] [pid 3144] [client 34.212.194.231:56420] PHP Notice:  Undefined index: Froot in /var/www/Wp/user.php on line 7
+[Sun Sep 03 16:09:55.818687 2017] [:error] [pid 3138] [client 156.195.204.209:60323] PHP Notice:  Undefined index: HTTP_X_REQUESTED_WITH in /var/www/v2/inc/function.php on line 1073
+[Sun Sep 03 16:09:56.018420 2017] [:error] [pid 3137] [client 41.233.30.93:39851] PHP Notice:  Undefined index: quran in /var/www/v2/json.php on line 11
+[Sun Sep 03 16:09:56.023271 2017] [:error] [pid 3149] [client 34.212.194.231:56422] PHP Notice:  Undefined index: Froot in /var/www/Wp/user.php on line 7
+[Sun Sep 03 16:09:56.026008 2017] [:error] [pid 3137] [client 41.233.30.93:39851] PHP Notice:  Undefined index: HTTP_X_REQUESTED_WITH in /var/www/v2/inc/function.php on line 1073
+[Sun Sep 03 16:09:56.195407 2017] [:error] [pid 3138] [client 156.195.204.209:60323] PHP Warning:  file_get_contents(http://ipinfo.io/156.195.204.209): failed to open stream: HTTP request failed! HTTP/1.0 429 Too Many Requests\r\n in /var/www/v2/inc/function.php on line 474
+[Sun Sep 03 16:09:56.195441 2017] [:error] [pid 3138] [client 156.195.204.209:60323] PHP Notice:  Trying to get property of non-object in /var/www/v2/inc/function.php on line 476
+[Sun Sep 03 16:09:56.412854 2017] [:error] [pid 3137] [client 41.233.30.93:39851] PHP Warning:  file_get_contents(http://ipinfo.io/41.233.30.93): failed to open stream: HTTP request failed! HTTP/1.0 429 Too Many Requests\r\n in /var/www/v2/inc/function.php on line 474
+[Sun Sep 03 16:09:56.412886 2017] [:error] [pid 3137] [client 41.233.30.93:39851] PHP Notice:  Trying to get property of non-object in /var/www/v2/inc/function.php on line 476
+[Sun Sep 03 16:09:56.753215 2017] [:error] [pid 3167] [client 41.140.4.222:16589] PHP Notice:  Undefined index: quran in /var/www/v2/json.php on line 11
+[Sun Sep 03 16:09:56.757848 2017] [:error] [pid 3131] [client 34.212.194.231:56426] PHP Notice:  Undefined index: Froot in /var/www/Wp/user.php on line 7
+[Sun Sep 03 16:09:56.760532 2017] [:error] [pid 3167] [client 41.140.4.222:16589] PHP Notice:  Undefined index: HTTP_X_REQUESTED_WITH in /var/www/v2/inc/function.php on line 1073
+[Sun Sep 03 16:09:57.139594 2017] [:error] [pid 3167] [client 41.140.4.222:16589] PHP Warning:  file_get_contents(http://ipinfo.io/41.140.4.222): failed to open stream: HTTP request failed! HTTP/1.0 429 Too Many Requests\r\n in /var/www/v2/inc/function.php on line 474
+[Sun Sep 03 16:09:57.139629 2017] [:error] [pid 3167] [client 41.140.4.222:16589] PHP Notice:  Trying to get property of non-object in /var/www/v2/inc/function.php on line 476
+[Sun Sep 03 16:09:57.770054 2017] [:error] [pid 3162] [client 87.49.147.238:22818] PHP Notice:  Undefined index: quran in /var/www/v2/json.php on line 11
+[Sun Sep 03 16:09:57.774488 2017] [:error] [pid 3124] [client 34.212.194.231:56429] PHP Notice:  Undefined index: Froot in /var/www/Wp/user.php on line 7
+[Sun Sep 03 16:09:57.776797 2017] [:error] [pid 3162] [client 87.49.147.238:22818] PHP Notice:  Undefined index: HTTP_X_REQUESTED_WITH in /var/www/v2/inc/function.php on line 1073
+[Sun Sep 03 16:09:58.156871 2017] [:error] [pid 3162] [client 87.49.147.238:22818] PHP Warning:  file_get_contents(http://ipinfo.io/87.49.147.238): failed to open stream: HTTP request failed! HTTP/1.0 429 Too Many Requests\r\n in /var/www/v2/inc/function.php on line 474
+[Sun Sep 03 16:09:58.156905 2017] [:error] [pid 3162] [client 87.49.147.238:22818] PHP Notice:  Trying to get property of non-object in /var/www/v2/inc/function.php on line 476
+[Sun Sep 03 16:09:58.541802 2017] [:error] [pid 3121] [client 156.216.59.215:58499] PHP Notice:  Undefined index: quran in /var/www/v2/json.php on line 11
+[Sun Sep 03 16:09:58.546228 2017] [:error] [pid 3135] [client 34.212.194.231:56432] PHP Notice:  Undefined index: Froot in /var/www/Wp/user.php on line 7
+[Sun Sep 03 16:09:58.548375 2017] [:error] [pid 3121] [client 156.216.59.215:58499] PHP Notice:  Undefined index: HTTP_X_REQUESTED_WITH in /var/www/v2/inc/function.php on line 1073
+[Sun Sep 03 16:09:58.929835 2017] [:error] [pid 3121] [client 156.216.59.215:58499] PHP Warning:  file_get_contents(http://ipinfo.io/156.216.59.215): failed to open stream: HTTP request failed! HTTP/1.0 429 Too Many Requests\r\n in /var/www/v2/inc/function.php on line 474
+[Sun Sep 03 16:09:58.929867 2017] [:error] [pid 3121] [client 156.216.59.215:58499] PHP Notice:  Trying to get property of non-object in /var/www/v2/inc/function.php on line 476
+[Sun Sep 03 16:09:59.089645 2017] [:error] [pid 3142] [client 109.253.205.170:49664] PHP Notice:  Undefined index: quran in /var/www/v2/json.php on line 11
+[Sun Sep 03 16:09:59.094007 2017] [:error] [pid 3145] [client 34.212.194.231:56435] PHP Notice:  Undefined index: Froot in /var/www/Wp/user.php on line 7
+[Sun Sep 03 16:09:59.096166 2017] [:error] [pid 3142] [client 109.253.205.170:49664] PHP Notice:  Undefined index: HTTP_X_REQUESTED_WITH in /var/www/v2/inc/function.php on line 1073
+[Sun Sep 03 16:09:59.201144 2017] [:error] [pid 3146] [client 41.104.70.79:48028] PHP Notice:  Undefined index: quran in /var/www/v2/json.php on line 11
+[Sun Sep 03 16:09:59.206074 2017] [:error] [pid 3122] [client 34.212.194.231:56436] PHP Notice:  Undefined index: Froot in /var/www/Wp/user.php on line 7
+[Sun Sep 03 16:09:59.208222 2017] [:error] [pid 3146] [client 41.104.70.79:48028] PHP Notice:  Undefined index: HTTP_X_REQUESTED_WITH in /var/www/v2/inc/function.php on line 1073
+[Sun Sep 03 16:09:59.529093 2017] [:error] [pid 3120] [client 37.238.195.103:26835] PHP Notice:  Undefined index: quran in /var/www/v2/json.php on line 11
+[Sun Sep 03 16:09:59.533283 2017] [:error] [pid 3139] [client 34.212.194.231:56439] PHP Notice:  Undefined index: Froot in /var/www/Wp/user.php on line 7
+[Sun Sep 03 16:09:59.535432 2017] [:error] [pid 3120] [client 37.238.195.103:26835] PHP Notice:  Undefined index: HTTP_X_REQUESTED_WITH in /var/www/v2/inc/function.php on line 1073
+[Sun Sep 03 16:09:59.589010 2017] [:error] [pid 3146] [client 41.104.70.79:48028] PHP Warning:  file_get_contents(http://ipinfo.io/41.104.70.79): failed to open stream: HTTP request failed! HTTP/1.0 429 Too Many Requests\r\n in /var/www/v2/inc/function.php on line 474
+[Sun Sep 03 16:09:59.589042 2017] [:error] [pid 3146] [client 41.104.70.79:48028] PHP Notice:  Trying to get property of non-object in /var/www/v2/inc/function.php on line 476
+[Sun Sep 03 16:09:59.893077 2017] [:error] [pid 3120] [client 37.238.195.103:26835] PHP Notice:  Undefined index: quran in /var/www/v2/json.php on line 11
+[Sun Sep 03 16:09:59.897652 2017] [:error] [pid 3144] [client 34.212.194.231:56440] PHP Notice:  Undefined index: Froot in /var/www/Wp/user.php on line 7
+[Sun Sep 03 16:09:59.900022 2017] [:error] [pid 3120] [client 37.238.195.103:26835] PHP Notice:  Undefined index: HTTP_X_REQUESTED_WITH in /var/www/v2/inc/function.php on line 1073
+[Sun Sep 03 16:10:00.281212 2017] [:error] [pid 3120] [client 37.238.195.103:26835] PHP Warning:  file_get_contents(http://ipinfo.io/37.238.195.103): failed to open stream: HTTP request failed! HTTP/1.0 429 Too Many Requests\r\n in /var/www/v2/inc/function.php on line 474
+[Sun Sep 03 16:10:00.281248 2017] [:error] [pid 3120] [client 37.238.195.103:26835] PHP Notice:  Trying to get property of non-object in /var/www/v2/inc/function.php on line 476
+[Sun Sep 03 16:10:00.329946 2017] [:error] [pid 3138] [client 156.195.204.209:60323] PHP Notice:  Undefined index: quran in /var/www/v2/json.php on line 11
+[Sun Sep 03 16:10:00.334310 2017] [:error] [pid 3149] [client 34.212.194.231:56443] PHP Notice:  Undefined index: Froot in /var/www/Wp/user.php on line 7
+[Sun Sep 03 16:10:00.336483 2017] [:error] [pid 3138] [client 156.195.204.209:60323] PHP Notice:  Undefined index: HTTP_X_REQUESTED_WITH in /var/www/v2/inc/function.php on line 1073
+[Sun Sep 03 16:10:00.962107 2017] [:error] [pid 3138] [client 156.195.204.209:60323] PHP Notice:  Undefined index: quran in /var/www/v2/json.php on line 11
+[Sun Sep 03 16:10:00.966467 2017] [:error] [pid 3131] [client 34.212.194.231:56444] PHP Notice:  Undefined index: Froot in /var/www/Wp/user.php on line 7
+[Sun Sep 03 16:10:00.968824 2017] [:error] [pid 3138] [client 156.195.204.209:60323] PHP Notice:  Undefined index: HTTP_X_REQUESTED_WITH in /var/www/v2/inc/function.php on line 1073
+[Sun Sep 03 16:10:01.350325 2017] [:error] [pid 3138] [client 156.195.204.209:60323] PHP Warning:  file_get_contents(http://ipinfo.io/156.195.204.209): failed to open stream: HTTP request failed! HTTP/1.0 429 Too Many Requests\r\n in /var/www/v2/inc/function.php on line 474
+[Sun Sep 03 16:10:01.350360 2017] [:error] [pid 3138] [client 156.195.204.209:60323] PHP Notice:  Trying to get property of non-object in /var/www/v2/inc/function.php on line 476
+[Sun Sep 03 16:10:01.753584 2017] [:error] [pid 3167] [client 41.140.4.222:16589] PHP Notice:  Undefined index: quran in /var/www/v2/json.php on line 11
+[Sun Sep 03 16:10:01.757834 2017] [:error] [pid 3124] [client 34.212.194.231:56447] PHP Notice:  Undefined index: Froot in /var/www/Wp/user.php on line 7
+[Sun Sep 03 16:10:01.760066 2017] [:error] [pid 3167] [client 41.140.4.222:16589] PHP Notice:  Undefined index: HTTP_X_REQUESTED_WITH in /var/www/v2/inc/function.php on line 1073
+[Sun Sep 03 16:10:02.140555 2017] [:error] [pid 3167] [client 41.140.4.222:16589] PHP Warning:  file_get_contents(http://ipinfo.io/41.140.4.222): failed to open stream: HTTP request failed! HTTP/1.0 429 Too Many Requests\r\n in /var/www/v2/inc/function.php on line 474
+[Sun Sep 03 16:10:02.140589 2017] [:error] [pid 3167] [client 41.140.4.222:16589] PHP Notice:  Trying to get property of non-object in /var/www/v2/inc/function.php on line 476
+[Sun Sep 03 16:10:02.528974 2017] [:error] [pid 3135] [client 41.233.30.93:55346] PHP Notice:  Undefined index: quran in /var/www/v2/json.php on line 11
+[Sun Sep 03 16:10:02.533263 2017] [:error] [pid 3145] [client 34.212.194.231:56450] PHP Notice:  Undefined index: Froot in /var/www/Wp/user.php on line 7
+[Sun Sep 03 16:10:02.535604 2017] [:error] [pid 3135] [client 41.233.30.93:55346] PHP Notice:  Undefined index: HTTP_X_REQUESTED_WITH in /var/www/v2/inc/function.php on line 1073
+[Sun Sep 03 16:10:02.919007 2017] [:error] [pid 3135] [client 41.233.30.93:55346] PHP Warning:  file_get_contents(http://ipinfo.io/41.233.30.93): failed to open stream: HTTP request failed! HTTP/1.0 429 Too Many Requests\r\n in /var/www/v2/inc/function.php on line 474
+[Sun Sep 03 16:10:02.919041 2017] [:error] [pid 3135] [client 41.233.30.93:55346] PHP Notice:  Trying to get property of non-object in /var/www/v2/inc/function.php on line 476
+[Sun Sep 03 16:10:03.021042 2017] [:error] [pid 3162] [client 87.49.147.238:22818] PHP Notice:  Undefined index: quran in /var/www/v2/json.php on line 11
+[Sun Sep 03 16:10:03.025440 2017] [:error] [pid 3122] [client 34.212.194.231:56453] PHP Notice:  Undefined index: Froot in /var/www/Wp/user.php on line 7
+[Sun Sep 03 16:10:03.027728 2017] [:error] [pid 3162] [client 87.49.147.238:22818] PHP Notice:  Undefined index: HTTP_X_REQUESTED_WITH in /var/www/v2/inc/function.php on line 1073
+[Sun Sep 03 16:10:03.340488 2017] [:error] [pid 3139] [client 156.185.67.212:55666] PHP Notice:  Undefined index: quran in /var/www/v2/json.php on line 11
+[Sun Sep 03 16:10:03.346587 2017] [:error] [pid 3144] [client 34.212.194.231:56456] PHP Notice:  Undefined index: Froot in /var/www/Wp/user.php on line 7
+[Sun Sep 03 16:10:03.348851 2017] [:error] [pid 3139] [client 156.185.67.212:55666] PHP Notice:  Undefined index: HTTP_X_REQUESTED_WITH in /var/www/v2/inc/function.php on line 1073
+[Sun Sep 03 16:10:03.411647 2017] [:error] [pid 3162] [client 87.49.147.238:22818] PHP Warning:  file_get_contents(http://ipinfo.io/87.49.147.238): failed to open stream: HTTP request failed! HTTP/1.0 429 Too Many Requests\r\n in /var/www/v2/inc/function.php on line 474
+[Sun Sep 03 16:10:03.411678 2017] [:error] [pid 3162] [client 87.49.147.238:22818] PHP Notice:  Trying to get property of non-object in /var/www/v2/inc/function.php on line 476
+[Sun Sep 03 16:10:03.575763 2017] [:error] [pid 3121] [client 156.216.59.215:58499] PHP Notice:  Undefined index: quran in /var/www/v2/json.php on line 11
+[Sun Sep 03 16:10:03.580035 2017] [:error] [pid 3149] [client 34.212.194.231:56458] PHP Notice:  Undefined index: Froot in /var/www/Wp/user.php on line 7
+[Sun Sep 03 16:10:03.582182 2017] [:error] [pid 3121] [client 156.216.59.215:58499] PHP Notice:  Undefined index: HTTP_X_REQUESTED_WITH in /var/www/v2/inc/function.php on line 1073
+[Sun Sep 03 16:10:03.733260 2017] [:error] [pid 3139] [client 156.185.67.212:55666] PHP Warning:  file_get_contents(http://ipinfo.io/156.185.67.212): failed to open stream: HTTP request failed! HTTP/1.0 429 Too Many Requests\r\n in /var/www/v2/inc/function.php on line 474
+[Sun Sep 03 16:10:03.733291 2017] [:error] [pid 3139] [client 156.185.67.212:55666] PHP Notice:  Trying to get property of non-object in /var/www/v2/inc/function.php on line 476
+[Sun Sep 03 16:10:03.969673 2017] [:error] [pid 3121] [client 156.216.59.215:58499] PHP Warning:  file_get_contents(http://ipinfo.io/156.216.59.215): failed to open stream: HTTP request failed! HTTP/1.0 429 Too Many Requests\r\n in /var/www/v2/inc/function.php on line 474
+[Sun Sep 03 16:10:03.969705 2017] [:error] [pid 3121] [client 156.216.59.215:58499] PHP Notice:  Trying to get property of non-object in /var/www/v2/inc/function.php on line 476
+[Sun Sep 03 16:10:04.229027 2017] [:error] [pid 3146] [client 41.104.70.79:48028] PHP Notice:  Undefined index: quran in /var/www/v2/json.php on line 11
+[Sun Sep 03 16:10:04.233555 2017] [:error] [pid 3131] [client 34.212.194.231:56462] PHP Notice:  Undefined index: Froot in /var/www/Wp/user.php on line 7
+[Sun Sep 03 16:10:04.235774 2017] [:error] [pid 3146] [client 41.104.70.79:48028] PHP Notice:  Undefined index: HTTP_X_REQUESTED_WITH in /var/www/v2/inc/function.php on line 1073
+[Sun Sep 03 16:10:04.519097 2017] [:error] [pid 3120] [client 37.238.195.103:26835] PHP Notice:  Undefined index: quran in /var/www/v2/json.php on line 11
+[Sun Sep 03 16:10:04.523336 2017] [:error] [pid 3124] [client 34.212.194.231:56464] PHP Notice:  Undefined index: Froot in /var/www/Wp/user.php on line 7
+[Sun Sep 03 16:10:04.525966 2017] [:error] [pid 3120] [client 37.238.195.103:26835] PHP Notice:  Undefined index: HTTP_X_REQUESTED_WITH in /var/www/v2/inc/function.php on line 1073
+[Sun Sep 03 16:10:04.619208 2017] [:error] [pid 3146] [client 41.104.70.79:48028] PHP Warning:  file_get_contents(http://ipinfo.io/41.104.70.79): failed to open stream: HTTP request failed! HTTP/1.0 429 Too Many Requests\r\n in /var/www/v2/inc/function.php on line 474
+[Sun Sep 03 16:10:04.619623 2017] [:error] [pid 3146] [client 41.104.70.79:48028] PHP Notice:  Trying to get property of non-object in /var/www/v2/inc/function.php on line 476
+[Sun Sep 03 16:10:04.907583 2017] [:error] [pid 3120] [client 37.238.195.103:26835] PHP Warning:  file_get_contents(http://ipinfo.io/37.238.195.103): failed to open stream: HTTP request failed! HTTP/1.0 429 Too Many Requests\r\n in /var/www/v2/inc/function.php on line 474
+[Sun Sep 03 16:10:04.907618 2017] [:error] [pid 3120] [client 37.238.195.103:26835] PHP Notice:  Trying to get property of non-object in /var/www/v2/inc/function.php on line 476
+[Sun Sep 03 16:10:05.269724 2017] [:error] [pid 3138] [client 156.195.204.209:60323] PHP Notice:  Undefined index: quran in /var/www/v2/json.php on line 11
+[Sun Sep 03 16:10:05.274082 2017] [:error] [pid 3137] [client 34.212.194.231:56468] PHP Notice:  Undefined index: Froot in /var/www/Wp/user.php on line 7
+[Sun Sep 03 16:10:05.276320 2017] [:error] [pid 3138] [client 156.195.204.209:60323] PHP Notice:  Undefined index: HTTP_X_REQUESTED_WITH in /var/www/v2/inc/function.php on line 1073
+[Sun Sep 03 16:10:05.394568 2017] [:error] [pid 3145] [client 109.253.205.170:49666] PHP Notice:  Undefined index: quran in /var/www/v2/json.php on line 11
+[Sun Sep 03 16:10:05.398879 2017] [:error] [pid 3122] [client 34.212.194.231:56469] PHP Notice:  Undefined index: Froot in /var/www/Wp/user.php on line 7
+[Sun Sep 03 16:10:05.401127 2017] [:error] [pid 3145] [client 109.253.205.170:49666] PHP Notice:  Undefined index: HTTP_X_REQUESTED_WITH in /var/www/v2/inc/function.php on line 1073
+[Sun Sep 03 16:10:05.972058 2017] [:error] [pid 3138] [client 156.195.204.209:60323] PHP Notice:  Undefined index: quran in /var/www/v2/json.php on line 11
+[Sun Sep 03 16:10:05.976292 2017] [:error] [pid 3144] [client 34.212.194.231:56470] PHP Notice:  Undefined index: Froot in /var/www/Wp/user.php on line 7
+[Sun Sep 03 16:10:05.978471 2017] [:error] [pid 3138] [client 156.195.204.209:60323] PHP Notice:  Undefined index: HTTP_X_REQUESTED_WITH in /var/www/v2/inc/function.php on line 1073
+[Sun Sep 03 16:10:06.028679 2017] [:error] [pid 3135] [client 41.233.30.93:55346] PHP Notice:  Undefined index: quran in /var/www/v2/json.php on line 11
+[Sun Sep 03 16:10:06.032993 2017] [:error] [pid 3149] [client 34.212.194.231:56472] PHP Notice:  Undefined index: Froot in /var/www/Wp/user.php on line 7
+[Sun Sep 03 16:10:06.035268 2017] [:error] [pid 3135] [client 41.233.30.93:55346] PHP Notice:  Undefined index: HTTP_X_REQUESTED_WITH in /var/www/v2/inc/function.php on line 1073
+[Sun Sep 03 16:10:06.372497 2017] [:error] [pid 3138] [client 156.195.204.209:60323] PHP Warning:  file_get_contents(http://ipinfo.io/156.195.204.209): failed to open stream: HTTP request failed! HTTP/1.0 429 Too Many Requests\r\n in /var/www/v2/inc/function.php on line 474
+[Sun Sep 03 16:10:06.372529 2017] [:error] [pid 3138] [client 156.195.204.209:60323] PHP Notice:  Trying to get property of non-object in /var/www/v2/inc/function.php on line 476
+[Sun Sep 03 16:10:06.416791 2017] [:error] [pid 3135] [client 41.233.30.93:55346] PHP Warning:  file_get_contents(http://ipinfo.io/41.233.30.93): failed to open stream: HTTP request failed! HTTP/1.0 429 Too Many Requests\r\n in /var/www/v2/inc/function.php on line 474
+[Sun Sep 03 16:10:06.416822 2017] [:error] [pid 3135] [client 41.233.30.93:55346] PHP Notice:  Trying to get property of non-object in /var/www/v2/inc/function.php on line 476
+[Sun Sep 03 16:10:06.792030 2017] [:error] [pid 3167] [client 41.140.4.222:16589] PHP Notice:  Undefined index: quran in /var/www/v2/json.php on line 11
+[Sun Sep 03 16:10:06.796436 2017] [:error] [pid 3131] [client 34.212.194.231:56476] PHP Notice:  Undefined index: Froot in /var/www/Wp/user.php on line 7
+[Sun Sep 03 16:10:06.798828 2017] [:error] [pid 3167] [client 41.140.4.222:16589] PHP Notice:  Undefined index: HTTP_X_REQUESTED_WITH in /var/www/v2/inc/function.php on line 1073
+[Sun Sep 03 16:10:07.179690 2017] [:error] [pid 3167] [client 41.140.4.222:16589] PHP Warning:  file_get_contents(http://ipinfo.io/41.140.4.222): failed to open stream: HTTP request failed! HTTP/1.0 429 Too Many Requests\r\n in /var/www/v2/inc/function.php on line 474
+[Sun Sep 03 16:10:07.179725 2017] [:error] [pid 3167] [client 41.140.4.222:16589] PHP Notice:  Trying to get property of non-object in /var/www/v2/inc/function.php on line 476
+[Sun Sep 03 16:10:07.675085 2017] [:error] [pid 3162] [client 87.49.147.238:22818] PHP Notice:  Undefined index: quran in /var/www/v2/json.php on line 11
+[Sun Sep 03 16:10:07.679842 2017] [:error] [pid 3124] [client 34.212.194.231:56479] PHP Notice:  Undefined index: Froot in /var/www/Wp/user.php on line 7
+[Sun Sep 03 16:10:07.682702 2017] [:error] [pid 3162] [client 87.49.147.238:22818] PHP Notice:  Undefined index: HTTP_X_REQUESTED_WITH in /var/www/v2/inc/function.php on line 1073
+[Sun Sep 03 16:10:08.064889 2017] [:error] [pid 3162] [client 87.49.147.238:22818] PHP Warning:  file_get_contents(http://ipinfo.io/87.49.147.238): failed to open stream: HTTP request failed! HTTP/1.0 429 Too Many Requests\r\n in /var/www/v2/inc/function.php on line 474
+[Sun Sep 03 16:10:08.064922 2017] [:error] [pid 3162] [client 87.49.147.238:22818] PHP Notice:  Trying to get property of non-object in /var/www/v2/inc/function.php on line 476
+[Sun Sep 03 16:10:08.540526 2017] [:error] [pid 3121] [client 156.216.59.215:58499] PHP Notice:  Undefined index: quran in /var/www/v2/json.php on line 11
+[Sun Sep 03 16:10:08.544814 2017] [:error] [pid 3142] [client 34.212.194.231:56482] PHP Notice:  Undefined index: Froot in /var/www/Wp/user.php on line 7
+[Sun Sep 03 16:10:08.547087 2017] [:error] [pid 3121] [client 156.216.59.215:58499] PHP Notice:  Undefined index: HTTP_X_REQUESTED_WITH in /var/www/v2/inc/function.php on line 1073
+[Sun Sep 03 16:10:08.929461 2017] [:error] [pid 3121] [client 156.216.59.215:58499] PHP Warning:  file_get_contents(http://ipinfo.io/156.216.59.215): failed to open stream: HTTP request failed! HTTP/1.0 429 Too Many Requests\r\n in /var/www/v2/inc/function.php on line 474
+[Sun Sep 03 16:10:08.929494 2017] [:error] [pid 3121] [client 156.216.59.215:58499] PHP Notice:  Trying to get property of non-object in /var/www/v2/inc/function.php on line 476
+[Sun Sep 03 16:10:09.153729 2017] [:error] [pid 3145] [client 109.253.205.170:49666] PHP Notice:  Undefined index: quran in /var/www/v2/json.php on line 11
+[Sun Sep 03 16:10:09.158023 2017] [:error] [pid 3137] [client 34.212.194.231:56485] PHP Notice:  Undefined index: Froot in /var/www/Wp/user.php on line 7
+[Sun Sep 03 16:10:09.160183 2017] [:error] [pid 3145] [client 109.253.205.170:49666] PHP Notice:  Undefined index: HTTP_X_REQUESTED_WITH in /var/www/v2/inc/function.php on line 1073
+[Sun Sep 03 16:10:09.222090 2017] [:error] [pid 3146] [client 41.104.70.79:48028] PHP Notice:  Undefined index: quran in /var/www/v2/json.php on line 11
+[Sun Sep 03 16:10:09.226405 2017] [:error] [pid 3122] [client 34.212.194.231:56486] PHP Notice:  Undefined index: Froot in /var/www/Wp/user.php on line 7
+[Sun Sep 03 16:10:09.228683 2017] [:error] [pid 3146] [client 41.104.70.79:48028] PHP Notice:  Undefined index: HTTP_X_REQUESTED_WITH in /var/www/v2/inc/function.php on line 1073
+[Sun Sep 03 16:10:09.599910 2017] [:error] [pid 3120] [client 37.238.195.103:26835] PHP Notice:  Undefined index: quran in /var/www/v2/json.php on line 11
+[Sun Sep 03 16:10:09.604135 2017] [:error] [pid 3144] [client 34.212.194.231:56489] PHP Notice:  Undefined index: Froot in /var/www/Wp/user.php on line 7
+[Sun Sep 03 16:10:09.606312 2017] [:error] [pid 3120] [client 37.238.195.103:26835] PHP Notice:  Undefined index: HTTP_X_REQUESTED_WITH in /var/www/v2/inc/function.php on line 1073
+[Sun Sep 03 16:10:09.611222 2017] [:error] [pid 3146] [client 41.104.70.79:48028] PHP Warning:  file_get_contents(http://ipinfo.io/41.104.70.79): failed to open stream: HTTP request failed! HTTP/1.0 429 Too Many Requests\r\n in /var/www/v2/inc/function.php on line 474
+[Sun Sep 03 16:10:09.611239 2017] [:error] [pid 3146] [client 41.104.70.79:48028] PHP Notice:  Trying to get property of non-object in /var/www/v2/inc/function.php on line 476
+[Sun Sep 03 16:10:09.991674 2017] [:error] [pid 3120] [client 37.238.195.103:26835] PHP Warning:  file_get_contents(http://ipinfo.io/37.238.195.103): failed to open stream: HTTP request failed! HTTP/1.0 429 Too Many Requests\r\n in /var/www/v2/inc/function.php on line 474
+[Sun Sep 03 16:10:09.991705 2017] [:error] [pid 3120] [client 37.238.195.103:26835] PHP Notice:  Trying to get property of non-object in /var/www/v2/inc/function.php on line 476
+[Sun Sep 03 16:10:10.371969 2017] [:error] [pid 3138] [client 156.195.204.209:60323] PHP Notice:  Undefined index: quran in /var/www/v2/json.php on line 11
+[Sun Sep 03 16:10:10.376393 2017] [:error] [pid 3149] [client 34.212.194.231:56492] PHP Notice:  Undefined index: Froot in /var/www/Wp/user.php on line 7
+[Sun Sep 03 16:10:10.378659 2017] [:error] [pid 3138] [client 156.195.204.209:60323] PHP Notice:  Undefined index: HTTP_X_REQUESTED_WITH in /var/www/v2/inc/function.php on line 1073
+[Sun Sep 03 16:10:11.008064 2017] [:error] [pid 3135] [client 41.233.30.93:55346] PHP Notice:  Undefined index: quran in /var/www/v2/json.php on line 11
+[Sun Sep 03 16:10:11.012291 2017] [:error] [pid 3131] [client 34.212.194.231:56493] PHP Notice:  Undefined index: Froot in /var/www/Wp/user.php on line 7
+[Sun Sep 03 16:10:11.014551 2017] [:error] [pid 3135] [client 41.233.30.93:55346] PHP Notice:  Undefined index: HTTP_X_REQUESTED_WITH in /var/www/v2/inc/function.php on line 1073
+[Sun Sep 03 16:10:11.390217 2017] [:error] [pid 3135] [client 41.233.30.93:55346] PHP Warning:  file_get_contents(http://ipinfo.io/41.233.30.93): failed to open stream: HTTP request failed! HTTP/1.0 429 Too Many Requests\r\n in /var/www/v2/inc/function.php on line 474
+[Sun Sep 03 16:10:11.390239 2017] [:error] [pid 3135] [client 41.233.30.93:55346] PHP Notice:  Trying to get property of non-object in /var/www/v2/inc/function.php on line 476
