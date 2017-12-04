@@ -14,8 +14,9 @@ $dbparts = parse_url($url);
 $hostname = $dbparts['host'];
 $username = $dbparts['user'];
 $password = $dbparts['pass'];
-$database = ltrim($dbparts['path'],'/');
-echo $database;
+//$database = ltrim($dbparts['path'],'/');
+$database = "pmea2aha671y7tl3";
+//echo $database;
 $conn = new mysqli($hostname, $username, $password, $database);
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
