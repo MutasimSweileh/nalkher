@@ -85,12 +85,19 @@ $p = Selaa('video','where id='.$post->vid);
       }
    $postb['message'] .= html_entity_decode(stripslashes(str_replace('\n','
         ',$post->text)));
+        if(!isv("msg",1)){
    $postb['message'] .="
   خدمة التنبيه بالرسائل القصيره ==> http://m.me/Ned2.Al5er";
-
+                          }
  ?>
  <item>
 <?php
+
+if($s->fb_link != ""){
+    $fb_link = $s->fb_link;
+}else{
+    $fb_link = "https://www.facebook.com/Qurani.Nalkher/?ref=bookmarks";
+}
  if($gtype != "video"){
   ?>
          <link><?=$post->link?></link>
@@ -114,6 +121,7 @@ $p = Selaa('video','where id='.$post->vid);
          <text></text>
          <link></link>
          </buttom>
+         <Fb_link><?=$fb_link?></Fb_link>
          </item>
  </channel>
  </rss>

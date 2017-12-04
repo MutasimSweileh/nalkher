@@ -99,7 +99,8 @@ if(isv("post")  && $St->zapier == 0){
              // rtoken();
             }else{
           // echo $ad['id'];
-
+          //Qurani.Nalkher/?ref=bookmarks
+            UpDate('share',"fb_link","https://www.facebook.com/".$ad['id']);
             }
 
            }
