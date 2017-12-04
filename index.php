@@ -1,4 +1,5 @@
 <?php
+include "function.php";
 if(isv("test")){
  echo  isv("test");
 }
