@@ -136,4 +136,7 @@ goR(null,null,"groups",null,"<?=isv("user",1)?>");
         alignment: 'right' // Displays dropdown with edge aligned to the left of button
     });
 </script>
+<?php
+mysqli_close($DBcon);
+?>
 

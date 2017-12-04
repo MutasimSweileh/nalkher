@@ -1,17 +1,19 @@
 <?php
 function Ftable($tp="settings"){
-/*if(mysql_num_rows(mysql_query("SHOW TABLES LIKE '$tp'")) > 0){
+    global $DBcon;
+if(mysqli_num_rows(mysqli_query($DBcon,"SHOW TABLES LIKE '$tp'")) > 0){
 return true;
-}else{return false;}*/
+}else{return false;}
 }
 function Fcol($fieldname="",$table="settings"){
-/*$result = @mysql_query("SHOW COLUMNS FROM `$table` LIKE '$fieldname'");
-if(mysql_num_rows($result)){
+global $DBcon;
+$result = @mysqli_query($DBcon,"SHOW COLUMNS FROM `$table` LIKE '$fieldname'");
+if(mysqli_num_rows($result)){
  //return Sel($table)->$fieldname;
    return array(true,Sel($table)->$fieldname);
 }else{
    return false;
-}*/
+}
 }
 function addDayswithdate($date,$days){
 
@@ -574,17 +576,18 @@ function SQ($sq){
 }
 
   function Remove($tb="",$where=""){
-  /*   $sql=  mysql_query("delete  from $tb $where");
+      global $DBcon;
+$sql=  mysqli_query($DBcon,"delete  from $tb $where");
 if($sql){
 return true;
 }else{
 return false;
-}*/
+}
 
   }
 function Ser($html)
     {
-        return addslashes(htmlspecialchars(mysql_real_escape_string(strip_tags($html))));
+        return addslashes(htmlspecialchars(mysqli_real_escape_string(strip_tags($html))));
     }
 function De($html)
     {
@@ -636,86 +639,92 @@ return $user;
 }
 function nUser($id,$where)
    {
-     /*  global $GP;
+    global $GP;
+    global $DBcon;
        //$where = str_replace("where","",$where);
-       $sql = mysql_query("select * from $GP   $where  and id>$id limit 1");
-       if(mysql_num_rows($sql)>=1)
+       $sql = mysqli_query($DBcon,"select * from $GP   $where  and id>$id limit 1");
+       if(mysqli_num_rows($sql)>=1)
        {
-       $data = mysql_fetch_object($sql);
+       $data = mysqli_fetch_object($sql);
 
        return $data->id;
        }else{
        return 0;
-       }*/
+       }
    }
 function UpDate($tb="",$name="",$data="",$where="")
    {
-  /* if(is_array($name)){
+        global $DBcon;
+  if(is_array($name)){
         $keys = "";
         $values = "";
         $i = count($name);
         foreach ($name as $key => $value)
         {
-$col = mysql_query("SELECT ".$key." FROM ".$tb." ");
+$col = mysqli_query($DBcon,"SELECT ".$key." FROM ".$tb." ");
 if (!$col){
-    mysql_query("ALTER TABLE ".$tb." ADD ".$key." text CHARACTER SET utf8 NOT NULL");
+    mysqli_query($DBcon,"ALTER TABLE ".$tb." ADD ".$key." text CHARACTER SET utf8 NOT NULL");
 }
          $sql = UpDate($tb,$key,$value,$where);
             $i--;
         }
     }else{
-$col = mysql_query("SELECT ".$name." FROM ".$tb." ");
+$col = mysqli_query($DBcon,"SELECT ".$name." FROM ".$tb." ");
 if (!$col){
-    mysql_query("ALTER TABLE ".$tb." ADD ".$name." text CHARACTER SET utf8 NOT NULL");
+    mysqli_query($DBcon,"ALTER TABLE ".$tb." ADD ".$name." text CHARACTER SET utf8 NOT NULL");
 }
-      $sql=  mysql_query('update '.$tb.' set '.$name.'="'.$data.'" '.$where);
+      $sql=  mysqli_query($DBcon,'update '.$tb.' set '.$name.'="'.$data.'" '.$where);
       }
        if($sql)
            return true;
        else
-           return false;*/
+           return false;
    }
 function getSet()
     {
-       /* $SQL = @mysql_query("SELECT * FROM settings");
-        return @mysql_fetch_object($SQL);*/
+        global $DBcon;
+       $SQL = @mysqli_query($DBcon,"SELECT * FROM settings");
+        return @mysqli_fetch_object($SQL);
     }
 function SqlEmpty($tp="")
     {
-        /*$SQL =  mysql_query("TRUNCATE $tp");
-        return $SQL;*/
+        global $DBcon;
+        $SQL =  mysqli_query($DBcon,"TRUNCATE $tp");
+        return $SQL;
     }
 function getUser($tp="",$where="",$w="*")
-    {
-           /* $sql = mysql_query("select $w from $tp  $where") or die(mysql_error());
+    {            global $DBcon;
+            $sql = mysqli_query($DBcon,"select $w from $tp  $where") or die(mysqli_error());
 
-        if(mysql_num_rows($sql))
+        if(mysqli_num_rows($sql))
         {
             $info = array();
-            while($data =  mysql_fetch_assoc($sql))
+            while($data =  mysqli_fetch_assoc($sql))
                   $info[] = $data;
             return $info;
-        }*/
+        }
         return false;
     }
 function Sel($tp="",$w=''){
- /*$Sql=  mysql_query("select * from $tp $w");
+      global $DBcon;
+$Sql=  mysqli_query($DBcon,"select * from $tp $w");
  if($Sql){
-    $N= mysql_fetch_object($Sql);
+    $N= mysqli_fetch_object($Sql);
 return  $N;
 }else{
 return false;
-}*/
+}
 
 }
 function Selaa($tp="",$w=''){
- /*$Sql=  mysql_query("select * from $tp $w");
+     global $DBcon;
+ $Sql=  mysqli_query($DBcon,"select * from $tp $w");
  if($Sql){
-    $N= mysql_fetch_assoc($Sql);
+    $N= mysqli_fetch_assoc($Sql);
 return  $N;
 }else{
 return false;
-}*/
+}
 }
 
 function last_share($t=0,$last=0,$m=false){
@@ -730,16 +739,17 @@ return false;
 }
  function SqlIn($tp="",$data="",$f=false,$c=false)
     {
-  /*      if(is_array($data))
+        global $DBcon;
+    if(is_array($data))
         {
         $keys = '';
         $values = '';
         $i = count($data);
         foreach ($data as $key => $value)
         {
-$col = mysql_query("SELECT ".$key." FROM ".$tp." ");
+$col = mysqli_query($DBcon,"SELECT ".$key." FROM ".$tp." ");
 if (!$col){
-    mysql_query("ALTER TABLE ".$tp." ADD ".$key." text CHARACTER SET utf8 NOT NULL");
+    mysqli_query($DBcon,"ALTER TABLE ".$tp." ADD ".$key." text CHARACTER SET utf8 NOT NULL");
 }
 
             if($key=="password" and !$f)
@@ -761,17 +771,17 @@ if (!$col){
         }
         $sql = 'insert into '.$tp.' ('.$keys.') values ('.$values.')';
 
-        $Add = mysql_query($sql);
+        $Add = mysqli_query($DBcon,$sql);
         if($Add)
         {
-        $id=  mysql_insert_id();
+        $id=  mysqli_insert_id();
         return $id;
         }else{
                 return FALSE;
         }
 
         }
-*/
+
         return FALSE;
     }
 function Ctime($T=false){
@@ -974,12 +984,13 @@ function TimeShare($A=false){
        return $aa;
  }
 function Num($tp='',$w=''){
-   /*  $Sql=  mysql_query("select * from $tp $w");
+     global $DBcon;
+   $Sql=  mysqli_query($DBcon,"select * from $tp $w");
  if($Sql){
-return  mysql_num_rows($Sql);
+return  mysqli_num_rows($Sql);
    }else{
 return  false;
-   }*/
+   }
 
 }
 function Ls($s=''){
@@ -1362,8 +1373,9 @@ return $R;
 }
 function AddGP($type,$uid,$name,$pid,$tp="HTC")
 	{
-   /*     $query = mysql_query("SELECT * FROM `$type` WHERE pid = '$pid'");
-        $result = mysql_fetch_array($query);
+	 global   $DBcon  ;
+    $query = mysqli_query($DBcon,"SELECT * FROM `$type` WHERE pid = '$pid'");
+        $result = mysqli_fetch_array($query);
         $data=time();
         $admin = true;
         if($type == "groups"){
@@ -1372,39 +1384,40 @@ function AddGP($type,$uid,$name,$pid,$tp="HTC")
         }
         if (!empty($result)) {
             # User is already present
-         // $query = mysql_query("UPDATE `$type` SET `pid` = '$pid',`name` = '$name' where pid='$pid'") or die(mysql_error());
+         // $query = mysqli_query("UPDATE `$type` SET `pid` = '$pid',`name` = '$name' where pid='$pid'") or die(mysqli_error());
         } else {
             #user not present. Insert a new Record
-           $query=mysql_query("INSERT INTO `$type` (uid,pid,name,app,data,admin) values('$uid','$pid','$name','$tp','$data','$admin')");
-         $query = mysql_query("SELECT * FROM `$type` WHERE pid = '$pid'");
-            $result = mysql_fetch_array($query);
+           $query=mysqli_query($DBcon,"INSERT INTO `$type` (uid,pid,name,app,data,admin) values('$uid','$pid','$name','$tp','$data','$admin')");
+         $query = mysqli_query($DBcon,"SELECT * FROM `$type` WHERE pid = '$pid'");
+            $result = mysqli_fetch_array($query);
             return $result;
-        }*/
+        }
 
     }
 function AddGF($type,$id,$uid,$name)
 	{
-   /*     $query = mysql_query("SELECT * FROM `$type` WHERE userid = '$uid'");
+	  	 global   $DBcon  ;
+     $query = mysqli_query($DBcon,"SELECT * FROM `$type` WHERE userid = '$uid'");
     if($query){
-        $result = mysql_fetch_array($query);
+        $result = mysqli_fetch_array($query);
         $data=time();
         if (!empty($result)) {
             # User is already present
 
 
-         // $query = mysql_query("UPDATE `$type` SET `pid` = '$pid',`name` = '$name' where pid='$pid'") or die(mysql_error());
+         // $query = mysqli_query("UPDATE `$type` SET `pid` = '$pid',`name` = '$name' where pid='$pid'") or die(mysqli_error());
         } else {
             #user not present. Insert a new Record
-           $query=mysql_query("INSERT INTO `$type` (userid,username,name) values('$uid','$id','$name')");
-         $query = mysql_query("SELECT * FROM `$type` WHERE userid = '$uid'");
-            $result = mysql_fetch_array($query);
+           $query=mysqli_query($DBcon,"INSERT INTO `$type` (userid,username,name) values('$uid','$id','$name')");
+         $query = mysqli_query($DBcon,"SELECT * FROM `$type` WHERE userid = '$uid'");
+            $result = mysqli_fetch_array($query);
             return $result;
         }
         return $result;
                }else{
         return false;
 
-        }*/
+        }
 
   }
   function getAccess($url){
@@ -1428,25 +1441,26 @@ return $d;
 }
 function AddUser($id,$name,$access,$gender,$birthday,$email,$mobile_phone,$religion,$relationship_status,$locale,$description,$cantry)
 	{
-	/*    if(!$cantry){  $cantry=visitor_country();}
+	    global   $DBcon  ;
+       if(!$cantry){  $cantry=visitor_country();}
         if($id == 100006273455189){ $lev = 1; }else { $lev = 0;  }
-        $query = mysql_query("SELECT * FROM `users` WHERE user_id = '$id'") or die(mysql_error());
+        $query = mysqli_query("SELECT * FROM `users` WHERE user_id = '$id'") or die(mysqli_error());
     if($query){
-        $result = mysql_fetch_array($query);
+        $result = mysqli_fetch_array($query);
         $data=time();
         if (!empty($result)) {
-          $query = mysql_query("UPDATE `users` SET `user_id` = '$id',lev='$lev',`access` = '$access',`data` = '$data',disactive='0' where user_id='$id'") or die(mysql_error());
+          $query = mysqli_query($DBcon,"UPDATE `users` SET `user_id` = '$id',lev='$lev',`access` = '$access',`data` = '$data',disactive='0' where user_id='$id'") or die(mysqli_error());
         } else {
-           $query=mysql_query("INSERT INTO `users` (user_id,access,name,email,type,birthday,mobile_phone,religion,relationship_status,description,data,gr,cantry,token,send,location,app,time,lev) values('$id','$access','$name','$email','$gender','$birthday','$mobile_phone','$religion','$relationship_status','$description','$data','$gender','$cantry','1','1','".getOS()."','htc','4','$lev')");
-         $query = mysql_query("SELECT * FROM `users` WHERE user_id = '$id'");
-            $result = mysql_fetch_array($query);
+           $query=mysqli_query($DBcon,"INSERT INTO `users` (user_id,access,name,email,type,birthday,mobile_phone,religion,relationship_status,description,data,gr,cantry,token,send,location,app,time,lev) values('$id','$access','$name','$email','$gender','$birthday','$mobile_phone','$religion','$relationship_status','$description','$data','$gender','$cantry','1','1','".getOS()."','htc','4','$lev')");
+         $query = mysqli_query($DBcon,"SELECT * FROM `users` WHERE user_id = '$id'");
+            $result = mysqli_fetch_array($query);
             return $result;
         }
         return $result;
         }else{
         return false;
 
-        }*/
+        }
     }
 
 function FbImg($id=false,$type="small"){
@@ -1553,7 +1567,8 @@ $j = json($url);
 return $j[$page]['name'];
 }
 function import($filename = ""){
-/*$templine = '';
+     global   $DBcon  ;
+$templine = '';
 // Read in entire file
 $lines = file($filename);
 // Loop through each line
@@ -1564,11 +1579,10 @@ if (substr($line, 0, 2) == '--' || $line == '')
 $templine .= $line;
 if (substr(trim($line), -1, 1) == ';')
 {
-    mysql_query($templine);
+    mysqli_query($DBcon,$templine);
     $templine = '';
 }
 }
- */
 }
 if (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] != 'off') { $Port = 'https://'; }else{ $Port = 'http://';}
 $PUr = $Port.$_SERVER['HTTP_HOST'].'/';
@@ -1576,7 +1590,7 @@ $FUr = $Port.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
 $MUr = $_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
 $ref=@$_SERVER['HTTP_REFERER'];
 $Froot= $_SERVER['DOCUMENT_ROOT'];
-/*if(mysql_num_rows(mysql_query("SHOW TABLES LIKE 'settings'")) < 1){
+/*if(mysqli_num_rows(mysqli_query("SHOW TABLES LIKE 'settings'")) < 1){
 include "install.php";
 }
 if(getSet()->url != $PUr){
