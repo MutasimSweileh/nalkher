@@ -4,10 +4,21 @@ $UserDb="id3740887_root";    /// «”„ „” Œœ„ «·ﬁ«⁄œÂ
 $PassDb="mohtasm10@@"; ///  «·»«”Ê—œ
 $NameDb="id3740887_app";  /// «”„ «·ﬁ«⁄œÂ
 /************************************************/
-@mysql_connect($localhost,$UserDb,$PassDb)or die('<div style="text-align: center;font-size: 21px;"><p style="font-weight:bold;color:red;">Error</p><br>'.mysql_error()."</div>");
+/*@mysql_connect($localhost,$UserDb,$PassDb)or die('<div style="text-align: center;font-size: 21px;"><p style="font-weight:bold;color:red;">Error</p><br>'.mysql_error()."</div>");
 @mysql_select_db($NameDb);
 @mysql_query("set character_set_server='utf8'");
 mysql_query("SET NAMES 'utf8'");
-date_default_timezone_set("Africa/Cairo");
+date_default_timezone_set("Africa/Cairo");*/
+$url = getenv('mysql://m2uocbf3nwtzyq5p:v1ns6nhjlmxa8n49@icopoghru9oezxh8.cbetxkdyhwsb.us-east-1.rds.amazonaws.com:3306/pmea2aha671y7tl3');
+$dbparts = parse_url($url);
+$hostname = $dbparts['host'];
+$username = $dbparts['user'];
+$password = $dbparts['pass'];
+$database = ltrim($dbparts['path'],'/');
+$conn = new mysqli($hostname, $username, $password, $database);
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+echo "Connection was successfully established!";
 
 ?>
