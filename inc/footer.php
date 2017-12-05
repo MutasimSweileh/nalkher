@@ -85,18 +85,19 @@ if(!$id){ ?>
 <div class="dropzone" style="display: none;"></div>
 <script type="text/javascript" src="<?=$St->url?>/assets/js/jquery.min.js"></script>
 <script type="text/javascript" src="<?=$St->url?>/assets/js/materialize.js"></script>
-<script type="text/javascript" src="<?=$St->url?>/assets/js/lightbox.js"></script>
+<!--<script type="text/javascript" src="<?=$St->url?>/assets/js/lightbox.js"></script> -->
 <script type="text/javascript" src="<?=$St->url?>/assets/js/sweetalert.min.js"></script>
 <script type="text/javascript" src="<?=$St->url?>/assets/js/toastr.min.js"></script>
 <script type="text/javascript" src="<?=$St->url?>/assets/js/mara.min.js"></script>
 <script type="text/javascript" src="<?=$St->url?>/assets/js/youtube.js"></script>
 <script type="text/javascript" src="<?=$St->url?>/assets/js/imgur.min.js"></script>
 <script type="text/javascript" src="<?=$St->url?>/assets/js/Chart.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.js"></script>
 <script type="text/javascript" src="<?=$St->url?>/assets/js/jquery-confirm.js"></script>
 <script type="text/javascript" src="<?=$St->url?>/assets/js/custom.js"></script>
 <script type="text/javascript" src="<?=$St->url?>/assets/js/ajax.js"></script>
 <script type="text/javascript">
-<?php if($Gapp == "login" && isv("user",1)){  ?>
+ <?php if($Gapp == "login" && isv("user",1)){  ?>
 goR(null,null,"groups",null,"<?=isv("user",1)?>");
 <?php } if(Sion("type") == "error"){  ?>
          error_msg("<?=Sion("msg")?>");
