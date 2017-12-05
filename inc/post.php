@@ -120,7 +120,7 @@ if($p['id']){
 <?php  } ?>
 <div class="clearfix"></div>
 </div>
-            <div class="card-action center" style="border:0;padding:0;">
+            <div class="card-action center" style="border:0;padding:10;">
              <div class="post-action center col s12 m12 waves-effect waves-light">
              <div class="info-post col s12 m7  bold">
 <i class="fa fa-clock-o" aria-hidden="true"></i> <?=cptime($p['date'])?>  ❖ <i class="fa fa-pencil-square-o" aria-hidden="true"></i> <a  style="    margin: 0px;    display: inline-block;" href="<?=Fb($p['userid'])?>"  class=""><?=limit_str($Su['name'],3)?> </a>
@@ -169,7 +169,7 @@ if($p['num_dw']){
             </div>
 
 </div>
-<div class="nx card no-shadow center">
+<div class="nx card no-shadow center" style="    padding: 10px;">
 <div class="col m4 s5 " >
 <?=nx($Gapp,$id,1)?>
 </div>
@@ -183,16 +183,13 @@ if($p['num_dw']){
  <div class="clear"></div>
 </div>
 
-<div class="card no-shadow">
+<div class="card no-shadow" style="    padding: 10px;">
 <?php if($St->comment == "site"){  ?>
 <div class="card-title">التعليقات</div>
 <?php  } ?>
 <div class="card-content">
 <?php if(!Ls()){ ?>
-
-<div class="commentt col s12 m12 center right" style="margin-bottom: 9px;">
 <a href="" onclick="login('fb',0,1); return false;"  class="btn waves-effect waves-light blue darken-4" ><i class="fa fa-facebook  right"></i> قم بالتسجيل من خلال الفيس بوك</a>
-</div>
 <?php }else{ if(Ftable('comment') and $St->comment == "site"){ ?>
 <div class="commentt col m12">
                                     <div class="col  m2 s4 right center">
