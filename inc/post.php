@@ -62,11 +62,9 @@ if($p['id']){
     if(empty($Su['name'])){$Su['name']= $St->title;}
 ?>
 
-<div class="row " >
-
+<div class="row">
 <div class="main col m12 s12 " >
 <div class="card no-shadow">
-
 <div class="card-content" style="position: relative;  <?php if($Iv){  ?>  padding: 0;  <?php } ?> ">
 <?php if($Iv or $p['type'] == 2 or $p['type'] == 5){ ?>
 <div class="card-title truncate"><?=html_entity_decode(stripslashes(str_replace('\n','<br>',$p['text'])));?></div>
