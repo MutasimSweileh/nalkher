@@ -3,10 +3,7 @@ if($Gapp == 'post'){
     if(isset($_GET['pid']) and is_numeric($_GET['pid'])){
      $Iv=0;
 $id = (int)$_GET['pid'];
-     if(Csite()){
-      $R = Upost($id);
-      header("Location: ".$R);
-     }
+     
         $p = Selaa('posts','where id='.$id);
          $tutorial_id = $p["id"];
        $Su =Selaa($appsql,' where user_id='.$p['userid']);
@@ -20,10 +17,7 @@ $id = (int)$_GET['pid'];
     if(isset($_GET['vid']) and is_numeric($_GET['vid'])){
        $Iv=1;
 $id = $_GET['vid'];
-     if(Csite()){
-      $R = Uvideo($id);
-      header("Location: ".$R);
-     }
+
         $p = Selaa('video','where id='.$id);
         $vid = $p["id"];
         $lv = $p["link"];
@@ -116,7 +110,7 @@ if($p['id']){
 
             <?php  if($p['type']  == 2){
            $l=  $p['link'];
-       
+
             ?>
 
                <div class="center post-img" style=" position: relative;"><img src="<?=$p['link']?>"  class=" responsive-img z-depth-1" alt=""></div>
