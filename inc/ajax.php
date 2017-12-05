@@ -1691,12 +1691,12 @@ if(!$ad['id']){ $e = $ad['error']['message']; }
   if($dir) {
 if(isset($_POST['id'])){
          $showLimit = 4;
-          $SAll= Num('posts',"WHERE id < ".$_POST['id']." and type ='2' or type='5' ORDER BY id DESC");
-          $post= getUser('posts',"WHERE  id < ".$_POST['id']." and type ='2' or type='5' ORDER BY id DESC LIMIT ".$showLimit);
+          $SAll= Num('posts',"WHERE id < ".$_POST['id']." and type ='2' or type='5' or type='6' ORDER BY id DESC");
+          $post= getUser('posts',"WHERE  id < ".$_POST['id']." and type ='2' or type='5' or type='6' ORDER BY id DESC LIMIT ".$showLimit);
      }else{
          $showLimit = 12;
-          $SAll= Num('posts',"WHERE  type ='2' or type='5' ORDER BY id DESC");
-          $post= getUser('posts',"WHERE  type ='2' or type='5' ORDER BY id DESC LIMIT ".$showLimit);
+          $SAll= Num('posts',"WHERE  type ='2' or type='5' or type='6' ORDER BY id DESC");
+          $post= getUser('posts',"WHERE  type ='2' or type='5' or type='6' ORDER BY id DESC LIMIT ".$showLimit);
 
      }
      if($post){
