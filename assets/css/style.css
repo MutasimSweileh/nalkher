@@ -53,6 +53,10 @@ html body .wrapper main{
     padding-left: 0;
     padding-right: 0px;
 }
+[dir="rtl"] .fancybox-caption{
+     text-align: right !important;
+}
+
 html body.boxed-layout .wrapper.vertical-sidebar{
     max-width: 970px;
 }
