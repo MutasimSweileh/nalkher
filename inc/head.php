@@ -1,6 +1,31 @@
 <?php
 include "inc.php";
-$id = $_GET['pid'];
+    if(isset($_GET['pid'])){
+    $id = $_GET['pid'];
+    $p = Selaa('posts','where id='.$id);
+   $title= html_entity_decode(stripslashes(str_replace('n',' ',trim($p['text']))));
+   $description= html_entity_decode(stripslashes(str_replace('n',' ',trim($p['text']))));
+   $description_url= $St->url.'/post/'.$id.'.html';
+   if($p['type'] == 2 or $p['type'] == 5  or $p['type'] == 6){
+   $description_logo = $p['link'] ;
+   }else{
+   $description_logo= $St->logo;
+
+   }
+    }else if(isset($_GET['vid'])){
+    $id = $_GET['vid'];
+    $p = Selaa('video','where id='.$id);
+   $title= html_entity_decode(stripslashes(str_replace('n',' ',trim($p['title']))));
+   $description= html_entity_decode(stripslashes(str_replace('n',' ',trim($p['description']))));
+   $description_url= Uvideo($id);
+   $description_logo = $p['img'] ;
+    }else{
+   $description= $St->description;
+   $description_url= $St->url;
+   $description_logo= $St->logo;
+
+    }
+
 ?>
 <!DOCTYPE html>
 <html  lang="ar" dir="rtl" >
@@ -16,19 +41,19 @@ $id = $_GET['pid'];
     echo $title." | ".$St->title ;}
     ?></title>
 
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-
-    <meta name="description" content="<?=$St->description?>">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="<?=$description?>">
     <meta name="author" content="<?=$St->title?>">
-    <meta property="og:description" content="<?=$St->description?>" />
+    <meta property="og:description" content="<?=$description?>" />
     <meta content='<?=$St->fb_link?>' property='article:author'/>
     <meta content='<?=$St->fb_link?>' property='article:publisher'/>
     <meta content='<?=$St->title?>' property='og:site_name'/>
+    <meta content='<?=$description_url?>' property='og:url'/>
      <?php
     if(!empty($St->logo)){ ?>
-    <meta property="og:image" content="<?=$St->logo?>"/>
+    <meta property="og:image" content="<?=$description_logo?>"/>
     <link rel="shortcut icon" href="<?=$St->logo?>" />
-    <link rel="image_src" href='<?=$St->logo?>' />
+    <link rel="image_src" href='<?=$description_logo?>' />
     <link rel="icon" href="<?=$St->logo?>">
     <?php }else{
     ?>
