@@ -1704,15 +1704,15 @@ if(isset($_POST['id'])){
              $p = $post[$i];
                $tutorial_id = $p["id"];
              $Su =Selaa($appsql,' where user_id='.$p['userid']);
-             if(!strpos($p['link'],'imgur')){
+            /* if(!strpos($p['link'],'imgur')){
                  $p['link'] = '../'.$p['link'];
-             }
+             }*/
 
      ?>
    	             <div class="col  s12 m3" id="t<?=$tutorial_id?>">
                  <div class="card no-shadow center">
                  <div class="card-content" style="    padding: 0;">
-                 <div class="center post-img postimg"><a href="<?=Upost($p['id'])?>">  <img src="<?=$p['link']?>" class=" responsive-img z-depth-1" alt=""></a></div>
+                 <div class="center post-img postimg"><a href="<?=Upost($p['id'])?>"> <img src="<?=$p['link']?>" class=" responsive-img z-depth-1" alt=""></a></div>
                 </div>
                  <div class="card-action center" style="    font-size: 13px;">
                                <a class="tooltipped " onclick="fb_share(<?=$p['id']?>);"  data-position="bottom" data-delay="50" data-tooltip="نشر على فيس بوك"><i class="fa fa-facebook-square fa-lg " aria-hidden="true"></i></a>
