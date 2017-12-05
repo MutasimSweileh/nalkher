@@ -263,7 +263,30 @@ width:100%;
 color:#D03F42;
 font-size:38px;
 background:rgba(255,255,255,0.65)
- }    
+ }
+.card .card-title {
+    font-size: 17px;
+    font-weight: 700;
+    position: relative;
+    margin: 0;
+    padding: 5px 9px;
+    border-radius: 3px;
+    box-shadow: 0px 3px 15px 2px rgba(238, 238, 238, 0.81);
+    border-bottom: 1px solid #eee;
+        line-height: 30px;
+}
+.card-title a{
+        color: #00BCD4;
+}
+.clearfix{
+    clear: both;
+}
+[dir="rtl"] .posts .main{
+    float: right !important;
+}
+[dir="rtl"] .posts .slide{
+    float: left !important;
+}
 [dir="rtl"] .social  .card-title {
      padding-left: 15px;
      padding-right: 0;

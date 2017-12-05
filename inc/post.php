@@ -3,7 +3,7 @@ if($Gapp == 'post'){
     if(isset($_GET['pid']) and is_numeric($_GET['pid'])){
      $Iv=0;
 $id = (int)$_GET['pid'];
-     
+
         $p = Selaa('posts','where id='.$id);
          $tutorial_id = $p["id"];
        $Su =Selaa($appsql,' where user_id='.$p['userid']);
@@ -62,32 +62,9 @@ if($p['id']){
     if(empty($Su['name'])){$Su['name']= $St->title;}
 ?>
 
-<div class="row" style="direction:rtl;">
-	   <div class="center" style="position: absolute;opacity: 0;">
-	   <div class="center ad">
-      <div class="col m6 s12">
- <?php if($app['Adf'] == 2){ echo  $St->send_text_off;  } ?>
-       </div>
-      <div class="col m6 s12">
- <?php if($app['Adf'] == 2){ echo  $St->send_text_off;  } ?>
-       </div>
-       </div>
-	   <div class="center row">
-     <?php  $ylix =0; $Uylix = "https://ylx-4.com/fullpage.php?section=General&pub=964729&ga=g"; if($ylix and $PUr == $AdF){ for($i=0;$i<10;$i++){  ?>
-      <div class="col m6 s12">
-       <iframe class="pupad" src="<?=$Uylix?>" <?=$sandbox?>></iframe>
-       </div>
-    <?php } } ?>
+<div class="row posts" >
 
-     <?php if(!empty($St->admin_name) and $app['adf'] == 1){ for($i=0;$i<$app['pub'][2];$i++){  ?>
-
-       <iframe class="pupad" src="<?=$St->admin_name?>" <?=$sandbox?>></iframe>
-    <?php } } ?>
-
-    </div>
-       </div>
-
-   <div class="main col m8 s12 right" style="    position: relative;">
+   <div class="main col m8 s12 " style="position: relative;">
 
 <div class="card no-shadow">
 
@@ -191,18 +168,20 @@ if($p['num_dw']){
             </div>
 
             </div>
+            <div class="clear"></div>
             </div>
 
 </div>
 <div class="nx card no-shadow center">
-<div class="col m4 s5 right" >
+<div class="col m4 s5 " >
 <?=nx($Gapp,$id,1)?>
-</div>
-<div class="col m4 s5 left" >
-<?=nx($Gapp,$id)?>
 </div>
 <div class="col m4 s2" >
 <?=home_nx($Gapp)?>
+</div>
+
+<div class="col m4 s5 " >
+<?=nx($Gapp,$id)?>
 </div>
 
 </div>
@@ -264,7 +243,8 @@ if($p['num_dw']){
 
 <!---main---->
 </div>
-<div class="col m4 s12 slide" style="position: relative;">
+
+<div class="col m4 s12 slide">
 <div class="card no-shadow">
 <div class="card-content center sico">
  <a style="    padding: 5px;"  href="<?=$St->fb_link?>" target="_blank" class="tooltipped " data-position="bottom" data-delay="50" data-tooltip="تابعنا على فيس بوك"><i class="fa fa-facebook-square fa-4x " aria-hidden="true"></i></a>
