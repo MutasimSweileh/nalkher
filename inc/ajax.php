@@ -1711,8 +1711,14 @@ if(isset($_POST['id'])){
      ?>
    	             <div class="col  s12 m3" id="t<?=$tutorial_id?>">
                  <div class="card no-shadow center">
-                 <div class="card-content" style="    padding: 0;">
-                 <div class="center post-img postimg"><a href="<?=Upost($p['id'])?>"> <img src="<?=$p['link']?>" class=" responsive-img z-depth-1" alt=""></a></div>
+                 <div class="card-image">
+                  <img src="<?=$p['link']?>"  alt="">
+                              <a class="btn-floating halfway-fab waves-effect waves-light red left">
+                                <i class="material-icons">share</i>
+                              </a>
+                            </div>
+                 <div class="card-content" >
+
                 </div>
                  <div class="card-action center" style="    font-size: 13px;">
                                <a class="tooltipped " onclick="fb_share(<?=$p['id']?>);"  data-position="bottom" data-delay="50" data-tooltip="نشر على فيس بوك"><i class="fa fa-facebook-square fa-lg " aria-hidden="true"></i></a>

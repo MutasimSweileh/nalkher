@@ -32,7 +32,9 @@ font-family: 'JF Flat' !important;
 }
 }
 
-
+html[dir="rtl"] .images .col {
+    float: left !important;
+}
 span.badge{
     position: inherit;
 }
