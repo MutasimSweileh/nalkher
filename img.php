@@ -56,7 +56,7 @@ location.replace("<?=$url?>");
 <?php }else{
 if($St->close == 1){
 ?>
-                   <div class="container">
+
                  <div class="row images">
 
        <div class="col s12 m12 upload-image" style="text-align:center;">
@@ -65,7 +65,7 @@ if($St->close == 1){
               </div>
 
 </div>
-</div>
+
      <div class="clearfix"></div>
 
 
