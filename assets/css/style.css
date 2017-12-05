@@ -234,6 +234,10 @@ html body.horizontal-navigation .wrapper.vertical-sidebar .dropdown-content {
        min-height: 200px;
 }
 
+[dir="rtl"] .card .card-action a:not(.btn):not(.btn-large):not(.btn-large):not(.btn-floating){
+    margin-right: 0px !important;
+    margin-left: 20px !important;
+}
 
 .post-img-video a:after {
     content: '\f01d';

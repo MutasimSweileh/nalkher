@@ -319,10 +319,10 @@ return $S;
 
 function more($tutorial_id,$SAll,$showLimit){
 if($SAll > $showLimit){
-             $r = '   <div class="col offset-s1 s11 m12  center" id="show_more_main'.$tutorial_id.'">
+             $r = '   <div style="margin-bottom: 12px;" class="col  s12 m12  center" id="show_more_main'.$tutorial_id.'">
                  <a id="'.$tutorial_id.'" class="btn waves-effect waves-light teal lighten-2 z-depth-2  show_more" alt=""   data-position="buttom" data-tooltip="تحميل المزيد من المنشورات" data-tooltip-id="ed472c81-cc4c-1ce6-956d-2ac9b8acd67b">
             <span class="loding" style="display:none">  <img style="width: 25px;height: 25px;    margin: 6px;" src="../assets/images/spin.svg" alt="" />   </span>
-        <span class="icon_more" >    عرض المزيد  <i class="fa fa-refresh right"></i>   </span>
+        <span class="icon_more" >  <i class="fa fa-refresh "></i>       عرض المزيد  </span>
 
                  </a>
 

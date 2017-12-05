@@ -1743,7 +1743,7 @@ if(isset($_POST['id'])){
                 </div>
                 </div>
                 </div>
-<?php }echo more($tutorial_id,Num('posts',"where id < '".$tutorial_id."' and type ='2' or type='5' "),4); }else{ echo NotFound(); }
+<?php }echo more($tutorial_id,Num('posts',"where id < '".$tutorial_id."' and type ='2' or type='5' or type='6' "),4); }else{ echo NotFound(); }
     }else{
      header("Location: ../");
      }
