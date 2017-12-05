@@ -187,7 +187,7 @@ if($p['num_dw']){
 <?php if($St->comment == "site"){  ?>
 <div class="card-title">التعليقات</div>
 <?php  } ?>
-<div class="card-content">
+<div class="card-content center">
 <?php if(!Ls()){ ?>
 <a href="" onclick="login('fb',0,1); return false;"  class="btn waves-effect waves-light blue darken-4" ><i class="fa fa-facebook  right"></i> قم بالتسجيل من خلال الفيس بوك</a>
 <?php }else{ if(Ftable('comment') and $St->comment == "site"){ ?>
