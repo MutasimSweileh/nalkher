@@ -68,13 +68,13 @@ include "inc.php";
   <link href="<?=$St->url?>/assets/css/style.css" rel="stylesheet" media="screen">
   <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700,900">
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <div id="fb-root"></div>
+<!--    <div id="fb-root"></div>
 <script>(function(d, s, id) {
   var js, fjs = d.getElementsByTagName(s)[0];
   if (d.getElementById(id)) return;
   js = d.createElement(s); js.id = id;
   js.src = "//connect.facebook.net/ar_AR/sdk.js#xfbml=1&version=v2.7&appId=<?=$St->app_id?>";
   fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
+}(document, 'script', 'facebook-jssdk'));</script>-->
 </head>
 <body class=" boxed-layout horizontal-navigation">
