@@ -1712,7 +1712,7 @@ if(isset($_POST['id'])){
    	             <div class="col  s12 m3" id="t<?=$tutorial_id?>">
                  <div class="card no-shadow center">
                  <div class="card-image">
-                  <img src="<?=$p['link']?>"  alt="">
+                  <a href="<?=$p["link"]?>" data-fancybox="gallery"  data-caption="<?=$p["text"]?>" ><img src="<?=$p['link']?>"  alt="<?=$p["text"]?>"></a>
                               <a class="btn-floating halfway-fab waves-effect waves-light red left">
                                 <i class="material-icons">share</i>
                               </a>
