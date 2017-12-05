@@ -1,18 +1,4 @@
 <?php
-if(!defined('MyConst')) {
-header("Location: ../");
-}
-if(!Sion('Rfb') and 1 == 2){
-iSion('Rfb',$FUr);
-echo'
-<script type="text/javascript">
-  window.location.replace("/red.php");
-</script>';
-die();
-}else{
-iSion('Rfb',0);
-}
-
 if($Gapp == 'post'){
     if(isset($_GET['pid']) and is_numeric($_GET['pid'])){
      $Iv=0;
@@ -81,7 +67,7 @@ if($p['id']){
  if($Iv){ $p["id"] = $S['id'];}
     if(empty($Su['name'])){$Su['name']= $St->title;}
 ?>
-<div class="container">
+
 <div class="row" style="direction:rtl;">
 	   <div class="center" style="position: absolute;opacity: 0;">
 	   <div class="center ad">
@@ -126,22 +112,11 @@ if($p['id']){
         </center>
 </div>
 <?php } ?>
-<?php if($app['AD'] and last_share($app['Atime'][0],$St->last_adf,$app['Atime'][1]) and $app['Adf'] == 1 and  $app['Atime'][2] or $app['Adf'] == 1 and  $app['Atime'][2] and $app['AD'] ){ ?>
-<div class="ad AdF" style=" /*   width: 100%;
-    background: #fff;
-    height: 100%; */">
-       <?=$St->send_text_off?>
-       <?=$St->send_text_off?>
-</div>
-<?php } ?>
-<?php if( !empty($St->send_text_off)  and  $app['Adf'] == 1 and $Gapp == 'video'  and  $app['Atime'][2] and $app['AD']){ ?>
-<div class="center AdFc">قد يتم تحويلك الى فاصل اعلانى يمكنك الرجوع الى هذه الصفحه مره اخرى لمشاهدة الفديو</div>
-<?php } ?>
+
+
             <?php  if($p['type']  == 2){
            $l=  $p['link'];
-        if(!strpos($p['link'],'imgur')){
-         $p['link'] = '../'.$p['link'];
-             }
+       
             ?>
 
                <div class="center post-img" style=" position: relative;"><img src="<?=$p['link']?>"  class=" responsive-img z-depth-1" alt=""></div>
@@ -369,57 +344,25 @@ if($p['num_dw']){
 <div id="userCount"></div>
 </div>
 </div>
-<?php }else if( 1 == 2) { ?>
-   <!-- Histats.com  START  (aync)-->
-<script type="text/javascript">var _Hasync= _Hasync|| [];
-_Hasync.push(['Histats.start', '1,3485545,4,0,0,0,00010000']);
-_Hasync.push(['Histats.fasi', '1']);
-_Hasync.push(['Histats.track_hits', '']);
-(function() {
-var hs = document.createElement('script'); hs.type = 'text/javascript'; hs.async = true;
-hs.src = ('//s10.histats.com/js15_as.js');
-(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(hs);
-})();</script>
-<noscript><a href="/" target="_blank"><img  src="//sstatic1.histats.com/0.gif?3485545&101" alt="free website hit counter" border="0"></a></noscript>
-<!-- Histats.com  END  -->
-
-<?php } ?>
+<?php }?>
 <!---slid---->
 </div>
 
 
 </div>
-</div>
+
 <?php } else if($Gapp == "video" and !$id){   ?>
-                   <div class="container">
+
              <?php  if(Sion('not')){
                echo Amsg('لايوجد الفديو او تم حذفه من قبل الاداره','red');
              } ?>
-                 <div class="row videos">
-	   <div class="center container" style="position: absolute;opacity: 0;">
-	   <div class="center ad">
-      <div class="col m6 s12">
- <?php if($app['Adf'] == 1){ echo  $St->send_text_off;  } ?>
-       </div>
-      <div class="col m6 s12">
- <?php if($app['Adf'] == 1){ echo  $St->send_text_off;  } ?>
-       </div>
-       </div>
-	   <div class="center row">
-     <?php if(!empty($St->admin_name) and $app['adf'] == 1){ for($i=0;$i<$app['pub'][1];$i++){  ?>
-      <div class="col m6 s12">
-       <iframe class="pupad" src="<?=$St->admin_name?>" <?=$sandbox?>></iframe>
-       </div>
-    <?php } } ?>
-       </div>
-       </div>
-
+      <div class="row videos">
        <div class="col s12 m12 upload-image" style="text-align:center;">
        <p>من فضلك انتظر جارى التحميل     </p>
                     <img src="<?=$St->url?>/assets/images/bigloader.gif" alt="" class="responsive-img">
               </div>
 </div>
-</div>
+
      <div class="clearfix"></div>
 
 <?php }else{

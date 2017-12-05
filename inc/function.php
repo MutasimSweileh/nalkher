@@ -1585,6 +1585,42 @@ if (substr(trim($line), -1, 1) == ';')
 }
 }
 }
+function nx($Gapp="",$id="",$p=""){
+if($Gapp == 'post'){
+$Gapp = 'posts';
+$app = 'post';
+}else{
+$Gapp = 'video';
+$app = 'video';
+
+}
+if(!$p){
+$S = Sel($Gapp,'where id >"'.$id.'" order by id asc');
+if($S){
+$r='<a href="'.getSet()->url.'/'.$app.$S->id.'.html">التالى <i class="fa fa-chevron-left arrowleft"></i> </a> ';
+}else{
+$r='<a href="#">هذا احدث منشور <i class="fa fa-smile-o" aria-hidden="true"></i></a> ';
+}
+}else{
+$S = Sel($Gapp,'where id <"'.$id.'" order by id desc');
+if($S){
+$r='<a href="'.getSet()->url.'/'.$app.$S->id.'.html"><i class="fa fa-chevron-right arrowright"></i>  السابق</a> ';
+}else{
+$r='<a href="#"><i class="fa fa-smile-o" aria-hidden="true"></i> هذا اقدم منشور</a> ';
+}
+
+
+}
+ return $r;
+}
+function home_nx($Gapp=""){
+if($Gapp == 'video'){
+$r='<a href="../videos.html"><i class="fa fa-home fa-lg" aria-hidden="true"></i></a>  ';
+}else{
+$r='<a href="../"><i class="fa fa-home fa-lg" aria-hidden="true"></i></a>  ';
+}
+return $r;
+}
 if (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] != 'off') { $Port = 'https://'; }else{ $Port = 'http://';}
 $PUr = $Port.$_SERVER['HTTP_HOST'].'/';
 $FUr = $Port.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
