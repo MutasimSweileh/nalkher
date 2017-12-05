@@ -64,8 +64,7 @@ if($p['id']){
 
 <div class="row " >
 
-   <div class="main col m8 s12 " >
-
+<div class="main col m12 s12 " >
 <div class="card no-shadow">
 
 <div class="card-content" style="position: relative;  <?php if($Iv){  ?>  padding: 0;  <?php } ?> ">
@@ -183,7 +182,7 @@ if($p['num_dw']){
 <div class="col m4 s5 " >
 <?=nx($Gapp,$id)?>
 </div>
-
+ <div class="clear"></div>
 </div>
 
 <div class="card no-shadow">
@@ -239,88 +238,13 @@ if($p['num_dw']){
 <div class="fb-comments" data-href="<?=Lurl($Gapp,$id)?>" data-width="100%" data-numposts="5"></div>
 <?php }  ?>
 </div>
+ <div class="clear"></div>
 </div>
 
 <!---main---->
 </div>
 
-<div class="col m4 s12 slide">
-<div class="card no-shadow">
-<div class="card-content center sico">
- <a style="    padding: 5px;"  href="<?=$St->fb_link?>" target="_blank" class="tooltipped " data-position="bottom" data-delay="50" data-tooltip="تابعنا على فيس بوك"><i class="fa fa-facebook-square fa-4x " aria-hidden="true"></i></a>
-<a style="    padding: 5px;" href="<?=$St->tw_link?>" target="_blank" class="tooltipped"   data-position="bottom" data-delay="50" data-tooltip="تابعنا على تويتر"><i class="fa fa-twitter-square fa-4x" aria-hidden="true"></i></a>
-<a style="    padding: 5px;" href="<?=$St->youtube_link?>" target="_blank" class="tooltipped"   data-position="bottom" data-delay="50" data-tooltip="تابعنا على يوتيوب"><i class="fa fa-youtube-square fa-4x" aria-hidden="true"></i></a>
 
-</div>
-</div>
-
-
-<?php if(!empty($St->send_text_off)){ ?>
-<div class="card no-shadow">
-<div class="card-title">اعلان</div>
-<div class="card-content">
-    <div  class="center ad">
- <center>
-
-       <?=$St->send_text_off?>
- </center>
-
-    </div>
-</div>
-</div>
-<?php } ?>
-<style type="text/css">
-.morevideo  .imge img{
-    background: #FFFFFF;
-    display: block;
-    width: 100px;
-    height: 66px;
-    overflow: hidden;
-    float: right;
-    margin-left: 10px;
-    border: 1px solid rgba(221, 221, 221, 0.66);
-    padding: 3px;
-    opacity: 1;
-    -webkit-transition: .3s ease-in-out;
-    transition: .3s ease-in-out;
-}
-
-</style>
-<?php  if($Iv and Num('video',' where active="1" and id !="$id"') > 0){  ?>
-<div class="card no-shadow">
-<div class="card-title">مكتبة الفديو</div>
-<div class="card-content">
-<?php $video= getUser('video',' where active="1" and id !="$id" order by rand() limit 4 '); for($i=0;$i<count($video);$i++){
- $v = $video[$i];
- ?>
-    <div  class="row morevideo">
-    <div  class="col s4  m4 right imge">
-   <a href="<?=Uvideo($v['id'])?>"><img src="<?=$v['img']?>" alt="" /></a>
-    </div>
-    <div  class="col s8 m8">
-   <a style="color: #387d77;" href="<?=Uvideo($v['id'])?>"> <p><?=limit_str($v['title'],8)?></p></a>
-    <p style="font-size: 12px;" ><?=cptime($v['date'])?></p>
-    </div>
-    </div>
-<?php } ?>
-</div>
-</div>
-
-
- <?php } if(!empty($St->terms)){ ?>
-
-<div class="card no-shadow">
-<div class="card-title">احصائيات</div>
-<div class="card-content center" dir="ltr">
-<?=$St->terms?>
-<div id="online" <?php if(1 == 2){ echo "style='display:none'"; } ?>  >
-</div>
-<div id="userCount"></div>
-</div>
-</div>
-<?php }?>
-<!---slid---->
-</div>
 
 
 </div>
