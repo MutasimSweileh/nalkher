@@ -61,7 +61,7 @@ if($St->close == 1){
 
        <div class="col s12 m12 upload-image" style="text-align:center;">
        <p>من فضلك انتظر جارى التحميل     </p>
-                    <img src="http://app.nalkher.net//assets/images/bigloader.gif" alt="" class="responsive-img">
+                    <img src="<?=$St->url?>/assets/images/bigloader.gif" alt="" class="responsive-img">
               </div>
 
 </div>
