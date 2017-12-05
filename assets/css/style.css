@@ -281,10 +281,10 @@ background:rgba(255,255,255,0.65)
 .clearfix{
     clear: both;
 }
-[dir="rtl"] .posts .main{
+[dir="rtl"]  .main{
     float: right !important;
 }
-[dir="rtl"] .posts .slide{
+[dir="rtl"]  .slide{
     float: left !important;
 }
 [dir="rtl"] .social  .card-title {

@@ -62,9 +62,9 @@ if($p['id']){
     if(empty($Su['name'])){$Su['name']= $St->title;}
 ?>
 
-<div class="row posts" >
+<div class="row " >
 
-   <div class="main col m8 s12 " style="position: relative;">
+   <div class="main col m8 s12 " >
 
 <div class="card no-shadow">
 
