@@ -254,7 +254,7 @@
                                     </p>
                                     <?php if($p["type"] == 6){  ?>
                                     <div class="center">
-                                      <a href="<?=$p["link"]?>" data-fancybox="gallery"  ><img  src="<?=$p["link"]?>" alt="<?=str_replace(PHP_EOL,"<br />",$p["text"])?>"></a>
+                                      <a href="<?=$p["link"]?>" data-fancybox="gallery"  data-caption="<?=$p["text"]?>" ><img  src="<?=$p["link"]?>" alt="<?=str_replace(PHP_EOL,"<br />",$p["text"])?>"></a>
                                          </div>
                                    <?php } ?>
                 <div class=" center col s12 m12 waves-effect waves-light footer-post" id="footer-post">
