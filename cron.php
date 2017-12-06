@@ -81,6 +81,10 @@ if(isv("post")  && $St->zapier == 0){
   UpDate("posts","msg",1,"where id=".$post->id);
   UpDate('share',"werd_id",$post->id);
   UpDate('settings','last_share_werd',time());
+  $link =  Uimgur($post->link);
+    if($link[0]){
+    UpDate('posts',"link",$link[1]," where id=".$post->id);
+    }
   for($i=0;$i<count($users);$i++){
            $userb= $users[$i];
 

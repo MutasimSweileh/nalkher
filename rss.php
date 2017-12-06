@@ -39,7 +39,7 @@ $blog =7;
 
 $Nvideo =  Num($po,"where  msg='0' and active='1' and type='".$blog."'   ");
 $post =  Sel($po,"where  msg='0' and active='1' and type='".$blog."'   ".$orderby);
-if($Nvideo  < 1){    UpDate($po,'msg',0,'where send="1" and type="'.$blog.'"');   }
+if($Nvideo  < 1){    UpDate($po,'msg',0,'where  type="'.$blog.'"');   }
 if(!$Werd){
 if($gtype == "quran"){
 UpDate('share',"quran_msg",time());
@@ -96,12 +96,7 @@ $p = Selaa('video','where id='.$post->vid);
  ?>
  <item>
 <?php
-    $link =  Uimgur($post->link);
-    if($link[0]){
-    UpDate('posts',"link",$link[1]," where id=".$s->werd_id);
-    }else{
-        echo $link[1];
-    }
+
 if($s->fb_link != ""){
     $fb_link = $s->fb_link;
 }else{
