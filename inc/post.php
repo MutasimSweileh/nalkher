@@ -188,7 +188,7 @@ if($p['num_dw']){
 <div class="card-title">التعليقات</div>
 <?php  } ?>
 <div class="card-content center" style="    padding: 10px;">
-<?php if(!Ls() || Ls()){ ?>
+<?php if(!Ls() && 1 == 2){ ?>
 <a href="" onclick="login('fb',0,1); return false;"  class="btn waves-effect waves-light blue darken-4" ><i class="fa fa-facebook  "></i> قم بالتسجيل من خلال الفيس بوك</a>
 <?php }else{ if(Ftable('comment') and $St->comment == "site"){ ?>
 <div class="commentt col m12">
@@ -200,9 +200,10 @@ if($p['num_dw']){
                                         <input type="hidden" name="Cuid" value="<?=Sion('id')?>" />
                                     </div>
                                 </div>
-<?php } } if(Ftable('comment') and  $St->comment == "site"){ ?>
-<div class="CommentsList">
-<?php $com= getUser('comment',' where pid='.$id); if($com){ for($i=0;$i<count($com);$i++){
+                                <div class="CommentsList">
+<?php
+$com= getUser('comment',' where pid='.$id);
+if($com){ for($i=0;$i<count($com);$i++){
  $v = $com[$i];
 ?>
 <div class="comment col m12">
@@ -229,7 +230,7 @@ if($p['num_dw']){
 <?php }  } ?>
 
 </div>
-<?php }else if(Ls()){ ?>
+<?php }else{ ?>
 <div class="fb-comments" data-href="<?=Lurl($Gapp,$id)?>" data-width="100%" data-numposts="5"></div>
 <?php }  ?>
 </div>
