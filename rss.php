@@ -96,7 +96,12 @@ $p = Selaa('video','where id='.$post->vid);
  ?>
  <item>
 <?php
-
+    $link =  Uimgur($post->link);
+    if($link[0]){
+    UpDate('posts',"link",$link[1]," where id=".$s->werd_id);
+    }else{
+        echo $link[1];
+    }
 if($s->fb_link != ""){
     $fb_link = $s->fb_link;
 }else{
