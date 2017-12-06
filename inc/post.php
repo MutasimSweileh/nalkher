@@ -195,9 +195,8 @@ if($p['num_dw']){
                                     <div class="col  m2 s4 right center">
                 					    <a href=""><img width="43" height="43"  src="<?=FbImg(Sion('id'),'normal')?>" class="circle img-responsive"></a>
                                     </div>
-                                    <div class="input-field  col s8 m10  textfilde">
-										<textarea class="form-control CommentBox materialize-textarea"  name="comment" id="<?=$id?>"  ></textarea>
-                                        <label for="<?=$id?>" class="">اكتب تعليقك</label>
+                                    <div class="col s8 m10 ">
+										<textarea class="form-control CommentBox "  placeholder="اكتب تعليقك"  name="comment" id="<?=$id?>"  ></textarea>
                                         <input type="hidden" name="Cuid" value="<?=Sion('id')?>" />
                                     </div>
                                 </div>
