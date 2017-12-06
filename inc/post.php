@@ -232,7 +232,7 @@ if($com){ for($i=0;$i<count($com);$i++){
 </div>
 <?php }else{ ?>
 <div class="fb-comments" data-href="<?=Lurl($Gapp,$id)?>" data-width="100%" data-numposts="5"></div>
-<?php }  ?>
+<?php } } ?>
 </div>
  <div class="clear"></div>
 </div>
