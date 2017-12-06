@@ -127,13 +127,13 @@ if($p['id']){
 <?php
 if($view){
 ?>
- ❖ <i class="fa fa-eye" aria-hidden="true"></i> <?=$view?>
+  <i class="fa fa-eye" aria-hidden="true"></i> <?=$view?>
 
  <?php } ?>
  <?php
 if($Nshare){
 ?>
- ❖ <i class="fa fa-share-alt-square" aria-hidden="true"></i> <?=$Nshare?>
+ <i class="fa fa-share-alt-square" aria-hidden="true"></i> <?=$Nshare?>
 
  <?php }
 if($p['num_dw']){

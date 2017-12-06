@@ -917,13 +917,7 @@ if(!$off){
       "date"=>time(),
       );
       $Sql = SqlIn('comment',$i);
-     if($Sql){
             echo    json_encode( array('st'=>'ok','msg'=>'تم اضافة التعليق بنجاح'));
-
-     }else{
-            echo    json_encode( array('st'=>'error','msg'=>'عذرا  حدث  خطأ ما  حاول مره اخرى'));
-
-     }
     }else{
         $id = isv("com",1);
      $com= getUser('comment',' where pid='.$id); if($com){ for($i=0;$i<count($com);$i++){
