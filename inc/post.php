@@ -183,12 +183,12 @@ if($p['num_dw']){
  <div class="clear"></div>
 </div>
 
-<div class="card no-shadow" style="    padding: 10px;">
+<div class="card no-shadow" >
 <?php if($St->comment == "site"){  ?>
 <div class="card-title">التعليقات</div>
 <?php  } ?>
-<div class="card-content center">
-<?php if(!Ls()){ ?>
+<div class="card-content center" style="    padding: 10px;">
+<?php if(!Ls() || Ls()){ ?>
 <a href="" onclick="login('fb',0,1); return false;"  class="btn waves-effect waves-light blue darken-4" ><i class="fa fa-facebook  "></i> قم بالتسجيل من خلال الفيس بوك</a>
 <?php }else{ if(Ftable('comment') and $St->comment == "site"){ ?>
 <div class="commentt col m12">
