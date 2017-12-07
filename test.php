@@ -9,10 +9,11 @@ for($i = 0;$i<count($post);$i++){
      echo "good";
    }
 
-  $text = $p["text"];  
+
+  $text = $p["text"];
 
 }
-
+echo "string";
 
 
   ?>
