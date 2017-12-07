@@ -109,11 +109,11 @@ function Dta(){
   var start = new Date(),
         prevDay,
         startHours = 9;
-  var myDatepicker = $('.datepicker-here').datepicker({
+  var myDatepicker = $('#datepickerhere').datepicker({
       language: 'en',
       //timepicker: true
-      startDate:start
-  }).data('timepicker');
+      //startDate:start
+  }).data('datepicker');
   myDatepicker.show();
   }
 </script>
