@@ -33,7 +33,7 @@
                 <input type="hidden" name='img' />
                 <input type="hidden" name='type' value="0" />
                       <input type="checkbox" id="short" name="short" style="display:none" />
-                      <input type='text' class="datepicker-here" data-position="right top" />
+                      <input type='text' class="datepicker-here" data-position="center" />
 
 <!--                  <input
                     id="input_time"

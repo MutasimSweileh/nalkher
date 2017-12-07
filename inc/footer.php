@@ -106,7 +106,9 @@ var myDatepicker = $('.datepicker-here').datepicker({
 });
 */
 function Dta(){
-  var myDatepicker = $('.datepicker-here').datepicker().data('datepicker');
+  var myDatepicker = $('.datepicker-here').datepicker({
+      language: 'en'
+  }).data('datepicker');
   myDatepicker.show();
   }
 </script>
