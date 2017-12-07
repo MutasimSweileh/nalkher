@@ -579,6 +579,82 @@ function Rip (ip=""){
 	});
     */
 /////////////////////addpost///////////////////////////
+var dat = null;
+function Dta(){
+   $('#datepickerhere').focus();
+
+}
+  $('#datepickerhere').datepicker({
+      language: 'en',
+      timepicker: true,
+      minDate: new Date(),
+      onHide: function(dp, animationCompleted){
+          if (!animationCompleted) {
+          goDate();
+          }
+      },
+      onSelect: function(formattedDate, date, inst){
+        dat = formattedDate;
+      }
+
+  });
+function goDate(){
+  var post = $.trim($('textarea[name=post]').val());
+  var url =    $("input[name=url]").val();
+  var Stype =    $("input[name=Stype]").val();
+  var cat =    $("select[name=cat]").val();
+  var img = $.trim($('input[name=img]').val());
+  var type = $('input[name=type]').val();
+  var time = $('input[name=time]').val();
+  if(post=="" && type != 1 && Stype != 'token'){
+error_msg('قم بااضافة النص اولا');
+  }else if(type == 7  && url==""){
+error_msg('قم بااضافة الرابط اولا');
+  }else if(type == 1  && url==""){
+error_msg('قم بااضافة الرابط اولا');
+  }else if(type == 5  && img==""){
+error_msg('اضف الصوره');
+  }else if(type == 2  && img==""){
+error_msg('اضف الصوره');
+  }else{
+      //$('.loader').show();
+      loding_msg('من فضلك انتظر جارى اضافة المنشور',1000);
+    // $('.alert').addClass('alert-danger');
+       $.ajax({
+        type: "POST",
+        url: '../inc/ajax.php?step=Addpost',
+        data: {'cat':cat,'url':url,'post':post,'img':img,'type':type,'time':time},
+        success: function(data){
+         if(data.st == 'error'){
+
+        error_msg('حدث خطأ ما لم يتم النشر ');
+         }else{
+          if(data.Rn < 1){
+           soon_msg('تم اضافة منشورك الاول');
+         }else{
+         success_msg(data.msg);
+          }
+                 Getpost(data.pid);
+         }
+
+
+         $('textarea[name=post]').val("");
+         remove_img_dialog(0,1);
+        remove_video();
+
+          //Getposts();
+         $('.loader').hide();
+        },
+        dataType: 'json'
+      });
+
+  }
+}
+$("#Add_time").click(function(){
+  $('#datepickerhere').focus();
+  });
+
+
  $('select[name=app2]').change(function(){
 var type = $(this).val();
 if(type == 1){$(".app2").show();}else{$(".app2").hide();}

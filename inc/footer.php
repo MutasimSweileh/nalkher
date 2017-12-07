@@ -100,29 +100,6 @@ if(!$id){ ?>
 <script type="text/javascript" src="<?=$St->url?>/assets/js/custom.js"></script>
 <script type="text/javascript" src="<?=$St->url?>/assets/js/ajax.js"></script>
 <script type="text/javascript">
-var dat = null;
- $('#datepickerhere').datepicker({
-    language: 'en',
-    timepicker: true,
-    minDate: new Date(),
-    onHide: function(dp, animationCompleted){
-        if (!animationCompleted) {
-            success_msg(dat);
-        }
-    },
-    onSelect: function(formattedDate, date, inst){
-      dat = formattedDate;
-    }
-
-});
-
-function Dta(){
-   $(".dropdown-button").dropdown("close");
-   $('#datepickerhere').focus();
-   //success_msg("click");
-  }
-</script>
-<script type="text/javascript">
  <?php if($Gapp == "login" && isv("user",1)){  ?>
 goR(null,null,"groups",null,"<?=isv("user",1)?>");
 <?php } if(Sion("type") == "error"){  ?>
