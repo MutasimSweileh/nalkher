@@ -6,7 +6,7 @@ include "inc.php";
 for($i = 0;$i<count($post);$i++){
     $p = $post[$i];
     if($text == $p["text"]){
-     echo "good";
+     Remove("post","where id".$p["id"]);
    }
 
 
