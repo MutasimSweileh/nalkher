@@ -111,7 +111,7 @@ function Dta(){
         startHours = 9;
   var myDatepicker = $('.datepicker-here').datepicker({
       language: 'en',
-      timepicker: true,
+      timepicker: true
       //startDate:start,
   }).data('datepicker');
   myDatepicker.show();
