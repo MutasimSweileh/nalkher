@@ -92,7 +92,7 @@ if(!$id){ ?>
 <script type="text/javascript" src="<?=$St->url?>/assets/js/youtube.js"></script>
 <script type="text/javascript" src="<?=$St->url?>/assets/js/imgur.min.js"></script>
 <script type="text/javascript" src="<?=$St->url?>/assets/js/Chart.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.js"></script>
+<script type="text/javascript" src="<?=$St->url?>/jquery.fancybox.min.js"></script>
 <script type="text/javascript" src="<?=$St->url?>/assets/js/jquery-confirm.js"></script>
 <script type="text/javascript" src="<?=$St->url?>/assets/js/custom.js"></script>
 <script type="text/javascript" src="<?=$St->url?>/assets/js/ajax.js"></script>
@@ -140,4 +140,3 @@ goR(null,null,"groups",null,"<?=isv("user",1)?>");
 <?php
 mysqli_close($DBcon);
 ?>
-

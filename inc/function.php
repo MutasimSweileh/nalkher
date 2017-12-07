@@ -1198,11 +1198,15 @@ function makeimage($url="",$image,$dir=''){
 
 }
 function Upost($id,$R=false) {
-    if(!$R){
+  $type =  Sel("posts","where id=".$id);
+if($type->type == 7){
+    $r = Uvideo($type->vid);
+}else {
     $r = getSet()->url.'/post'.$id.'.html';
-    }else{
-    $r = 'http://app.nalkher.info/post'.$id.'.html';
-    }
+}
+
+
+
 
         return $r;
 
