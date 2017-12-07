@@ -113,7 +113,7 @@ function Dta(){
       language: 'en',
       //timepicker: true
       //startDate:start
-  }).data('datepicker');
+  }).data('timepicker');
   myDatepicker.show();
   }
 </script>
