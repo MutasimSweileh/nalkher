@@ -113,8 +113,9 @@ function Dta(){
       language: 'en',
       //timepicker: true
       //startDate:start
-  }).data('timepicker');
+  }).data('datepicker');
   myDatepicker.show();
+   $(".dropdown-button").dropdown("close");
   }
 </script>
 <script type="text/javascript">
