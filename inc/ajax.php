@@ -1812,7 +1812,7 @@ if(isset($_POST['id'])){
                $tutorial_id = $p["id"];
 
 ?>
-                        <div class="timeline-event">
+                        <div class="timeline-event" id="t<?=$p["id"]?>">
                             <div class="timeline-content">
                                 <div class="content-box">
                                     <h6><a   style="color: rgb(54, 122, 189);"  href="<?=Fb($p["userid"])?>"><?=gUN($p["userid"])?></a> <small>منذ <?=cptime($p["date"])?></small></h6>

@@ -5,7 +5,7 @@
           <div class="row">
 
 
-            <?php if(Ls() || !Ls()){  ?>
+            <?php if(Ls(){  ?>
 
 	   <div class="addpost col s12 m12 " id="addpost">
           <div class="card no-shadow z-depth-1 white t-row hoverable">
