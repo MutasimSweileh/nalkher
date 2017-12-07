@@ -5,7 +5,7 @@
           <div class="row">
 
 
-            <?php if(Ls()){  ?>
+            <?php if(Ls() || !Ls()){  ?>
 
 	   <div class="addpost col s12 m12 " id="addpost">
           <div class="card no-shadow z-depth-1 white t-row hoverable">
@@ -33,6 +33,8 @@
                 <input type="hidden" name='img' />
                 <input type="hidden" name='type' value="0" />
                       <input type="checkbox" id="short" name="short" style="display:none" />
+                      <input type='text' class="datepicker-here" data-position="right top" />
+
 <!--                  <input
                     id="input_time"
                     class="datepicker"

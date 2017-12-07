@@ -87,7 +87,6 @@ if(!$id){ ?>
 <?php } ?>
 <script type="text/javascript" src="<?=$St->url?>/assets/js/jquery.min.js"></script>
 <script type="text/javascript" src="<?=$St->url?>/assets/js/materialize.js"></script>
-<!--<script type="text/javascript" src="<?=$St->url?>/assets/js/lightbox.js"></script> -->
 <script type="text/javascript" src="<?=$St->url?>/assets/js/sweetalert.min.js"></script>
 <script type="text/javascript" src="<?=$St->url?>/assets/js/toastr.min.js"></script>
 <script type="text/javascript" src="<?=$St->url?>/assets/js/mara.min.js"></script>
@@ -101,7 +100,10 @@ if(!$id){ ?>
 <script type="text/javascript" src="<?=$St->url?>/assets/js/custom.js"></script>
 <script type="text/javascript" src="<?=$St->url?>/assets/js/ajax.js"></script>
 <script type="text/javascript">
-$('#Add_time').datepicker({
+function Dta(){
+myDatepicker.show();
+  }
+var myDatepicker = $('.datepicker-here').datepicker({
     language: 'en',
     onShow: function(dp, animationCompleted){
         if (!animationCompleted) {
