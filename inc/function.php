@@ -337,8 +337,17 @@ return facebook_username(Sel('admin')->fb);
 function Tw($id=0){
     return "https://www.twitter.com/".$id;
 }
-function more($tutorial_id,$SAll,$showLimit){
+function more($tutorial_id,$SAll,$showLimit,$home){
 if($SAll > $showLimit){
+ if($home){
+ $r = '<div class="timeline-milestone more" id="show_more_main'.$tutorial_id.'" >
+                   <a id="'.$tutorial_id.'" class="btn waves-effect waves-light  z-depth-2  show_more"    data-position="buttom" data-tooltip="تحميل المزيد من المنشورات" >
+                            <span class="icon_more" ><i class="fa fa-refresh "></i> عرض المزيد</span>
+                              <span class="loding" style="display:none">  <img style="width: 25px;height: 25px;    margin: 6px;" src="../assets/images/spin.svg" alt="" />   </span>
+                     </a>
+                   </div>';
+
+ }else{
              $r = '   <div style="margin-bottom: 12px;" class="col  s12 m12  center" id="show_more_main'.$tutorial_id.'">
                  <a id="'.$tutorial_id.'" class="btn waves-effect waves-light  z-depth-2  show_more" alt=""   data-position="buttom" data-tooltip="تحميل المزيد من المنشورات" data-tooltip-id="ed472c81-cc4c-1ce6-956d-2ac9b8acd67b">
             <span class="loding" style="display:none">  <img style="width: 25px;height: 25px;    margin: 6px;" src="../assets/images/spin.svg" alt="" />   </span>
@@ -346,7 +355,8 @@ if($SAll > $showLimit){
 
                  </a>
 
- </div>';
+ </div>';        }
+
  }else{
      $r = false;
  }

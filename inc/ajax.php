@@ -1796,140 +1796,60 @@ if($post){
      header("Location: ../");
      }
  }else if($_GET['step'] == 'Moreposts'){
-  if($dir) {
+
 if(isset($_POST['id'])){
-         $showLimit = 4;
-         $SAll= Num('posts',"WHERE id < ".$_POST['id']." ORDER BY id DESC");
+          $showLimit = 4;
           $post= getUser('posts',"WHERE id < ".$_POST['id']." ORDER BY id DESC LIMIT ".$showLimit);
           }else if(isset($_POST['pid'])){
-         $SAll= Num('posts',"WHERE id=".$_POST['pid']." ");
           $post= getUser('posts',"WHERE id=".$_POST['pid']." ");
           }else{
          $showLimit = $St->numposts;
-         $SAll= Num('posts'," ORDER BY id DESC");
-     $post= getUser('posts'," ORDER BY id DESC LIMIT ".$showLimit);
-
+         $post= getUser('posts'," ORDER BY id DESC LIMIT ".$showLimit);
           }
           if($post){
          for($i=0;$i < count($post);$i++){
              $p = $post[$i];
                $tutorial_id = $p["id"];
-             $Su =Selaa($appsql,' where user_id='.$p['userid']);
-              if(empty($Su['name'])){
-               $Su['name'] = $St->title;
-              }
-                  if($i == ceil(count($post)/2)  and !empty($St->post_ad) or $i == ceil(count($post)/2)  and !empty($St->admin_name)){
-          ?>
-     <?php if(!empty($St->post_ad)){  ?>
 
-                  <div class="col  s12 m6 z-depth-1 white t-row hoverable" style="  /*  position: static;*/" id="t<?=$tutorial_id?>">
-                            <div class="card no-shadow" style="    margin: 0;">
-            <div class="card-content" style="text-align: center;">
-       <?=$St->post_ad?>
-          </div>
-          </div>
-                    <div class="icon-column z-depth-1">
-          <i class="fa fa-adn fa-lg tooltipped"  data-position="bottom" data-delay="50" data-tooltip="اعلان" aria-hidden="true"></i>
-          </div>
-          </div>
-     <?php }
-
- } ?>
-
-             <div class="col s12 m6 z-depth-1 white t-row hoverable" id="t<?=$tutorial_id?>">
-          <div class="card no-shadow">
-
-            <div class="card-content <?php if($p['type']  != 1 and $p['type']  != 4 and $p['type']  != 7){ ?> valign-wrapper <?php } ?>" style="    direction: rtl;">
-            <?php  if($p['type']  == 2 or $p['type']  == 5){
-
-           if(!strpos($p['link'],'imgur')){
-         $p['link'] = '../'.$p['link']; }
-             ?>
-                  <div class="profile-image">
-                 <a href="<?=Lurll($p['type'],$p['id'])?>"> <img src="<?=$p['link']?>" class="circle responsive-img z-depth-1" alt=""> </a>
-                </div>
-                <?php } ?>
-                <div class="textLine right-align ">
-                    <a href="<?php if($p['type'] == 0 or $p['type'] == 2 or $p['type'] == 5){echo Lurll($p['type'],$p['id']);}else{echo $p['link'];}?>"> <?=html_entity_decode(stripslashes(str_replace('\n',' ',limit_str($p['text'],20))))?>  </a>
-              <?php if($p['quran'] == 1){ echo ' ['.$p['suraName'].' : '.$p['VerseID'].']';}      ?>
-             </div>
-                                 <?php if($p['type']  == 1 or $p['type']  == 4 or $p['type']  == 7){ ?>
-
-          <div>   <a href="<?=$p['link']?>" target="_blank" class="truncate left-align" > <?=$p['link']?> </a> </div>
-
-                <?php } ?>
-				</div>
-            <div class="card-action center" dir="rtl">
-              <div class="date col s8"><a  style="    margin: 0px; " href="#" class="blue-text"><?=limit_str($Su['name'],2)?></a> ❖ <pp><?=cptime($p['date'])?><pp></div>
-              <div class="share col s4">
- <?php
- $date = date_create($p['time_share']);
- if($p['userid'] != userid){
-if($p['active'] == 0){
-   echo "<pp style='    color: #ee6e73;'>باانتظار المراجعه</pp>"  ;
-}else{
-echo  "<pp style='    color: #4caf50;'>تمت المراجعه</pp>" ;
-}
-}else{
-if($p['time'] == 1 and $p['Tsend'] == 0){
-   echo date('g:i A', $p['time_share'])." <pp style='    display: inline-block;'> : بالانتظار</pp>";
-}else if($p['time'] == 0){
-   echo date('g:i A', $p['date'])." <pp style='    display: inline-block;'> : تم النشر</pp>";
-}else{
-   echo date('g:i A', $p['time_share'])." <pp style='    display: inline-block;'> : تم النشر</pp>";
-}
-
-
-}
 ?>
-
-<!--              <div class="col s2">
-<button class='btn  waves-effect waves-light ' href='#'><i class="material-icons">add</i></button>
-</div>-->
-            </div>
-             <div class=" center col s12 m12 waves-effect waves-light footer-post" id="footer-post">
-                             <a class="tooltipped " onclick="fb_share(<?=$p['id']?>);"  data-position="bottom" data-delay="50" data-tooltip="نشر على فيس بوك"><i class="fa fa-facebook-square fa-lg " aria-hidden="true"></i></a>
-                <a class="tooltipped" onclick="tw_share(<?=$p['id']?>);" data-position="bottom" data-delay="50" data-tooltip="نشر على تويتر"><i class="fa fa-twitter-square fa-lg" aria-hidden="true"></i></a>
-                <a class="tooltipped" onclick="add_time(<?=$p['id']?>);" data-tooltip="النشر لاحقا" data-tooltip-id="ed472c81-cc4c-1ce6-956d-2ac9b8acd67b"><i class="fa fa-calendar-plus-o  fa-lg" aria-hidden="true"></i></a>
-                         <?php if(Ls('admin') and  $p['active'] == 0 or Ls('demo')  and  $p['active'] == 0){ ?>    <a  class="tooltipped" onclick="A_post(<?=$p['id']?>);" data-tooltip="الموافقه على المنشور" data-tooltip-id="ed472c81-cc4c-1ce6-956d-2ac9b8acd67b"><i class="fa fa-check-circle-o fa-lg" aria-hidden="true"></i></a>     <?php  } ?>
-                         <?php if(Ls('admin')  and  $p['active'] == 0 or Ls('demo') and  $p['active'] == 0){ ?>    <a  class="tooltipped" onclick="Aa_post(<?=$p['id']?>);" data-tooltip="الموافقه على المنشور" data-tooltip-id="ed472c81-cc4c-1ce6-956d-2ac9b8acd67b"><i class="fa fa-check-circle fa-lg" aria-hidden="true"></i></a>     <?php  } ?>
-
-            <?php if(Ls('admin') or Ls('demo') or $p['userid'] == $userid){ ?>    <a  class="tooltipped" onclick="E_post(<?=$p['id']?>);" data-tooltip="تعديل المنشور" data-tooltip-id="ed472c81-cc4c-1ce6-956d-2ac9b8acd67b"><i class="fa fa-pencil-square-o fa-lg" aria-hidden="true"></i></a>     <?php  } ?>
-            <?php if(Ls('admin') or Ls('demo') or $p['userid'] == $userid){ ?>    <a  class="tooltipped" onclick="re(<?=$p['id']?>);" data-tooltip="حذف  المنشور" data-tooltip-id="ed472c81-cc4c-1ce6-956d-2ac9b8acd67b"><i class="fa fa-times fa-lg" aria-hidden="true"></i></a>     <?php  } ?>
-            <?php if($p['time'] == 1){ ?>    <a  class="tooltipped" onclick="" data-tooltip="<?=date('g:i A', $p['time_share'])?>" data-tooltip-id="ed472c81-cc4c-1ce6-956d-2ac9b8acd67b"><i class="fa fa-clock-o fa-lg" aria-hidden="true"></i></a>     <?php  } ?>
-            <?php if(Ls('admin')  or Ls('demo')){ ?> <a  class="waves-effect waves-light" onclick="msg(<?=$p['userid']?>)" id="<?=$Sb['id']?>" ><i class="fa fa-commenting-o fa-lg" aria-hidden="true"></i></a>
-   <a  class="tooltipped" onclick="fb_post(<?=$p['id']?>)" data-tooltip="نشر الان" data-tooltip-id="ed472c81-cc4c-1ce6-956d-2ac9b8acd67b"><i class="fa fa-send fa-lg" aria-hidden="true"></i></a>     <?php  } ?>
-            <?php if(Ls('admin') or Ls('demo')){ ?>
-                                                   <?php if($Su['block'] == 0){ ?>
-                                                 <a class="waves-effect waves-light" onclick="ban(<?=$Su['id']?>)" id="<?=$Sb['id']?>" ><i class="fa fa-ban fa-lg " aria-hidden="true"></i></a>
-                                                <?php }else{?>
-                                                 <a class="waves-effect waves-light" onclick="unban(<?=$Su['id']?>)" id="<?=$Sb['id']?>" ><i class="fa fa-check-circle-o fa-lg " aria-hidden="true"></i></a>
-
-                                                <?php }?>
-
-                 <?php  } ?>
-
-            </div>
-            </div>
-          </div>
-          <div class="icon-column z-depth-1">
-             <a href="<?=Fb($p['userid'])?>" target="_blank">     <img src="<?=FBImg($p['userid'])?>" class="circle responsive-img z-depth-1 tooltipped"  data-position="bottom" data-delay="50" data-tooltip="<?=$Su['name']?>"  alt=""></a>
-          </div>
-        </div>
+                        <div class="timeline-event">
+                            <div class="timeline-content">
+                                <div class="content-box">
+                                    <h6><a   style="color: rgb(54, 122, 189);"  href="<?=Fb($p["userid"])?>"><?=gUN($p["userid"])?></a> <small>منذ <?=cptime($p["date"])?></small></h6>
+                                    <p>
+                                    <a href="<?=Upost($p["id"])?>"><?=str_replace(PHP_EOL,"<br />",$p["text"])?></a>
+                                    </p>
+                                    <?php if($p["type"] == 6){  ?>
+                                    <div class="center">
+                                      <a href="<?=$p["link"]?>" data-fancybox="gallery"  data-caption="<?=$p["text"]?>" ><img  src="<?=$p["link"]?>" alt="<?=str_replace(PHP_EOL,"<br />",$p["text"])?>"></a>
+                                         </div>
+                                   <?php } ?>
+                <div class=" center col s12 m12 waves-effect waves-light footer-post" id="footer-post">
+                <a class="tooltipped " onclick="fb_share(<?=$p["id"]?>);" data-position="bottom" data-delay="50" data-tooltip="نشر على فيس بوك" data-tooltip-id="dec616b6-8b6f-d718-4544-d66cab426144"><i class="fa fa-facebook-square fa-lg " aria-hidden="true"></i></a>
+                <a class="tooltipped" onclick="tw_share(<?=$p["id"]?>);" data-position="bottom" data-delay="50" data-tooltip="نشر على تويتر" data-tooltip-id="c32808bc-f1e8-8a51-08ed-6306fdbeb1a0"><i class="fa fa-twitter-square fa-lg" aria-hidden="true"></i></a>
+                <a class="tooltipped" onclick="add_time(<?=$p["id"]?>);" data-tooltip="النشر لاحقا" data-tooltip-id="1aa94471-f19c-fe35-732a-c09de0255a85"><i class="fa fa-calendar-plus-o  fa-lg" aria-hidden="true"></i></a>
+            <?php if(Ls()){ ?>
+                <a class="tooltipped" onclick="E_post(<?=$p["id"]?>);" data-tooltip="تعديل المنشور" data-tooltip-id="436c2da2-1018-1a41-64b5-3dbbdf83849e"><i class="fa fa-pencil-square-o fa-lg" aria-hidden="true"></i></a>
+                <a class="tooltipped" onclick="re(<?=$p["id"]?>);" data-tooltip="حذف  المنشور" data-tooltip-id="5d060d71-09d0-da52-66b2-b3016e295d6f"><i class="fa fa-times fa-lg" aria-hidden="true"></i></a>
+                <a class="waves-effect waves-light" onclick="ban()" id=""><i class="fa fa-ban fa-lg " aria-hidden="true"></i></a>
+            <?php } ?>
+           </div>
+                 <div class="clear"></div>
+                                </div>
+                            </div>
+                            <div class="timeline-badge timeline-badge1 white-text">
+                               <img src="<?=FbImg($p["userid"])?>" width="60" height="60" class="circle hoverable responsive-img z-depth-1 tooltipped" alt="" data-position="top" data-tooltip="<?=gUN($p["userid"])?>" >
+                            </div>
 
 
-        <!-- DIVIDER  START-->
+                        </div>
 
-       <!--   <div class="clearfix"></div> -->
-          <!-- DIVIDER END -->
-          <?php   } }else{ echo NotFound();} if(!isset($_POST['pid'])){ echo more($tutorial_id,Num('posts',"where id <".$tutorial_id),4);} ?>
+          <?php   } }else{ echo NotFound(); } if(!isset($_POST['pid'])){ echo more($tutorial_id,Num('posts',"where id <".$tutorial_id),4,true);} ?>
 <script type="text/javascript">
  toda ();
 </script>
 <?php
-    }else{
-     header("Location: ../");
-     }
+
 
   }else if($_GET['step'] == 'users'){
   if($dir) {
