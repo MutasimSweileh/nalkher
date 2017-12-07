@@ -1819,11 +1819,11 @@ if(isset($_POST['id'])){
                                     <p>
                                     <a href="<?=Upost($p["id"])?>"><?=str_replace(PHP_EOL,"<br />",$p["text"])?></a>
                                     </p>
-                                    <?php if($p["type"] == 6){  ?>
+                                    <?php if($p["type"] == 2 or $p["type"] == 5 or $p["type"] == 6){  ?>
                                     <div class="center">
                                       <a href="<?=$p["link"]?>" data-fancybox="gallery"  data-caption="<?=$p["text"]?>" ><img  src="<?=$p["link"]?>" alt="<?=str_replace(PHP_EOL,"<br />",$p["text"])?>"></a>
                                          </div>
-                                   <?php }else if($p["type"] == 2 || $p["type"] == 7){ ?>
+                                   <?php }else if($p["type"] == 1 || $p["type"] == 7){ ?>
                                      <div class="right-align">
                                        <a href="<?=$p["link"]?>" ><?=$p["link"]?></a>
                                           </div>
