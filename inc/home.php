@@ -241,7 +241,7 @@
                         <div class="timeline-milestone">
                             <span class="milestone-title white-text">الخط الزمنى للمنشورات</span>
                         </div>
-                <?php  $post = getUser("posts"," order by id desc limit 5 ");
+                <?php  $post = getUser("posts"," order by id desc limit ".$St->numposts);
                 for($i = 0;$i<count($post);$i++){
                     $p = $post[$i];
                   ?>
@@ -281,29 +281,10 @@
 
 
 
-
+                     <div class="timeline-milestone more" >
+                            <span class="btn white-text"><i class="fa fa-refresh "></i> عرض المزيد</span>
+                        </div>
 
                     </div>
                 </div>
             </div>
-<section class="large-list" style="display: none">
-        <div class="containerr">
-            <a href="#">
-                <div class="list color-5 col-lg-2 col-md-4 col-sm-6 col-xs-6">
-                    <i class="fa fa-user"></i>
-                </div>
-            </a>
-            <a href="#">
-                <div class="list color-4 col-lg-2 col-md-4 col-sm-6 col-xs-6">
-                    <i class="fa fa-diamond"></i>
-                </div>
-            </a>
-            <a href="#">
-                <div class="list color-3 col-lg-2 col-lg-2 col-md-4 col-sm-6 col-xs-6">
-                    <i class="fa fa-life-ring"></i>
-                </div>
-            </a>
-
-        </div><!-- End container -->
-        <div class="clearfix"></div>
-    </section>

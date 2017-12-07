@@ -91,6 +91,12 @@ a{
 .timeline-page .timeline .timeline-milestone{
         background-color: #b02e67;
 }
+.timeline-page .timeline .more::after{
+    width: 0px;
+}
+.timeline-page .timeline .more::after{
+    background-color: #33222a00;
+}
 .timeline .milestone-title{
         background-color: rgba(0,0,0,0.1);
 }
