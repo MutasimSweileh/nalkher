@@ -1597,7 +1597,7 @@ if(!$ad['id']){ $e = $ad['error']['message']; }
         echo json_encode( array('st'=>'ok','pid'=>$id,'you'=>$vvideo,'R'=>$R,'Rn'=>$Rn,'msg'=>'تم نشر المنشور بنجاح'));
 
         }else{
-            echo json_encode( array('st'=>'error','msg'=>'حدث خطأ ما لم يتم النشر'));
+            echo json_encode( array('st'=>'error','msg'=>$e));
         }
 
         }else{
