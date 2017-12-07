@@ -100,11 +100,14 @@ if(!$id){ ?>
 <script type="text/javascript" src="<?=$St->url?>/assets/js/custom.js"></script>
 <script type="text/javascript" src="<?=$St->url?>/assets/js/ajax.js"></script>
 <script type="text/javascript">
+/*
 var myDatepicker = $('.datepicker-here').datepicker({
     language: 'en'
 });
+*/
 function Dta(){
-myDatepicker.show();
+  var myDatepicker = $('.datepicker-here').datepicker().data('datepicker');
+  myDatepicker.show();
   }
 </script>
 <script type="text/javascript">
