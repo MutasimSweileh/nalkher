@@ -1,5 +1,5 @@
 <?php
-include "head.php";
+include "inc.php";
 $nofooter = true;
 
 
