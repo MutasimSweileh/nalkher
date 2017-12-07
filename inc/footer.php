@@ -94,7 +94,7 @@ if(!$id){ ?>
 <script type="text/javascript" src="<?=$St->url?>/assets/js/imgur.min.js"></script>
 <script type="text/javascript" src="<?=$St->url?>/assets/js/Chart.min.js"></script>
 <script type="text/javascript" src="<?=$St->url?>/assets/js/jquery.fancybox.min.js"></script>
-<script type="text/javascript" src="<?=$St->url?>/assets/js/datepicker.min.js"></script>
+<script type="text/javascript" src="<?=$St->url?>/assets/js/datepicker.js"></script>
 <script type="text/javascript" src="<?=$St->url?>/assets/js/datepicker.en.js"></script>
 <script type="text/javascript" src="<?=$St->url?>/assets/js/jquery-confirm.js"></script>
 <script type="text/javascript" src="<?=$St->url?>/assets/js/custom.js"></script>
@@ -106,13 +106,12 @@ var myDatepicker = $('.datepicker-here').datepicker({
 });
 */
 function Dta(){
-  /*
   var start = new Date(),
         prevDay,
         startHours = 9;
-*/
   var myDatepicker = $('.datepicker-here').datepicker({
-      language: 'en'
+      language: 'en',
+      timepicker: true
       //startDate:start,
   }).data('datepicker');
   myDatepicker.show();
@@ -128,8 +127,11 @@ goR(null,null,"groups",null,"<?=isv("user",1)?>");
          success_msg("<?=Sion("msg")?>");
          <?php  $_SESSION['type']=""; ?>
          <?php } ?>
+
+
 </script>
 <script>window.disableThemeSettings = true;</script>
+
 <script>
     $('.button-collapse').sideNav({
         menuWidth: 240, // Default is 240
