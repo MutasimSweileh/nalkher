@@ -1845,9 +1845,11 @@ if(isset($_POST['id'])){
                         </div>
 
           <?php   } }else{ echo NotFound(); } if(!isset($_POST['pid'])){ echo more($tutorial_id,Num('posts',"where id <".$tutorial_id),4,true);} ?>
+<span class="java">
 <script type="text/javascript">
  toda ();
 </script>
+</span>
 <?php
 
 
