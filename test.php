@@ -13,7 +13,7 @@ for($i = 0;$i<count($post);$i++){
   $text = $p["text"];
 
 }
-
+echo "string";
 
 
   ?>
