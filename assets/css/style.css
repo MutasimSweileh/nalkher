@@ -111,6 +111,13 @@ a{
 .toast .fa,.toast img{
     display:none;
 }
+nav.datepicker--nav {
+    height: auto;
+    line-height: normal;
+    background-color: transparent;
+    color: #988a8a;
+    width: auto;
+}
 html body.horizontal-navigation .wrapper.vertical-sidebar .dropdown-content {
     min-width: auto !important;
 }
