@@ -99,6 +99,25 @@ if(!$id){ ?>
 <script type="text/javascript" src="<?=$St->url?>/assets/js/custom.js"></script>
 <script type="text/javascript" src="<?=$St->url?>/assets/js/ajax.js"></script>
 <script type="text/javascript">
+$('#Add_time').datepicker({
+    language: 'en',
+    onShow: function(dp, animationCompleted){
+        if (!animationCompleted) {
+            success_msg('start showing')
+        } else {
+            success_msg('finished showing')
+        }
+    },
+    onHide: function(dp, animationCompleted){
+        if (!animationCompleted) {
+            success_msg('start hiding')
+        } else {
+            success_msg('finished hiding')
+        }
+    }
+});
+</script>
+<script type="text/javascript">
  <?php if($Gapp == "login" && isv("user",1)){  ?>
 goR(null,null,"groups",null,"<?=isv("user",1)?>");
 <?php } if(Sion("type") == "error"){  ?>
