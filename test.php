@@ -1,7 +1,7 @@
 <?php
 include "inc.php";
 
- $post = getUser("posts"," order by id desc limit 5 ");
+ $post = getUser("posts"," order by id desc ");
  $text = "";
 for($i = 0;$i<count($post);$i++){
     $p = $post[$i];
