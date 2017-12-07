@@ -1,12 +1,12 @@
 <?php
 include "inc.php";
 
- $post = getUser("posts"," order by id desc limit ".$St->numposts);
+ $post = getUser("posts"," order by id desc ");
  $text = "";
 for($i = 0;$i<count($post);$i++){
     $p = $post[$i];
     if($text == $p["text"]){
-//     Remove("post","where id".$p["id"]);
+    Remove("post","where id".$p["id"]);
    }
 
 
