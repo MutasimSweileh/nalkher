@@ -106,8 +106,13 @@ var myDatepicker = $('.datepicker-here').datepicker({
 });
 */
 function Dta(){
+  var start = new Date(),
+        prevDay,
+        startHours = 9;
   var myDatepicker = $('.datepicker-here').datepicker({
-      language: 'en'
+      language: 'en',
+      timepicker: true,
+      //startDate:start,
   }).data('datepicker');
   myDatepicker.show();
   }
