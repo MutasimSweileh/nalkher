@@ -11,6 +11,7 @@
 @import url(imgur.min.css);
 @import url(jquery-confirm.css);
 @import url(jquery.fancybox.min.css);
+@import url(datepicker.min.css);
 /*@import url(flaticon/flaticon.css);*/
 *,p{
 font-family: 'Droid Arabic Naskh' , serif;
@@ -130,7 +131,7 @@ html body.horizontal-navigation .wrapper.vertical-sidebar .dropdown-content {
     left: inherit;
 }
 .timeline-full .timeline-page .timeline .timeline-event:nth-child(odd) .timeline-content .content-box::after {
-    background: #fff url(/images/timeline_item_content_l.png) no-repeat;
+    background: #fff url(../images/timeline_item_content_l.png) no-repeat;
     background-size: 100% 100%;
 }
 .timeline-full .timeline-page .timeline .timeline-event:nth-child(even) .timeline-content .content-box::before, .timeline-full .timeline-page .timeline .timeline-event:nth-child(even) .timeline-content .content-box::after {
@@ -138,7 +139,7 @@ html body.horizontal-navigation .wrapper.vertical-sidebar .dropdown-content {
 }
 
 .timeline-full  .timeline-page .timeline .timeline-event:nth-child(even) .timeline-content .content-box::after {
-    background: #fff url(/images/timeline_item_content_l.png) no-repeat;
+    background: #fff url(../images/timeline_item_content_l.png) no-repeat;
     background-size: 100% 100%;
 }
 .timeline-full  .timeline-page .timeline .timeline-event:nth-child(odd) .timeline-content {

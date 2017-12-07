@@ -93,6 +93,8 @@ if(!$id){ ?>
 <script type="text/javascript" src="<?=$St->url?>/assets/js/imgur.min.js"></script>
 <script type="text/javascript" src="<?=$St->url?>/assets/js/Chart.min.js"></script>
 <script type="text/javascript" src="<?=$St->url?>/jquery.fancybox.min.js"></script>
+<script type="text/javascript" src="<?=$St->url?>/datepicker.min.js"></script>
+<script type="text/javascript" src="<?=$St->url?>/datepicker.en.js"></script>
 <script type="text/javascript" src="<?=$St->url?>/assets/js/jquery-confirm.js"></script>
 <script type="text/javascript" src="<?=$St->url?>/assets/js/custom.js"></script>
 <script type="text/javascript" src="<?=$St->url?>/assets/js/ajax.js"></script>
