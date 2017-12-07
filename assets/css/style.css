@@ -10,7 +10,7 @@
 @import url(sweetalert.css);
 @import url(imgur.min.css);
 @import url(jquery-confirm.css);
-@import url(https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.css);
+@import url(jquery.fancybox.min.css);
 /*@import url(flaticon/flaticon.css);*/
 *,p{
 font-family: 'Droid Arabic Naskh' , serif;
