@@ -110,7 +110,7 @@ var start = new Date(),
 });
 
 function Dta(){
-   $('#datepickerhere').trigger('click');
+   $('#datepickerhere').focus();
    $(".dropdown-button").dropdown("close");
    success_msg("click");
   }
