@@ -1807,7 +1807,7 @@ if(isset($_POST['id'])){
          $post= getUser('posts'," ORDER BY id DESC LIMIT ".$showLimit);
           }
           if($post){
-         for($i=0;$i < count($post);$i++){
+         for($i=0;$i<count($post);$i++){
              $p = $post[$i];
                $tutorial_id = $p["id"];
 

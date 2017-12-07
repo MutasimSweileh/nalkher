@@ -805,7 +805,7 @@ if (!$col){
         $Add = mysqli_query($DBcon,$sql);
         if($Add)
         {
-        $id=  mysqli_insert_id();
+        $id=  mysqli_insert_id($DBcon);
         return $id;
         }else{
                 return FALSE;
