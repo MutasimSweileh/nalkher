@@ -33,12 +33,7 @@
                 <input type="hidden" name='img' />
                 <input type="hidden" name='type' value="0" />
                       <input type="checkbox" id="short" name="short" style="display:none" />
-                      <input type='text'           data-user-datetime-format="d M, Y H:i"
-                                                   data-date-format="dd M, yyyy"
-                                                   data-time-format="hh:ii"
-                                                   data-min-date="2017-12-07T13:31:14-06:00"
-                                                   data-start-date="2017-12-07T13:31:14-06:00"
-  id="datepickerhere"  style="height: 0;margin: 0;margin-bottom: 0;margin-top: 0;border: 0;" />
+                      <input type='text' id="datepickerhere"  style="height: 0;margin: 0;margin-bottom: 0;margin-top: 0;border: 0;" />
 
 <!--                  <input
                     id="input_time"
