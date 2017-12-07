@@ -1,8 +1,9 @@
+<?php if(!$nofooter){ ?>
   </div>
 <div class="clear"></div>
 
+<?php if($Gapp != "login"  ){ ?>
 </main>
-<?php if($Gapp != "login" && !$nofooter ){ ?>
 
 
 <div class="page-footer foot4 col offset-s1 s11 m12" style="font-weight: bold;">
@@ -83,6 +84,7 @@ if(!$id){ ?>
 <input type="hidden"  name="utitle" value="<?=base64_encode($title)?>"/>
 <input type="hidden"  name="Ytoken" value="<?php if(Fcol('google_id')[1]){ echo base64_encode(Sion('Ytoken')); }else{ echo 1; }  ?>"/>
 <div class="dropzone" style="display: none;"></div>
+<?php } ?>
 <script type="text/javascript" src="<?=$St->url?>/assets/js/jquery.min.js"></script>
 <script type="text/javascript" src="<?=$St->url?>/assets/js/materialize.js"></script>
 <!--<script type="text/javascript" src="<?=$St->url?>/assets/js/lightbox.js"></script> -->
