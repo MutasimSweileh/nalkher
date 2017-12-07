@@ -1,5 +1,5 @@
 <?php
-include "inc.php";
+include "head.php";
 $nofooter = true;
 
 
@@ -9,7 +9,3 @@ $nofooter = true;
   <?php
 include "inc/footer.php";
    ?>
-<script type="text/javascript">
-
-
-</script>
