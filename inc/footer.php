@@ -2,7 +2,7 @@
 <div class="clear"></div>
 
 </main>
-<?php if($Gapp != "login" ){ ?>
+<?php if($Gapp != "login" && !$nofooter ){ ?>
 
 
 <div class="page-footer foot4 col offset-s1 s11 m12" style="font-weight: bold;">

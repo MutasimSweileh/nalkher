@@ -1,19 +1,15 @@
 <?php
 include "inc.php";
-
- $post = getUser("posts"," order by id desc ");
- $text = "";
-for($i = 0;$i<count($post);$i++){
-    $p = $post[$i];
-    if($text == $p["text"]){
-    Remove("posts","where id=".$p["id"]);
-    echo $p["id"]."</br>";
-   }
-  $text = $p["text"];
-
-}
-
-
+$nofooter = true;
 
 
   ?>
+<input id="Add_time" type="text">
+
+  <?php
+include "inc/footer.php";
+   ?>
+<script type="text/javascript">
+
+
+</script>
