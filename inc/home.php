@@ -241,6 +241,7 @@
                         <div class="timeline-milestone">
                             <span class="milestone-title white-text">الخط الزمنى للمنشورات</span>
                         </div>
+                    <div class="posts">
                 <?php  $post = getUser("posts"," order by id desc limit ".$St->numposts);
                 for($i = 0;$i<count($post);$i++){
                     $p = $post[$i];
@@ -285,6 +286,7 @@
                             <span class="btn white-text"><i class="fa fa-refresh "></i> عرض المزيد</span>
                         </div>
 
+                    </div>
                     </div>
                 </div>
             </div>
