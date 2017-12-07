@@ -100,21 +100,23 @@ if(!$id){ ?>
 <script type="text/javascript" src="<?=$St->url?>/assets/js/custom.js"></script>
 <script type="text/javascript" src="<?=$St->url?>/assets/js/ajax.js"></script>
 <script type="text/javascript">
-/*
-var myDatepicker = $('.datepicker-here').datepicker({
-    language: 'en'
+var start = new Date(),
+      prevDay,
+      startHours = 9;
+var myDatepicker = $('#datepickerhere').datepicker({
+    language: 'en',
+    timepicker: true,
+    startDate:start,
 });
-*/
+
 function Dta(){
-  var start = new Date(),
-        prevDay,
-        startHours = 9;
+
   var myDatepicker = $('#datepickerhere').datepicker({
       language: 'en',
       //timepicker: true
       //startDate:start
-  }).data('datepicker');
-  myDatepicker.show();
+    });
+  //myDatepicker.show();
    $(".dropdown-button").dropdown("close");
   }
 </script>
