@@ -1589,6 +1589,7 @@ $id= $SR->id;
                                  }
                           }else{
 $ad =Tpost($type,Sion("id"),$postb,$tags);
+$id= $ad['id'];
 if(!$ad['id']){ $e = $ad['error']['message']; }
                           }
 
@@ -1848,7 +1849,7 @@ if(isset($_POST['id'])){
 
                         </div>
 
-          <?php   } }else{ echo NotFound(); } if(!isset($_POST['pid'])){ echo more($tutorial_id,Num('posts',"where id <".$tutorial_id),4,true);} ?>
+          <?php   } }else{ echo NotFound(); } if(!isv("pid")){ echo more($tutorial_id,Num('posts',"where id <".$tutorial_id),4,true);} ?>
 <span class="java">
 <script type="text/javascript">
  toda ();
