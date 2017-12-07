@@ -242,49 +242,7 @@
                             <span class="milestone-title white-text">الخط الزمنى للمنشورات</span>
                         </div>
                     <div class="posts">
-                <?php  $post = getUser("posts"," order by id desc limit ".$St->numposts);
-                for($i = 0;$i<count($post);$i++){
-                    $p = $post[$i];
-                  ?>
-                        <div class="timeline-event">
-                            <div class="timeline-content">
-                                <div class="content-box">
-                                    <h6><a   style="color: rgb(54, 122, 189);"  href="<?=Fb($p["userid"])?>"><?=gUN($p["userid"])?></a> <small>منذ <?=cptime($p["date"])?></small></h6>
-                                    <p>
-                                    <a href="<?=Upost($p["id"])?>"><?=str_replace(PHP_EOL,"<br />",$p["text"])?></a>
-                                    </p>
-                                    <?php if($p["type"] == 6){  ?>
-                                    <div class="center">
-                                      <a href="<?=$p["link"]?>" data-fancybox="gallery"  data-caption="<?=$p["text"]?>" ><img  src="<?=$p["link"]?>" alt="<?=str_replace(PHP_EOL,"<br />",$p["text"])?>"></a>
-                                         </div>
-                                   <?php } ?>
-                <div class=" center col s12 m12 waves-effect waves-light footer-post" id="footer-post">
-                <a class="tooltipped " onclick="fb_share(<?=$p["id"]?>);" data-position="bottom" data-delay="50" data-tooltip="نشر على فيس بوك" data-tooltip-id="dec616b6-8b6f-d718-4544-d66cab426144"><i class="fa fa-facebook-square fa-lg " aria-hidden="true"></i></a>
-                <a class="tooltipped" onclick="tw_share(<?=$p["id"]?>);" data-position="bottom" data-delay="50" data-tooltip="نشر على تويتر" data-tooltip-id="c32808bc-f1e8-8a51-08ed-6306fdbeb1a0"><i class="fa fa-twitter-square fa-lg" aria-hidden="true"></i></a>
-                <a class="tooltipped" onclick="add_time(<?=$p["id"]?>);" data-tooltip="النشر لاحقا" data-tooltip-id="1aa94471-f19c-fe35-732a-c09de0255a85"><i class="fa fa-calendar-plus-o  fa-lg" aria-hidden="true"></i></a>
-            <?php if(Ls()){ ?>
-                <a class="tooltipped" onclick="E_post(<?=$p["id"]?>);" data-tooltip="تعديل المنشور" data-tooltip-id="436c2da2-1018-1a41-64b5-3dbbdf83849e"><i class="fa fa-pencil-square-o fa-lg" aria-hidden="true"></i></a>
-                <a class="tooltipped" onclick="re(<?=$p["id"]?>);" data-tooltip="حذف  المنشور" data-tooltip-id="5d060d71-09d0-da52-66b2-b3016e295d6f"><i class="fa fa-times fa-lg" aria-hidden="true"></i></a>
-                <a class="waves-effect waves-light" onclick="ban()" id=""><i class="fa fa-ban fa-lg " aria-hidden="true"></i></a>
-            <?php } ?>
-           </div>
-                 <div class="clear"></div>
-                                </div>
-                            </div>
-                            <div class="timeline-badge timeline-badge1 white-text">
-                               <img src="<?=FbImg($p["userid"])?>" width="60" height="60" class="circle hoverable responsive-img z-depth-1 tooltipped" alt="" data-position="top" data-tooltip="<?=gUN($p["userid"])?>" >
-                            </div>
 
-
-                        </div>
-                   <?php } ?>
-
-
-
-
-                     <div class="timeline-milestone more" >
-                            <span class="btn white-text"><i class="fa fa-refresh "></i> عرض المزيد</span>
-                        </div>
 
                     </div>
                     </div>
