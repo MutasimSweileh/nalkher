@@ -111,6 +111,9 @@ a{
 .toast .fa,.toast img{
     display:none;
 }
+.images .card .card-image img  {
+    height: 250px;
+}
 nav.datepicker--nav {
     height: auto;
     line-height: normal;
