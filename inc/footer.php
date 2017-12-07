@@ -110,8 +110,9 @@ var start = new Date(),
 });
 
 function Dta(){
-$('#datepickerhere').click();
+   $('#datepickerhere').trigger('click');
    $(".dropdown-button").dropdown("close");
+   success_msg("click");
   }
 </script>
 <script type="text/javascript">
