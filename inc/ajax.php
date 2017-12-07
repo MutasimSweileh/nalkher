@@ -730,7 +730,7 @@ if($msg or $rmsg or $Nmsg){
 
       );
       $Sql = SqlIn('msg',$i);
-      $mid = mysqli_insert_id();
+      $mid = mysqli_insert_id($DBcon);
      }
                 $da = '<div class="input-field col s12 m12 textfilde"  ><input type="hidden" name="uid" value="'.$id.'" />';
           $da .= '<textarea class="materialize-textarea right-align" name="msg">'. html_entity_decode(stripslashes(str_replace('\n',' ',$text)))  .'</textarea> <label for="linetext-1" >الرساله</label></div>';
@@ -994,7 +994,7 @@ $title = $youtube['title'];
       );
 
       $Sql = SqlIn('video',$i);
-      $vid= mysqli_insert_id();
+      $vid= mysqli_insert_id($DBcon);
 
 $url = Uvideo($vid);
 }
@@ -1017,7 +1017,7 @@ $url = Uvideo($vid);
       );
 
       $Sql = SqlIn('posts',$i);
-      $id= mysqli_insert_id();
+      $id= mysqli_insert_id($DBcon);
      if($Sql){
      $num = 1+ Num("posts","where userid=".$id);
      $D=   UpDate($appsql,'num',$num,"where user_id=".$id);
@@ -1146,7 +1146,7 @@ if($S){
      "active"=>Ls('admin'),
      );
       $Sql = SqlIn('posts',$i);
-     $id = mysqli_insert_id();
+     $id = mysqli_insert_id($DBcon);
 }
  }
 $count= Num($appsql);
@@ -1436,7 +1436,7 @@ $vvideo = $vid;
       );
 
       $Sql = SqlIn('video',$i);
-      $vid= mysqli_insert_id();
+      $vid= mysqli_insert_id($DBcon);
 
 $url = Uvideo($vid);
 }
@@ -1529,7 +1529,7 @@ $nof =1;
       );
 
       $Sql = SqlIn('nof',$i);
-      $id= mysqli_insert_id();
+      $id= mysqli_insert_id($DBcon);
 
   }else if($Stype == 'token'){
 $ttype ='token';
@@ -1563,7 +1563,7 @@ $token =1;
       );
 
       $Sql = SqlIn('posts',$i);
-      $id= mysqli_insert_id();
+      $id= mysqli_insert_id($DBcon);
       }
 }else{
 $SR= Sel('posts'," where text like '%$t%' order by id desc");
