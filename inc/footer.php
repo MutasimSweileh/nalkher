@@ -106,6 +106,7 @@ var start = new Date(),
  $('#datepickerhere').datepicker({
     language: 'en',
     timepicker: true,
+    minDate: new Date()
     //startDate:start,
 });
 
