@@ -123,7 +123,7 @@ if($p['id']){
             <div class="card-action center" style="border:0;padding:10;">
              <div class="post-action center col s12 m12 waves-effect waves-light">
              <div class="info-post col s12 m7  bold">
-<i class="fa fa-clock-o" aria-hidden="true"></i> <?=cptime($p['date'])?>  ❖ <i class="fa fa-pencil-square-o" aria-hidden="true"></i> <a  style="    margin: 0px;    display: inline-block;" href="<?=Fb($p['userid'])?>"  class=""><?=limit_str($Su['name'],3)?> </a>
+<i class="fa fa-clock-o" aria-hidden="true"></i> <?=cptime($p['date'])?>   <i class="fa fa-pencil-square-o" aria-hidden="true"></i> <a  style="    margin: 0px;    display: inline-block;" href="<?=Fb($p['userid'])?>"  class=""><?=limit_str($Su['name'],3)?> </a>
 <?php
 if($view){
 ?>

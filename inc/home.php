@@ -241,7 +241,7 @@
                         <div class="timeline-milestone">
                             <span class="milestone-title white-text">الخط الزمنى للمنشورات</span>
                         </div>
-                <?php  $post = getUser("posts"," order by rand() limit 5 ");
+                <?php  $post = getUser("posts"," order by id desc limit 5 ");
                 for($i = 0;$i<count($post);$i++){
                     $p = $post[$i];
                   ?>
@@ -250,7 +250,7 @@
                                 <div class="content-box">
                                     <h6><a   style="color: rgb(54, 122, 189);"  href="<?=Fb($p["userid"])?>"><?=gUN($p["userid"])?></a> <small>منذ <?=cptime($p["date"])?></small></h6>
                                     <p>
-                                      <?=str_replace(PHP_EOL,"<br />",$p["text"])?>
+                                    <a href="<?=Upost($p["id"])?>"><?=str_replace(PHP_EOL,"<br />",$p["text"])?></a>
                                     </p>
                                     <?php if($p["type"] == 6){  ?>
                                     <div class="center">

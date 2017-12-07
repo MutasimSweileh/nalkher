@@ -49,6 +49,8 @@ include "inc.php";
     <meta content='<?=$St->fb_link?>' property='article:publisher'/>
     <meta content='<?=$St->title?>' property='og:site_name'/>
     <meta content='<?=$description_url?>' property='og:url'/>
+     <meta property="fb:app_id" content="<?=$St->app_id?>">
+    <meta content='<?=Iadmin()?>' property='fb:admins'/>
      <?php
     if(!empty($St->logo)){ ?>
     <meta property="og:image" content="<?=$description_logo?>"/>

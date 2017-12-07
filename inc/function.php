@@ -317,6 +317,26 @@ return $S;
   return $R;
 }
 
+function facebook_username($url='') {
+ if(strpos($url,"profile.php?id=")){
+ return str_replace('profile.php?id=','',substr($url,strpos($url,"profile.php?id=")));
+ }else{
+   $data = explode('/', $url);
+ return $data[3];
+ }
+}
+
+function Iadmin($id=0){
+if(Ls('admin') and $id){
+return facebook_username(Fb($id));
+}else{
+return facebook_username(Sel('admin')->fb);
+}
+
+}
+function Tw($id=0){
+    return "https://www.twitter.com/".$id;
+}
 function more($tutorial_id,$SAll,$showLimit){
 if($SAll > $showLimit){
              $r = '   <div style="margin-bottom: 12px;" class="col  s12 m12  center" id="show_more_main'.$tutorial_id.'">
