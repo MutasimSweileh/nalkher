@@ -100,14 +100,20 @@ if(!$id){ ?>
 <script type="text/javascript" src="<?=$St->url?>/assets/js/custom.js"></script>
 <script type="text/javascript" src="<?=$St->url?>/assets/js/ajax.js"></script>
 <script type="text/javascript">
-var start = new Date(),
-      prevDay,
-      startHours = 9;
+var dat = null;
  $('#datepickerhere').datepicker({
     language: 'en',
     timepicker: true,
-    minDate: new Date()
-    //startDate:start,
+    minDate: new Date(),
+    onHide: function(dp, animationCompleted){
+        if (!animationCompleted) {
+            success_msg(dat);
+        }
+    },
+    onSelect: function(formattedDate, date, inst){
+      dat = formattedDate;
+    }
+
 });
 
 function Dta(){
