@@ -101,7 +101,7 @@ if($p['id']){
                 <?php } if(!$Iv and $p['type'] != 2 and $p['type'] != 5){ ?>
 
                 <div class="textLin">
-            <p> <?=html_entity_decode(stripslashes(str_replace('\n','<br>',$p['text'])));?>  </p>
+            <p><?=str_replace(PHP_EOL,"<br />",$p["text"])?></p>
                 </div>
 
                <?php } if($p['type']  == 1 or $p['type']  == 4){ ?>
