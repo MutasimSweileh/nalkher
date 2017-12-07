@@ -1823,7 +1823,11 @@ if(isset($_POST['id'])){
                                     <div class="center">
                                       <a href="<?=$p["link"]?>" data-fancybox="gallery"  data-caption="<?=$p["text"]?>" ><img  src="<?=$p["link"]?>" alt="<?=str_replace(PHP_EOL,"<br />",$p["text"])?>"></a>
                                          </div>
-                                   <?php } ?>
+                                   <?php }else if($p["type"] == 2 || $p["type"] == 7){ ?>
+                                     <div class="align-right">
+                                       <a href="<?=$p["link"]?>" ><?=$p["link"]?></a>
+                                          </div>
+                                  <?php } ?>
                 <div class=" center col s12 m12 waves-effect waves-light footer-post" id="footer-post">
                 <a class="tooltipped " onclick="fb_share(<?=$p["id"]?>);" data-position="bottom" data-delay="50" data-tooltip="نشر على فيس بوك" data-tooltip-id="dec616b6-8b6f-d718-4544-d66cab426144"><i class="fa fa-facebook-square fa-lg " aria-hidden="true"></i></a>
                 <a class="tooltipped" onclick="tw_share(<?=$p["id"]?>);" data-position="bottom" data-delay="50" data-tooltip="نشر على تويتر" data-tooltip-id="c32808bc-f1e8-8a51-08ed-6306fdbeb1a0"><i class="fa fa-twitter-square fa-lg" aria-hidden="true"></i></a>
