@@ -1821,6 +1821,7 @@ $('.pposts').load('../inc/ajax.php?step='+ Gtype );
             data:{'id':ID,'Gapp':Gapp,'Gtype':Gtype,'type':type,'app':app},
             success:function(html){
                 $('#show_more_main'+ID).remove();
+                $('.java').remove();
                 $('.users').append(html);
                 $('.gshare').append(html);
                 $('.posts').append(html);
