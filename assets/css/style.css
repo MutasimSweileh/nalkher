@@ -94,7 +94,7 @@ a{
 .timeline-page .timeline .more::after{
     width: 0px;
 }
-.timeline-page .timeline .more::after{
+.timeline-page .timeline .more{
     background-color: #33222a00;
 }
 .timeline .milestone-title{
