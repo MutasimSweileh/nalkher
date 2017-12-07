@@ -128,11 +128,8 @@ goR(null,null,"groups",null,"<?=isv("user",1)?>");
          success_msg("<?=Sion("msg")?>");
          <?php  $_SESSION['type']=""; ?>
          <?php } ?>
-
-
 </script>
 <script>window.disableThemeSettings = true;</script>
-
 <script>
     $('.button-collapse').sideNav({
         menuWidth: 240, // Default is 240
