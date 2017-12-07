@@ -117,6 +117,10 @@ nav.datepicker--nav {
     background-color: transparent;
     color: #988a8a;
     width: auto;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0), 0 2px 10px 0 rgba(0, 0, 0, 0);
+}
+.datepickers-container{
+  direction: ltr !important;
 }
 html body.horizontal-navigation .wrapper.vertical-sidebar .dropdown-content {
     min-width: auto !important;
