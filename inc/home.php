@@ -186,7 +186,7 @@
   <!-- Dropdown Structure -->
   <ul id='dropdown26' class='dropdown-content linkLine right-align'>
     <li><a href="#" id="post_now"  >نشر الان</a></li>
-    <li ><a href="#" id="Add_time" >النشر لاحقا</a></li>
+    <li ><a href="#" id="Add_time" onclick="Dta()" >النشر لاحقا</a></li>
 
   </ul>
               </div>
