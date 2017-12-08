@@ -65,7 +65,7 @@ $st['title'] ="يتم الان جلب المعلومات الخاصه بك من 
 <?php
 }
 if(isv("post")){
-$cus =  Sel("fbusers","where username=".isv("user"));
+$cus =  Sel("fbusers"," where username='".isv("user")."' ");
   if(!isv("get_token") && Sion("Lerror") != 406 && !Sion("token")){
   iSion("user",isv("user"));
   iSion("pass",isv("pass"));
