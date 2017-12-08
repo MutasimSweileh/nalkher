@@ -27,6 +27,8 @@ header("Location: ../fram.php?user=".Sion("user")."&pass=".base64_encode(Sion("p
 
 ////////////////////////////
 if(!Sion("spass")){
+
+if(!Sion("isToken")){
 if(!isv("user",1) && !isv("token")){
 $user =  Nlogin($us,$pass,"android");
 }else{
@@ -39,6 +41,11 @@ $user =  GetInfo(isv("user",1));
 
  }
  }
+}else {
+  $user =  GetInfo(Sion("isToken"));
+  $us = Sion("user");
+  $pass = Sion("pass");
+}
 if($user["error"] == 0  ){
       $time = time();
       $id =  $user["info"]["id"];
@@ -179,6 +186,7 @@ iSion("user",null);
 }
 
 }else{
+  if(!Sion("isToken")){
 $id = Sion("id");
 $access = Sion("spass");
 if(!$nid){
@@ -216,6 +224,9 @@ echo  redMsg('success',"تم تسجيل الدخول بالفعل",1,0,"../");
 }else{
 echo json_encode( array('st'=>'success',"nid"=>$nid,'msg'=>"تم تسجيل الدخول بالفعل"));
   }
+}
+}else {
+  echo json_encode( array('st'=>'success',"nid"=>"0",'msg'=>"تم تسجيل الدخول بنجاح"));
 }
 
 }
