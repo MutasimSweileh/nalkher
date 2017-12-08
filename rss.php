@@ -63,6 +63,7 @@ UpDate('share',"video_msg",$post->id);
 }
 UpDate($po,"msg",1,' where id='.$post->id);
 UpDate($po,"send",1,' where id='.$post->id);
+NotToken();
 }
 if($St->zapier == 1 || isv("msg",1)){
 $s = Sel("share");

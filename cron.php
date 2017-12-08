@@ -51,6 +51,7 @@ if(isv("post")  && $St->zapier == 0){
            if(!$ad['id']) {
            $e = $ad['error']['message'];
             //rtoken();
+            NotToken();
             if(isv("msg"))
             echo $e."<br>";
             }else{
@@ -101,6 +102,7 @@ if(isv("post")  && $St->zapier == 0){
            $e = $ad['error']['message'];
           //echo $e."<br>";
              // rtoken();
+             NotToken();
             }else{
           // echo $ad['id'];
           //Qurani.Nalkher/?ref=bookmarks

@@ -849,6 +849,13 @@ function isv($is='',$a=false){
 }
 return false;
 }
+function NotToken(){
+  if(!Ctoken(getSet()->token)){
+  UpDate("settings","zapier",1);
+}else{
+  UpDate("settings","zapier",0);
+}
+}
 function rtoken(){
     if(!Ctoken(getSet()->token)){
 $user = "mohtasm.sawilh";
