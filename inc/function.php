@@ -860,7 +860,7 @@ function Cinst($tb,$arm,$wr){
 if(Sel($tb,$wr)){
 $sq= UpDate($tp,$arm,false,$wr);
 }else{
-$sq = SqlIn($tb,$arm);
+$sq = SqlIn($tb,$arm,true);
 }
 return $sq;
 }
