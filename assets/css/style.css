@@ -114,6 +114,12 @@ a{
 .images .card .card-image img  {
     height: 250px;
 }
+.datepicker.-from-bottom-{
+  display: none;
+}
+.datepicker .active{
+  display: block !important;
+}
 nav.datepicker--nav {
     height: auto;
     line-height: normal;
