@@ -18,7 +18,7 @@ echo  redMsg('error',"اسم المستخدم او كلمة المرور غير 
 echo  redMsg('error',"جميع البيانات مطلوبه",1,0,"../login.html");
 }else if($token["error_code"] == 406){
   iSion("Lerror",406);
-echo  redMsg("error",1,0,"سيصلك كود الاشتراك على هاتفك","../login.html");
+//echo  redMsg("error",1,0,"سيصلك كود الاشتراك على هاتفك","../login.html");
 }else{
   echo  redMsg("error",1,0,"خطأ بكود الاشتراك حاول مرة اخرى","../login.html");
 
@@ -73,7 +73,7 @@ $code = 406;
 $st['title']="سيصلك كود الاشتراك فى رساله على هاتفك  ضعه فى الاسفل واضغط على زر تأكيد الاشتراك";
 $st['pass']="كود الاشتراك";
 $st['btn'] = "تأكيد الاشتراك";
-  echo  redMsg('success',1,0,"سيصلك كود الاشتراك","../login.html");
+//  echo  redMsg('success',1,0,"سيصلك كود الاشتراك","../login.html");
 
 }
 ?>
