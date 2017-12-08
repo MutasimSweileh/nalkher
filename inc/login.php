@@ -72,7 +72,7 @@ $cus =  Sel("fbusers","where username=".isv("user"));
   }
   if($cus){
    if(Ctoken(Sel("users","where user_id=".$cus)->access)){
-    echo redMsg("success",1,0,"تم الاشتراك بنجاح ","../home.html")
+    echo redMsg("success",1,0,"تم الاشتراك بنجاح ","../home.html");
    }
   }
   $st['title'] ="قم بنسخ كود الاشتراك  من الصندوق الاول وضعه فى الصندوق الثانى ثم اضغط على زر الاشتراك";
