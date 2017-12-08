@@ -374,7 +374,7 @@ background:rgba(255,255,255,0.65)
 .row {
     margin-bottom: 0px;
 }
-logo-icon{
+.logo-icon{
   display: none;
 }
 [dir="rtl"] .navbar nav ul a.drop-down-profile {
@@ -382,7 +382,7 @@ logo-icon{
      margin-left: 0px;
 }
   @media (max-width: 600px){
-    logo-icon{
+    .logo-icon{
       display: none;
     }
 .timeline-page .timeline .timeline-event::after {
