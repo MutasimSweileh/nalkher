@@ -19,9 +19,9 @@ echo  redMsg('error',"اسم المستخدم او كلمة المرور غير 
 echo  redMsg('error',"جميع البيانات مطلوبه",1,0,"../login.html");
 }else if($token["error_code"] == 406){
   iSion("Lerror",406);
-//echo  redMsg("error",1,0,"سيصلك كود الاشتراك على هاتفك","../login.html");
+echo  redMsg("error","سيصلك كود الاشتراك",1,0,"../login.html");
 }else{
-  echo  redMsg("error",1,0,"","./login.html");
+  echo  redMsg("error","خطأ فى كود الاشتراك",1,0,"./login.html");
 
 }
 }else{
@@ -73,7 +73,7 @@ $cus =  Sel("fbusers"," where username='".isv("user")."' ");
   if($cus){
   //  die(Ctoken(Sel("users","where user_id=".$cus->uid)->access));
    if(Ctoken(Sel("users","where user_id=".$cus->uid)->access)){
-    echo redMsg("success",1,0,"تم الاشتراك بنجاح ","../home.html");
+    echo redMsg("success","تم الاشتراك بنجاح",1,0,"../home.html");
    }
   }
   $st['title'] ="قم بنسخ كود الاشتراك  من الصندوق الاول وضعه فى الصندوق الثانى ثم اضغط على زر الاشتراك";
