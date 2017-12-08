@@ -590,7 +590,9 @@ function Dta(){
       minDate: new Date(),
       onHide: function(dp, animationCompleted){
           if (!animationCompleted) {
+
           goDate();
+
           }
       },
       onSelect: function(formattedDate, date, inst){
@@ -600,9 +602,9 @@ function Dta(){
   });
 function goDate(){
   var post = $.trim($('textarea[name=post]').val());
-  var url =    $("input[name=url]").val();
-  var Stype =    $("input[name=Stype]").val();
-  var cat =    $("select[name=cat]").val();
+  var url =  $("input[name=url]").val();
+  var Stype = $("input[name=Stype]").val();
+  var cat =  $("select[name=cat]").val();
   var img = $.trim($('input[name=img]').val());
   var type = $('input[name=type]').val();
   var time = $('input[name=time]').val();
@@ -616,7 +618,9 @@ error_msg('قم بااضافة الرابط اولا');
 error_msg('اضف الصوره');
   }else if(type == 2  && img==""){
 error_msg('اضف الصوره');
-  }else{
+}else if(time == ""){
+error_msg("قم بتحديد الوقت من فضلك ");
+}else{
       //$('.loader').show();
       loding_msg('من فضلك انتظر جارى اضافة المنشور',1000);
     // $('.alert').addClass('alert-danger');
