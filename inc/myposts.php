@@ -1,9 +1,3 @@
-<?php
- if(!defined('MyConst')) {
-header("Location: ../");
-}
-?>
-  <div class="container">
     <div class="row" >
 
 			<div class="col s12 m12" >
@@ -41,6 +35,5 @@ header("Location: ../");
  </div>
  </div>
 
-</div>
 
 
