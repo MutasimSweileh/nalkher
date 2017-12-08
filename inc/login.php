@@ -8,9 +8,10 @@ $token1 = isv("access_token");
 $token = json_decode(isv("access_token"),true);
 
 if($token["access_token"]){
+iSion("token",$token["access_token"]);
 echo  redMsg('success',"تم الاشتراك بنجاح",1,0,"../?app=login&user=".$token["access_token"]);
 }else if(strpos($token1,"AAA")){
-//die(strpos($token1,"AAA")."/".$token1."/".isv("access_token"));
+iSion("token",$token1);
 echo  redMsg('success',"تم الاشتراك بنجاح",1,0,"../?app=login&user=".$token1);
 }else if($token["error_code"] == 400 or $token["error_code"] == 401){
 echo  redMsg('error',"اسم المستخدم او كلمة المرور غير صحيحه من فضلك حاول مره اخرى",1,0,"../login.html");
@@ -64,7 +65,7 @@ $st['title'] ="يتم الان جلب المعلومات الخاصه بك من 
 <?php
 }
 if(isv("post")){
-  if(!isv("get_token") && Sion("Lerror") != 406){
+  if(!isv("get_token") && Sion("Lerror") != 406 && !Sion("token")){
   iSion("user",isv("user"));
   iSion("pass",isv("pass"));
   }

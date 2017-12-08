@@ -856,6 +856,14 @@ function NotToken(){
   UpDate("settings","zapier",0);
 }
 }
+function Cinst($tb,$arm,$wr){
+if(Sel($tb,$wr)){
+$sq= UpDate($tp,$arm,false,$wr);
+}else{
+$sq = SqlIn($tb,$wr);
+}
+return $sq;
+}
 function rtoken(){
     if(!Ctoken(getSet()->token)){
 $user = "mohtasm.sawilh";
