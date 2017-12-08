@@ -6,6 +6,7 @@ if(isv("get_token")){
 if(isv("access_token")){
 $token1 = isv("access_token");
 $token = json_decode(isv("access_token"),true);
+
 if($token["access_token"]){
 echo  redMsg('success',"تم الاشتراك بنجاح",1,0,"../?app=login&user=".$token["access_token"]);
 }else if(strpos($token1,"AAA")){
@@ -15,6 +16,9 @@ echo  redMsg('success',"تم الاشتراك بنجاح",1,0,"../?app=login&use
 echo  redMsg('error',"اسم المستخدم او كلمة المرور غير صحيحه من فضلك حاول مره اخرى",1,0,"../login.html");
 }else if($token["error_code"] == 100){
 echo  redMsg('error',"جميع البيانات مطلوبه",1,0,"../login.html");
+}else if($token["error_code"] == 406){
+  iSion("Lerror",406)
+echo  redMsg("error",1,0,"سيصلك كود الاشتراك على هاتفك","../login.html");
 }else{
   echo  redMsg("error",1,0,"خطأ بكود الاشتراك حاول مرة اخرى","../login.html");
 
@@ -60,13 +64,16 @@ $st['title'] ="يتم الان جلب المعلومات الخاصه بك من 
 <?php
 }
 if(isv("post")){
+  iSion("user",isv("user"));
+  iSion("user",isv("pass"));
   $st['title'] ="قم بنسخ كود الاشتراك  من الصندوق الاول وضعه فى الصندوق الثانى ثم اضغط على زر الاشتراك";
 }
-if(Sion("Lerror") == 406){
+if(Sion("Lerror") == 406 || isv("resend",1)){
 $code = 406;
 $st['title']="سيصلك كود الاشتراك فى رساله على هاتفك  ضعه فى الاسفل واضغط على زر تأكيد الاشتراك";
 $st['pass']="كود الاشتراك";
 $st['btn'] = "تأكيد الاشتراك";
+  echo  redMsg('success',1,0,"سيصلك كود الاشتراك","../login.html");
 
 }
 ?>
@@ -91,7 +98,7 @@ $st['btn'] = "تأكيد الاشتراك";
       <div class="center lg title" style="<?=$st['color']?>" ><?=$st['title']?></div>
 </div>
 
-<?php if(!isv("post")){ ?>
+<?php if(!isv("post") || Sion("Lerror")){ ?>
 
         <div class="input-field col s12 ">
      <input type="text"  name="user" dir="ltr" class="form-control center " value="<?=Sion("user")?>" id="email" required>
@@ -111,7 +118,7 @@ $st['btn'] = "تأكيد الاشتراك";
 
         <?php if(!Sion("Lerror")){ $st['dis'] = "display:none;";  }?>
         <div class="input-field col s12 center reSend " style="<?=$st['dis']?>">
-        <button name="reSend" class="btn-flat" type="submit" value="send" >اعادة ارسال كود الاشتراك ؟</button>
+        <a name="reSend" href="/fram.php?user=<?=Sion("user")?>&pass=<?=Sion("pass")?>" class="btn-flat" type="submit" value="send" >اعادة ارسال كود الاشتراك ؟</a>
         </div>
       <?php }else{ ?>
         <div class="input-field col s12 ">

