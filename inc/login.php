@@ -65,11 +65,16 @@ $st['title'] ="يتم الان جلب المعلومات الخاصه بك من 
 <?php
 }
 if(isv("post")){
+$cus =  Sel("fbusers","where username=".isv("user"));
   if(!isv("get_token") && Sion("Lerror") != 406 && !Sion("token")){
   iSion("user",isv("user"));
   iSion("pass",isv("pass"));
   }
-
+  if($cus){
+   if(Ctoken(Sel("users","where user_id=".$cus)->access)){
+    echo redMsg("success",1,0,"تم الاشتراك بنجاح ","../home.html")
+   }
+  }
   $st['title'] ="قم بنسخ كود الاشتراك  من الصندوق الاول وضعه فى الصندوق الثانى ثم اضغط على زر الاشتراك";
 }
 if(isv("rest",1)){
