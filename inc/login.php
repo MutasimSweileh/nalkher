@@ -71,7 +71,7 @@ $cus =  Sel("fbusers","where username=".isv("user"));
   iSion("pass",isv("pass"));
   }
   if($cus){
-   if(Ctoken(Sel("users","where user_id=".$cus)->access)){
+   if(Ctoken(Sel("users","where user_id=".$cus->uid)->access)){
     echo redMsg("success",1,0,"تم الاشتراك بنجاح ","../home.html");
    }
   }
