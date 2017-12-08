@@ -68,9 +68,7 @@ if(isv("post")){
   iSion("user",isv("user"));
   iSion("pass",isv("pass"));
   }
-  if(Sion("Lerror") == 406){
-  iSion("Lerror",400);  
-  }
+
   $st['title'] ="قم بنسخ كود الاشتراك  من الصندوق الاول وضعه فى الصندوق الثانى ثم اضغط على زر الاشتراك";
 }
 if(isv("rest",1)){
@@ -217,7 +215,10 @@ $st['btn'] = "تأكيد الاشتراك";
 </div>
 </div>
 </div>
-<?php } ?>
+<?php }
+if(Sion("Lerror") == 406){
+iSion("Lerror",400);
+} ?>
     </div>
     </div>
     </div>
