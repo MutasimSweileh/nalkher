@@ -246,7 +246,10 @@
                             <span class="milestone-title white-text">الخط الزمنى للمنشورات</span>
                         </div>
                     <div class="posts">
-
+                      <div class="col s12 m12" style=" text-align:center;">
+                            
+                            <img src="/assets/images/ripple.svg" alt="" />
+                      </div>
 
                     </div>
                     </div>
