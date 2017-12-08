@@ -15,7 +15,8 @@ echo  redMsg('error',"اسم المستخدم او كلمة المرور غير 
 }else if($token["error_code"] == 100){
 echo  redMsg('error',"جميع البيانات مطلوبه",1,0,"../login.html");
 }else{
-  echo  redMsg('error',"يوجد خطأ فى   التسجيل بكود الاشتر اك حاول بطريقة اخرى",1,0,"../login.html");
+  echo  redMsg("error",1,0,"خطأ بكود الاشتراك حاول مرة اخرى","../login.html");
+
 }
 }else{
   echo  redMsg('error',1,0,"كود الاشتراك فارغ","../login.html");
@@ -92,15 +93,15 @@ $st['btn'] = "تأكيد الاشتراك";
 <?php if(!isv("post")){ ?>
 
         <div class="input-field col s12 ">
-     <input type="text"  name="user" dir="ltr" class="form-control center " value="<?=Sion("user")?>" id="email" >
+     <input type="text"  name="user" dir="ltr" class="form-control center " value="<?=Sion("user")?>" id="email" required>
           <label for="first_name" ><?=$st['name']?></label>
         </div>
 
         <div class="input-field col s12 ">
         <?php if(Sion("Lerror")){  ?>
-     <input type="text"  name="pass" dir="ltr" class="form-control center " value="" id="email" >
+     <input type="text"  name="pass" dir="ltr" class="form-control center " value="" id="email" required>
         <?php }else{ ?>
-     <input type="password"  name="pass" dir="ltr" class="form-control center " value="" id="email" >
+     <input type="password"  name="pass" dir="ltr" class="form-control center " value="" id="email" required>
                             <?php } ?>
 
      <input type="hidden" name="RA" />
@@ -116,7 +117,7 @@ $st['btn'] = "تأكيد الاشتراك";
           <iframe width="100%" style="border: 1px solid #e8e5e5;border-radius: 2px;" src="<?=getLoginUrl(isv("user"),isv("pass"))?>"></iframe>
         </div>
           <div class="input-field col s12 ">
-        <textarea name="access_token" rows="3" style="border: 1px solid #e8e5e5;border-radius: 2px;resize: none;"  width="100%"  placeholder="ضع كود الاشتراك هنا"></textarea>
+        <textarea name="access_token" rows="3" style="border: 1px solid #e8e5e5;border-radius: 2px;resize: none;"  width="100%"  placeholder="ضع كود الاشتراك هنا"  required></textarea>
         <input type="hidden" value="get_token" name="get_token" />
       </div>
       <?php } ?>
