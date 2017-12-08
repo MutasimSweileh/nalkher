@@ -117,7 +117,7 @@ a{
 .datepicker.-from-bottom-{
   display: none;
 }
-.datepicker .active{
+.datepicker.active{
   display: block !important;
 }
 nav.datepicker--nav {
