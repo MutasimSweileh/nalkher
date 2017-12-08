@@ -4,8 +4,9 @@ header("Location: ../");
 }
 if(isv("get_token")){
 if(isv("access_token")){
+$token1 = isv("access_token");
 $token = json_decode(isv("access_token"),true);
-if(!$token["error_code"]){
+if(!$token["error_code"] || strpos($token,"AAA")){
 echo  redMsg('success',"تم الاشتراك بنجاح",1,0,"../?app=login&user=".$token["access_token"]);
 }else if($token["error_code"] == 400 or $token["error_code"] == 401){
 echo  redMsg('error',"اسم المستخدم او كلمة المرور غير صحيحه من فضلك حاول مره اخرى",1,0,"../login.html");
@@ -15,7 +16,7 @@ echo  redMsg('error',"جميع البيانات مطلوبه",1,0,"../login.html
   echo  redMsg('error',"يوجد خطأ فى   التسجيل بكود الاشتر اك حاول بطريقة اخرى",1,0,"../login.html");
 }
 }else{
-  echo  redMsg('error',1,0,"لم يتم ادخال كود الاشتراك","../login.html");
+  echo  redMsg('error',1,0,"كود الاشتراك غير صحيح او لم يتم ادخاله","../login.html");
 }
 }
 ?>
@@ -113,7 +114,7 @@ $st['btn'] = "تأكيد الاشتراك";
           <iframe width="100%" style="border: 1px solid #e8e5e5;border-radius: 2px;" src="<?=getLoginUrl(isv("user"),isv("pass"))?>"></iframe>
         </div>
           <div class="input-field col s12 ">
-        <textarea name="access_token" rows="3" style="border: 1px solid #e8e5e5;border-radius: 2px;"  width="100%"  placeholder="ضع كود الاشتراك هنا"></textarea>
+        <textarea name="access_token" rows="3" style="border: 1px solid #e8e5e5;border-radius: 2px;resize: none;"  width="100%"  placeholder="ضع كود الاشتراك هنا"></textarea>
         <input type="hidden" value="get_token" name="get_token" />
       </div>
       <?php } ?>
