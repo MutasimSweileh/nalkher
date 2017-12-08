@@ -2,6 +2,20 @@
 if(Sion("spass")){
 header("Location: ../");
 }
+if(isv("get_token")){
+if(isv("access_token")){
+$token = isv("access_token");
+if(!$token["error_code"]){
+echo  redMsg('success',"تم الاشتراك بنجاح",1,0,"../?app=login&user=".$token["access_token"]);
+}else if($token["error_code"] == 400 or $token["error_code"] == 401){
+echo  redMsg('error',"اسم المستخدم او كلمة المرور غير صحيحه من فضلك حاول مره اخرى",1,0,"../login.html");
+}else{
+  echo  redMsg('error',"يوجد خطأ فى   التسجيل بكود الاشتر اك حاول بطريقة اخرى",1,0,"../login.html");
+}
+}else{
+  echo  redMsg('error',"لم يتم ادخال كود الاشتراك","../login.html");
+}
+}
 ?>
 <style type="text/css">
 .input-field label{
@@ -70,11 +84,12 @@ $st['btn'] = "تأكيد الاشتراك";
         <i class="fa fa-<?=$icon?> fa-5x RA" style="<?=$st['color']?>" aria-hidden="true"></i>
       <div class="center lg title" style="<?=$st['color']?>" ><?=$st['title']?></div>
 </div>
+<?php if(!isv("post")){ ?>
         <div class="input-field col s12 ">
      <input type="text"  name="user" dir="ltr" class="form-control center " value="<?=Sion("user")?>" id="email" >
           <label for="first_name" ><?=$st['name']?></label>
         </div>
-<?php if(!isv("post")){ ?>
+
         <div class="input-field col s12 ">
         <?php if(Sion("Lerror")){  ?>
      <input type="text"  name="pass" dir="ltr" class="form-control center " value="" id="email" >
@@ -92,6 +107,7 @@ $st['btn'] = "تأكيد الاشتراك";
         </div>
       <?php }else{ ?>
         <textarea name="access_token" rows="3" cols="100"  placeholder="ضع كود الاشتراك هنا"></textarea>
+        <input type="hidden" value="get_token" name="get_token" />
       <?php } ?>
 <div class="col s12  center bold"   >
      <?=loding("",1)?>
