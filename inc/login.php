@@ -20,7 +20,7 @@ echo  redMsg('error',"جميع البيانات مطلوبه",1,0,"../login.html
   iSion("Lerror",406);
 //echo  redMsg("error",1,0,"سيصلك كود الاشتراك على هاتفك","../login.html");
 }else{
-  echo  redMsg("error",1,0,"خطأ بكود الاشتراك حاول مرة اخرى","../login.html");
+  echo  redMsg("error",1,0,"","./login.html");
 
 }
 }else{
@@ -63,9 +63,11 @@ $st['title'] ="يتم الان جلب المعلومات الخاصه بك من 
 </style>
 <?php
 }
-if(isv("post") && !Sion("Lerror")){
+if(isv("post")){
+  if(!isv("get_token")){
   iSion("user",isv("user"));
   iSion("pass",isv("pass"));
+  }
   $st['title'] ="قم بنسخ كود الاشتراك  من الصندوق الاول وضعه فى الصندوق الثانى ثم اضغط على زر الاشتراك";
 }
 if(isv("rest",1)){

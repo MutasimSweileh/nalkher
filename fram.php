@@ -11,5 +11,5 @@ $pass = base64_decode($_GET["pass"]);
 </script>
 
 <?php }else{ ?>
-
+header("Location: ../login.html");
 <?php } ?>
