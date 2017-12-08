@@ -1,27 +1,16 @@
 <?php
-session_start();
-require_once('inc/config.php');
-include 'inc/function.php';
-$St = getSet();
+include 'inc.php';
 define('CONSUMER_KEY',$St->tw_id);
 define('CONSUMER_SECRET', $St->tw_key);
-require_once('src/oauth/twitteroauth.php');
-if(1==1){
 if (isset($_REQUEST['oauth_token']) && $_SESSION['oauth_token'] !== $_REQUEST['oauth_token']) {
   $_SESSION['oauth_status'] = 'oldtoken';
   header('Location: /');
 }
-adf($app['end'],2);
 $connection = new TwitterOAuth(CONSUMER_KEY, CONSUMER_SECRET, $_SESSION['oauth_token'], $_SESSION['oauth_token_secret']);
 $access_token = $connection->getAccessToken($_REQUEST['oauth_verifier']);
-//save new access tocken array in session
 $_SESSION['access_token'] = $access_token;
- // Let's get the user's info
-
 $user_info = $connection->get('account/verify_credentials');
-
     if (isset($user_info->error)) {
-        // Something's wrong, go back to square 1
         header('Location: /');
     } else {
       $access_token_oauth_token = $_SESSION['access_token']['oauth_token'] ;
@@ -86,13 +75,4 @@ if(getCookie("url") != ""){
 
         }
     }
-   }
-/*
-if (200 == $connection->http_code) {
-  $_SESSION['status'] = 'verified';
-  header('Location: ./index.php');
-} else {
-  header('Location: ./destroysessions.php');
-}
-*/
 ?>

@@ -1442,6 +1442,31 @@ function AddGP($type,$uid,$name,$pid,$tp="HTC")
         }
 
     }
+    function checkUser($uid, $oauth_provider, $username,$email,$twitter_otoken,$twitter_otoken_secret,$access_token_oauth_token,$access_token_oauth_token_secret,$screen_name)
+    	{
+    	     $data=time();
+           global $DBcon;
+            $query = mysqli_query($DBcon,"SELECT * FROM `users_tw` WHERE oauth_uid = '$uid' and oauth_provider = '$oauth_provider'") or die(mysqli_error($DBcon));
+        if($query){
+            $result = mysqli_fetch_array($query);
+            if (!empty($result)) {
+                # User is already present
+
+
+              $query = mysqli_query($DBcon,"UPDATE `users_tw` SET `send` = '1',`data` = '$data',`twitter_oauth_token` = '$twitter_otoken',`twitter_oauth_token_secret` = '$twitter_otoken_secret',`accessToken` = '$access_token_oauth_token',`accessTokenSecret` = '$access_token_oauth_token_secret' WHERE  oauth_uid = '$uid' and oauth_provider = '$oauth_provider'") or die(mysqli_error($DBcon));
+            } else {
+                #user not present. Insert a new Record
+                $query = mysqli_query($DBcon,"INSERT INTO `users_tw` (send,data,oauth_provider, oauth_uid, username,email,twitter_oauth_token,twitter_oauth_token_secret,accessToken,accessTokenSecret,screen_name) VALUES ('1','$data','$oauth_provider', $uid, '$username','$email','$twitter_otoken','$twitter_otoken_secret','$access_token_oauth_token','$access_token_oauth_token_secret','$screen_name')") or die(mysqli_error($DBcon));
+                $query = mysqli_query($DBcon,"SELECT * FROM `users_tw` WHERE oauth_uid = '$uid' and oauth_provider = '$oauth_provider'");
+                $result = mysqli_fetch_array($query);
+                return $result;
+            }
+            return $result;
+            }else{
+            return false;
+
+            }
+        }
 function AddGF($type,$id,$uid,$name)
 	{
 	  	 global   $DBcon  ;
