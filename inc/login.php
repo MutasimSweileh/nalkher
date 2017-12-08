@@ -64,7 +64,7 @@ $st['title'] ="يتم الان جلب المعلومات الخاصه بك من 
 <?php
 }
 if(isv("post")){
-  if(!isv("get_token") && Sion("Lerror") != 400){
+  if(!isv("get_token") && Sion("Lerror") != 406){
   iSion("user",isv("user"));
   iSion("pass",isv("pass"));
   }
@@ -107,7 +107,6 @@ $st['btn'] = "تأكيد الاشتراك";
 </div>
 
 <?php if(!isv("post") || Sion("Lerror") == 406){
-iSion("Lerror",400);
   ?>
 
         <div class="input-field col s12 ">
