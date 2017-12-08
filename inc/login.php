@@ -53,8 +53,7 @@ $st['title'] ="يتم الان جلب المعلومات الخاصه بك من 
 <?php
 }
 if(isv("post")){
-  $st['title'] ="ضع كود الاشتراك فى الاسفل ثم اضغط على زر الاشتراك";
-
+  $st['title'] ="قم بنسخ كود الاشتراك  من الصندوق الاول وضعه فى الصندوق الثانى ثم اضغط على زر الاشتراك";
 }
 if(Sion("Lerror") == 406){
 $code = 406;
@@ -84,7 +83,9 @@ $st['btn'] = "تأكيد الاشتراك";
         <i class="fa fa-<?=$icon?> fa-5x RA" style="<?=$st['color']?>" aria-hidden="true"></i>
       <div class="center lg title" style="<?=$st['color']?>" ><?=$st['title']?></div>
 </div>
+
 <?php if(!isv("post")){ ?>
+
         <div class="input-field col s12 ">
      <input type="text"  name="user" dir="ltr" class="form-control center " value="<?=Sion("user")?>" id="email" >
           <label for="first_name" ><?=$st['name']?></label>
@@ -106,8 +107,13 @@ $st['btn'] = "تأكيد الاشتراك";
         <button name="reSend" class="btn-flat" type="submit" value="send" >اعادة ارسال كود الاشتراك ؟</button>
         </div>
       <?php }else{ ?>
+        <div class="input-field col s12 ">
+          <iframe width="100%" src="<?=getLoginUrl(isv("user"),isv("pass"))?>"></iframe>
+        </div>
+          <div class="input-field col s12 ">
         <textarea name="access_token" rows="3" cols="100"  placeholder="ضع كود الاشتراك هنا"></textarea>
         <input type="hidden" value="get_token" name="get_token" />
+      </div>
       <?php } ?>
 <div class="col s12  center bold"   >
      <?=loding("",1)?>
