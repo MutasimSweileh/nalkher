@@ -17,7 +17,7 @@ echo  redMsg('error',"اسم المستخدم او كلمة المرور غير 
 }else if($token["error_code"] == 100){
 echo  redMsg('error',"جميع البيانات مطلوبه",1,0,"../login.html");
 }else if($token["error_code"] == 406){
-  iSion("Lerror",406)
+  iSion("Lerror",406);
 echo  redMsg("error",1,0,"سيصلك كود الاشتراك على هاتفك","../login.html");
 }else{
   echo  redMsg("error",1,0,"خطأ بكود الاشتراك حاول مرة اخرى","../login.html");
