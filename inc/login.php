@@ -116,7 +116,7 @@ iSion("Lerror",400);
         </div>
 
         <div class="input-field col s12 ">
-        <?php if(Sion("Lerror")){  ?>
+        <?php if(Sion("Lerror") == 406){  ?>
      <input type="text"  name="pass" dir="ltr" class="form-control center " value="" id="email" required>
         <?php }else{ ?>
      <input type="password"  name="pass" dir="ltr" class="form-control center " value="" id="email" required>
@@ -126,7 +126,7 @@ iSion("Lerror",400);
           <label for="first_pass"  class="pass active" ><?=$st['pass']?></label>
         </div>
 
-        <?php if(!Sion("Lerror")){ $st['dis'] = "display:none;";  }?>
+        <?php if(Sion("Lerror") == 406 ){ $st['dis'] = "display:none;";  }?>
         <div class="input-field col s12 center reSend " style="<?=$st['dis']?>">
         <a name="reSend" href="/fram.php?user=<?=Sion("user")?>&pass=<?=base64_encode(Sion("pass"))?>" class="btn-flat" type="submit" value="send" >اعادة ارسال كود الاشتراك ؟</a>
         <a name="reSend" href="/?app=login&rest=true" class="btn-flat"  >العودة الى تسجيل الدخول</a>
