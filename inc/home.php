@@ -221,13 +221,14 @@
                                             <h5 class="card-title left"><i class="fa fa-info-circle" aria-hidden="true"></i></h5>
                                             <div>
                                                 <p class="font19"><?=$St->description?></p>
-                                                <p class="right-align">
+                                                <p class="right">
                                                 <a   class="btn-floating btn waves-effect waves-light  tooltipped" data-position="top" data-tooltip="اشتراك فيس بوك" href="/login.html"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-                                                <a   class="btn-floating btn waves-effect waves-light tooltipped" data-position="top" data-tooltip="اشتراك تويتر"  href="/login.html"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                                                <a   class="btn-floating btn waves-effect waves-light tooltipped" data-position="top" data-tooltip="اشتراك تويتر"  href="/twitter.html"><i class="fa fa-twitter" aria-hidden="true"></i></a>
 
                                                 </p>
                                             </div>
                                         </div>
+                                        <div class="clear" ></div>
                                     </div>
                                 </div>
                                 </div>
