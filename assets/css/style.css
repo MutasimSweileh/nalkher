@@ -375,7 +375,7 @@ background:rgba(255,255,255,0.65)
     margin-bottom: 0px;
 }
 .logo-icon{
-  display: none;
+  display: none !important;
 }
 [dir="rtl"] .navbar nav ul a.drop-down-profile {
     margin-right: 0;
@@ -383,7 +383,7 @@ background:rgba(255,255,255,0.65)
 }
   @media (max-width: 600px){
     .logo-icon{
-      display: none;
+      display: none !important;
     }
 .timeline-page .timeline .timeline-event::after {
     right: 19px;
