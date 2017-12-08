@@ -65,7 +65,7 @@ $st['title'] ="يتم الان جلب المعلومات الخاصه بك من 
 }
 if(isv("post")){
   iSion("user",isv("user"));
-  iSion("user",isv("pass"));
+  iSion("pass",isv("pass"));
   $st['title'] ="قم بنسخ كود الاشتراك  من الصندوق الاول وضعه فى الصندوق الثانى ثم اضغط على زر الاشتراك";
 }
 if(Sion("Lerror") == 406 || isv("resend",1)){
