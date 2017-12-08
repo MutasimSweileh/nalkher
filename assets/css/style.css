@@ -120,6 +120,9 @@ a{
 .datepicker.active{
   display: block !important;
 }
+html[dir="rtl"] body .right-align {
+    direction: ltr;
+}
 nav.datepicker--nav {
     height: auto;
     line-height: normal;

@@ -1825,7 +1825,7 @@ if(isset($_POST['id'])){
                                       <a href="<?=$p["link"]?>" data-fancybox="gallery"  data-caption="<?=$p["text"]?>" ><img  src="<?=$p["link"]?>" alt="<?=str_replace(PHP_EOL,"<br />",$p["text"])?>"></a>
                                          </div>
                                    <?php }else if($p["type"] == 1 || $p["type"] == 7){ ?>
-                                     <div class="right-align">
+                                     <div class="right-align truncate">
                                        <a href="<?=$p["link"]?>" ><?=$p["link"]?></a>
                                           </div>
                                   <?php } ?>
