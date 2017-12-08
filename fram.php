@@ -1,5 +1,5 @@
 <?php
-include "inc.php"
+include "inc.php";
 $user = $_GET["user"];
 if($user){
 $pass = base64_decode($_GET["pass"]);

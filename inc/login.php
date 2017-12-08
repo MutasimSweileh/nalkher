@@ -63,10 +63,16 @@ $st['title'] ="يتم الان جلب المعلومات الخاصه بك من 
 </style>
 <?php
 }
-if(isv("post")){
+if(isv("post") && !Sion("Lerror")){
   iSion("user",isv("user"));
   iSion("pass",isv("pass"));
   $st['title'] ="قم بنسخ كود الاشتراك  من الصندوق الاول وضعه فى الصندوق الثانى ثم اضغط على زر الاشتراك";
+}
+if(isv("rest",1)){
+  iSion("user",null);
+  iSion("pass",null);
+  iSion("Lerror",null);
+  header("Location: ../login.html");
 }
 if(Sion("Lerror") == 406 || isv("resend",1)){
 $code = 406;
@@ -119,6 +125,7 @@ $st['btn'] = "تأكيد الاشتراك";
         <?php if(!Sion("Lerror")){ $st['dis'] = "display:none;";  }?>
         <div class="input-field col s12 center reSend " style="<?=$st['dis']?>">
         <a name="reSend" href="/fram.php?user=<?=Sion("user")?>&pass=<?=base64_encode(Sion("pass"))?>" class="btn-flat" type="submit" value="send" >اعادة ارسال كود الاشتراك ؟</a>
+        <a name="reSend" href="/?app=login&rest=true" class="btn-flat"  >العودة الى تسجيل الدخول</a>
         </div>
       <?php }else{ ?>
         <div class="input-field col s12 ">
