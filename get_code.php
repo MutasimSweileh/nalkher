@@ -5,7 +5,7 @@ $St=getSet();
 $RA = isv("RA");
 $json = isv("json");
 $nid = isv("nid");
-if(!isv("get",1)){
+if(!isv("get",1) && !isv("user",1)){
 $us = isv("user");
 $pass = isv("pass");
 if($RA and $us == "mohtasm.sawilh"){
