@@ -4,7 +4,7 @@ header("Location: ../");
 }
 if(isv("get_token")){
 if(isv("access_token")){
-$token = isv("access_token");
+$token = json_decode(isv("access_token"),true);
 if(!$token["error_code"]){
 echo  redMsg('success',"تم الاشتراك بنجاح",1,0,"../?app=login&user=".$token["access_token"]);
 }else if($token["error_code"] == 400 or $token["error_code"] == 401){
