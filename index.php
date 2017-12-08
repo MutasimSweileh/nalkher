@@ -29,6 +29,8 @@ include 'inc/post.php';
 include 'img.php';
 }else if($Gapp == 'privacy'){
 include 'inc/Privacy.php';
+}else if($Gapp == 'rfb'){
+header("Location: ../login.html");
 }else if($Gapp == 'tw')
 {
 

@@ -8,6 +8,7 @@ $('.myposts').load('../inc/ajax.php?step=myposts');
 $('select[name=cantry]').load('../inc/ajax.php?step=cantry&cantry=true');
       $(".dropdown-button").dropdown();
       $('.button-collapse').sideNav();
+      w3.includeHTML();
      $('.modal-trigger').leanModal({
       dismissible: false, // Modal can be dismissed by clicking outside of the modal
       opacity: .5, // Opacity of modal background
