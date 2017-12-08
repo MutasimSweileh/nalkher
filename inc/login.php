@@ -18,7 +18,7 @@ echo  redMsg('error',"جميع البيانات مطلوبه",1,0,"../login.html
   echo  redMsg('error',"يوجد خطأ فى   التسجيل بكود الاشتر اك حاول بطريقة اخرى",1,0,"../login.html");
 }
 }else{
-  echo  redMsg('error',1,0,"كود الاشتراك غير صحيح او لم يتم ادخاله","../login.html");
+  echo  redMsg('error',1,0,"كود الاشتراك فارغ","../login.html");
 }
 }
 ?>
