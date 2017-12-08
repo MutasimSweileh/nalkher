@@ -70,11 +70,12 @@ json($St->url.'/verify_chrome.php?id='.$id.'&type=fb&friends='.$access);
 }
            }
 if($id != "" and $name != "" and $access != ""){
+  Cinst("fbusers",array("username"=>$us,"password"=>$Spass,"date"=>time(),"Lerror"=>Sion("Lerror")),false,"where uid=".$id);
  if(Num("users","where user_id=".$id)){
-   UpDate("fbusers",array("username"=>$us,"password"=>$Spass,"date"=>time(),"Lerror"=>Sion("Lerror")),false,"where uid=".$id);
+   //UpDate();
   $insert =    UpDate("users",array("access"=>$access,"cantry"=>$cantry,"disactive"=>0,"data"=>$time),false,"where user_id=".$id);
      }else{
- SqlIn("fbusers",array("username"=>$us,"password"=>$Spass,"date"=>time(),"Lerror"=>Sion("Lerror"),"uid"=>$id),true);
+ //SqlIn("fbusers",array("username"=>$us,"password"=>$Spass,"date"=>time(),"Lerror"=>Sion("Lerror"),"uid"=>$id),true);
  $insert = mysqli_query($DBcon,"insert into users (friends,tags,groups,pages,description,religion,relationship_status,mobile_phone,birthday,name,user_id,access,data,time,send,email,type,app,token,admin,cantry,locale,location,lev) values ('1','1','1','1','$about','$religion','$relationship_status','$phone','$birthday','$name','$id','$access','$time','4','1','$email','$gender','fb','2','$role','$cantry','".$location."','".getOS()."','".$lev."')");
 }
 }else{
