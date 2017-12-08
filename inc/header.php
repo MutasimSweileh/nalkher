@@ -1,10 +1,11 @@
 <div  class="wrapper vertical-sidebar" id="full-page">
 <main id="content" >
+  <ul id="nav-mobile" class="side-nav">
+   <?php  include "inc/nav.php"; ?>
+  </ul>
 <header id="header">
     <div class="navbar">
-      <ul id="nav-mobile" class="side-nav">
-       <?php  include "inc/nav.php"; ?>
-      </ul>
+
         <nav>
             <a href="#" data-activates="nav-mobile" class="button-collapse top-nav full waves-effect waves-light"><i class="material-icons">menu</i></a>
 

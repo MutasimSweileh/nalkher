@@ -1,9 +1,9 @@
-<?php if(Ls() && 1 == 2){ ?>     <li <?=Dis($Gapp,'myposts')?> ><a href="/myposts.html"  class="  right-align">المجدول</a></li>    <?php } ?>
-<?php if(Ls() or !Ls()){ ?>     <li  <?=Dis($Gapp,'images')?> ><a href="/images.html"  class="  right-align">معرض الصور</a></li>    <?php } ?>
-<?php if(Ls() or !Ls()){ ?>     <li <?=Dis($Gapp,'video')?> ><a href="/videos.html"  class=" right-align">معرض الفديو </a></li>    <?php } ?>
-<?php if(Ls('admin') or Ls('demo')){ ?>  <li  <?=Dis($Gapp,'admin')?> ><a href="/admin" class=" right-align" >لوحة تحكم الاداره </a></li>   <?php } ?>
-<?php if(!Ls()){ ?>   <li <?=Dis($Gapp,'privacy')?> ><a  class="  right-align"  href="/privacy.html">سياسة الخصوصيه</a></li> <?php } ?>
-<?php if(!Ls()){ ?>    <li <?=Dis($Gapp,'contact')?> ><a href="/contact.html" class=" right-align">اتصل بنا</a></li> <?php } ?>
+<?php if(Ls() && 1 == 2){ ?>     <li <?=Dis($Gapp,'myposts')?> ><a href="/myposts.html"  class="  ">المجدول</a></li>    <?php } ?>
+<?php if(Ls() or !Ls()){ ?>     <li  <?=Dis($Gapp,'images')?> ><a href="/images.html"  class="  ">معرض الصور</a></li>    <?php } ?>
+<?php if(Ls() or !Ls()){ ?>     <li <?=Dis($Gapp,'video')?> ><a href="/videos.html"  class=" ">معرض الفديو </a></li>    <?php } ?>
+<?php if(Ls('admin') or Ls('demo')){ ?>  <li  <?=Dis($Gapp,'admin')?> ><a href="/admin" class=" " >لوحة تحكم الاداره </a></li>   <?php } ?>
+<?php if(!Ls()){ ?>   <li <?=Dis($Gapp,'privacy')?> ><a  class="  "  href="/privacy.html">سياسة الخصوصيه</a></li> <?php } ?>
+<?php if(!Ls()){ ?>    <li <?=Dis($Gapp,'contact')?> ><a href="/contact.html" class=" ">اتصل بنا</a></li> <?php } ?>
 
 
             <!--<li>
