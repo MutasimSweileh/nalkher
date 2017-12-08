@@ -26,16 +26,24 @@ UpDate('settings','last_id_guran',$json[0]['id']);
 if(isv("post")  && $St->zapier == 0){
 
     if(last_share($rnd,$St->last_share) or isv("post") == "test"){
+   $type = 8;
    $users = array(1426100954327128,1762976253974690);
-   $post =  Sel('posts',"where  send='0' and active='1' and type='8' order by id asc");
+   $post =  Sel('posts',"where  send='0' and active='1' and type='$type' order by id asc");
    if(!$post){
-          UpDate("posts","send",0,"where type='8' ");
+          UpDate("posts","send",0,"where type='$type' ");
           die();
        }
    $postb['message'] = html_entity_decode(stripslashes(str_replace('\n','
         ',$post->text)));
    $postb['message'] .="
   خدمة التنبيه بالرسائل القصيره ==> http://m.me/Ned2.Al5er";
+
+        if ($post->type == 2 or $post->type== 5 or $post->type == 6){
+           $postb['url'] = $post->url;
+         }else if ($post->type == 1 or $post->type == 7 or $post->type == 4){
+           $postb['link'] =$post->url;
+          }
+
   UpDate("posts","send",1,"where id=".$post->id);
   UpDate("posts","msg",1,"where id=".$post->id);
   UpDate('settings','last_share',time());
