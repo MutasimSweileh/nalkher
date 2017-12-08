@@ -130,9 +130,9 @@ intervalId = setInterval(function(){
      if(varCounter < times) {
           times--;
 //     success_msg(varCounter);
-      $(".soon").html("<p style='font-weight:bold;'  > فى انتظار الفاصل الزمنى المحدد "+times+" ثانية   <i class='fa fa-smile-o fa-lg' aria-hidden='true'></i></p> ");
+      $(".toast-message").html("<p style='font-weight:bold;'  > فى انتظار الفاصل الزمنى المحدد "+times+" ثانية  </p> ");
      } else {
-         $(".soon").hide();
+         $(".toast-message").hide();
          goPost(data.pid,data.nid,data.where,data.name);
          clearInterval(intervalId);
      }
