@@ -602,63 +602,16 @@ function Dta(){
       }
 
   });
-function goDate(){
-  var post = $.trim($('textarea[name=post]').val());
-  var url =  $("input[name=url]").val();
-  var Stype = $("input[name=Stype]").val();
-  var Spages = $('input[name=Spages]').val();
-  var groups = document.getElementById("groups").checked;
-  var pages = document.getElementById("pages").checked;
-  if(pages){ pages ="pages"; }else if(groups){ pages ="groups"; }else{ pages =0;}
-  var cat =  $("select[name=cat]").val();
-  var img = $.trim($('input[name=img]').val());
-  var type = $('input[name=type]').val();
-  var time = $('input[name=time]').val();
-  if(post=="" && type != 1 && Stype != 'token'){
-error_msg('قم بااضافة النص اولا');
-  }else if(type == 7  && url==""){
-error_msg('قم بااضافة الرابط اولا');
-  }else if(type == 1  && url==""){
-error_msg('قم بااضافة الرابط اولا');
-  }else if(type == 5  && img==""){
-error_msg('اضف الصوره');
-  }else if(type == 2  && img==""){
-error_msg('اضف الصوره');
-}else if(time == ""){
-error_msg("قم بتحديد الوقت من فضلك ");
-}else{
-      //$('.loader').show();
-      loding_msg('من فضلك انتظر جارى اضافة المنشور',1000);
-    // $('.alert').addClass('alert-danger');
-       $.ajax({
-        type: "POST",
-        url: '../inc/ajax.php?step=Addpost',
-        data: {'cat':cat,'url':url,'post':post,'img':img,'type':type,'time':time},
-        success: function(data){
-         if(data.st == 'error'){
-
-        error_msg('حدث خطأ ما لم يتم النشر ');
-         }else{
-          if(data.Rn < 1){
-           soon_msg('تم اضافة منشورك الاول');
-         }else{
-         success_msg(data.msg);
-          }
-                 Getpost(data.pid);
-         }
-
-
-         $('textarea[name=post]').val("");
-         remove_img_dialog(0,1);
-        remove_video();
-
-          //Getposts();
-         $('.loader').hide();
-        },
-        dataType: 'json'
-      });
-
-  }
+function Ddialog(){
+$.dialog({
+  title: 'Text content!',
+  content: 'Simple modal!',
+  icon: 'fa fa-question',
+  theme: 'material',
+  closeIcon: true,
+  animation: 'scale',
+  type: 'red',
+  });
 }
 $("#Add_time").click(function(){
   $('#datepickerhere').focus();
