@@ -783,7 +783,7 @@ return false;
 }
 
 function user_share(){
-$next = Sel("posts","where time='1' and Tsend='0' and time_share <=".time());
+$next = Sel("posts","where time='1' and Tsend='0' and time_share<='".time()."' ");
 if($next){
 return  array('id'=>$next->id,'user'=>$next->userid,'PostTo'=>$next->PostTo);;
 }else{
