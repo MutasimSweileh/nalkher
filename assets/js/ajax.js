@@ -911,9 +911,7 @@ function PostNow(Ptype=false){
  error_msg('حدد الدوله او قم بتحديد الكل');
    }else if(pages  && !Spages && admin < 1){
  error_msg('حدد صفحه معينه او عددة صفحات');
-}else if(Ptype  && time_share == "" ){
- error_msg('حدد صفحه معينه او عددة صفحات');
-   }else{
+}else{
        //$('.loader').show();
      // $('.alert').addClass('alert-danger');
    var ajaxTime= new Date().getTime();
@@ -921,7 +919,7 @@ function PostNow(Ptype=false){
        $.ajax({
          type: "POST",
          url: '../inc/ajax.php?step=post_now',
-         data: {'time_share':time_share,'Yd':Yd,'pages':pages,'Spages':Spages,'cantry':cantry,'allcantry':allcantry,'Durl':Durl,'Nmurl':Nmurl,'cat':cat,'tags':tags,'short':short,'title':title,'post':post,'img':img,'url':url,'admin':admin,'type':type,'Ttoken':Ttoken,'Dtoken':Dtoken,'Stype':Stype,'type_user':type_user,'ttype':ttype,'time':time},
+         data: {'time_share':Ptype,'Yd':Yd,'pages':pages,'Spages':Spages,'cantry':cantry,'allcantry':allcantry,'Durl':Durl,'Nmurl':Nmurl,'cat':cat,'tags':tags,'short':short,'title':title,'post':post,'img':img,'url':url,'admin':admin,'type':type,'Ttoken':Ttoken,'Dtoken':Dtoken,'Stype':Stype,'type_user':type_user,'ttype':ttype,'time':time},
          success: function(data){
           $('.loader').hide();
           if(data.st == 'error'){
