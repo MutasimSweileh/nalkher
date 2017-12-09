@@ -336,6 +336,18 @@ background:rgba(255,255,255,0.65)
 [dir="rtl"]  .slide{
     float: left !important;
 }
+[dir="rtl"] .switch label .lever {
+    width: 29px;
+    height: 10px;
+    margin-right: 0px;
+    margin: 0px 7px;
+}
+[dir="rtl"] .switch label .lever:after{
+  width: 15px;
+  height: 15px;
+  left: -2px;
+  top: -3px;
+}
 [dir="rtl"] .social  .card-title {
      padding-left: 15px;
      padding-right: 0;
