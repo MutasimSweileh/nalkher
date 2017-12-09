@@ -140,6 +140,10 @@ nav.datepicker--nav {
 .datepickers-container{
   direction: ltr !important;
 }
+.datepicker-inline{
+direction: ltr;
+text-align: -webkit-center;
+}
 html body.horizontal-navigation .wrapper.vertical-sidebar .dropdown-content {
     min-width: auto !important;
 }
