@@ -631,7 +631,8 @@ $.dialog({
             action: function () {
                 PostNow(true);
               }
-    },
+         },
+  }
   });
 }
 $("#Add_time").click(function(){
