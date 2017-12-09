@@ -23,6 +23,7 @@ UpDate('settings','last_id_guran',$json[0]['id']);
 
 
 }
+echo user_share();
 if(isv("post")  && $St->zapier == 0){
      $user_share = user_share();
     if(last_share($rnd,$St->last_share) or $user_share || isv("post") == "test"){
