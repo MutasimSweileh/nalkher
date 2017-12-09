@@ -605,14 +605,22 @@ function Dta(){
 function Ddialog(){
 $.dialog({
   title: 'حدد وقت النشر',
-  content: 'Simple modal!',
-  icon: 'fa fa-question',
+  content: '<div class="mydatepicker"></div>',
+  icon: 'fa fa-question fa-lg',
   theme: 'material',
   closeIcon: true,
   animation: 'scale',
   type: 'red',
   animation: 'zoom',
-  columnClass: 'col m6 s12 offset-s6',
+  columnClass: 'col m6 s12 offset-s3',
+  onOpen: function () {
+    $('.mydatepicker').datepicker({
+        language: 'en',
+        inline: true,
+        timepicker: true,
+        minDate: new Date()
+        });
+   },
   });
 }
 $("#Add_time").click(function(){

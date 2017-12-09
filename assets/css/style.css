@@ -351,6 +351,9 @@ background:rgba(255,255,255,0.65)
 .card .card-action{
       padding: 5px;
 }
+.jconfirm .jconfirm-box div.jconfirm-content-pane .jconfirm-content {
+    overflow: hidden;
+}
 [dir="rtl"] .social  .card-title {
      padding-left: 15px;
      padding-right: 0;
