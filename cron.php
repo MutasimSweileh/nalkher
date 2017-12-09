@@ -24,7 +24,7 @@ UpDate('settings','last_id_guran',$json[0]['id']);
 
 }
 echo user_share()."</br>";
-echo time();
+//echo time();
 
 if(isv("post")  && $St->zapier == 0){
      $user_share = user_share();
