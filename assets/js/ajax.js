@@ -605,14 +605,14 @@ function Dta(){
 function Ddialog(){
 $.dialog({
   title: 'حدد وقت النشر',
-  content: '<div class="row" ><div class="col s12 m10"><div class="mydatepicker"></div></div><div style="direction:ltr;pading:10px" class="col s12 m2 center Mydate">10:10 AM</div></div>',
+  content: '<div class="row" ><div class="col s12 m12"><div class="mydatepicker"></div></div><div style="direction:ltr;padding:10px" class="col s12 m12 center Mydate">10:10 AM</div></div>',
   icon: 'fa fa-question fa-lg',
   theme: 'material',
   closeIcon: true,
   animation: 'scale',
   type: 'red',
   animation: 'zoom',
-  columnClass: 'col m6 s12 offset-m3',
+  columnClass: 'col m5 s12 offset-m4',
   onOpen: function () {
     $('.mydatepicker').datepicker({
         language: 'en',
@@ -624,6 +624,13 @@ $.dialog({
         }
         });
    },
+   buttons: {
+        hey: function () {
+           text: 'اضافة',
+            action: function () {
+                PostNow($(".Mydate").text());
+              }
+    },
   });
 }
 $("#Add_time").click(function(){
