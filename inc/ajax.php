@@ -1728,8 +1728,8 @@ if(isset($_POST['id'])){
                                <a class="tooltipped " onclick="fb_share(<?=$p['id']?>);"  data-position="bottom" data-delay="50" data-tooltip="نشر على فيس بوك"><i class="fa fa-facebook-square fa-lg " aria-hidden="true"></i></a>
                 <a class="tooltipped" onclick="tw_share(<?=$p['id']?>);" data-position="bottom" data-delay="50" data-tooltip="نشر على تويتر"><i class="fa fa-twitter-square fa-lg" aria-hidden="true"></i></a>
 <!--                <a class="tooltipped" onclick="add_time(<?=$p['id']?>);" data-tooltip="النشر لاحقا" data-tooltip-id="ed472c81-cc4c-1ce6-956d-2ac9b8acd67b"><i class="fa fa-calendar-plus-o  fa-lg" aria-hidden="true"></i></a>
--->                         <?php if(Ls('admin') and  $p['active'] == 0 or Ls('demo')  and  $p['active'] == 0){ ?>    <a  class="tooltipped" onclick="A_post(<?=$p['id']?>);" data-tooltip="الموافقه على المنشور" data-tooltip-id="ed472c81-cc4c-1ce6-956d-2ac9b8acd67b"><i class="fa fa-check-circle-o fa-lg" aria-hidden="true"></i></a>     <?php  } ?>
-                         <?php if(Ls('admin')  and  $p['active'] == 0 or Ls('demo')  and  $p['active'] == 0){ ?>    <a  class="tooltipped" onclick="Aa_post(<?=$p['id']?>);" data-tooltip="الموافقه على المنشور" data-tooltip-id="ed472c81-cc4c-1ce6-956d-2ac9b8acd67b"><i class="fa fa-check-circle fa-lg" aria-hidden="true"></i></a>     <?php  } ?>
+-->
+            <?php if(Ls('admin') and  $p['active'] == 0 or Ls('demo')  and  $p['active'] == 0){ ?>    <a  class="tooltipped" onclick="A_post(<?=$p['id']?>);" data-tooltip="الموافقه على المنشور" data-tooltip-id="ed472c81-cc4c-1ce6-956d-2ac9b8acd67b"><i class="fa fa-check-circle-o fa-lg" aria-hidden="true"></i></a>     <?php  } ?>
             <?php if(Ls('admin')  or Ls('demo') or $p['userid'] == $userid){ ?>    <a  class="tooltipped" onclick="E_post(<?=$p['id']?>);" data-tooltip="تعديل المنشور" data-tooltip-id="ed472c81-cc4c-1ce6-956d-2ac9b8acd67b"><i class="fa fa-pencil-square-o fa-lg" aria-hidden="true"></i></a>     <?php  } ?>
             <?php if(Ls('admin') or Ls('demo') or $p['userid'] == $userid){ ?>    <a  class="tooltipped" onclick="re(<?=$p['id']?>);" data-tooltip="حذف  المنشور" data-tooltip-id="ed472c81-cc4c-1ce6-956d-2ac9b8acd67b"><i class="fa fa-times fa-lg" aria-hidden="true"></i></a>     <?php  } ?>
             <?php if($p['time'] == 1){ ?>    <a  class="tooltipped" onclick="" data-tooltip="<?=date('g:i A', $p['time_share'])?>" data-tooltip-id="ed472c81-cc4c-1ce6-956d-2ac9b8acd67b"><i class="fa fa-clock-o fa-lg" aria-hidden="true"></i></a>     <?php  } ?>
@@ -1775,25 +1775,6 @@ if($post){
 <div class="card-title truncate" style="    direction: rtl;"><a href="<?=Uvideo($p['id'])?>"><?=html_entity_decode(stripslashes(str_replace('\n',' ',limit_str($p['title'],20))))?></a></div>
                  <div class="card-content" style="    padding: 0;    position: relative;">
                  <div class="center post-img post-img-video"><a href="<?=Uvideo($p['id'])?>" >  <img src="<?=$p['img']?>" class=" responsive-img z-depth-1" alt=""></a></div>
-                </div>
-                 <div class="card-action center" style="display:none">
-            <a class="tooltipped " onclick="fb_share(<?=$p['id']?>);"  data-position="bottom" data-delay="50" data-tooltip="نشر على فيس بوك"><i class="fa fa-facebook-square fa-lg " aria-hidden="true"></i></a>
-            <a class="tooltipped" onclick="tw_share(<?=$p['id']?>);" data-position="bottom" data-delay="50" data-tooltip="نشر على تويتر"><i class="fa fa-twitter-square fa-lg" aria-hidden="true"></i></a>
-            <?php if(Ls('admin') or Ls('demo')  and  $p['active'] == 0){ ?>    <a  class="tooltipped" onclick="A_post(<?=$p['id']?>);" data-tooltip="الموافقه على المنشور" data-tooltip-id="ed472c81-cc4c-1ce6-956d-2ac9b8acd67b"><i class="fa fa-check-circle-o fa-lg" aria-hidden="true"></i></a>     <?php  } ?>
-            <?php if(Ls('admin') or Ls('demo') or $p['userid'] == userid){ ?>    <a  class="tooltipped" onclick="E_post(<?=$p['id']?>);" data-tooltip="تعديل المنشور" data-tooltip-id="ed472c81-cc4c-1ce6-956d-2ac9b8acd67b"><i class="fa fa-pencil-square-o fa-lg" aria-hidden="true"></i></a>     <?php  } ?>
-            <?php if(Ls('admin') or  Ls('demo') or $p['userid'] == userid){ ?>    <a  class="tooltipped" onclick="re(<?=$p['id']?>);" data-tooltip="حذف  المنشور" data-tooltip-id="ed472c81-cc4c-1ce6-956d-2ac9b8acd67b"><i class="fa fa-times fa-lg" aria-hidden="true"></i></a>     <?php  } ?>
-            <?php if($p['time'] == 1){ ?>    <a  class="tooltipped" onclick="" data-tooltip="<?=date('g:i A', $p['time_share'])?>" data-tooltip-id="ed472c81-cc4c-1ce6-956d-2ac9b8acd67b"><i class="fa fa-clock-o fa-lg" aria-hidden="true"></i></a>     <?php  } ?>
-            <a  class="tooltipped" onclick="fb_post(<?=$p['id']?>)" data-tooltip="نشر الان" data-tooltip-id="ed472c81-cc4c-1ce6-956d-2ac9b8acd67b"><i class="fa fa-send fa-lg" aria-hidden="true"></i></a>     <?php  } ?>
-            <?php if(Ls('admin') or Ls('demo')){ ?>
-                                                   <?php if($Su['block'] == 0){ ?>
-                                                 <a class="waves-effect waves-light" onclick="ban(<?=$Su['id']?>)" id="<?=$Sb['id']?>" ><i class="fa fa-ban fa-lg " aria-hidden="true"></i></a>
-                                                <?php }else{?>
-                                                 <a class="waves-effect waves-light" onclick="unban(<?=$Su['id']?>)" id="<?=$Sb['id']?>" ><i class="fa fa-check-circle-o fa-lg " aria-hidden="true"></i></a>
-
-                                                <?php }?>
-
-                 <?php  } ?>
-
                 </div>
                 </div>
                 </div>
@@ -1846,12 +1827,11 @@ if(isset($_POST['id'])){
                 <?php if(Ls('admin') or Ls('demo')){ ?>    <a  class="waves-effect waves-light" onclick="msg(<?=$p['userid']?>)" id="<?=$Sb['id']?>" ><i class="fa fa-commenting-o fa-lg" aria-hidden="true"></i></a>
                 <a  class="tooltipped" onclick="fb_post(<?=$p['id']?>)" data-tooltip="نشر الان" data-tooltip-id="ed472c81-cc4c-1ce6-956d-2ac9b8acd67b"><i class="fa fa-send fa-lg" aria-hidden="true"></i></a>     <?php  } ?>
                 <?php if(Ls('admin') or Ls('demo')){ ?>
-                                                       <?php if($Su['block'] == 0){ ?>
-                                                     <a class="waves-effect waves-light" onclick="ban(<?=$Su['id']?>)" id="<?=$Sb['id']?>" ><i class="fa fa-ban fa-lg " aria-hidden="true"></i></a>
-                                                    <?php }else{?>
-                                                     <a class="waves-effect waves-light" onclick="unban(<?=$Su['id']?>)" id="<?=$Sb['id']?>" ><i class="fa fa-check-circle-o fa-lg " aria-hidden="true"></i></a>
-
-                                                    <?php }?>
+                <?php if($Su['block'] == 0){ ?>
+                <a class="waves-effect waves-light" onclick="ban(<?=$Su['id']?>)" id="<?=$Sb['id']?>" ><i class="fa fa-ban fa-lg " aria-hidden="true"></i></a>
+                <?php }else{?>
+                <a class="waves-effect waves-light" onclick="unban(<?=$Su['id']?>)" id="<?=$Sb['id']?>" ><i class="fa fa-check-circle-o fa-lg " aria-hidden="true"></i></a>
+                  <?php }?>
 
                      <?php  } ?>
            </div>
