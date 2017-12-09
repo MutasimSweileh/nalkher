@@ -605,7 +605,7 @@ function Dta(){
 function Ddialog(){
 $.dialog({
   title: 'حدد وقت النشر',
-  content: '<div class="row" ><div class="col s12 m10"><div class="mydatepicker"></div></div><div class="col s12 m2">10:10 AM</div></div>',
+  content: '<div class="row" ><div class="col s12 m10"><div class="mydatepicker"></div></div><div style="direction:ltr;pading:10px" class="col s12 m2 center Mydate">10:10 AM</div></div>',
   icon: 'fa fa-question fa-lg',
   theme: 'material',
   closeIcon: true,
@@ -618,7 +618,10 @@ $.dialog({
         language: 'en',
         inline: true,
         timepicker: true,
-        minDate: new Date()
+        minDate: new Date(),
+        onSelect: function(formattedDate, date, inst){
+          $(".Mydate").text(formattedDate);
+        }
         });
    },
   });
