@@ -11,6 +11,8 @@ require_once 'src/API/src/Google/Client.php';
 require_once 'src/API/src/Google/Service/YouTube.php';
 include 'inc/gapi.php';
 $St=getSet();
+define("userid","Nuser");
+if(Sion("id"))
 define("userid",Sion("id"));
 $Gapp = isv("app");
 $Gtype = isv("type");
