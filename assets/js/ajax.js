@@ -611,6 +611,7 @@ $.dialog({
   closeIcon: true,
   animation: 'scale',
   type: 'red',
+  animation: 'zoom',
   columnClass: 'col m6 s12',
   });
 }
