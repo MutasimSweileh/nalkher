@@ -621,6 +621,7 @@ $.dialog({
         minDate: new Date(),
         onSelect: function(formattedDate, date, inst){
           $(".Mydate").text(formattedDate);
+          $('input[name=time_share]').val(formattedDate);
         }
         });
    },
@@ -628,7 +629,7 @@ $.dialog({
         hey: function () {
            text: 'اضافة',
             action: function () {
-                PostNow($(".Mydate").text());
+                PostNow(true);
               }
     },
   });
