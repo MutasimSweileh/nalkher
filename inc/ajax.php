@@ -1362,10 +1362,6 @@ if(!Ls('demo') and $app['end'] == 1){
 $cat = $_POST['cat'];
 $time_share = $_POST['time_share'];
 $gr = $_POST['type_user'];
-if($time_share){
-  $T_time = 1;
-  $add_time = 1;
-}
  $tags = $_POST['tags'];
  $short = $_POST['short'];
  $ttype =  $_POST['ttype'];
@@ -1381,8 +1377,12 @@ if($_POST['allcantry'] != 'all'){
 }else{
  $cantry =  $_POST['allcantry'];
 }
- $add_time =  $_POST['add_time'];
+$add_time =  $_POST['add_time'];
 $id = $_SESSION['id'];
+if($time_share){
+  $T_time = 1;
+  $add_time = 1;
+}
 if(!$pid){
  $type =  $_POST['type'];
 $post =  trim($_POST['post']);
