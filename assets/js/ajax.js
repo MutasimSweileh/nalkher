@@ -612,7 +612,7 @@ $.dialog({
   animation: 'scale',
   type: 'red',
   animation: 'zoom',
-  columnClass: 'col m6 s12',
+  columnClass: 'col m6 s12 offset-s6',
   });
 }
 $("#Add_time").click(function(){
