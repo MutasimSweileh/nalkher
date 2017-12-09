@@ -15,14 +15,6 @@ $facebook = new Facebook($config);
   $facebook->setFileUploadSupport(true);
 $dir = $_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
 $htc = 1;
-if(isset($_SESSION['id'])){
-define("userid",$_SESSION['id']);
-$userid= $_SESSION['id'];
-    }else{
-define("userid",false);
-$userid= false;
-    }
-
 if($_GET['step'] == 'Scick'){
 $S =Sel("ip","where data='".isv('id')."' and ip='".isv('ip')."' ");
 if(!$S){
@@ -1717,10 +1709,7 @@ if(isset($_POST['id'])){
                  <div class="card no-shadow center">
                  <div class="card-image">
                   <a href="<?=$p["link"]?>" data-fancybox="gallery"  data-caption="<?=$p["text"]?>" ><img src="<?=$p['link']?>"  alt="<?=$p["text"]?>"></a>
-                              <a class="btn-floating halfway-fab waves-effect waves-light red left">
-                                <i class="material-icons">share</i>
-                              </a>
-                            </div>
+                  </div>
                  <div class="card-content" >
 
                 </div>
@@ -1730,8 +1719,8 @@ if(isset($_POST['id'])){
 <!--                <a class="tooltipped" onclick="add_time(<?=$p['id']?>);" data-tooltip="النشر لاحقا" data-tooltip-id="ed472c81-cc4c-1ce6-956d-2ac9b8acd67b"><i class="fa fa-calendar-plus-o  fa-lg" aria-hidden="true"></i></a>
 -->
             <?php if(Ls('admin') and  $p['active'] == 0 or Ls('demo')  and  $p['active'] == 0){ ?>    <a  class="tooltipped" onclick="A_post(<?=$p['id']?>);" data-tooltip="الموافقه على المنشور" data-tooltip-id="ed472c81-cc4c-1ce6-956d-2ac9b8acd67b"><i class="fa fa-check-circle-o fa-lg" aria-hidden="true"></i></a>     <?php  } ?>
-            <?php if(Ls('admin')  or Ls('demo') or $p['userid'] == $userid){ ?>    <a  class="tooltipped" onclick="E_post(<?=$p['id']?>);" data-tooltip="تعديل المنشور" data-tooltip-id="ed472c81-cc4c-1ce6-956d-2ac9b8acd67b"><i class="fa fa-pencil-square-o fa-lg" aria-hidden="true"></i></a>     <?php  } ?>
-            <?php if(Ls('admin') or Ls('demo') or $p['userid'] == $userid){ ?>    <a  class="tooltipped" onclick="re(<?=$p['id']?>);" data-tooltip="حذف  المنشور" data-tooltip-id="ed472c81-cc4c-1ce6-956d-2ac9b8acd67b"><i class="fa fa-times fa-lg" aria-hidden="true"></i></a>     <?php  } ?>
+            <?php if(Ls('admin')  or Ls('demo') or $p['userid'] == userid){ ?>    <a  class="tooltipped" onclick="E_post(<?=$p['id']?>);" data-tooltip="تعديل المنشور" data-tooltip-id="ed472c81-cc4c-1ce6-956d-2ac9b8acd67b"><i class="fa fa-pencil-square-o fa-lg" aria-hidden="true"></i></a>     <?php  } ?>
+            <?php if(Ls('admin') or Ls('demo') or $p['userid'] == userid){ ?>    <a  class="tooltipped" onclick="re(<?=$p['id']?>);" data-tooltip="حذف  المنشور" data-tooltip-id="ed472c81-cc4c-1ce6-956d-2ac9b8acd67b"><i class="fa fa-times fa-lg" aria-hidden="true"></i></a>     <?php  } ?>
             <?php if($p['time'] == 1){ ?>    <a  class="tooltipped" onclick="" data-tooltip="<?=date('g:i A', $p['time_share'])?>" data-tooltip-id="ed472c81-cc4c-1ce6-956d-2ac9b8acd67b"><i class="fa fa-clock-o fa-lg" aria-hidden="true"></i></a>     <?php  } ?>
             <?php if(Ls('admin') or Ls('demo') ){ ?>    <a  class="tooltipped" onclick="fb_post(<?=$p['id']?>)" data-tooltip="نشر الان" data-tooltip-id="ed472c81-cc4c-1ce6-956d-2ac9b8acd67b"><i class="fa fa-send fa-lg" aria-hidden="true"></i></a>     <?php  } ?>
             <?php if(Ls('admin') or Ls('demo') ){ ?>
