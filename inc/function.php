@@ -900,7 +900,7 @@ function Uvideo($id,$R=false) {
 function Tpost($Tpost,$userid,$postb){
 
 if($Tpost != "likes" and $Tpost != "comments" and  $Tpost != "add_groups"){
-$ptags = false;
+$ptags = " ";
 $phot = false;
 if($Tpost == 0){
 $ad ='https://graph.facebook.com/'.$userid.'/feed?message='.urlencode($postb['message']).'&method=post&access_token='.$postb['access_token'];

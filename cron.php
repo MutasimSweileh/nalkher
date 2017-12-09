@@ -57,9 +57,9 @@ $postTo  = $post->PostTo;
   خدمة التنبيه بالرسائل القصيره ==> http://m.me/Ned2.Al5er";
 
         if ($post->type == 2 or $post->type== 5 or $post->type == 6){
-           $postb['url'] = $post->url;
+           $postb['url'] = $post->link;
          }else if ($post->type == 1 or $post->type == 7 or $post->type == 4){
-           $postb['link'] =$post->url;
+           $postb['link'] =$post->link;
            if($post->type == 7)
            $postb['link'] = Uvideo($post->vid);
           }
