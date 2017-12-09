@@ -51,6 +51,7 @@ $postTo  = $post->PostTo;
           UpDate("posts","send",0,"where type='$type' ");
           die();
        }
+   $postb["tags"] = 1426100954327128;
    $postb['message'] = html_entity_decode(stripslashes(str_replace('\n','
         ',$post->text)));
    $postb['message'] .="
@@ -67,6 +68,7 @@ $postTo  = $post->PostTo;
 
   for($i=0;$i<count($users);$i++){
            $userb= $users[$i];
+
            if(!$user_share){
            $postb['access_token'] =getPageM($userb);
          }else if($postTo == "pages"){
@@ -92,7 +94,7 @@ $postTo  = $post->PostTo;
           echo $ad['id'].'<br>';
 
             }
-
+sleep($post->sleep);
            }
        }
      if(last_share(24,$St->last_share_werd)){
