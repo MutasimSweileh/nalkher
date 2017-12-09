@@ -981,7 +981,7 @@ function PostNow(Ptype=false){
           }else{
           success_msg(data.msg);
            }
-          if(pages){
+          if(pages && !Ptype){
               goPost(data.id,0,data.where,data.name);
           }
            if(type == 7 && data.you && Yd){
