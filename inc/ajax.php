@@ -1557,6 +1557,7 @@ $token =1;
       "type"=>$type,
       "cantry"=>$cantry,
       "gr"=>$gr,
+      "wr"=>$whereg,
       "vid"=>$vid,
       "cat"=>$cat,
       "ttype"=>$tw,
