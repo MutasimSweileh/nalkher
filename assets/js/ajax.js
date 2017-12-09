@@ -605,7 +605,7 @@ function Dta(){
 function Ddialog(){
 $.dialog({
   title: 'حدد وقت النشر',
-  content: '<div class="row" ><div class="col s12 m12"><div class="mydatepicker"></div></div><div style="direction:ltr;padding:10px" class="col s12 m12 center Mydate">10:10 AM</div></div>',
+  content: '<div class="row" ><div class="col s12 m12"><div class="mydatepicker"></div></div><div style="direction:ltr;padding:10px" class="col s12 m12 center Mydate">10:10 AM</div><div class="col m12 s12"><a class="btn Bdg" >اضافة</a></div></div>',
   icon: 'fa fa-question fa-lg',
   theme: 'material',
   closeIcon: true,
@@ -624,15 +624,7 @@ $.dialog({
           $('input[name=time_share]').val(formattedDate);
         }
         });
-   },
-   buttons: {
-        hey: function () {
-           text: 'اضافة',
-            action: function () {
-                PostNow(true);
-              }
-         },
-  }
+   }
   });
 }
 $("#Add_time").click(function(){
