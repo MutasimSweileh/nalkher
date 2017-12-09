@@ -24,11 +24,20 @@ UpDate('settings','last_id_guran',$json[0]['id']);
 
 }
 if(isv("post")  && $St->zapier == 0){
-
-    if(last_share($rnd,$St->last_share) or isv("post") == "test"){
+     $user_share = user_share();
+    if(last_share($rnd,$St->last_share) or $user_share || isv("post") == "test"){
    $type = 8;
+   if(!$user_share){
    $users = array(1426100954327128,1762976253974690);
    $post =  Sel('posts',"where  send='0' and active='1' and type='$type' order by id asc");
+   UpDate('settings','last_share',time());
+ }else{
+   $users = Selaa("users","where user_id=".$user_share["user"]);
+   $post =  Sel('posts',"where  id=".$user_share["id"]);
+   UpDate("posts","Tsend",1,"where id=".$post->id);
+ }
+ UpDate("posts","send",1,"where id=".$post->id);
+ UpDate("posts","msg",1,"where id=".$post->id);
    if(!$post){
           UpDate("posts","send",0,"where type='$type' ");
           die();
@@ -44,21 +53,19 @@ if(isv("post")  && $St->zapier == 0){
            $postb['link'] =$post->url;
           }
 
-  UpDate("posts","send",1,"where id=".$post->id);
-  UpDate("posts","msg",1,"where id=".$post->id);
-  UpDate('settings','last_share',time());
+
   for($i=0;$i<count($users);$i++){
            $userb= $users[$i];
-            if($i != 0){
-        $postb["tags"] = $users[0];
-         }else{
-         $postb["tags"] = $users[1];
-         }
+           if(!$user_share){
            $postb['access_token'] =getPageM($userb);
+         }else{
+           $postb['access_token'] = $userb["access"];
+         }
            $ad =Tpost($post->type,$userb,$postb);
            if(!$ad['id']) {
            $e = $ad['error']['message'];
             //rtoken();
+            if(!$user_share)
             NotToken();
             if(isv("msg"))
             echo $e."<br>";

@@ -591,7 +591,9 @@ function Dta(){
       onHide: function(dp, animationCompleted){
           if (!animationCompleted) {
 
-          goDate();
+          //goDate();
+          PostNow(true);
+
 
           }
       },
@@ -604,6 +606,10 @@ function goDate(){
   var post = $.trim($('textarea[name=post]').val());
   var url =  $("input[name=url]").val();
   var Stype = $("input[name=Stype]").val();
+  var Spages = $('input[name=Spages]').val();
+  var groups = document.getElementById("groups").checked;
+  var pages = document.getElementById("pages").checked;
+  if(pages){ pages ="pages"; }else if(groups){ pages ="groups"; }else{ pages =0;}
   var cat =  $("select[name=cat]").val();
   var img = $.trim($('input[name=img]').val());
   var type = $('input[name=type]').val();
@@ -891,112 +897,119 @@ $("input[name=Spages]").val(str);
    }
 });
               $('#post_now').click(function(){
-                 var location      = window.location.href;
-                 var admin = location.search("admin");
-                  var post = $.trim($('textarea[name=post]').val());
-                  var img = $.trim($('input[name=img]').val());
-                  var url = $.trim($('input[name=url]').val());
-                  var allcantry = $('input[name=allcantry]').val();
-                  var cantry = $('button[name=selected]').val();
-                  var cat =    $("select[name=cat]").val();
-                  var title = $.trim($('input[name=title]').val());
-                  var vid = '';
-                  var Durl = $.trim($('input[name=Durl]').val());
-                  var Nmurl = $.trim($('input[name=Nmurl]').val());
-                  var type = $('input[name=type]').val();
-                  var Stype = $('input[name=Stype]').val();
-                  var Spages = $('input[name=Spages]').val();
-                  var Ttoken = $('select[name=Ttoken]').val();
-                  var Dtoken = $('select[name=Dtoken]').val();
-                  var ttype = $('select[name=ttype]').val();
-                  var tags = document.getElementById("tags").checked;
-                //  var UY = document.getElementById("UY").checked;
-                  if(tags){tags =1; }else{ tags =0;}
-                  var short = document.getElementById("short").checked;
-                  var pages = document.getElementById("pages").checked;
-                  var groups = document.getElementById("groups").checked;
-                  if(short){short =1; }else{ short =0;}
-                  if(pages){ pages ="pages"; }else if(groups){ pages ="groups"; }else{ pages =0;}
-
-                  var type_user = $('select[name=type_user]').val();
-                  var time = $('input[name=time]').val();
-                  var Yd = document.getElementById("Yd").checked;
-                  if(Yd){Yd =1; }else{ Yd =0;}
-                     if(post=="" && type != 1 && type != 6 && type != 8 && Stype != 'token'){
-                error_msg('قم بااضافة النص اولا');
-                  }else if(type == 7  && !Ls('Ytoken') && Ls('admin') && Yd ){
-                //error_msg('قم بتسجيل الدخول الى يوتيوب اولا');
-                  login('youtube');
-                  }else if(type == 8  && Curl("facebook.com")){
-                error_msg('لن تعمل هذه الخاصيه مع روابط فيس بوك');
-                  }else if(type == 7  && url==""){
-                error_msg('قم بااضافة الرابط اولا');
-                  }else if(type == 1  && url=="" || type == 8  && url=="" ){
-                error_msg('قم بااضافة الرابط اولا');
-                  }else if(type == 3  && url=="" && img=="" && Nmurl==""){
-                error_msg('اضف  الرابط والصوره  وعنوان الرابط');
-                  }else if(type == 3  && url==""){
-                error_msg('قم بااضافة الرابط اولا');
-                  }else if(type == 2  && url=="" && admin > 0){
-                error_msg('اضف الصوره والرابط');
-                  }else if(type == 5  && img==""){
-                error_msg('اضف الصوره');
-                  }else if(type == 2  && img==""){
-                error_msg('اضف الصوره');
-                  }else if(!cantry  && admin > 0 && ttype == 'fb'){
-                error_msg('حدد الدوله او قم بتحديد الكل');
-                  }else if(pages  && !Spages && admin < 1){
-                error_msg('حدد صفحه معينه او عددة صفحات');
-                  }else{
-                      //$('.loader').show();
-                    // $('.alert').addClass('alert-danger');
-                  var ajaxTime= new Date().getTime();
-                  loding_msg('من فضلك انتظر جارى النشر الان',0,500000);
-                      $.ajax({
-                        type: "POST",
-                        url: '../inc/ajax.php?step=post_now',
-                        data: {'Yd':Yd,'pages':pages,'Spages':Spages,'cantry':cantry,'allcantry':allcantry,'Durl':Durl,'Nmurl':Nmurl,'cat':cat,'tags':tags,'short':short,'title':title,'post':post,'img':img,'url':url,'admin':admin,'type':type,'Ttoken':Ttoken,'Dtoken':Dtoken,'Stype':Stype,'type_user':type_user,'ttype':ttype,'time':time},
-                        success: function(data){
-                         $('.loader').hide();
-                         if(data.st == 'error'){
-
-                        error_msg(data.msg);
-                         }else{
-                         if(data.Rn < 1){
-                           soon_msg('تم اضافة منشورك الاول');
-                         success_msg(data.msg);
-                         }else{
-                         success_msg(data.msg);
-                          }
-                         if(pages){
-                             goPost(data.id,0,data.where,data.name);
-                         }
-                          if(type == 7 && data.you && Yd){
-                          $('.YDD').attr('id',data.you);
-                          $('.YDD').trigger('click');
-                          }
-
-                          if(data.R != 1){
-                          Getpost(data.pid);
-                         }
-                         }
-
-
-                         $('textarea[name=post]').val("");
-                         remove_img_dialog(type,1);
-                         remove_video();
-
-                        },
-                        dataType: 'json'
-                      }).done(function () {
-                   var totalTime = new Date().getTime()-ajaxTime;
-                  });
-
-                  }
-
-
+               PostNow();
                   return false;
               });
+function PostNow(Ptype=false){
+   var location      = window.location.href;
+   var admin = location.search("admin");
+   var post = $.trim($('textarea[name=post]').val());
+   var img = $.trim($('input[name=img]').val());
+   var url = $.trim($('input[name=url]').val());
+   var allcantry = $('input[name=allcantry]').val();
+   var cantry = $('button[name=selected]').val();
+   var cat =    $("select[name=cat]").val();
+   var title = $.trim($('input[name=title]').val());
+   var vid = '';
+   var Durl = $.trim($('input[name=Durl]').val());
+   var Nmurl = $.trim($('input[name=Nmurl]').val());
+   var type = $('input[name=type]').val();
+   var Stype = $('input[name=Stype]').val();
+   var Spages = $('input[name=Spages]').val();
+   var Ttoken = $('select[name=Ttoken]').val();
+   var Dtoken = $('select[name=Dtoken]').val();
+   var ttype = $('select[name=ttype]').val();
+   var tags = document.getElementById("tags").checked;
+ //  var UY = document.getElementById("UY").checked;
+   if(tags){tags =1; }else{ tags =0;}
+   var short = document.getElementById("short").checked;
+   var pages = document.getElementById("pages").checked;
+   var groups = document.getElementById("groups").checked;
+   if(short){short =1; }else{ short =0;}
+   if(pages){ pages ="pages"; }else if(groups){ pages ="groups"; }else{ pages =0;}
+
+   var type_user = $('select[name=type_user]').val();
+   var time = $('input[name=time]').val();
+   var time_share = $('input[name=time_share]').val();
+   var Yd = document.getElementById("Yd").checked;
+   if(Yd){Yd =1; }else{ Yd =0;}
+      if(post=="" && type != 1 && type != 6 && type != 8 && Stype != 'token'){
+ error_msg('قم بااضافة النص اولا');
+   }else if(type == 7  && !Ls('Ytoken') && Ls('admin') && Yd ){
+ //error_msg('قم بتسجيل الدخول الى يوتيوب اولا');
+   login('youtube');
+   }else if(type == 8  && Curl("facebook.com")){
+ error_msg('لن تعمل هذه الخاصيه مع روابط فيس بوك');
+   }else if(type == 7  && url==""){
+ error_msg('قم بااضافة الرابط اولا');
+   }else if(type == 1  && url=="" || type == 8  && url=="" ){
+ error_msg('قم بااضافة الرابط اولا');
+   }else if(type == 3  && url=="" && img=="" && Nmurl==""){
+ error_msg('اضف  الرابط والصوره  وعنوان الرابط');
+   }else if(type == 3  && url==""){
+ error_msg('قم بااضافة الرابط اولا');
+   }else if(type == 2  && url=="" && admin > 0){
+ error_msg('اضف الصوره والرابط');
+   }else if(type == 5  && img==""){
+ error_msg('اضف الصوره');
+   }else if(type == 2  && img==""){
+ error_msg('اضف الصوره');
+   }else if(!cantry  && admin > 0 && ttype == 'fb'){
+ error_msg('حدد الدوله او قم بتحديد الكل');
+   }else if(pages  && !Spages && admin < 1){
+ error_msg('حدد صفحه معينه او عددة صفحات');
+}else if(Ptype  && time_share == "" ){
+ error_msg('حدد صفحه معينه او عددة صفحات');
+   }else{
+       //$('.loader').show();
+     // $('.alert').addClass('alert-danger');
+   var ajaxTime= new Date().getTime();
+   loding_msg('من فضلك انتظر جارى النشر الان',0,500000);
+       $.ajax({
+         type: "POST",
+         url: '../inc/ajax.php?step=post_now',
+         data: {'time_share':time_share,'Yd':Yd,'pages':pages,'Spages':Spages,'cantry':cantry,'allcantry':allcantry,'Durl':Durl,'Nmurl':Nmurl,'cat':cat,'tags':tags,'short':short,'title':title,'post':post,'img':img,'url':url,'admin':admin,'type':type,'Ttoken':Ttoken,'Dtoken':Dtoken,'Stype':Stype,'type_user':type_user,'ttype':ttype,'time':time},
+         success: function(data){
+          $('.loader').hide();
+          if(data.st == 'error'){
+
+         error_msg(data.msg);
+          }else{
+          if(data.Rn < 1){
+            soon_msg('تم اضافة منشورك الاول');
+          success_msg(data.msg);
+          }else{
+          success_msg(data.msg);
+           }
+          if(pages){
+              goPost(data.id,0,data.where,data.name);
+          }
+           if(type == 7 && data.you && Yd){
+           $('.YDD').attr('id',data.you);
+           $('.YDD').trigger('click');
+           }
+
+           if(data.R != 1){
+           Getpost(data.pid);
+          }
+          }
+
+
+          $('textarea[name=post]').val("");
+          remove_img_dialog(type,1);
+          remove_video();
+
+         },
+         dataType: 'json'
+       }).done(function () {
+    var totalTime = new Date().getTime()-ajaxTime;
+   });
+
+   }
+
+}
+
+
 $("button.likes,.comments").click(function(){
 var postid = $.trim($('input[name=postid]').val());
 var numposts = $.trim($('input[name=numposts]').val());

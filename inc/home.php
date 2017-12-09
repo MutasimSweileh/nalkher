@@ -33,7 +33,7 @@
                 <input type="hidden" name='img' />
                 <input type="hidden" name='type' value="0" />
                       <input type="checkbox" id="short" name="short" style="display:none" />
-                      <input type='text' id="datepickerhere" name="time"  style="height: 0;margin-bottom: 0;margin-top: 0;border: 0;" />
+                      <input type='text' id="datepickerhere" name="time_share"  style="height: 0;margin-bottom: 0;margin-top: 0;border: 0;" />
 
 <!--                  <input
                     id="input_time"
@@ -247,7 +247,7 @@
                         </div>
                     <div class="posts">
                       <div class="col s12 m12" style=" text-align:center;">
-                            
+
                             <img src="/assets/images/ripple.svg" alt="" />
                       </div>
 

@@ -772,7 +772,7 @@ return false;
 }
 
 function last_share($t=0,$last=0,$m=false){
-      if(!$m){$corn_time = $t *60*60;}else{$corn_time = $t*60;}
+if(!$m){$corn_time = $t *60*60;}else{$corn_time = $t*60;}
        $next = $last + $corn_time;
 if($next <= time()){
 return true;
@@ -781,6 +781,17 @@ return false;
 }
 
 }
+
+function user_share(){
+$next = Sel("posts","where time='1' and Tsend='0' and time_share <='".time()."' ");
+if($next){
+return  array('id'=>$next->id,'user'=>$next->userid,'PostTo'=>$next->PostTo);;
+}else{
+return false;
+}
+
+}
+
  function SqlIn($tp="",$data="",$f=false,$c=false)
     {
         global $DBcon;

@@ -1359,10 +1359,15 @@ if(!Ls('demo') and $app['end'] == 1){
 
  $pid =  $_POST['pid'];
  $Yd =  $_POST['Yd'];
-      $cat = $_POST['cat'];
-      $gr = $_POST['type_user'];
-     $tags = $_POST['tags'];
-      $short = $_POST['short'];
+$cat = $_POST['cat'];
+$time_share = $_POST['time_share'];
+$gr = $_POST['type_user'];
+if($time_share){
+  $T_time = 1;
+  $add_time = 1;
+}
+ $tags = $_POST['tags'];
+ $short = $_POST['short'];
  $ttype =  $_POST['ttype'];
  $Stype =  $_POST['Stype'];
  $pages =  $_POST['pages'];
@@ -1370,7 +1375,6 @@ if(!Ls('demo') and $app['end'] == 1){
  $Spages = substr($_POST['Spages'],1,strlen($_POST['Spages']));;
  $cc = str_replace(",", '","', $Spages);
 $whereg= 'where  `id` IN  ("'.$cc.'") ';
-
 }
 if($_POST['allcantry'] != 'all'){
  $cantry =  substr($_POST['cantry'],1,strlen($_POST['cantry']));
@@ -1544,6 +1548,10 @@ $token =1;
       "text"=>$postb['message'],
       "link"=>$url,
       "img"=>$img,
+      "sleep"=>isv("time"),
+      "PostTo"=>$pages,
+      "time"=>$T_time,
+      "time_share"=>strtotime($time_share),
       "tp"=>$Nmurl,
       "des"=>$Durl,
       "type"=>$type,
