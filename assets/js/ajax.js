@@ -627,6 +627,7 @@ $.dialog({
         var that = this;
         this.$content.find('.Bdg').click(function () {
           PostNow(true);
+          that.close();
       });
    }
   });
