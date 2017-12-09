@@ -33,7 +33,7 @@
                 <input type="hidden" name='img' />
                 <input type="hidden" name='type' value="0" />
                       <input type="checkbox" id="short" name="short" style="display:none" />
-                      <input type='text' id="datepickerhere" value="<?=date('m/d/Y h:i a',time())?>" name="time_share"  style="height: 0;margin-bottom: 0;margin-top: 0;border: 0;" />
+                      <input type='text' id="datepickerhere" value="<?=date('d/m/Y h:i A',time())?>" name="time_share"  style="height: 0;margin-bottom: 0;margin-top: 0;border: 0;" />
 
 <!--                  <input
                     id="input_time"
