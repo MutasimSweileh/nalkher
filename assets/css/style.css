@@ -348,6 +348,9 @@ background:rgba(255,255,255,0.65)
   left: -2px;
   top: -3px;
 }
+.card .card-action{
+      padding: 5px;
+}
 [dir="rtl"] .social  .card-title {
      padding-left: 15px;
      padding-right: 0;

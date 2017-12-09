@@ -169,7 +169,7 @@
   </div>
 
    <div class="col s6 m3  tags">
-   <div class="switch   left"  style="    height: 36px;
+   <div class="switch   left"  style=" display:none;   height: 36px;
     line-height: 36px;">
     <label>
       <input type="checkbox" id="tags"  name="tags">
@@ -179,8 +179,8 @@
   </div>
   </div>
 
-            <div class="col s12 m3 left ">
-  <button name="post" style="width:100%" class='dropdown-button btn waves-effect waves-light  left' href='#' data-activates='dropdown26'><i class="zmdi zmdi-caret-down drop-down-icon right"></i>  نشر <i class="fa fa-facebook left "></i></button>
+            <div class="col s12 m3 right ">
+  <button name="post" style="width:100%" class='dropdown-button btn waves-effect waves-light  ' href='#' data-activates='dropdown26'><i class="zmdi zmdi-caret-down drop-down-icon right"></i>  نشر <i class="fa fa-facebook left "></i></button>
   </div>
 
   <!-- Dropdown Structure -->
