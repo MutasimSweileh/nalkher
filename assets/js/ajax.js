@@ -579,29 +579,6 @@ function Rip (ip=""){
 	});
     */
 /////////////////////addpost///////////////////////////
-var dat = null;
-function Dta(){
-   $('#datepickerhere').focus();
-
-}
-  $('#datepickerhere').datepicker({
-      language: 'en',
-      timepicker: true,
-      minDate: new Date(),
-      onHide: function(dp, animationCompleted){
-          if (!animationCompleted) {
-
-          //goDate();
-          PostNow(true);
-
-
-          }
-      },
-      onSelect: function(formattedDate, date, inst){
-        dat = formattedDate;
-      }
-
-  });
 function Ddialog(){
 $.dialog({
   title: 'حدد وقت النشر',
@@ -614,6 +591,8 @@ $.dialog({
   animation: 'zoom',
   columnClass: 'col m5 s12 offset-m4',
   onOpen: function () {
+      var that = this;
+      var dare =  this.$content.find('.Mydate').text();
     $('.mydatepicker').datepicker({
         language: 'en',
         inline: true,
@@ -621,12 +600,13 @@ $.dialog({
         minDate: new Date(),
         onSelect: function(formattedDate, date, inst){
           $(".Mydate").text(formattedDate);
-          $('input[name=time_share]').val(formattedDate);
+          dare = formattedDate;
+          $('#datepickerhere').val(formattedDate);
         }
         });
-        var that = this;
+
         this.$content.find('.Bdg').click(function () {
-          PostNow(true);
+          PostNow(dare);
           that.close();
       });
    }
