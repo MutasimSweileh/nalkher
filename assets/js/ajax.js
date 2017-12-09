@@ -614,7 +614,8 @@ $.dialog({
   });
 }
 $("#Add_time").click(function(){
-  $('#datepickerhere').focus();
+  //$('#datepickerhere').focus();
+   Ddialog();
   });
 
 
