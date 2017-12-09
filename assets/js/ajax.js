@@ -605,7 +605,7 @@ function Dta(){
 function Ddialog(){
 $.dialog({
   title: 'حدد وقت النشر',
-  content: '<div class="row" ><div class="col s12 m10"><div class="mydatepicker"></div></div><div class="col s12 m10">10:10 AM</div></div>',
+  content: '<div class="row" ><div class="col s12 m10"><div class="mydatepicker"></div></div><div class="col s12 m2">10:10 AM</div></div>',
   icon: 'fa fa-question fa-lg',
   theme: 'material',
   closeIcon: true,
