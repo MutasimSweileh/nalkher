@@ -604,13 +604,14 @@ function Dta(){
   });
 function Ddialog(){
 $.dialog({
-  title: 'Text content!',
+  title: 'حدد وقت النشر',
   content: 'Simple modal!',
   icon: 'fa fa-question',
   theme: 'material',
   closeIcon: true,
   animation: 'scale',
   type: 'red',
+  columnClass: 'col m6 s12',
   });
 }
 $("#Add_time").click(function(){
