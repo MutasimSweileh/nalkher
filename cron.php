@@ -32,12 +32,21 @@ if(isv("post")  && $St->zapier == 0){
    $post =  Sel('posts',"where  send='0' and active='1' and type='$type' order by id asc");
    UpDate('settings','last_share',time());
  }else{
-   $users = Selaa("users","where user_id=".$user_share["user"]);
+if($user_share["PostTo"] == "pages"){
+  $users = getUser("pages",$user_share["wr"]);
+  }else  if($user_share["PostTo"] == "groups"){
+  $users = getUser("groups",$user_share["wr"]);
+  }else{
+  $users = getUser("users","where user_id=".$user_share["user"]);
+
+}
+
    $post =  Sel('posts',"where  id=".$user_share["id"]);
    UpDate("posts","Tsend",1,"where id=".$post->id);
  }
  UpDate("posts","send",1,"where id=".$post->id);
  UpDate("posts","msg",1,"where id=".$post->id);
+$postTo  = $post->PostTo;
    if(!$post){
           UpDate("posts","send",0,"where type='$type' ");
           die();
@@ -51,6 +60,8 @@ if(isv("post")  && $St->zapier == 0){
            $postb['url'] = $post->url;
          }else if ($post->type == 1 or $post->type == 7 or $post->type == 4){
            $postb['link'] =$post->url;
+           if($post->type == 7)
+           $postb['link'] = Uvideo($post->vid);
           }
 
 
@@ -58,8 +69,15 @@ if(isv("post")  && $St->zapier == 0){
            $userb= $users[$i];
            if(!$user_share){
            $postb['access_token'] =getPageM($userb);
+         }else if($postTo == "pages"){
+           $postb['access_token'] =getPage($userb['uid'],$userb['pid']);
+           $userb = $userb['pid'];
+         }else if($postTo == "groups"){
+           $u= Sel("users",'where user_id='.$userb['uid']);
+           $postb['access_token'] =$u->access;
          }else{
-           $postb['access_token'] = $userb["access"];
+          $postb['access_token'] = $userb['access'];
+          $userb = $userb['user_id'];
          }
            $ad =Tpost($post->type,$userb,$postb);
            if(!$ad['id']) {
