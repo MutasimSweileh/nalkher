@@ -605,14 +605,14 @@ function Dta(){
 function Ddialog(){
 $.dialog({
   title: 'حدد وقت النشر',
-  content: '<div class="mydatepicker"></div>',
+  content: '<div class="row" ><div class="col s12 m10"><div class="mydatepicker"></div></div><div class="col s12 m10">10:10 AM</div></div>',
   icon: 'fa fa-question fa-lg',
   theme: 'material',
   closeIcon: true,
   animation: 'scale',
   type: 'red',
   animation: 'zoom',
-  columnClass: 'col m6 s12 offset-s3',
+  columnClass: 'col m6 s12 offset-m3',
   onOpen: function () {
     $('.mydatepicker').datepicker({
         language: 'en',
