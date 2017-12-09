@@ -613,6 +613,11 @@ $.dialog({
   type: 'red',
   animation: 'zoom',
   columnClass: 'col m5 s12 offset-m4',
+  buttons: {
+        buttonName: function(){
+            $.alert('Button name was called');
+        }
+  },
   onOpen: function () {
     $('.mydatepicker').datepicker({
         language: 'en',
