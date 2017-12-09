@@ -47,7 +47,7 @@ if($user_share["PostTo"] == "pages"){
  UpDate("posts","send",1,"where id=".$post->id);
  UpDate("posts","msg",1,"where id=".$post->id);
 $postTo  = $post->PostTo;
-   if(!$post){
+   if(!$post && !$user_share){
           UpDate("posts","send",0,"where type='$type' ");
           die();
        }
