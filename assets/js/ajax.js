@@ -1342,6 +1342,7 @@ function fb_share (id){
 
               $('textarea[name=post]').val(data.post);
               $("button[name=epost]").show();
+              $("button[name=epost]").attr("onclick","edite("+id+")");
               $("button[name=post]").hide();
               $("input[name=type]").val(data.type);
               if(data.type == 2){
