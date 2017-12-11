@@ -607,8 +607,8 @@ $.dialog({
         });
 
         this.$content.find('.Bdg').click(function () {
-          //PostNow(that.$content.find('.Mydate').text());
-          error_msg($(this).val());
+          PostNow($(this).val());
+          //error_msg();
           that.close();
       });
    }
