@@ -1322,7 +1322,7 @@ function fb_share (id){
                       }
   return false;
 }
-    function add_time (id){
+    function G_post(id){
 
   loding_msg("من فضلك انتظر جارى جلب المنشور الان");
 
