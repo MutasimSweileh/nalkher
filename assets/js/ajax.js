@@ -1354,8 +1354,6 @@ function fb_share (id){
               document.body.scrollTop = 0;
               document.documentElement.scrollTop = 0;
                    }
-		//$('#Add_time').trigger('click');
-        // soon_msg('قم بااختيار الوقت المناسب');
                         },
                         dataType: 'json'
                       });
