@@ -682,7 +682,9 @@ if(Ls('admin') and $app['end'] == 1){
         $S= UpDate("video",'link',$url,"where id=".$Sv->vid);
         }
         $S= UpDate("posts",'text',$post,"where id=".$id);
-      //  $S= UpDate("posts",'link',$url,"where id=".$id);
+        if($type == 1){
+        $S= UpDate("posts",'link',$url,"where id=".$id);
+         }
         $S= UpDate("posts",'type',$type,"where id=".$id);
         //$S= UpDate("posts",'time',0,"where id=".$id);
          if($S){
@@ -1033,9 +1035,7 @@ $id = $_SESSION['id'];
         }
 
 
-    }else{
-     header("Location: ../");
-     }
+
 
 }else if($_GET['step'] == 'get_video'){
     if(isset($_POST['url'])){
