@@ -1022,6 +1022,7 @@ $url = Uvideo($vid);
 
     }else if($_GET['step'] == 'AddT'){
  $pid =  $_POST['pid'];
+ if($pid){
  $Sql = Selaa('posts','where id="'.$pid.'"');
  $type =  $Sql['type'];
 $post =  $Sql['text'];
@@ -1036,7 +1037,9 @@ $id = $_SESSION['id'];
         }
 
 
-  
+    }else{
+     header("Location: ../");
+     }
 
 }else if($_GET['step'] == 'get_video'){
     if(isset($_POST['url'])){
