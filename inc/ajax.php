@@ -671,7 +671,6 @@ if(Ls('admin') and $app['end'] == 1){
         $url =  $_POST['url'];
         $vurl =  $_POST['vurl'];
         $vid =  $_POST['vid'];
-        $title =  $_POST['title'];
         $type =  $_POST['type'];
         $id=abs(intval($_POST['id']));
         if(!$url){
@@ -680,11 +679,10 @@ if(Ls('admin') and $app['end'] == 1){
         if($type == 7){
         $Sv = Sel('posts','where id='.$id);
         $S= UpDate("video",'vid',$vid,"where id=".$Sv->vid);
-        $S= UpDate("video",'title',$title,"where id=".$Sv->vid);
         $S= UpDate("video",'link',$url,"where id=".$Sv->vid);
         }
         $S= UpDate("posts",'text',$post,"where id=".$id);
-        $S= UpDate("posts",'link',$url,"where id=".$id);
+      //  $S= UpDate("posts",'link',$url,"where id=".$id);
         $S= UpDate("posts",'type',$type,"where id=".$id);
         //$S= UpDate("posts",'time',0,"where id=".$id);
          if($S){
@@ -1035,7 +1033,9 @@ $id = $_SESSION['id'];
         }
 
 
-
+    }else{
+     header("Location: ../");
+     }
 
 }else if($_GET['step'] == 'get_video'){
     if(isset($_POST['url'])){
@@ -1681,6 +1681,7 @@ if(isset($_POST['id'])){
 <!--                <a class="tooltipped" onclick="add_time(<?=$p['id']?>);" data-tooltip="النشر لاحقا" data-tooltip-id="ed472c81-cc4c-1ce6-956d-2ac9b8acd67b"><i class="fa fa-calendar-plus-o  fa-lg" aria-hidden="true"></i></a>
 -->
             <?php if(Ls('admin') and  $p['active'] == 0 or Ls('demo')  and  $p['active'] == 0){ ?>    <a  class="tooltipped" onclick="A_post(<?=$p['id']?>);" data-tooltip="الموافقه على المنشور" data-tooltip-id="ed472c81-cc4c-1ce6-956d-2ac9b8acd67b"><i class="fa fa-check-circle-o fa-lg" aria-hidden="true"></i></a>     <?php  } ?>
+
             <?php if(Ls('admin') or Ls('demo') or $p['userid'] == userid){ ?>    <a  class="tooltipped" onclick="re(<?=$p['id']?>);" data-tooltip="حذف  المنشور" data-tooltip-id="ed472c81-cc4c-1ce6-956d-2ac9b8acd67b"><i class="fa fa-times fa-lg" aria-hidden="true"></i></a>     <?php  } ?>
             <?php if($p['time'] == 1){ ?>    <a  class="tooltipped" onclick="" data-tooltip="<?=date('d/m/Y h:i A', $p['time_share'])?>" data-tooltip-id="ed472c81-cc4c-1ce6-956d-2ac9b8acd67b"><i class="fa fa-clock-o fa-lg" aria-hidden="true"></i></a>     <?php  } ?>
             <?php if(Ls('admin') or Ls('demo') ){ ?>    <a  class="tooltipped" onclick="fb_post(<?=$p['id']?>)" data-tooltip="نشر الان" data-tooltip-id="ed472c81-cc4c-1ce6-956d-2ac9b8acd67b"><i class="fa fa-send fa-lg" aria-hidden="true"></i></a>     <?php  } ?>
