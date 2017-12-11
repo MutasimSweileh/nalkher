@@ -1372,12 +1372,13 @@ if($_POST['allcantry'] != 'all'){
 $add_time =  $_POST['add_time'];
 $id = $_SESSION['id'];
 
- die(json_encode( array('st'=>'error','msg'=>$time_share)));
 
-if($time_share){
+
+if($time_share != "" &&  $time_share != false &&  $time_share != "false" ){
   $T_time = 1;
   $add_time = 1;
 }
+die(json_encode( array('st'=>'error','msg'=>$T_time)));
 if(!$pid){
  $type =  $_POST['type'];
 $post =  trim($_POST['post']);
