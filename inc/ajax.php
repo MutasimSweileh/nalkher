@@ -1372,7 +1372,7 @@ if($_POST['allcantry'] != 'all'){
 $add_time =  $_POST['add_time'];
 $id = $_SESSION['id'];
 
- echo json_encode( array('st'=>'error','msg'=>$time_share));
+ die(json_encode( array('st'=>'error','msg'=>$time_share)));
 
 if($time_share){
   $T_time = 1;
