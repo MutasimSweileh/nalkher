@@ -606,7 +606,7 @@ $.dialog({
         });
 
         this.$content.find('.Bdg').click(function () {
-          PostNow(dare);
+          PostNow(that.$content.find('.Mydate').text());
           that.close();
       });
    }
