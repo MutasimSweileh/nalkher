@@ -1357,7 +1357,8 @@ function fb_share (id){
 
   loding_msg("من فضلك انتظر جارى جلب المنشور الان");
 
-
+  remove_img_dialog(0,1);
+  remove_video();
                      $.ajax({
                         type: "POST",
                         url: '../inc/ajax.php?step=AddT',
@@ -1378,6 +1379,7 @@ function fb_share (id){
               $("button[name=epost]").attr("onclick","edite("+id+")");
               $("button[name=post]").hide();
               $("input[name=type]").val(data.type);
+
             $('label').addClass('active');
             if(data.type == 2 ){
               $('.textfilde').removeClass('m12');
