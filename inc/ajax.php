@@ -1539,7 +1539,7 @@ if($Stype == 'nof'){
       $Dtoken= $_POST['Dtoken'];
 
   }else{
-    die(json_encode( array('st'=>'error','msg'=>$time_share)));
+  //  die(json_encode( array('st'=>'error','msg'=>$time_share)));
       $i= array(
       "text"=>$postb['message'],
       "link"=>$url,
@@ -1547,7 +1547,7 @@ if($Stype == 'nof'){
       "sleep"=>isv("time"),
       "PostTo"=>$pages,
       "time"=>$T_time,
-      "time_share"=>$time_share,
+      "time_share"=>strtotime($time_share),
       "tp"=>$Nmurl,
       "des"=>$Durl,
       "type"=>$type,
