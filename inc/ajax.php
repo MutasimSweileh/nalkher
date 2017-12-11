@@ -1346,9 +1346,7 @@ $nid =  nUser($nid,isv("where"));
 
      }else if($_GET['step'] == 'post_now'){
     if(isset($_POST['pid']) or isset($_POST['type']) ){
-
 if(!Ls('demo') and $app['end'] == 1){
-
  $pid =  $_POST['pid'];
  $Yd =  $_POST['Yd'];
 $cat = $_POST['cat'];
@@ -1516,10 +1514,10 @@ if($admin > 0 and $add_time == 0){$admin = 1;}else {$admin =0;};
 if($ttype == 'tw' or strlen($postb['message']) <= 140){$tw =1;}else {$tw =0;};
 
 if(!$pid and $count > 0){
-if($type == 0 or $type == 7 or $type == 2 or $type == 5 or $type == 1 or $add_time == 1 or $admin  == 1){
+
 if($Stype == 'nof'){
-$ttype ='nof';
-$nof =1;
+      $ttype ='nof';
+      $nof =1;
       $i= array(
       "nof"=>$postb['message'],
       "link"=>$url,
@@ -1532,8 +1530,8 @@ $nof =1;
       $id= mysqli_insert_id($DBcon);
 
   }else if($Stype == 'token'){
-$ttype ='token';
-$token =1;
+      $ttype ='token';
+      $token =1;
       $Sql = 1;
       $id= 0;
       $Ttoken= $_POST['Ttoken'];
@@ -1570,21 +1568,11 @@ $token =1;
       $Sql = SqlIn('posts',$i);
       $id= mysqli_insert_id($DBcon);
       }
-}else{
-$SR= Sel('posts'," where text like '%$t%' order by id desc");
-$id= $SR->id;
- $Sql=1;
-  $R=1;
-}
+
 }
    if($Sql and $count > 0){
      if($admin == 0 and $add_time == 0){
      if(!$pages){
-         /*
-         $postb['message'] .='
-
-         '.'#'.str_replace(' ','_',$_SESSION['sname']).'  باستخدام   #'.str_replace(' ','_',$St->title);
-         */
                      if(!$htc){
                                  try {
                          if($type ==2){ $ad= $facebook->api('/me/photos/','post',$postb);
@@ -1606,43 +1594,15 @@ if(!$ad['id']){ $e = $ad['error']['message']; }
         }
 
         }else{
-
-       if($pages){
             echo json_encode( array('st'=>'ok',"tags"=>$tags,"type"=>$pages,"where"=>$whereg,"id"=>$id,'msg'=>"جارى النشر الان من فضلك انتظر"));
-
-  /*     for($i=0;$i<count($pages);$i++){
-             $p = $pages[$i];
-             $pid = $p['pid'];
-             $name = $p['name'];
-
-            $u =  Sel($appsql,"where user_id=".$p['uid']);
-             $postb['access_token'] = getPage($p['uid'],$p['pid']);
-                     if(!$htc){
-                                 try {
-                         if($type ==2){ $ad= $facebook->api('/'.$pid.'/photos/','post',$postb);
-                        }else{$ad= $facebook->api('/'.$pid.'/feed','post',$postb);}
-                  } catch (FacebookApiException $e) {
-                                  $ad=false;
-                                 }
-                          }else{
-$ad =Tpost($type,$pid,$postb,0);
-if(!$ad['id']){ $e = $ad['error']['message']; }
-                          }
-
-       }*/
-
-        }
         }
 
      }else if($add_time == 1){
-
       if($Sql){
         echo json_encode( array('st'=>'ok','pid'=>$id,'you'=>$vvideo,'R'=>$R,'Rn'=>$Rn,'msg'=>'تم اضافة المنشور بنجاح'));
-
         }else{
             echo json_encode( array('st'=>'error','msg'=>'حدث خطأ ما لم يتم النشر'));
         }
-
      }else{
       $i= array(
       "postid"=>$id,
