@@ -1184,10 +1184,9 @@ function G_video(url){
 
              $('textarea[name=post]').val(data.title);
              $('input[name=title]').val(data.title);
+             $('input[name=url]').val(data.vurl);
              $('.image').attr('src',data.img);
-             if(a != 1){
              $('label').addClass('active');
-             }
              $('label[for=linetext-1]').text('وصف الفديو');
              $('.title_video').show();
              $('.remove').hide();
@@ -1378,6 +1377,7 @@ function fb_share (id){
               $("button[name=epost]").attr("onclick","edite("+id+")");
               $("button[name=post]").hide();
               $("input[name=type]").val(data.type);
+            $('label').addClass('active');
             if(data.type == 2 ){
               $('.textfilde').removeClass('m12');
               $('.textfilde').addClass('m9');
