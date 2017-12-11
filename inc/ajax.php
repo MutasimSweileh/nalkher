@@ -1035,9 +1035,7 @@ $id = $_SESSION['id'];
         }
 
 
-    }else{
-     header("Location: ../");
-     }
+
 
 }else if($_GET['step'] == 'get_video'){
     if(isset($_POST['url'])){
