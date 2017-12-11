@@ -1343,12 +1343,12 @@ function fb_share (id){
               $('textarea[name=post]').val(data.post);
               $("button[name=epost]").show();
               $("button[name=post]").hide();
+              $("input[name=type]").val(data.type);
               if(data.type == 2){
               $('.textfilde').removeClass('m12');
               $('.textfilde').addClass('m9');
 							$(".image").attr('src',data.img);
 							$("input[name=img]").val(data.img);
-							$("input[name=type]").val(2);
               $(".uimage").show();
               }
               document.body.scrollTop = 0;
