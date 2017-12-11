@@ -1356,7 +1356,7 @@ function fb_share (id){
     function G_post(id){
 
   loding_msg("من فضلك انتظر جارى جلب المنشور الان");
-
+  $('.url_video').hide();
   remove_img_dialog(0,1);
   remove_video();
                      $.ajax({
