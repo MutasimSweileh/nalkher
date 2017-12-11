@@ -1027,9 +1027,11 @@ $url = Uvideo($vid);
 $post =  $Sql['text'];
 $img =  $Sql['link'];
 $id = $_SESSION['id'];
-
+if($type == 7){
+$vid = Sel("video","where id=".$Sql['vid']);
+}
      if($Sql){
-        echo json_encode( array('st'=>'ok','pid'=>$id,'type'=>$type,'url'=>$Sql['link'],'post'=>$post,'img'=>$img,'msg'=>'تم جلب المنشور بنجاح'));
+        echo json_encode( array('st'=>'ok','pid'=>$id,'type'=>$type,"vurl"=>$vid,'url'=>$Sql['link'],'post'=>$post,'img'=>$img,'msg'=>'تم جلب المنشور بنجاح'));
 
         }else{
             echo json_encode( array('st'=>'error','msg'=>'حدث خطأ ما لم يتم النشر'));

@@ -1354,7 +1354,7 @@ function fb_share (id){
 							$("input[name=img]").val(data.img);
               $(".uimage").show();
             }else if(data.type == 7){
-             get_video (data.url);
+             get_video (data.vurl);
             }else if(data.type == 1){
               $('.url_video').show();
               $("input[name=url]").val(data.url);
