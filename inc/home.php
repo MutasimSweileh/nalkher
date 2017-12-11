@@ -130,7 +130,7 @@
               <div class="col s12 m12 upload-image" style="display:none; text-align:center;">
                     <img  src="<?=$St->url?>/assets/images/bigloader.gif" alt="" class="responsive-img"  />
               </div>
-              <div class="col s12 m12 options left">
+              <div class="col s12 m12  left">
 
 <!-- Dropdown Trigger -->
 
