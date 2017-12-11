@@ -1323,8 +1323,11 @@ function fb_share (id){
   return false;
 }
     function add_time (id){
-      loding_msg('من فضلك انتظر جارى النشر الان',0,1000);
-                       $.ajax({
+
+  loding_msg("من فضلك انتظر جارى جلب المنشور الان");
+
+
+                     $.ajax({
                         type: "POST",
                         url: '../inc/ajax.php?step=AddT',
                         data: {'pid':id},
@@ -1337,16 +1340,16 @@ function fb_share (id){
                          }
 
 
-                         $('textarea[name=post]').val(data.post);
-if(data.type == 2){
-                    $('.textfilde').removeClass('m12');
-                    $('.textfilde').addClass('m9');
+              $('textarea[name=post]').val(data.post);
+              if(data.type == 2){
+              $('.textfilde').removeClass('m12');
+              $('.textfilde').addClass('m9');
 							$(".image").attr('src',data.img);
 							$("input[name=img]").val(data.img);
 							$("input[name=type]").val(2);
-                            $(".uimage").show();
- }
-		$('#Add_time').trigger('click');
+              $(".uimage").show();
+              }
+		//$('#Add_time').trigger('click');
         // soon_msg('قم بااختيار الوقت المناسب');
                         },
                         dataType: 'json'
