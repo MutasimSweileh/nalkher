@@ -14,7 +14,7 @@
          <div class="row">
 
 <div class="url_video input-field col s12 m12 " style="display:none;    float: right;" >
-          <input id="text" name="url" type="text" class="validate">
+          <input id="text" name="url" type="text" class="validate right-align">
           <label for="text">رابط الفديو</label>
 </div>
 <div class="cat_video input-field col s12 m12 " style="display:none;" >
@@ -22,7 +22,7 @@
           <label for="text">التصنيف</label>
 </div>
 <div class="title_video input-field col s12 m12" style="display:none;    float: right;" >
-          <input id="text" name="title" type="text"   class="validate valid right-align">
+          <input id="text" name="title" type="text"   class="validate valid left-align">
           <label class="active" for="text">اسم الفديو</label>
 </div>
 

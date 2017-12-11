@@ -1184,11 +1184,12 @@ function G_video(url){
 
              $('textarea[name=post]').val(data.title);
              $('input[name=title]').val(data.title);
-             $('input[name=url]').val(data.vurl);
+             $('input[name=url]').val(url);
              $('.image').attr('src',data.img);
              $('label').addClass('active');
              $('label[for=linetext-1]').text('وصف الفديو');
              $('.title_video').show();
+             $('.url_video').show();
              $('.remove').hide();
              $('.uimage').show();
              $('.textfilde').removeClass('m12');
