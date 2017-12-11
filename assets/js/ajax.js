@@ -1170,6 +1170,37 @@ if(you2 < 1){
                  });
 
 }
+function G_video(url){
+  $.ajax({
+            type: "POST",
+            url: '../inc/ajax.php?step=get_video',
+            data: {'url':url},
+            success: function(data){
+             if(data.st == 'error'){
+
+            error_msg(data.msg);
+             }else{
+             success_msg(data.msg);
+
+             $('textarea[name=post]').val(data.title);
+             $('input[name=title]').val(data.title);
+             $('.image').attr('src',data.img);
+             if(a != 1){
+             $('label').addClass('active');
+             }
+             $('label[for=linetext-1]').text('وصف الفديو');
+             $('.title_video').show();
+             $('.remove').hide();
+             $('.uimage').show();
+             $('.textfilde').removeClass('m12');
+             $('.textfilde').addClass('m9');
+             $("input[name=type]").val(7);
+             }
+            },
+            dataType: 'json'
+          });
+
+}
           function get_url (url){
                 $("input[name=url]").change(function(){
                  var url =    $("input[name=url]").val();
@@ -1354,7 +1385,7 @@ function fb_share (id){
 							$("input[name=img]").val(data.img);
               $(".uimage").show();
             }else if(data.type == 7){
-             get_video (data.vurl);
+             G_video(data.vurl);
             }else if(data.type == 1){
               $('.url_video').show();
               $("input[name=url]").val(data.url);
