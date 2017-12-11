@@ -1029,7 +1029,7 @@ $img =  $Sql['link'];
 $id = $_SESSION['id'];
 
      if($Sql){
-        echo json_encode( array('st'=>'ok','pid'=>$id,'type'=>$type,'post'=>$post,'img'=>$img,'msg'=>'تم جلب المنشور بنجاح'));
+        echo json_encode( array('st'=>'ok','pid'=>$id,'type'=>$type,'url'=>$Sql['link'],'post'=>$post,'img'=>$img,'msg'=>'تم جلب المنشور بنجاح'));
 
         }else{
             echo json_encode( array('st'=>'error','msg'=>'حدث خطأ ما لم يتم النشر'));
@@ -1776,7 +1776,7 @@ if(isset($_POST['id'])){
                 <?php if(Ls('admin') or Ls('demo') or $p['userid'] == userid){ ?>    <a  class="tooltipped" onclick="G_post(<?=$p['id']?>);" data-tooltip="تعديل المنشور" data-tooltip-id="ed472c81-cc4c-1ce6-956d-2ac9b8acd67b"><i class="fa fa-pencil-square-o fa-lg" aria-hidden="true"></i></a>     <?php  } ?>
                 <?php if(Ls('admin') or  Ls('demo') or $p['userid'] == userid){ ?>    <a  class="tooltipped" onclick="re(<?=$p['id']?>);" data-tooltip="حذف  المنشور" data-tooltip-id="ed472c81-cc4c-1ce6-956d-2ac9b8acd67b"><i class="fa fa-times fa-lg" aria-hidden="true"></i></a>     <?php  } ?>
                 <?php if($p['time'] == 1){ ?>    <a  class="tooltipped" onclick="" data-tooltip="<?=date('d/m/Y h:i A', $p['time_share'])?>" data-tooltip-id="ed472c81-cc4c-1ce6-956d-2ac9b8acd67b"><i class="fa fa-clock-o fa-lg" aria-hidden="true"></i></a>     <?php  } ?>
-                <?php if(Ls('admin') or Ls('demo')){ ?>    <a  class="waves-effect waves-light" onclick="msg(<?=$p['userid']?>)" id="<?=$Sb['id']?>" ><i class="fa fa-commenting-o fa-lg" aria-hidden="true"></i></a>
+                <?php if(Ls('admin') or Ls('demo')){ ?>
                 <a  class="tooltipped" onclick="fb_post(<?=$p['id']?>)" data-tooltip="نشر الان" data-tooltip-id="ed472c81-cc4c-1ce6-956d-2ac9b8acd67b"><i class="fa fa-send fa-lg" aria-hidden="true"></i></a>     <?php  } ?>
                 <?php if(Ls('admin') or Ls('demo')){ ?>
                 <?php if($Su['block'] == 0){ ?>

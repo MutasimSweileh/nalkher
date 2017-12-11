@@ -1342,16 +1342,24 @@ function fb_share (id){
 
               $('textarea[name=post]').val(data.post);
               $("button[name=epost]").show();
+               $(".options").hide();
               $("button[name=epost]").attr("onclick","edite("+id+")");
               $("button[name=post]").hide();
               $("input[name=type]").val(data.type);
-              if(data.type == 2){
+            if(data.type == 2 ){
               $('.textfilde').removeClass('m12');
               $('.textfilde').addClass('m9');
 							$(".image").attr('src',data.img);
 							$("input[name=img]").val(data.img);
               $(".uimage").show();
-              }
+            }else if(data.type == 7){
+             get_video (data.url);
+            }else if(data.type == 1){
+              $('.url_video').show();
+              $("input[name=url]").val(data.url);
+              $('.url_video label').text("الرابط");
+              $('label[for=linetext-1]').text('المنشور');
+            }
               document.body.scrollTop = 0;
               document.documentElement.scrollTop = 0;
                    }
@@ -1601,6 +1609,7 @@ window.open(server+"/admin/status"+id+".html","","width=525,height=550,left=0,to
                            Getpost(id);
                          success_msg(data.msg);
                          $("button[name=post]").show();
+                         $(".options").show();
                          $("button[name=epost]").hide();
                          }
 
