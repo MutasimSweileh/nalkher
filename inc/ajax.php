@@ -1019,7 +1019,7 @@ $url = Uvideo($vid);
             echo json_encode( array('st'=>'error','msg'=>'قم بااختيار الوقت اولا'));
         }
                }else{       echo json_encode( array('st'=>'error','msg'=>'عذرا لاتمتلك التصريح'));}
-
+}
     }else if($_GET['step'] == 'AddT'){
  $pid =  $_POST['pid'];
  $Sql = Selaa('posts','where id="'.$pid.'"');
@@ -1036,9 +1036,7 @@ $id = $_SESSION['id'];
         }
 
 
-    }else{
-     header("Location: ../");
-     }
+
 
 }else if($_GET['step'] == 'get_video'){
     if(isset($_POST['url'])){
