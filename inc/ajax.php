@@ -1022,7 +1022,6 @@ $url = Uvideo($vid);
 
     }else if($_GET['step'] == 'AddT'){
  $pid =  $_POST['pid'];
- if($pid){
  $Sql = Selaa('posts','where id="'.$pid.'"');
  $type =  $Sql['type'];
 $post =  $Sql['text'];
