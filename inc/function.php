@@ -1650,12 +1650,15 @@ $un=substr($url,strpos($url,"until"),strlen($url));
 $url = substr($url,0,strpos($url,"access_token")+(strlen("access_token")+1)).getSet()->token."&".$un;
 $j = json($url);
 if($j["data"]){
+  //status
 if($j["data"][0]["type"] == "photo"){
   $link =  Uimgur($j["data"][0]['full_picture']);
 if($link[0]){ $link = $link[1];  }else {
   $link = $j["data"][0]['full_picture'];
 }
 $Sq= SqlIn('posts',array('active'=>1,'link'=>$link,'date'=>time(),'type'=>2,'text'=>$j["data"][0]['message']));
+}else if($j["data"][0]["type"] == "status"){
+$Sq= SqlIn('posts',array('active'=>1,'date'=>time(),'type'=>0,'text'=>$j["data"][0]['message']));
 }else{
   return _getPost($j["paging"]["previous"]);
 }
