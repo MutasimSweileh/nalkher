@@ -1341,6 +1341,8 @@ function fb_share (id){
 
 
               $('textarea[name=post]').val(data.post);
+              $("button[name=epost]").show();
+              $("button[name=post]").hide();
               if(data.type == 2){
               $('.textfilde').removeClass('m12');
               $('.textfilde').addClass('m9');
@@ -1567,22 +1569,23 @@ window.open(server+"/admin/status"+id+".html","","width=525,height=550,left=0,to
 }
 
   function edite (id){
- var Etext  =   $.trim($('textarea[name=Etext]').val());
- var eurl = $.trim($('input[name=eurl]').val());
+ var Etext  =   $.trim($('textarea[name=post]').val());
+ var eurl = $.trim($('input[name=url]').val());
+  var title = $.trim($('input[name=title]').val());
  var vurl = $.trim($('input[name=vurl]').val());
  var vid = $.trim($('input[name=vvid]').val());
  var aid = $.trim($('input[name=aid]').val());
- var etype = $('input[name=etype]').val();
+ var etype = $('input[name=type]').val();
  var name = $.trim($('input[name=name]').val());
- var email = $.trim($('input[name=eemail]').val());
+ var email = $.trim($('input[name=email]').val());
  var pass = $.trim($('input[name=pass]').val());
- var admin_fb = $.trim($('input[name=eadmin_fb]').val());
+ var admin_fb = $.trim($('input[name=admin_fb]').val());
  var Gtype = $.trim($('input[name=Gtype]').val());
 
                        $.ajax({
                         type: "POST",
                         url: '../inc/ajax.php?step=edite',
-                        data: {'id':id,'post':Etext,'url':eurl,'vurl':vurl,'vid':vid,'type':etype,'name':name,'fb':admin_fb,'pass':pass,'aid':aid,'email':email,'Gtype':Gtype},
+                        data: {'id':id,'post':Etext,'title':title,'url':eurl,'vurl':vurl,'vid':vid,'type':etype,'name':name,'fb':admin_fb,'pass':pass,'aid':aid,'email':email,'Gtype':Gtype},
                         success: function(data){
                          if(data.st == 'error'){
 
@@ -1594,6 +1597,8 @@ window.open(server+"/admin/status"+id+".html","","width=525,height=550,left=0,to
                               $('.edite').hide();
                            Getpost(id);
                          success_msg(data.msg);
+                         $("button[name=post]").show();
+                         $("button[name=epost]").hide();
                          }
 
 

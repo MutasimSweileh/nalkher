@@ -671,6 +671,7 @@ if(Ls('admin') and $app['end'] == 1){
         $url =  $_POST['url'];
         $vurl =  $_POST['vurl'];
         $vid =  $_POST['vid'];
+        $title =  $_POST['title'];
         $type =  $_POST['type'];
         $id=abs(intval($_POST['id']));
         if(!$url){
@@ -679,7 +680,8 @@ if(Ls('admin') and $app['end'] == 1){
         if($type == 7){
         $Sv = Sel('posts','where id='.$id);
         $S= UpDate("video",'vid',$vid,"where id=".$Sv->vid);
-        $S= UpDate("video",'link',$vurl,"where id=".$Sv->vid);
+        $S= UpDate("video",'title',$title,"where id=".$Sv->vid);
+        $S= UpDate("video",'link',$url,"where id=".$Sv->vid);
         }
         $S= UpDate("posts",'text',$post,"where id=".$id);
         $S= UpDate("posts",'link',$url,"where id=".$id);

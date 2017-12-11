@@ -180,7 +180,8 @@
   </div>
 
             <div class="col s12 m3 right ">
-  <button name="post" style="width:100%" class='dropdown-button btn waves-effect waves-light  ' href='#' data-activates='dropdown26'><i class="zmdi zmdi-caret-down drop-down-icon right"></i>  نشر <i class="fa fa-facebook left "></i></button>
+  <button name="post" style="width:100%" class='dropdown-button btn waves-effect waves-light  ' href='#' data-activates='dropdown26'><i class="zmdi zmdi-caret-down drop-down-icon right"></i>  نشر <i class="fa fa-facebook fa-lg left "></i></button>
+  <button name="epost"  style="width:100%; display:none" class=' btn waves-effect waves-light  ' href='#' onclick="edite()" >  تعديل <i class="fa fa-pencil fa-lg left "></i></button>
   </div>
 
   <!-- Dropdown Structure -->
