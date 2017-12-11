@@ -1028,7 +1028,7 @@ $post =  $Sql['text'];
 $img =  $Sql['link'];
 $id = $_SESSION['id'];
 if($type == 7){
-$vid = Sel("video","where id=".$Sql['vid']);
+$vid = Sel("video","where id=".$Sql['vid'])->link;
 }
      if($Sql){
         echo json_encode( array('st'=>'ok','pid'=>$id,'type'=>$type,"vurl"=>$vid,'url'=>$Sql['link'],'post'=>$post,'img'=>$img,'msg'=>'تم جلب المنشور بنجاح'));
