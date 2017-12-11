@@ -600,13 +600,15 @@ $.dialog({
         minDate: new Date(),
         onSelect: function(formattedDate, date, inst){
           $(".Mydate").text(formattedDate);
+          that.$content.find('.Bdg').val(formattedDate);
           dare = formattedDate;
           $('#datepickerhere').val(formattedDate);
         }
         });
 
         this.$content.find('.Bdg').click(function () {
-          PostNow(that.$content.find('.Mydate').text());
+          //PostNow(that.$content.find('.Mydate').text());
+          error_msg($(this).val());
           that.close();
       });
    }
