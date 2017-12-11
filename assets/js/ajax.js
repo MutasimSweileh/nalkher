@@ -1337,7 +1337,7 @@ function fb_share (id){
                         error_msg(data.msg);
                          }else{
                          success_msg(data.msg);
-                         }
+
 
 
               $('textarea[name=post]').val(data.post);
@@ -1351,6 +1351,9 @@ function fb_share (id){
 							$("input[name=type]").val(2);
               $(".uimage").show();
               }
+              document.body.scrollTop = 0;
+              document.documentElement.scrollTop = 0;
+                   }
 		//$('#Add_time').trigger('click');
         // soon_msg('قم بااختيار الوقت المناسب');
                         },
