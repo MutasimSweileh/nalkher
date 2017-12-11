@@ -25,15 +25,30 @@ _getPost2($St->last_url_feed);
 }
 //echo user_share()."</br>";
 //echo time();
-
+function g_last($post){
+  global $St;
+if($post == "quran"){
+return  array("quran"=>true,"strlast"=>"last_share_quran",'last' =>$St->last_share_quran,"type"=>8,"user"=>array(1762976253974690));
+}
+return  array("quran"=>false,"strlast"=>"last_share",'last' =>$St->last_share,"type"=>$St->last_type,"user"=>array(1426100954327128));
+}
 if(isv("post")  && $St->zapier == 0){
      $user_share = user_share();
-    if(last_share($rnd,$St->last_share) or $user_share || isv("post") == "test"){
-   $type = 8;
+     $last =  g_last(isv("post"));
+   if(last_share($rnd,$last["last"]) or $user_share || isv("post") == "test"){
+   $type = $last["type"];
    if(!$user_share){
-   $users = array(1426100954327128,1762976253974690);
+   $users = $last["user"];
    $post =  Sel('posts',"where  send='0' and active='1' and type='$type' order by id asc");
-   UpDate('settings','last_share',time());
+   UpDate('settings',$last["strlast"],time());
+   if(!$last["quran"]){
+   if($post->type == 0){
+   UpDate('settings','last_type',2);
+    }else if($post->type == 2){
+   UpDate('settings','last_type',8);
+   }else{
+   UpDate('settings','last_type',0);
+ }}
  }else{
 if($user_share["PostTo"] == "pages"){
   $users = getUser("pages",$user_share["wr"]);
