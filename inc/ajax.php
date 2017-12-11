@@ -1347,6 +1347,7 @@ $nid =  nUser($nid,isv("where"));
      }else if($_GET['step'] == 'post_now'){
     if(isset($_POST['pid']) or isset($_POST['type']) ){
 if(!Ls('demo') and $app['end'] == 1){
+  $R = 0;
  $pid =  $_POST['pid'];
  $Yd =  $_POST['Yd'];
 $cat = $_POST['cat'];
@@ -1448,6 +1449,7 @@ $post =  $Sql['text'];
 $Nshare =  $Sql['Nshare'] + 1;
 $img =  $Sql['link'];
 $id = $_SESSION['id'];
+$R = 1;
 UpDate('posts','Nshare',$Nshare,' where id='.$pid);
 }
 

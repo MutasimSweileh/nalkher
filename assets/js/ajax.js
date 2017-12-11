@@ -939,8 +939,7 @@ function PostNow(Ptype=false){
            $('.YDD').attr('id',data.you);
            $('.YDD').trigger('click');
            }
-
-           if(data.R != 1){
+          if(data.R != 1){
            Getpost(data.pid);
           }
           }
