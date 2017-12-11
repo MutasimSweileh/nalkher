@@ -1378,7 +1378,7 @@ if($time_share != "" &&  $time_share != false &&  $time_share != "false" ){
   $T_time = 1;
   $add_time = 1;
 }
-die(json_encode( array('st'=>'error','msg'=>$T_time)));
+
 if(!$pid){
  $type =  $_POST['type'];
 $post =  trim($_POST['post']);
@@ -1516,7 +1516,7 @@ if($admin > 0 and $add_time == 0){$admin = 1;}else {$admin =0;};
 if($ttype == 'tw' or strlen($postb['message']) <= 140){$tw =1;}else {$tw =0;};
 
 if(!$pid and $count > 0){
-if($type == 7 or $type == 2 or $type == 5 or $type == 1 or $add_time == 1 or $admin  == 1){
+if($type == 0 or $type == 7 or $type == 2 or $type == 5 or $type == 1 or $add_time == 1 or $admin  == 1){
 if($Stype == 'nof'){
 $ttype ='nof';
 $nof =1;
