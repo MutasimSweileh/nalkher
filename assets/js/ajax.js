@@ -186,7 +186,7 @@ $(".NLogin").click(function(){
                                    error_msg(data.msg);
                          }else{
                                success_msg(data.msg);
-                               if(data.nid && data.nid != "406" && data.nid != "groups" ){
+                               if(data.count && data.nid != "groups" ){
                                success_msg("العدد "+data.count);
                                }
                             if(data.nid=="0")
