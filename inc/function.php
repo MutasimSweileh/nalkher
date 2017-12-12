@@ -1763,7 +1763,7 @@ if(getSet()->url != $PUr){
 }
 $us = getUser("posts","where type='0'");
 for ($i=0; $i < count($us); $i++) {
- $str =  strpos($us[$i]['text'],'online');
+ $str =  strpos($us[$i]['text'],'3lmny');
  echo $str."</br>";
 if($str){
 Remove("posts","where id=".$us[$i]['id']);
