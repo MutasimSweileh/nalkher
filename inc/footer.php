@@ -128,7 +128,7 @@ function register($form) {
               success_msg(data.msg);
                 // Something went wrong, do something to notify the user. maybe alert(data.msg);
             } else {
-              success_msg(data.msg);
+              error_msg(data.msg);
                 // It worked, carry on...
             }
         }
