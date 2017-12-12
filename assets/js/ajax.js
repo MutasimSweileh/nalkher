@@ -2235,6 +2235,7 @@ function popup(url){
 }
 function register() {
   $.ajax({
+      type:"POST",
       url:"../inc/ajax.php?step=Mail",
       data: $('#form').serialize(),
       dataType : 'json',
