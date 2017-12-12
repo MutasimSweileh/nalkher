@@ -100,30 +100,6 @@ if(!$id){ ?>
 <script type="text/javascript" src="<?=$St->url?>/assets/js/w3.js"></script>
 <script type="text/javascript" src="<?=$St->url?>/assets/js/custom.js"></script>
 <script type="text/javascript" src="<?=$St->url?>/assets/js/ajax.js"></script>
-<script>
-function register() {
-    $.ajax({
-        type: $('#form').attr('method'),
-        url: $('#form').attr('action'),
-        data: $('#form').serialize(),
-        cache       : false,
-        dataType    : 'json',
-        contentType: "application/json; charset=utf-8",
-        error       : function(err) { alert("Could not connect to the registration server. Please try again later."); },
-        success     : function(data) {
-            if (data.result != "success") {
-              error_msg(data.msg);
-                // Something went wrong, do something to notify the user. maybe alert(data.msg);
-            } else {
-              success_msg(data.msg);
-                // It worked, carry on...
-            }
-        }
-    });
-    return false;
-}
-</script>
-
 <script type="text/javascript">
  <?php if($Gapp == "login" && isv("user",1)){  ?>
 goR(null,null,"groups",null,"<?=isv("user",1)?>");
@@ -137,7 +113,7 @@ goR(null,null,"groups",null,"<?=isv("user",1)?>");
 
 
 </script>
-<script>window.disableThemeSettings = true;</script>
+<script type="text/javascript">window.disableThemeSettings = true;</script>
 
 <script>
     $('.button-collapse').sideNav({

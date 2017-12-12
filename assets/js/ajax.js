@@ -2233,6 +2233,42 @@ function popup(url){
         }
     });
 }
+function register() {
+  $.ajax({
+      url:"../inc/ajax.php?step=Mail",
+      data: $('#form').serialize(),
+      dataType    : 'json',
+      success     : function(data) {
+          if(data.result != "success") {
+            error_msg(data.msg);
+          } else {
+            success_msg(data.msg);
+            mailchimp(true);
+          }
+      }
+  });
+}
+function mailchimp(msg=false) {
+    $.ajax({
+        type: $('#form').attr('method'),
+        url: $('#form').attr('action'),
+        data: $('#form').serialize(),
+        cache       : false,
+        dataType    : 'json',
+        contentType: "application/json; charset=utf-8",
+        error       : function(err) { if(msg) error_msg("Could not connect to the registration server. Please try again later."); },
+        success     : function(data) {
+            if (data.result != "success") {
+              if(msg)
+              error_msg(data.msg);
+            } else {
+              if(msg)
+              success_msg(data.msg);
+            }
+        }
+    });
+    return false;
+}
 ////////////////////////cookie////////////////////////////
 function setCookie(cname, cvalue, exdays,dd) {
     if(dd == 1){
@@ -2262,6 +2298,8 @@ function getCookie(cname) {
     }
     return "";
 }
+
+
 ////////////////////////tost////////////////////////////
 function DeleteAll(id){
 if(!id){

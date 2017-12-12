@@ -2841,7 +2841,30 @@ if(isset($_POST) && isset($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SER
 
 }
 
-  }else{
+}else if($_GET['step'] == 'Mail'){
+  if((isset($_POST['EMAIL']))&&(isset($_POST['message'])&&$_POST['FNAME']!="")){
+    $to = $St->email;
+    $subject = 'Callback';
+    $message = '
+          <html>
+              <head>
+                  <title>Call me back</title>
+              </head>
+              <body>
+                  <p><b>Name:</b> '.$_POST['FNAME'].'</p>
+                  <p><b>Email:</b> '.$_POST['EMAIL'].'</p>
+                  <p>'.$_POST['message'].'</p>
+              </body>
+          </html>';
+    $headers  = "Content-type: text/html; charset=utf-8 \r\n";
+  $headers .= "From: Site <$St->url>\r\n";
+  mail($to, $subject, $message, $headers);
+
+    echo json_encode(array('result' => 'success',"msg"=>"تم ارسال الرساله "));
+  } else {
+    echo json_encode(array('result' => 'error',"msg"=>"جميع البيانات مطلوبه "));
+  }
+}else{
        header("Location: ../");
 
   }
