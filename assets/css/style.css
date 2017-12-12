@@ -58,6 +58,7 @@ html body .wrapper main{
 }
 [dir="rtl"] .input-field .prefix {
       width: auto !important;
+
 }
 [dir="rtl"] .fancybox-caption{
      text-align: right !important;
