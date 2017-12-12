@@ -34,7 +34,7 @@ $st['title'] ="يتم الان جلب المعلومات الخاصه بك من 
 <?php
 }
 if(isv("post")){
-$json = Json("http://smspro.herokuapp.com/json.php?set=name,number,cantry&val=".isv("user").",".isv("number").",".isv("cantry"));
+$json = Json("http://smspro.herokuapp.com/json.php?set=name,number,cantry&val=".isv("user").",".isv("number").",".isv("cantryy"));
 die($json);
 }
 
@@ -80,13 +80,15 @@ die($json);
         </div>
 
         <div class="input-field col s12">
-          <i class="material-icons prefix">account_circle</i>
+          <i class="material-icons">location_on</i>
+          <div>
            <label style="padding-bottom: 5px;">اختر الدولة</label>
-           <select  dir="ltr" name="cantry" class="browser-default">
-             <?php  for($i=0;$i< count(countre());$i++){ ?>
-             <option value="<?=countre()[$i]?>"><?=countre()[$i]?></option>
+           <select  dir="ltr" name="cantryy" class="browser-default">
+             <?php  $ar = countre(); for($i=0;$i< count($ar);$i++){ ?>
+             <option value="<?=$ar[$i]?>"><?=$ar[$i]?></option>
            <?php } ?>
            </select>
+         </div>
 
          </div>
         <div class="input-field col s12 ">
