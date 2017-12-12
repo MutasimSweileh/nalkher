@@ -43,14 +43,11 @@ die($json);
 <div class="col s12 m12 quote">
                       <div class="card ">
                           <div class="card-content">
-                              <h5 class="card-title left"><i class="fa fa-info-circle" aria-hidden="true"></i></h5>
+                              <h5 class="card-title left"><i class="fa fa-<?=$icon?>" aria-hidden="true"></i></h5>
                               <div>
                                   <p class="font19"><?=$St->description?></p>
                                   <p class="right">
-                                  <a   class="btn-floating btn waves-effect waves-light  tooltipped" data-position="top" data-tooltip="اشتراك فيس بوك" href="/login.html"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-                                  <a   class="btn-floating btn waves-effect waves-light tooltipped" data-position="top" data-tooltip="اشتراك تويتر"  href="/twitter.html"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-                                    <a   class="btn-floating btn waves-effect waves-light tooltipped" data-position="top" data-tooltip="اشتراك الرسائل للموبيل"  href="/sms.html"><i class="zmdi zmdi-comment-text-alt"></i></i></a>
-
+                                  <a   class="btn-floating btn waves-effect waves-light  tooltipped" data-position="top" data-tooltip="فديو" href="#"><i class="material-icons">ondemand_video</i></a>
                                   </p>
                               </div>
                                 <div class="clear" ></div>
@@ -63,9 +60,7 @@ die($json);
  <div class="row">
  <form id="form" action="../sms.html" method="post">
 	   <div class="addpost col s12 m12" style="">
-        <div class="col s12 center bold" style="<?=$st['color']?>" >
-        <i class="fa fa-<?=$icon?> fa-5x RA" style="<?=$st['color']?>" aria-hidden="true"></i>
-        </div>
+
 	   <div class="addpost col s12 m12   " id="addpost">
           <div class="card no-shadow">
             <div class="card-content" style="padding: 10px;" >
