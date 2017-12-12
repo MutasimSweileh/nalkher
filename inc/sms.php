@@ -49,7 +49,7 @@ if($json["success"]){
                           <div class="card-content">
                               <h5 class="card-title left"><i class="fa fa-<?=$icon?>" aria-hidden="true"></i></h5>
                               <div>
-                                  <p class="font19">الرسائل على الجوال  هى خدمة ارسال رسائل نصيه  قصيرة ومفيده على الموبيل  بدون اى  مصاريف   اى هى خدمة مجانيه   ماعليك فقط هو اختيار   دولتك  ثم  اضافة اسمك ورقمك  وسيتم ارسال الرسائل لك بطريقه منظمه يوميا  ويمكنك ايضا التحكم فى الاشتراك او حذفه وقتما تشاء ..</p>
+                                  <p class="font19">خدمة ارسال رسائل نصيه قصيرة ومفيده على الموبيل مجانا  ماعليك فقط هو اختيار دولتك ثم اضافة اسمك ورقمك وسيتم ارسال الرسائل لك بطريقه منظمه يوميا ويمكنك ايضا التحكم فى الاشتراك او حذفه وقتما تشاء ..</p>
                                   <p class="right">
                                   <a   class="btn-floating btn waves-effect waves-light  tooltipped" data-position="top" data-tooltip="فديو" href="#"><i class="material-icons">ondemand_video</i></a>
                                   </p>
