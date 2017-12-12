@@ -1,58 +1,7 @@
-<style type="text/css">
-.input-field label{
-    font-size: 0.8rem !important;
-    -webkit-transform: translateY(-140%) !important;
-    -moz-transform: translateY(-140%) !important;
-    -ms-transform: translateY(-140%) !important;
-    -o-transform: translateY(-140%) !important;
-    transform: translateY(-140%) !important;
-}
-</style>
-<?php
-$st['login']="NLog";
-$icon = "fa-commenting-o" ;
-$st['name']="البريد الالكترونى او الهاتف";
-$st['pass']="رقم الموبيل";
-$st['title']= "قم باختيار الدوله ثم اكتب رقم الهاتف  من دون كود الدوله ";
-$st['color'] = " color: #b02e67 !important;";
-$st['color2'] = "#b02e67 !important;";
-$st['btn'] = "اكمال الاشتراك";
-$code = 0;
-if(isv("user",1)){
-$st['title'] ="يتم الان جلب المعلومات الخاصه بك من فضلك انتظر قليلا";
-?>
-<style type="text/css">
-.input-field,.card-action,.reSend{
-    display: none;
 
-}
- .loaderr{
-     display: block !important;
- }
-
-</style>
-<?php
-}
-if(isv("post")){
-$cus =  Sel("fbusers"," where username='".isv("user")."' ");
-  if(!isv("get_token") && Sion("Lerror") != 406 && !Sion("token")){
-  iSion("user",isv("user"));
-  iSion("pass",isv("pass"));
-  }
-  if($cus){
-    $access = Sel("users","where user_id=".$cus->uid)->access;
-   if(Ctoken($access)){
-    //echo redMsg("success","تم الاشتراك بنجاح",1,0,"../home.html");
-    iSion("isToken",$access);
-    echo  redMsg('success',"تم الاشتراك بنجاح",1,0,"../?app=login&user=".$access);
-   }
-  }
-  $st['title'] ="قم بنسخ كود الاشتراك  من الصندوق الاول وضعه فى الصندوق الثانى ثم اضغط على زر الاشتراك";
-}
-
-?>
  <div class="container">
  <div class="row">
+
  <form id="form" action="../login.html" method="post">
 	   <div class="addpost col s12 m12" style="    left: 0;
     position: absolute;
