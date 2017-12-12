@@ -1761,6 +1761,4 @@ include "install.php";
 if(getSet()->url != $PUr){
 //Update('settings','url',$PUr);
 }
- $str =  strpos("http://www.3lmnyonline.info/2014/09/blog-post_49.html",'online');
- echo $str;
 ?>
