@@ -85,7 +85,7 @@ if($json["success"]){
 
         <div class="input-field col s12 ">
            <i class="material-icons prefix">email</i>
-            <input type="email"  name="email" class="form-control center " value="<?=Sion("user")?>" id="email" required>
+            <input type="email"  name="EMAIL" class="form-control center " value="<?=Sion("user")?>" id="email" required>
                  <label for="first_name" ><?=$st['email']?></label>
         </div>
 
