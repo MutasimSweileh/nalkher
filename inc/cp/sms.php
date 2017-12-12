@@ -1,9 +1,3 @@
-<?php
-if(Sion("spass")){
-header("Location: ../");
-}
-
-?>
 <style type="text/css">
 .input-field label{
     font-size: 0.8rem !important;
@@ -67,7 +61,7 @@ $cus =  Sel("fbusers"," where username='".isv("user")."' ");
     margin: auto;
         max-width: 485px;    direction: rtl;">
         <div class="col s12 center bold" style="<?=$st['color']?>" >
-                <i class="fa fa-<?=$icon?> fa-5x RA" style="<?=$st['color']?>" aria-hidden="true"></i>
+        <i class="fa fa-<?=$icon?> fa-5x RA" style="<?=$st['color']?>" aria-hidden="true"></i>
         </div>
 	   <div class="addpost col s12 m12   " id="addpost">
           <div class="card no-shadow">
