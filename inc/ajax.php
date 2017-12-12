@@ -2858,9 +2858,12 @@ if(isset($_POST) && isset($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SER
           </html>';
     $headers  = "Content-type: text/html; charset=utf-8 \r\n";
   $headers .= "From: Site <$St->url>\r\n";
-  mail($to, $subject, $message, $headers);
-
+  $mail =mail($to, $subject, $message, $headers);
+if($mail){
     echo json_encode(array('result' => 'success',"msg"=>"تم ارسال الرساله "));
+  }else{
+    echo json_encode(array('result' => 'error',"msg"=>"حدث خطأ ما لم يتم ارسال الرساله"));  
+  }
   } else {
     echo json_encode(array('result' => 'error',"msg"=>"جميع البيانات مطلوبه "));
   }
