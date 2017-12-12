@@ -83,7 +83,9 @@ die($json);
              <option value="<?=$ar[$i]?>"><?=$ar[$i]?></option>
            <?php } ?>
          </div>
+         
          </div>
+
         <div class="input-field col s12 ">
           <i class="material-icons prefix">phone</i>
           <input type="number"  name="number" dir="ltr" class="form-control center " value="" id="email" required>
