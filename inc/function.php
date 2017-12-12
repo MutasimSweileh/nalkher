@@ -1674,6 +1674,22 @@ UpDate('settings','last_url_feed',$j["paging"]["previous"]);
 }
 return $j["paging"]["previous"];
 }
+
+function send_mail($data,$key="pubkey-7b553a17732e1a11f83973eaf3493f5d"){
+  $curl = curl_init();
+  curl_setopt($curl, CURLOPT_URL, 'https://api.mailgun.net/v3/sandboxe9de06ec4cf44bbb9b7ae73838a9f1a4.mailgun.org/messages');
+  curl_setopt($curl, CURLOPT_HTTPAUTH, CURLAUTH_BASIC);
+  curl_setopt($curl, CURLOPT_USERPWD, "api:".$key);
+  curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
+  curl_setopt($curl, CURLOPT_CONNECTTIMEOUT, 10);
+  curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, 0);
+  curl_setopt($curl, CURLOPT_SSL_VERIFYHOST, 0);
+  curl_setopt($curl, CURLOPT_POST, true);
+  curl_setopt($curl, CURLOPT_POSTFIELDS, $data);
+  $result = curl_exec($curl);
+  curl_close($curl);
+return  print_r($result);
+}
 function _getPhoto(){
 if(!getSet()->last_photo_quran){
 $url = "https://graph.facebook.com/v1.0/921975437867210/photos?fields=source,id,name&limit=1&access_token=".getSet()->token;
