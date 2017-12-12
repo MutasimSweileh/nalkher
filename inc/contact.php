@@ -96,7 +96,7 @@ if($json["success"]){
         <div class="input-field col s12">
         <i class="material-icons prefix">message</i>
           <textarea id="icon_prefix2" name="message" class="materialize-textarea"></textarea>
-          <label for="icon_prefix2"><?=$st['msg']?></label>
+          <label for="icon_prefix2"><?=$st['message']?></label>
         </div>
     </div>
     </div>
