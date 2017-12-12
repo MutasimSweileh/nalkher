@@ -95,13 +95,31 @@ $st['btn'] = "تأكيد الاشتراك";
 
 }
 ?>
+<div class="social">
+<div class="col s12 m12 quote">
+                      <div class="card ">
+                          <div class="card-content">
+                              <h5 class="card-title left"><i class="fa fa-<?=$icon?>" aria-hidden="true"></i></h5>
+                              <div>
+                                  <p class="font19"><?=$St->description?></p>
+                                  <p class="right">
+                                  <a   class="btn-floating btn waves-effect waves-light  tooltipped" data-position="top" data-tooltip="فديو" href="#"><i class="material-icons">ondemand_video</i></a>
+                                  </p>
+                              </div>
+                                <div class="clear" ></div>
+                          </div>
+                          <div class="clear" ></div>
+                      </div>
+                  </div>
+                  </div>
  <div class="container">
  <div class="row">
  <form id="form" action="../login.html" method="post">
 	   <div class="addpost col s12 m12" style="">
+       <!--
         <div class="col s12 center bold" style="<?=$st['color']?>" >
                 <i class="fa fa-<?=$icon?> fa-5x RA" style="<?=$st['color']?>" aria-hidden="true"></i>
-        </div>
+        </div>-->
 	   <div class="addpost col s12 m12   " id="addpost">
           <div class="card no-shadow">
 <?php  if(!isv('login',1) or !Sion('htc')){  ?>
