@@ -18,8 +18,8 @@
 
             </li>-->
       <?php if(Ls()){ ?>
-           <li  class="show-on-medium-and-down"><a href="#"><i class="zmdi zmdi-account-circle"></i>الملف الشخصى</a></li>
-           <li    class="show-on-medium-and-down" ><a href="/logout.html"    >تسجيل الخروج</a></li>
+           <li  class="hide-on-med-and-up"><a href="#"></i>الملف الشخصى</a></li>
+           <li  class="hide-on-med-and-up" ><a href="/logout.html"    >تسجيل الخروج</a></li>
             <li>
                 <a class="dropdown-button drop-down-profile relative-item hide-on-med-and-down" href="#" data-activates="dropdown33" data-beloworigin="true"><span class="profile-img-ribbon"></span><img class="responsive-img profile-img" src="<?=FbImg(Sion("id"))?>" alt="john"> <?=gUN(Sion("id"))?> <i class="zmdi zmdi-caret-down drop-down-icon"></i></a>
                 <ul id="dropdown33" class="create-dropdown dropdown-content">
