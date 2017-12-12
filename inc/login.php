@@ -104,6 +104,9 @@ $st['btn'] = "تأكيد الاشتراك";
     right: 0;
     margin: auto;
         max-width: 485px;    direction: rtl;">
+        <div class="col s12 center bold" style="<?=$st['color']?>" >
+                <i class="fa fa-<?=$icon?> fa-5x RA" style="<?=$st['color']?>" aria-hidden="true"></i>
+        </div>
 	   <div class="addpost col s12 m12   " id="addpost">
           <div class="card no-shadow">
 <?php  if(!isv('login',1) or !Sion('htc')){  ?>
@@ -112,7 +115,6 @@ $st['btn'] = "تأكيد الاشتراك";
 <!------------auto---------------->
 <div class="log auto">
 <div class="col s12 center bold" style="<?=$st['color']?>" >
-        <i class="fa fa-<?=$icon?> fa-5x RA" style="<?=$st['color']?>" aria-hidden="true"></i>
       <div class="center lg title" style="<?=$st['color']?>" ><?=$st['title']?></div>
 </div>
 

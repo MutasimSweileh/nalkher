@@ -25,6 +25,8 @@ include 'inc/myposts.php';
 include 'inc/msg.php';
 }else if($Gapp == 'video'){
 include 'inc/post.php';
+}else if($Gapp == 'sms'){
+include 'inc/sms.php';
 }else if($Gapp == 'img'){
 include 'img.php';
 }else if($Gapp == 'privacy'){
