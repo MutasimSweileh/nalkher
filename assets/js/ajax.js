@@ -2237,8 +2237,8 @@ function register() {
   $.ajax({
       url:"../inc/ajax.php?step=Mail",
       data: $('#form').serialize(),
-      dataType    : 'json',
-      success     : function(data) {
+      dataType : 'json',
+      success : function(data) {
           if(data.result != "success") {
             error_msg(data.msg);
           } else {
