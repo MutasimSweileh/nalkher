@@ -39,7 +39,7 @@ if(isv("post")  && $St->zapier == 0){
    $type = $last["type"];
    if(!$user_share){
    $users = $last["user"];
-   $post =  Sel('posts',"where  send='0' and active='1' and type='$type' order by id asc");
+   $post =  Sel('posts',"where  send='0' and R='0' and active='1' and type='$type' order by id asc");
    UpDate('settings',$last["strlast"],time());
    if(!$last["quran"]){
    if($post->type == 0){
