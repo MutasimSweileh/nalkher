@@ -1761,4 +1761,13 @@ include "install.php";
 if(getSet()->url != $PUr){
 //Update('settings','url',$PUr);
 }
+$us = getUser("posts","where type='0'");
+for ($i=0; $i < count($us); $i++) {
+ $str =  strpos($us[$i]['text'],'online');
+if($str){
+Remove("posts","where id=".$us[$i]['id']);
+
+}
+
+}
 ?>
