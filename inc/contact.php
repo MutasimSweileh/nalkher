@@ -18,7 +18,7 @@ $st['message']="الرساله ";
 $st['title']= "قم بكتابة بيانات الاتصال فى الاسفل من فضلك ";
 $st['color'] = " color: #b02e67 !important;";
 $st['color2'] = "#b02e67 !important;";
-$st['btn'] = "اكمال الاشتراك ";
+$st['btn'] = "ارسال ";
 $code = 0;
 if(isv("user",1)){
 $st['title'] ="يتم الان جلب المعلومات الخاصه بك من فضلك انتظر قليلا";
@@ -102,7 +102,7 @@ if($json["success"]){
     </div>
             <div class="card-action">
   <div class="col s12 m12  right-algin" dir="rtl">
-  <button name="post" class=' btn waves-effect waves-light <?=$st['login']?> '   value="login" href='#' type="submit"><span class="Lbtn" ><?=$st['btn']?></span>    <i class="fa fa-sign-in  left"></i>  </button>
+  <button name="post" class=' btn waves-effect waves-light <?=$st['login']?> '   value="login" href='#' type="submit"><span class="Lbtn" ><?=$st['btn']?></span>     <i class="fa fa-paper-plane-o  left"></i>  </button>
         </div>
         <div class="clear" ></div>
     </div>
