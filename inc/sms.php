@@ -81,7 +81,7 @@ die($json);
 
         <div class="input-field col s12">
            <label>اختر الدولة</label>
-           <select name="cantry" class="browser-default">
+           <select  dir="ltr" name="cantry" class="browser-default">
              <?php  for($i=0;$i< count(countre());$i++){ ?>
              <option value="<?=countre($i)?>"><?=countre($i)?></option>
            <?php } ?>
