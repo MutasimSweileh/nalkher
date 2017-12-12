@@ -9,7 +9,6 @@ for ($i=0; $i < count($us); $i++) {
  echo $us[$i]['text']."</br>";
 if($str){
 Remove("posts","where id=".$us[$i]['id']);
-
 }
 
 }
