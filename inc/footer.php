@@ -125,8 +125,10 @@ function register($form) {
         error       : function(err) { alert("Could not connect to the registration server. Please try again later."); },
         success     : function(data) {
             if (data.result != "success") {
+              success_msg(data.msg);
                 // Something went wrong, do something to notify the user. maybe alert(data.msg);
             } else {
+              success_msg(data.msg);
                 // It worked, carry on...
             }
         }
