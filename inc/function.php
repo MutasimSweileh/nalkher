@@ -1652,7 +1652,7 @@ $j = json($url);
 if($j["data"]){
   //status
   //http://www.3lmnyonline
- $str =  strpos($j["data"][0]['message'],"3lmnyonline");
+ $str =  strpos($j["data"][0]['message'],"online");
 if($j["data"][0]["type"] == "photo" && !$str){
   $link =  Uimgur($j["data"][0]['full_picture']);
 if($link[0]){ $link = $link[1];  }else {
