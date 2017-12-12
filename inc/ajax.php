@@ -2866,7 +2866,8 @@ if(isset($_POST) && isset($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SER
   'html' => $message
 );
 $mail = send_mail($data);
-  die(json_encode(array('result' => 'success',"msg"=>$mail)));
+//  die(json_encode(array('result' => 'success',"msg"=>$mail)));
+
 if($mail){
     echo json_encode(array('result' => 'success',"msg"=>"تم ارسال الرساله "));
   }else{
