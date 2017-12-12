@@ -64,6 +64,7 @@ if($json["success"]){
                       </div>
                   </div>
                   </div>
+<div style="background-color: #ffffffc7;">
  <div class="container">
  <div class="row">
  <form id="form" action="../sms.html" method="post">
@@ -88,11 +89,6 @@ if($json["success"]){
                  <label for="first_name" ><?=$st['email']?></label>
         </div>
 
-        <div class="input-field col s12 ">
-        <i class="material-icons prefix">info_outline</i>
-          <input type="text"  name="info" dir="ltr" class="form-control center " value="" id="email" required>
-          <label for="first_pass"  class="pass active" ><?=$st['info']?></label>
-        </div>
         <div class="input-field col s12">
         <i class="material-icons prefix">message</i>
           <textarea id="icon_prefix2" name="message" class="materialize-textarea"></textarea>
@@ -101,7 +97,7 @@ if($json["success"]){
     </div>
     </div>
             <div class="card-action">
-  <div class="col s12 m12  right-algin" dir="rtl">
+  <div class="col s12 m12  right-align" dir="rtl">
   <button name="post" class=' btn waves-effect waves-light <?=$st['login']?> '   value="login" href='#' type="submit"><span class="Lbtn" ><?=$st['btn']?></span>     <i class="fa fa-paper-plane-o  left"></i>  </button>
         </div>
         <div class="clear" ></div>
@@ -115,3 +111,4 @@ if($json["success"]){
     </form>
     </div>
     </div>
+        </div>
