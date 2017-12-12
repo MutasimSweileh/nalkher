@@ -80,14 +80,14 @@ die($json);
         </div>
 
         <div class="input-field col s12">
-          <i class="material-icons">location_on</i>
-          <div>
+          <i class="material-icons prefix">location_on</i>
+          <span>
            <label style="padding-bottom: 5px;">اختر الدولة</label>
            <select  dir="ltr" name="cantryy" class="browser-default">
              <?php  $ar = countre(); for($i=0;$i< count($ar);$i++){ ?>
              <option value="<?=$ar[$i]?>"><?=$ar[$i]?></option>
            <?php } ?>
-           </select>
+           </span>
          </div>
 
          </div>
