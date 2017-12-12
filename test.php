@@ -3,12 +3,13 @@ include "inc.php";
 $nofooter = true;
 
 
-$us = getUser("posts","where type='8'");
+$us = getUser("posts"," ");
 for ($i=0; $i < count($us); $i++) {
- $str =  strpos($us[$i]['text'],'3lm');
- echo $us[$i]['text']."</br>";
+ $str =  strpos($us[$i]['text'],'3lmny');
+// echo $us[$i]['text']."</br>";
 if($str){
-Remove("posts","where id=".$us[$i]['id']);
+$sq =  Remove("posts","where id=".$us[$i]['id']);
+echo $sq."</br>";
 }
 
 }
