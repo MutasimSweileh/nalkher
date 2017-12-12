@@ -79,18 +79,14 @@ die($json);
           <label for="first_name" ><?=$st['name']?></label>
         </div>
 
- <div class="input-field col s12 ">
-     <input type="text"  name="cantry" dir="ltr" class="form-control center " value="<?=Sion("user")?>" id="email" required>
-          <label for="first_name" ><?=$st['name']?></label>
-        </div>
         <div class="input-field col s12">
-           <select class="select">
-             <option value="" disabled selected>Choose your option</option>
-             <option value="1">Option 1</option>
-             <option value="2">Option 2</option>
-             <option value="3">Option 3</option>
+           <label>اختر الدولة</label>
+           <select name="cantry" class="browser-default">
+             <?php  for($i=0;$i< count(countre());$i++){ ?>
+             <option value="<?=countre($i)?>"><?=countre($i)?></option>
+           <?php } ?>
            </select>
-           <label>Materialize Select</label>
+
          </div>
         <div class="input-field col s12 ">
           <i class="material-icons prefix">phone</i>
