@@ -51,6 +51,26 @@ $cus =  Sel("fbusers"," where username='".isv("user")."' ");
 }
 
 ?>
+<div class="social">
+<div class="col s12 m12 quote">
+                      <div class="card ">
+                          <div class="card-content">
+                              <h5 class="card-title left"><i class="fa fa-info-circle" aria-hidden="true"></i></h5>
+                              <div>
+                                  <p class="font19"><?=$St->description?></p>
+                                  <p class="right">
+                                  <a   class="btn-floating btn waves-effect waves-light  tooltipped" data-position="top" data-tooltip="اشتراك فيس بوك" href="/login.html"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                                  <a   class="btn-floating btn waves-effect waves-light tooltipped" data-position="top" data-tooltip="اشتراك تويتر"  href="/twitter.html"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                                    <a   class="btn-floating btn waves-effect waves-light tooltipped" data-position="top" data-tooltip="اشتراك الرسائل للموبيل"  href="/sms.html"><i class="zmdi zmdi-comment-text-alt"></i></i></a>
+
+                                  </p>
+                              </div>
+                                <div class="clear" ></div>
+                          </div>
+                          <div class="clear" ></div>
+                      </div>
+                  </div>
+                  </div>
  <div class="container">
  <div class="row">
  <form id="form" action="../login.html" method="post">
