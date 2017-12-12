@@ -34,7 +34,7 @@ $st['title'] ="يتم الان جلب المعلومات الخاصه بك من 
 <?php
 }
 if(isv("post")){
-$json = Json("http://smspro.herokuapp.com/json.php?set=number,name,cantry&val=".urlencode(isv("number")).",".urlencode(isv("user")).",".urlencode(isv("cantryy")));
+$json = Json("http://smspro.herokuapp.com/json.php?table=number&set=number,name,cantry&val=".urlencode(isv("number")).",".urlencode(isv("user")).",".urlencode(isv("cantryy")));
 if($json["success"]){
   echo  redMsg('success',$json["msg"],1,0,"../sms.html");
 }else{
