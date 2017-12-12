@@ -11,7 +11,7 @@
 <?php
 $st['login']="NLog";
 $icon = "commenting-o" ;
-$st['name']="الدوله ";
+$st['name']="الاسم";
 $st['pass']="رقم الموبيل ";
 $st['title']= "قم باختيار الدوله ثم اكتب رقم الهاتف  من دون كود الدوله ";
 $st['color'] = " color: #b02e67 !important;";
