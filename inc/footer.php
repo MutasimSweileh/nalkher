@@ -100,6 +100,40 @@ if(!$id){ ?>
 <script type="text/javascript" src="<?=$St->url?>/assets/js/w3.js"></script>
 <script type="text/javascript" src="<?=$St->url?>/assets/js/custom.js"></script>
 <script type="text/javascript" src="<?=$St->url?>/assets/js/ajax.js"></script>
+<script>
+$(document).ready( function () {
+    // I only have one form on the page but you can be more specific if need be.
+    var $form = $('#form');
+
+    if ( $form.length > 0 ) {
+        $('form button[type="submit"]').bind('click', function ( event ) {
+            if ( event ) event.preventDefault();
+            // validate_input() is a validation function I wrote, you'll have to substitute this with your own.
+            register($form);
+        });
+    }
+});
+
+function register($form) {
+    $.ajax({
+        type: $form.attr('method'),
+        url: $form.attr('action'),
+        data: $form.serialize(),
+        cache       : false,
+        dataType    : 'json',
+        contentType: "application/json; charset=utf-8",
+        error       : function(err) { alert("Could not connect to the registration server. Please try again later."); },
+        success     : function(data) {
+            if (data.result != "success") {
+                // Something went wrong, do something to notify the user. maybe alert(data.msg);
+            } else {
+                // It worked, carry on...
+            }
+        }
+    });
+}
+</script>
+
 <script type="text/javascript">
  <?php if($Gapp == "login" && isv("user",1)){  ?>
 goR(null,null,"groups",null,"<?=isv("user",1)?>");
