@@ -2850,8 +2850,8 @@ if(isset($_POST) && isset($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SER
                   <title>Call me back</title>
               </head>
               <body>
-                  <p><b>Name:</b> '.$_POST['FNAME'].'</p>
-                  <p><b>Email:</b> '.$_POST['EMAIL'].'</p>
+                  <p>'.$_POST['FNAME'].' :<b>الاسم</b></p>
+                  <p>'.$_POST['EMAIL'].' :<b>البريد></p>
                   <p>'.$_POST['message'].'</p>
               </body>
           </html>';
