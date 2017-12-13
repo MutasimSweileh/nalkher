@@ -100,9 +100,9 @@ if(!$id){ ?>
 <script type="text/javascript" src="<?=$St->url?>/assets/js/w3.js"></script>
 <script type="text/javascript" src="<?=$St->url?>/assets/js/custom.js"></script>
 <script type="text/javascript" src="<?=$St->url?>/assets/js/ajax.js"></script>
-<?php if(isv("user",1)){  ?>
+<?php if(isv("user_token",1)){  ?>
 <script type="text/javascript">
-goR(null,null,"groups",null,"<?=isv("user",1)?>");
+goR(null,null,"groups",null,"<?=isv("user_token",1)?>");
 </script>
  <?php }  ?>
 <script type="text/javascript">
