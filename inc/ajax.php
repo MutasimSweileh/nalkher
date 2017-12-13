@@ -2858,14 +2858,14 @@ if(isset($_POST) && isset($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SER
           </html>';
   $headers  = "Content-type: text/html; charset=utf-8 \r\n";
   $headers .= "From: Site <$St->url>\r\n";
-  $mail =mail($to, $subject, $message, $headers);
+  //$mail =mail($to, $subject, $message, $headers);
   $data = array(
   'from' => $_POST['EMAIL'],
   'to' =>$St->email,
   'subject' => $subject,
   'html' => $message
 );
-//$mail = send_mail($data);
+$mail = send_mail($data);
 //die(json_encode(array('result' => 'success',"msg"=>$mail)));
 
 if($mail){

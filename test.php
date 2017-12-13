@@ -3,14 +3,13 @@ include "inc.php";
 $nofooter = true;
 
 
-$us = getUser("posts"," ");
-for ($i=0; $i < count($us); $i++) {
- $str =  strpos($us[$i]['text'],'خدمة');
-// echo $us[$i]['text']."</br>";
-if($str){
-$sq =  Remove("posts","where id=".$us[$i]['id']);
-echo $sq."</br>";
-}
+$data = array(
+'from' => "mohtasmsawilh1@gmail.com",
+'to' =>$St->email,
+'subject' =>"test",
+'html' =>"good"
+);
+echo send_mail($data);
 
 }
   ?>
