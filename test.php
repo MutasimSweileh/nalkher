@@ -7,7 +7,7 @@ $data = array(
 'from' => "mohtasmsawilh1@gmail.com",
 'to' =>$St->email,
 'subject' =>"test",
-'html' =>"good"
+'text' =>"good"
 );
 echo send_mail($data);
 
