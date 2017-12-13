@@ -2842,7 +2842,7 @@ if(isset($_POST) && isset($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SER
 }
 
 }else if($_GET['step'] == 'Sms'){
-    if((isset($_POST['number']))&&(isset($_POST['user'])&&$_POST['cantryy']!="")){
+    if(isv("number") && isv("cantryy") && isv("user") ){
       if(strlen(isv("number")) == 11 && isv("cantryy") == "Egypt" || isv("cantryy") != "Egypt" ){
         $number = isv("number");
           if(strlen(isv("number")) == 11)
