@@ -10,6 +10,10 @@ if($type == 'admin'){
   $l='حول الموقع' ;
 }else if($type == 'msg'){
   $l='الرسائل' ;
+}else if($type == 'sms' || $type == 'Sms'){
+
+  $l='خدمة الرسائل' ;
+
 }else if($type == 'true'){
   $l='الاشتراك' ;
 }else if($type == 'share'){
