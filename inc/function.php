@@ -1663,7 +1663,7 @@ $Sq= SqlIn('posts',array('active'=>1,'link'=>$link,'date'=>time(),'type'=>2,'tex
 }else if($j["data"][0]["type"] == "status" && !$str){
 $Sq= SqlIn('posts',array('active'=>1,'date'=>time(),'type'=>0,'text'=>$j["data"][0]['message']));
 }else{
-  return _getPost($j["paging"]["previous"]);
+  return _getPost2($j["paging"]["previous"]);
 }
 if($j['error']){
 //return rtoken();
