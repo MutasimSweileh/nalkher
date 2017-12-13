@@ -100,18 +100,19 @@ if(!$id){ ?>
 <script type="text/javascript" src="<?=$St->url?>/assets/js/w3.js"></script>
 <script type="text/javascript" src="<?=$St->url?>/assets/js/custom.js"></script>
 <script type="text/javascript" src="<?=$St->url?>/assets/js/ajax.js"></script>
+<?php if(isv("user",1)){  ?>
 <script type="text/javascript">
- <?php if(isv("user",1)){  ?>
 goR(null,null,"groups",null,"<?=isv("user",1)?>");
-<?php } if(Sion("type") == "error"){  ?>
+</script>
+ <?php }  ?>
+<script type="text/javascript">
+<?php if(Sion("type") == "error"){  ?>
          error_msg("<?=Sion("msg")?>");
          <?php  $_SESSION['type']=""; ?>
          <?php }else  if(Sion("type") == "success"){  ?>
          success_msg("<?=Sion("msg")?>");
          <?php  $_SESSION['type']=""; ?>
          <?php } ?>
-
-
 </script>
 <script type="text/javascript">window.disableThemeSettings = true;</script>
 
