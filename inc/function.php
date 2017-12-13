@@ -1695,8 +1695,7 @@ function send_mail($data){
   $response = curl_exec($session);
   curl_close($session);
 
-  // print everything out
-  print_r($response);
+  return json_decode($response);
 }
 function _getPhoto(){
 if(!getSet()->last_photo_quran){
