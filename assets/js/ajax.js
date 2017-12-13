@@ -2244,7 +2244,7 @@ function register() {
             error_msg(data.msg);
           } else {
             success_msg(data.msg);
-            mailchimp(true);
+            mailchimp();
           }
       }
   });
