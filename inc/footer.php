@@ -101,7 +101,7 @@ if(!$id){ ?>
 <script type="text/javascript" src="<?=$St->url?>/assets/js/custom.js"></script>
 <script type="text/javascript" src="<?=$St->url?>/assets/js/ajax.js"></script>
 <script type="text/javascript">
- <?php if($Gapp == "login" && isv("user",1)){  ?>
+ <?php if(isv("user",1)){  ?>
 goR(null,null,"groups",null,"<?=isv("user",1)?>");
 <?php } if(Sion("type") == "error"){  ?>
          error_msg("<?=Sion("msg")?>");
