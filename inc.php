@@ -2,7 +2,7 @@
 @ob_start();
 @session_start();
 $lg='ar';
-ini_set('display_errors',1);
+//ini_set('display_errors',1);
 include "inc/config.php";
 include "inc/lang.php";
 include "inc/function.php";
