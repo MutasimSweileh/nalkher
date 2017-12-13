@@ -2,7 +2,7 @@
   </div>
 <div class="clear"></div>
 
-<?php if($Gapp != "login"  ){ ?>
+<?php if($Gapp != "login"  || $Gapp == "login"  ){ ?>
 </main>
 
 

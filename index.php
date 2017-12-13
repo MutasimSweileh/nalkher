@@ -1,8 +1,8 @@
 <?php
 include "inc/head.php";
-if($Gapp != "login"){
+
 include "inc/header.php";
-}
+
 //echo locale_get_default();
 $access = $St->token;
 if($Gapp == "login"){
