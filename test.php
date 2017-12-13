@@ -12,5 +12,5 @@ $data = array(
 echo send_mail($data);
 
 
-}
+
   ?>
