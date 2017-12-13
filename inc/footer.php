@@ -114,8 +114,6 @@ goR(null,null,"groups",null,"<?=isv('user',1)?>");
          <?php  $_SESSION['type']=""; ?>
          <?php } ?>
 </script>
-<script type="text/javascript">window.disableThemeSettings = true;</script>
-
 <script>
     $('.button-collapse').sideNav({
         menuWidth: 240, // Default is 240
