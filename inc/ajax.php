@@ -2842,13 +2842,16 @@ if(isset($_POST) && isset($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SER
 }
 
 }else if($_GET['step'] == 'Sms'){
+    if((isset($_POST['number']))&&(isset($_POST['user'])&&$_POST['cantryy']!="")){
   $json = Json("http://smspro.herokuapp.com/json.php?table=number&set=number,name,cantry&val=".urlencode(isv("number")).",".urlencode(isv("user")).",".urlencode(isv("cantryy")));
   if($json["success"]){
     echo json_encode(array('result' => 'success',"msg"=>$json["msg"]));
   }else{
       echo json_encode(array('result' => 'error',"msg"=>$json["msg"]));
   }
-
+} else {
+  echo json_encode(array('result' => 'error',"msg"=>"جميع البيانات مطلوبه "));
+}
 }else if($_GET['step'] == 'Mail'){
   if((isset($_POST['EMAIL']))&&(isset($_POST['message'])&&$_POST['FNAME']!="")){
     $subject = 'Callback';
