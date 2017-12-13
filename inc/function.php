@@ -1675,19 +1675,28 @@ UpDate('settings','last_url_feed',$j["paging"]["previous"]);
 return $j["paging"]["previous"];
 }
 
-function send_mail($data,$api_key="key-74c2c184380be543b5a5411e104fdd2a"){
-  $domain ="sandboxe9de06ec4cf44bbb9b7ae73838a9f1a4.mailgun.org";/* Domain Name you given to Mailgun */
-  $ch = curl_init();
-  curl_setopt($ch, CURLOPT_HTTPAUTH, CURLAUTH_BASIC);
-  curl_setopt($ch, CURLOPT_USERPWD, 'api:'.$api_key);
-  curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-  curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'POST');
-  curl_setopt($ch, CURLOPT_URL, 'https://api.mailgun.net/v3/'.$domain.'/messages');
-  curl_setopt($ch, CURLOPT_POSTFIELDS,$data);
-  $result = curl_exec($ch);
-  curl_close($ch);
-  //return $result;
-return  print_r($result);
+function send_mail($data){
+  $request =  'https://api.sendgrid.com/api/mail.send.json';
+
+  // Generate curl request
+  $session = curl_init($request);
+  // Tell PHP not to use SSLv3 (instead opting for TLS)
+  curl_setopt($session, CURLOPT_SSLVERSION, CURL_SSLVERSION_TLSv1_2);
+  curl_setopt($session, CURLOPT_HTTPHEADER, array('Authorization: Bearer ' .getenv('SENDGRID_API_KEY')));
+  // Tell curl to use HTTP POST
+  curl_setopt ($session, CURLOPT_POST, true);
+  // Tell curl that this is the body of the POST
+  curl_setopt ($session, CURLOPT_POSTFIELDS, $params);
+  // Tell curl not to return headers, but do return the response
+  curl_setopt($session, CURLOPT_HEADER, false);
+  curl_setopt($session, CURLOPT_RETURNTRANSFER, true);
+
+  // obtain response
+  $response = curl_exec($session);
+  curl_close($session);
+
+  // print everything out
+  print_r($response);
 }
 function _getPhoto(){
 if(!getSet()->last_photo_quran){
