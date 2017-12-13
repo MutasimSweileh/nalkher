@@ -2245,7 +2245,7 @@ function register() {
           } else {
             success_msg(data.msg);
             mailchimp();
-            $('#form').find("input[type=text], textarea").val("");
+            $('#form').find("input,textarea").val("");
           }
       }
   });
