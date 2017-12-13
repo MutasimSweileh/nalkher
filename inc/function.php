@@ -1644,7 +1644,6 @@ return $j["paging"]["previous"];
 }
 function _getPost2($url= "",$id="1426100954327128"){
 if(!$url)
-//$url = "https://graph.facebook.com/v1.0/374344912640676/feed?fields=message,id,type&limit=1&__paging_token=enc_AdCzzitrPzhb5kUpfZC8ZA4LoHOQe4aV4lB28YHLyCc8ZCjW9sH386GaIFuh2FwPdZAzwVRLucRVgeZCu7sv81jLULLbpTShZBQUujt0kL5zzgnbalxAZDZD&access_token=".getSet()->token."&until=1396087132";
 $url = "https://graph.facebook.com/v1.0/".$id."/feed?fields=message,id,type,name,full_picture&limit=1&__paging_token=enc_AdCrQvr9hn0ZC6RaK9ZCVbydY5TumLRnGTLxduZBNl2sdz8nmgDHZC3ZBirapRGb4fqyajZAfOp22I2EtTsjwjMREHTrCsTkuhELp3Qtjdc2RBsZAnKAQZDZD&access_token=".getSet()->token."&until=1402447508";
 $un=substr($url,strpos($url,"until"),strlen($url));
 $url = substr($url,0,strpos($url,"access_token")+(strlen("access_token")+1)).getSet()->token."&".$un;
