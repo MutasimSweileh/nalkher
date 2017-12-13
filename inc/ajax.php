@@ -2843,7 +2843,6 @@ if(isset($_POST) && isset($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SER
 
 }else if($_GET['step'] == 'Mail'){
   if((isset($_POST['EMAIL']))&&(isset($_POST['message'])&&$_POST['FNAME']!="")){
-    $to = $St->email;
     $subject = 'Callback';
     $message = '
           <html>
@@ -2856,22 +2855,19 @@ if(isset($_POST) && isset($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SER
                   <p>'.$_POST['message'].'</p>
               </body>
           </html>';
-  $headers  = "Content-type: text/html; charset=utf-8 \r\n";
-  $headers .= "From: Site <$St->url>\r\n";
-  //$mail =mail($to, $subject, $message, $headers);
   $data = array(
   'from' => $_POST['EMAIL'],
+  'fromname'  =>$_POST['FNAME'],
   'to' =>$St->email,
-  'subject' => $subject,
-  'html' => $message
-);
+  'toname'    => $St->title,
+  'subject' =>$subject,
+  'html' =>$message
+  );
 $mail = send_mail($data);
-//die(json_encode(array('result' => 'success',"msg"=>$mail)));
-
-if($mail){
+if($mail["message"] == "success"){
     echo json_encode(array('result' => 'success',"msg"=>"تم ارسال الرساله "));
   }else{
-    echo json_encode(array('result' => 'error',"msg"=>"حدث خطأ ما لم يتم ارسال الرساله"));
+    echo json_encode(array('result' => 'error',"msg"=>$mail["errors"]));
   }
   } else {
     echo json_encode(array('result' => 'error',"msg"=>"جميع البيانات مطلوبه "));
