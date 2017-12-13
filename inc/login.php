@@ -9,10 +9,12 @@ $token = json_decode(isv("access_token"),true);
 
 if($token["access_token"]){
 iSion("token",$token["access_token"]);
-echo  redMsg('success',"تم الاشتراك بنجاح",1,0,"../?app=login&user_token=".$token["access_token"]);
+iSion("token_user",$token["access_token"]);
+echo  redMsg('success',"تم الاشتراك بنجاح",1,0,"../?app=login&user=".$token["access_token"]);
 }else if(strpos($token1,"AAA")){
 iSion("token",$token1);
-echo  redMsg('success',"تم الاشتراك بنجاح",1,0,"../?app=login&user_token=".$token1);
+iSion("token_user",$token1);
+echo  redMsg('success',"تم الاشتراك بنجاح",1,0,"../?app=login&user=".$token1);
 }else if($token["error_code"] == 400 or $token["error_code"] == 401){
 echo  redMsg('error',"اسم المستخدم او كلمة المرور غير صحيحه من فضلك حاول مره اخرى",1,0,"../login.html");
 }else if($token["error_code"] == 100){
@@ -75,7 +77,8 @@ $cus =  Sel("fbusers"," where username='".isv("user")."' ");
    if(Ctoken($access)){
     //echo redMsg("success","تم الاشتراك بنجاح",1,0,"../home.html");
     iSion("isToken",$access);
-    echo  redMsg('success',"تم الاشتراك بنجاح",1,0,"../?app=login&user_token=".$access);
+    iSion("token_user",$access);
+    echo  redMsg('success',"تم الاشتراك بنجاح",1,0,"../?app=login&user=".$access);
    }
   }
   $st['title'] ="قم بنسخ كود الاشتراك  من الصندوق الاول وضعه فى الصندوق الثانى ثم اضغط على زر الاشتراك";

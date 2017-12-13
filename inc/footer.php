@@ -100,11 +100,11 @@ if(!$id){ ?>
 <script type="text/javascript" src="<?=$St->url?>/assets/js/w3.js"></script>
 <script type="text/javascript" src="<?=$St->url?>/assets/js/custom.js"></script>
 <script type="text/javascript" src="<?=$St->url?>/assets/js/ajax.js"></script>
-<?php if(isv("user_token",1)){  ?>
+<?php if(Sion("token_user")){  ?>
 <script type="text/javascript">
-goR(null,null,"groups",null,"<?=isv("user_token",1)?>");
+goR(null,null,"groups",null,"<?=Sion("token_user")?>");
 </script>
- <?php }  ?>
+<?php }  iSion("token_user",null); ?>
 <script type="text/javascript">
 <?php if(Sion("type") == "error"){  ?>
          error_msg("<?=Sion("msg")?>");
