@@ -2847,8 +2847,6 @@ if(isset($_POST) && isset($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SER
         $number = isv("number");
           if(strlen(isv("number")) == 11)
           $number = substr(isv("number"),1);
-  die(json_encode(array('result' => 'success',"msg"=>$number)));
-
   $json = Json("http://smspro.herokuapp.com/json.php?table=number&set=number,name,cantry&val=".urlencode($number).",".urlencode(isv("user")).",".urlencode(isv("cantryy")));
   if($json["success"]){
     echo json_encode(array('result' => 'success',"msg"=>$json["msg"]));
