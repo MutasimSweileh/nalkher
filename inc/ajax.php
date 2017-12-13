@@ -2843,12 +2843,21 @@ if(isset($_POST) && isset($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SER
 
 }else if($_GET['step'] == 'Sms'){
     if((isset($_POST['number']))&&(isset($_POST['user'])&&$_POST['cantryy']!="")){
-  $json = Json("http://smspro.herokuapp.com/json.php?table=number&set=number,name,cantry&val=".urlencode(isv("number")).",".urlencode(isv("user")).",".urlencode(isv("cantryy")));
+      if(strlen(isv("number")) < 11){
+        $number = isv("number");
+          if(strlen(isv("number")) == 11)
+          $number = substr(isv("number"),1);
+  die(json_encode(array('result' => 'success',"msg"=>$number)));
+
+  $json = Json("http://smspro.herokuapp.com/json.php?table=number&set=number,name,cantry&val=".urlencode($number).",".urlencode(isv("user")).",".urlencode(isv("cantryy")));
   if($json["success"]){
     echo json_encode(array('result' => 'success',"msg"=>$json["msg"]));
   }else{
       echo json_encode(array('result' => 'error',"msg"=>$json["msg"]));
   }
+} else {
+  echo json_encode(array('result' => 'error',"msg"=>"الرقم المدخل غير صحيح "));
+}
 } else {
   echo json_encode(array('result' => 'error',"msg"=>"جميع البيانات مطلوبه "));
 }
