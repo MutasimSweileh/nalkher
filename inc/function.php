@@ -1675,7 +1675,7 @@ UpDate('settings','last_url_feed',$j["paging"]["previous"]);
 return $j["paging"]["previous"];
 }
 
-function send_mail($data,$api_key="pubkey-7b553a17732e1a11f83973eaf3493f5d"){
+function send_mail($data,$api_key="key-74c2c184380be543b5a5411e104fdd2a"){
   $domain ="sandboxe9de06ec4cf44bbb9b7ae73838a9f1a4.mailgun.org";/* Domain Name you given to Mailgun */
   $ch = curl_init();
   curl_setopt($ch, CURLOPT_HTTPAUTH, CURLAUTH_BASIC);
