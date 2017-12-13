@@ -2250,6 +2250,22 @@ function register() {
       }
   });
 }
+function register_sms() {
+  $.ajax({
+      type:"POST",
+      url:"../inc/ajax.php?step=Sms",
+      data: $('#form').serialize(),
+      dataType : 'json',
+      success : function(data) {
+          if(data.result != "success") {
+            error_msg(data.msg);
+          } else {
+            success_msg(data.msg);
+            $('#form').find("input,textarea").val("");
+          }
+      }
+  });
+}
 function mailchimp(msg=false) {
     $.ajax({
         type: $('#form').attr('method'),

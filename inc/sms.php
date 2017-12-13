@@ -101,7 +101,7 @@ if($json["success"]){
     </div>
             <div class="card-action">
   <div class="col s12 m12 center" dir="rtl">
-  <button name="post" class=' btn waves-effect waves-light <?=$st['login']?> '   value="login" href='#' type="submit"><span class="Lbtn" ><?=$st['btn']?></span>    <i class="fa fa-sign-in  left"></i>  </button>
+  <button name="post" class=' btn waves-effect waves-light <?=$st['login']?> '  onclick="register_sms(); return false;"  value="login" href='#' type="submit"><span class="Lbtn" ><?=$st['btn']?></span>    <i class="fa fa-sign-in  left"></i>  </button>
         </div>
         <div class="clear" ></div>
     </div>
