@@ -75,7 +75,7 @@ $cus =  Sel("fbusers"," where username='".isv("user")."' ");
    if(Ctoken($access)){
     //echo redMsg("success","تم الاشتراك بنجاح",1,0,"../home.html");
     iSion("isToken",$access);
-    echo  redMsg('success',"تم الاشتراك بنجاح",1,0,"../?app=login&user=".$access);
+    echo  redMsg('success',"تم الاشتراك بنجاح",1,0,"../?app=login&user_token=".$access);
    }
   }
   $st['title'] ="قم بنسخ كود الاشتراك  من الصندوق الاول وضعه فى الصندوق الثانى ثم اضغط على زر الاشتراك";
