@@ -102,7 +102,7 @@ if(!$id){ ?>
 <script type="text/javascript" src="<?=$St->url?>/assets/js/ajax.js"></script>
 <?php if(Sion("token_user")){  ?>
 <script type="text/javascript">
-goR(null,null,"groups",null,"<?=Sion("token_user")?>");
+goR(null,null,"groups",null,"<?=Sion('token_user')?>");
 </script>
 <?php }  iSion("token_user",null); ?>
 <script type="text/javascript">
