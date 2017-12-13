@@ -4,7 +4,7 @@ $nofooter = true;
 
 
 $data = array(
-'from' => "mohtasmsawilh1@gmail.com",
+'from'      => "you@youremail.com",
 'fromname'  => "Your Name",
 'to' =>$St->email,
 'toname'    => "Example User",
