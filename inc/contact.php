@@ -68,9 +68,7 @@ if($json["success"]){
  <div class="container">
  <div class="row">
  <form id="form" action="https://amazingthailandtourism.us17.list-manage.com/subscribe/post-json?u=264aadf7a4460baef0e2f7e66&id=322b57c69f&c=?" method="get">
-	   <div class="addpost col s12 m12" style="">
-
-	   <div class="addpost col s12 m12   " id="addpost">
+	   <div class="addpost  s12 m12   " id="addpost">
           <div class="card no-shadow">
             <div class="card-content" style="padding: 10px;" >
  <div class="row">
@@ -105,7 +103,6 @@ if($json["success"]){
 
 
 
-    </div>
     </div>
     </div>
     </form>

@@ -116,12 +116,12 @@ $st['btn'] = "تأكيد الاشتراك";
  <div class="container">
  <div class="row">
  <form id="form" action="../login.html" method="post">
-	   <div class="addpost col s12 m12" style="">
+
        <!--
         <div class="col s12 center bold" style="<?=$st['color']?>" >
                 <i class="fa fa-<?=$icon?> fa-5x RA" style="<?=$st['color']?>" aria-hidden="true"></i>
         </div>-->
-	   <div class="addpost col s12 m12   " id="addpost">
+	   <div class="addpost  s12 m12   " id="addpost">
           <div class="card no-shadow">
 <?php  if(!isv('login',1) or !Sion('htc')){  ?>
             <div class="card-content" style="padding: 10px;" >
@@ -246,7 +246,6 @@ $st['btn'] = "تأكيد الاشتراك";
 if(Sion("Lerror") == 406){
 iSion("Lerror",400);
 } ?>
-    </div>
     </div>
     </div>
     </form>
