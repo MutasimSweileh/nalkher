@@ -2387,5 +2387,3 @@ function toda (){
        $('.tooltipped').tooltip({delay:0});
 }
 ///////////////////ref////////////////////////
-
-});
