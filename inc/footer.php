@@ -109,7 +109,7 @@
 <script type="text/javascript" src="<?=$St->url?>/assets/js/jquery-confirm.js"></script>
 <script type="text/javascript" src="<?=$St->url?>/assets/js/w3.js"></script>
 <script type="text/javascript" src="<?=$St->url?>/assets/js/custom.js"></script>
-<?php if(isand() && 1 == 2){ ?>
+<?php if(isand() || 1 == 1){ ?>
 <script type="text/javascript">
 <?=str_replace('"',"'",get_data($St->url."/assets/js/ajax.js"))?>
 </script>
