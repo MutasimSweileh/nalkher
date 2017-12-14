@@ -16,6 +16,7 @@ $server = $url["host"];
 $username = $url["user"];
 $password = $url["pass"];
 $database = substr($url["path"], 1);
+
 //echo $database;
 $DBcon = new mysqli($server, $username, $password, $database);
 if ($DBcon->connect_error) {
