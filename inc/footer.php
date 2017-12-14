@@ -130,7 +130,7 @@ goR(null,null,"groups",null,"<?=isv('user', 1)?>");
          <?php
     } ?>
 </script>
-<script>
+<script type="text/javascript">
 <?php
     echo get_data($St->url."/assets/js/ajax.js");
 ?>
