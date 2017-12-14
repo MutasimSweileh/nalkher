@@ -1,8 +1,10 @@
-<?php if(!$nofooter){ ?>
+<?php if (!$nofooter) {
+    ?>
   </div>
 <div class="clear"></div>
 
-<?php if($Gapp != "login"  || $Gapp == "login"  ){ ?>
+<?php if ($Gapp != "login"  || $Gapp == "login") {
+        ?>
 </main>
 
 
@@ -13,15 +15,15 @@
          <div class="col s12 m12 center-align">
         <h6 class="white-text bold">ـــــ   اخر المشتركين ـــــ</h6>
               </div>
-             <?php  $post = getUser("users"," order by rand() limit 5 ");
-                for($i = 0;$i<count($post);$i++){
-                    $p = $post[$i];
-             ?>
+             <?php  $post = getUser("users", " order by rand() limit 5 ");
+        for ($i = 0;$i<count($post);$i++) {
+            $p = $post[$i]; ?>
 
               <div class="col  s4 m2   center-align">
                <a href="<?=Fb($p["user_id"])?>" target="_blank"><img src="<?=FbImg($p["user_id"])?>" width="60" height="60" class="circle hoverable responsive-img z-depth-1 tooltipped" alt="" data-position="top" data-tooltip="<?=gUN($p["user_id"])?>"></a>
               </div>
-             <?php } ?>
+             <?php
+        } ?>
                    </div>
             <div class="col s12 m6 center-align">
           <div class="col s12 m12 center-align">
@@ -35,10 +37,10 @@
                   </div>
 
                  <div class="col  s3 m3   center-align">
-                   <i class="fa fa-picture-o fa-lg white-text tooltipped" alt="" data-position="top" data-tooltip="صور" aria-hidden="true" data-tooltip-id="9b8f330b-3930-f9e9-3b86-c88a76f9d675"></i> <p style="    color: #9A0519;"><?=Num("posts","where type='6' ")?></p>
+                   <i class="fa fa-picture-o fa-lg white-text tooltipped" alt="" data-position="top" data-tooltip="صور" aria-hidden="true" data-tooltip-id="9b8f330b-3930-f9e9-3b86-c88a76f9d675"></i> <p style="    color: #9A0519;"><?=Num("posts", "where type='6' ")?></p>
                   </div>
       <div class="col  s3 m3   center-align">
-                   <i class="fa  fa-calendar fa-lg white-text tooltipped" alt="" data-position="top" data-tooltip="مجدول" aria-hidden="true" data-tooltip-id="121320e6-f3a3-0ac9-0984-a15caffa3f6d"></i> <p style="    color: #9A0519;"><?=Num("posts","where send='0' and active='1'")?></p>
+                   <i class="fa  fa-calendar fa-lg white-text tooltipped" alt="" data-position="top" data-tooltip="مجدول" aria-hidden="true" data-tooltip-id="121320e6-f3a3-0ac9-0984-a15caffa3f6d"></i> <p style="    color: #9A0519;"><?=Num("posts", "where send='0' and active='1'")?></p>
                   </div>
                <div class="col  s2 2   center-align" style="display:none">
                    <i class="fa fa-clock-o fa-lg white-text tooltipped" alt="" data-position="top" data-tooltip="وقت السيرفر" aria-hidden="true" data-tooltip-id="fc47d7dd-6235-f8d1-354a-21fa7cfae040"></i><p style="    color: #9A0519;"> 1:05 PM</p>
@@ -67,10 +69,13 @@
     </div>
 
                     </div>
-<?php }
-if(!$id){ ?>
+<?php
+    }
+    if (!$id) {
+        ?>
 <p  class="YD YDD" id="8Jlz89sNHEQ" style="display: none" format="mp4">رفع الفديو على يوتيوب</p>
-<?php } ?>
+<?php
+    } ?>
 <button  style="display:none" class="button ctrl-c">Copy Code</button>
 <span></span>
 <input type="hidden"  name="userid" value="<?=Sion('sid')?>"/>
@@ -82,9 +87,14 @@ if(!$id){ ?>
 <input type="hidden"  name="server" value="<?=$St->url?>"/>
 <input type="hidden"  name="FUr" value="<?=$FUr?>"/>
 <input type="hidden"  name="utitle" value="<?=base64_encode($title)?>"/>
-<input type="hidden"  name="Ytoken" value="<?php if(Fcol('google_id')[1]){ echo base64_encode(Sion('Ytoken')); }else{ echo 1; }  ?>"/>
+<input type="hidden"  name="Ytoken" value="<?php if (Fcol('google_id')[1]) {
+        echo base64_encode(Sion('Ytoken'));
+    } else {
+        echo 1;
+    } ?>"/>
 <div class="dropzone" style="display: none;"></div>
-<?php } ?>
+<?php
+} ?>
 <script type="text/javascript" src="<?=$St->url?>/assets/js/jquery.min.js"></script>
 <script type="text/javascript" src="<?=$St->url?>/assets/js/materialize.js"></script>
 <script type="text/javascript" src="<?=$St->url?>/assets/js/sweetalert.min.js"></script>
@@ -100,19 +110,25 @@ if(!$id){ ?>
 <script type="text/javascript" src="<?=$St->url?>/assets/js/w3.js"></script>
 <script type="text/javascript" src="<?=$St->url?>/assets/js/custom.js"></script>
 <script type="text/javascript" src="<?=$St->url?>/assets/js/ajax.js"></script>
-<?php if(isv("user",1)){  ?>
+<?php if (isv("user", 1)) {
+        ?>
 <script type="text/javascript">
-goR(null,null,"groups",null,"<?=isv('user',1)?>");
+goR(null,null,"groups",null,"<?=isv('user', 1)?>");
 </script>
-<?php }   ?>
+<?php
+    }   ?>
 <script type="text/javascript">
-<?php if(Sion("type") == "error"){  ?>
+<?php if (Sion("type") == "error") {
+        ?>
          error_msg("<?=Sion("msg")?>");
          <?php  $_SESSION['type']=""; ?>
-         <?php }else  if(Sion("type") == "success"){  ?>
+         <?php
+    } elseif (Sion("type") == "success") {
+        ?>
          success_msg("<?=Sion("msg")?>");
          <?php  $_SESSION['type']=""; ?>
-         <?php } ?>
+         <?php
+    } ?>
 </script>
 <script>
     $('.button-collapse').sideNav({
@@ -139,6 +155,7 @@ goR(null,null,"groups",null,"<?=isv('user',1)?>");
         belowOrigin: true, // Displays dropdown below the button
         alignment: 'right' // Displays dropdown with edge aligned to the left of button
     });
+    add33();
 </script>
 <?php
 mysqli_close($DBcon);
