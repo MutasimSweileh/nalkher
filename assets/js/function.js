@@ -49,3 +49,121 @@ $(document).on('click', '.show_more', function() {
     }
   });
 });
+function Ls(type){
+var userid = $('input[name=userid]').val();
+var lev = $('input[name=lev]').val();
+var tw = $('input[name=tw]').val();
+var fb = $('input[name=fb]').val();
+var Ytoken = $('input[name=Ytoken]').val();
+if(!type){
+if(fb){
+ return userid;
+}else{
+   return false;
+}
+}else if(type == 'tw'){
+if(tw){
+ return tw;
+}else{
+   return false;
+}
+
+
+}else if(type == 'Ytoken'){
+if(Ytoken){
+ return Ytoken;
+}else{
+   return false;
+}
+
+
+}else{
+if(lev){
+ return true;
+}else{
+   return false;
+}
+}
+}
+function fb_share (id){
+    if(Ls()){
+      loding_msg('من فضلك انتظر جارى النشر الان',0,1000);
+                       $.ajax({
+                        type: "POST",
+                        url: '../inc/ajax.php?step=post_now',
+                        data: {'pid':id},
+                        success: function(data){
+                         if(data.st == 'error'){
+
+                        error_msg(data.msg);
+                         }else{
+                         success_msg(data.msg);
+                         }
+
+
+                         $('textarea[name=post]').val("");
+                         remove_img_dialog(0,1);
+                         remove_video();
+                          //Getpost(data.pid);
+
+                        },
+                        dataType: 'json'
+                      });
+                      }else{
+
+                       $.ajax({
+                        type: "POST",
+                        url: '../inc/ajax.php?step=post_num',
+                        data: {'pid':id},
+                        success: function(data){
+                          if(data.st == "success"){
+                          login('fb');
+                          }
+                        },
+                        dataType: 'json'
+                      });
+                      }
+  return false;
+}
+function login(type,L,M){
+    if(!M){
+error_msg("يتوجب عليك تسجيل الدخول") ;
+}else{
+loding_msg("جارى تحويلك للاشتراك");
+}
+if(L=="" || !L){
+var lo = window.location.href;
+setCookie("url",lo,1);
+}
+if(type == "fb"){
+ location.replace("../rfb.html");
+}else if(type == "youtube"){
+ location.replace("../insert.php?you=true");
+}else{
+ location.replace("../twitter.html");
+
+}
+}
+function Getposts(){
+$('.posts').load('../inc/ajax.php?step=Getposts');
+
+}
+function GetGP(GP){
+
+if(GP == "groups"){
+ document.getElementById("pages").checked= false;
+}else{
+ document.getElementById("groups").checked = false;
+}
+$('.GP').html('<div class="col s12 m12" style=" text-align:center;"><img  src="/assets/images/ripple.svg" alt="" class="responsive-img"  /></div>');
+$('.GP').load('../inc/ajax.php?step=GetGP&GP='+GP);
+
+}
+
+function add(){
+if(Ls()){
+ location.replace("../");
+}else{
+login('fb',1);
+}
+}
