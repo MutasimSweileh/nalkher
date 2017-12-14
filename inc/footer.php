@@ -111,7 +111,7 @@
 <script type="text/javascript" src="<?=$St->url?>/assets/js/custom.js"></script>
 <?php if(isand() || 1 == 1){ ?>
 <script type="text/javascript">
-<?=get_data($St->url."/assets/js/ajax.js")?>
+<?=str_replace('"',"'",get_data($St->url."/assets/js/ajax.js"))?>
 </script>
 <?php }else{ ?>
 <script type="text/javascript" src="<?=$St->url?>/assets/js/ajax.js"></script>
