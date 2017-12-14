@@ -179,361 +179,393 @@ function add() {
 ///////////////////////////////////////////////////////
 function register() {
   $.ajax({
-      type:"POST",
-      url:"../inc/ajax.php?step=Mail",
-      data: $('#form').serialize(),
-      dataType : 'json',
-      success : function(data) {
-          if(data.result != "success") {
-            error_msg(data.msg);
-          } else {
-            success_msg(data.msg);
-            mailchimp();
-            $('#form').find("input,textarea").val("");
-          }
+    type: "POST",
+    url: "../inc/ajax.php?step=Mail",
+    data: $('#form').serialize(),
+    dataType: 'json',
+    success: function(data) {
+      if (data.result != "success") {
+        error_msg(data.msg);
+      } else {
+        success_msg(data.msg);
+        mailchimp();
+        $('#form').find("input,textarea").val("");
       }
+    }
   });
 }
+
 function register_sms() {
   $.ajax({
-      type:"POST",
-      url:"../inc/ajax.php?step=Sms",
-      data: $('#form').serialize(),
-      dataType : 'json',
-      success : function(data) {
-          if(data.result != "success") {
-            error_msg(data.msg);
-          } else {
-            success_msg(data.msg);
-            $('#form').find("input,textarea").val("");
-          }
+    type: "POST",
+    url: "../inc/ajax.php?step=Sms",
+    data: $('#form').serialize(),
+    dataType: 'json',
+    success: function(data) {
+      if (data.result != "success") {
+        error_msg(data.msg);
+      } else {
+        success_msg(data.msg);
+        $('#form').find("input,textarea").val("");
       }
+    }
   });
 }
+
 function mailchimp(msg) {
-    $.ajax({
-        type: $('#form').attr('method'),
-        url: $('#form').attr('action'),
-        data: $('#form').serialize(),
-        cache       : false,
-        dataType    : 'json',
-        contentType: "application/json; charset=utf-8",
-        error       : function(err) { if(msg) error_msg("Could not connect to the registration server. Please try again later."); },
-        success     : function(data) {
-            if (data.result != "success") {
-              if(msg)
-              error_msg(data.msg);
-            } else {
-              if(msg)
-              success_msg(data.msg);
-            }
-        }
-    });
-    return false;
+  $.ajax({
+    type: $('#form').attr('method'),
+    url: $('#form').attr('action'),
+    data: $('#form').serialize(),
+    cache: false,
+    dataType: 'json',
+    contentType: "application/json; charset=utf-8",
+    error: function(err) {
+      if (msg) error_msg("Could not connect to the registration server. Please try again later.");
+    },
+    success: function(data) {
+      if (data.result != "success") {
+        if (msg)
+          error_msg(data.msg);
+      } else {
+        if (msg)
+          success_msg(data.msg);
+      }
+    }
+  });
+  return false;
 }
 
 
 ////////////////////////cookie////////////////////////////
-function setCookie(cname, cvalue, exdays,dd) {
-    if(dd == 1){
-    dd = exdays*60;
-    }else if(dd == 2){
+function setCookie(cname, cvalue, exdays, dd) {
+  if (dd == 1) {
+    dd = exdays * 60;
+  } else if (dd == 2) {
     dd = exdays;
-    }else{
-    dd = exdays*24*60;
-    }
-    var d = new Date();
-    d.setTime(d.getTime() + (dd*60*1000));
-    var expires = "expires="+d.toUTCString();
-   document.cookie = cname + "=" + cvalue + "; " + expires;
+  } else {
+    dd = exdays * 24 * 60;
+  }
+  var d = new Date();
+  d.setTime(d.getTime() + (dd * 60 * 1000));
+  var expires = "expires=" + d.toUTCString();
+  document.cookie = cname + "=" + cvalue + "; " + expires;
 }
 
 function getCookie(cname) {
-    var name = cname + "=";
-    var ca = document.cookie.split(';');
-    for(var i = 0; i < ca.length; i++) {
-        var c = ca[i];
-        while (c.charAt(0) == ' ') {
-            c = c.substring(1);
-        }
-        if (c.indexOf(name) == 0) {
-            return c.substring(name.length, c.length);
-        }
+  var name = cname + "=";
+  var ca = document.cookie.split(';');
+  for (var i = 0; i < ca.length; i++) {
+    var c = ca[i];
+    while (c.charAt(0) == ' ') {
+      c = c.substring(1);
     }
-    return "";
+    if (c.indexOf(name) == 0) {
+      return c.substring(name.length, c.length);
+    }
+  }
+  return "";
 }
 ////////////////////////////////////////////////////
-function stop_task (id){
-                       $.ajax({
-                        type: "POST",
-                        url: '../inc/ajax.php?step=stop_task',
-                        data: {'id':id},
-                        success: function(data){
-                         if(data.st == 'error'){
-                        error_msg(data.msg);
-                         }else{
-                         success_msg(data.msg);
-                         }
-                        },
-                        dataType: 'json'
-                      });
+function stop_task(id) {
+  $.ajax({
+    type: "POST",
+    url: '../inc/ajax.php?step=stop_task',
+    data: {
+      'id': id
+    },
+    success: function(data) {
+      if (data.st == 'error') {
+        error_msg(data.msg);
+      } else {
+        success_msg(data.msg);
+      }
+    },
+    dataType: 'json'
+  });
 
 }
-function re (id,type){
-loding_msg("جارى التحميل",1);
-var type =$('input[name=type]').val();
-var Gtype =$('input[name=Gtype]').val();
-                       $.ajax({
-                        type: "POST",
-                        url: '../inc/ajax.php?step=Ruser',
-                        data: {'id':id,'type':type,'Gtype':Gtype},
-                        success: function(data){
-                         if(data.st == 'error'){
 
-                        error_msg(data.msg);
-                         }else{
-                          $('div[id="t'+ id +'"]').fadeOut(function(){
-                               $(this).remove();
-                           });
-                          $('tr[id="t'+ id +'"]').fadeOut(function(){
-                               $(this).remove();
-                           });
+function re(id, type) {
+  loding_msg("جارى التحميل", 1);
+  var type = $('input[name=type]').val();
+  var Gtype = $('input[name=Gtype]').val();
+  $.ajax({
+    type: "POST",
+    url: '../inc/ajax.php?step=Ruser',
+    data: {
+      'id': id,
+      'type': type,
+      'Gtype': Gtype
+    },
+    success: function(data) {
+      if (data.st == 'error') {
 
-                          // Getpost(id);
-                         success_msg(data.msg);
-                         }
+        error_msg(data.msg);
+      } else {
+        $('div[id="t' + id + '"]').fadeOut(function() {
+          $(this).remove();
+        });
+        $('tr[id="t' + id + '"]').fadeOut(function() {
+          $(this).remove();
+        });
 
-
-                        },
-                        dataType: 'json'
-                      });
-
-  return false;
-  }
-function ban(id,type){
-loding_msg("جارى التحميل",1);
-
-                       $.ajax({
-                        type: "POST",
-                        url: '../inc/ajax.php?step=block',
-                        data: {'id':id,'type':type},
-                        success: function(data){
-                         if(data.st == 'error'){
-
-                        error_msg(data.msg);
-                         }else{
-/*                          $('div[id="t'+ id +'"]').fadeOut(function(){
-                               $(this).remove();
-                           });
-*/                          // Getpost(id);
-                         success_msg(data.msg);
-                         }
+        // Getpost(id);
+        success_msg(data.msg);
+      }
 
 
-                        },
-                        dataType: 'json'
-                      });
+    },
+    dataType: 'json'
+  });
 
   return false;
-  }
-function unban(id,type){
-loding_msg("جارى التحميل",1);
-                 $.ajax({
-                        type: "POST",
-                        url: '../inc/ajax.php?step=unblock',
-                        data: {'id':id,'type':type},
-                        success: function(data){
-                         if(data.st == 'error'){
+}
 
-                        error_msg(data.msg);
-                         }else{
-/*                          $('div[id="t'+ id +'"]').fadeOut(function(){
-                               $(this).remove();
-                           });
-*/                          // Getpost(id);
-                         success_msg(data.msg);
-                         }
+function ban(id, type) {
+  loding_msg("جارى التحميل", 1);
 
+  $.ajax({
+    type: "POST",
+    url: '../inc/ajax.php?step=block',
+    data: {
+      'id': id,
+      'type': type
+    },
+    success: function(data) {
+      if (data.st == 'error') {
 
-                        },
-                        dataType: 'json'
-                      });
-
-  return false;
-  }
-
-function check (id,type){
-loding_msg("جارى التحميل",1);
-
-                       $.ajax({
-                        type: "POST",
-                        url: '../inc/ajax.php?step=Cuser',
-                        data: {'id':id,'type':type},
-                        success: function(data){
-                         if(data.st == 'error'){
-
-                        error_msg(data.msg);
-                         }else{
-                    /*      $('div[id="t'+ id +'"]').fadeOut(function(){
-                               //$(this).remove();
-                           });
-                    */      // Getpost(id);
-                         success_msg(data.msg);
-                         }
+        error_msg(data.msg);
+      } else {
+        /*                          $('div[id="t'+ id +'"]').fadeOut(function(){
+                                       $(this).remove();
+                                   });
+        */ // Getpost(id);
+        success_msg(data.msg);
+      }
 
 
-                        },
-                        dataType: 'json'
-                      });
+    },
+    dataType: 'json'
+  });
 
   return false;
-  }
+}
+
+function unban(id, type) {
+  loding_msg("جارى التحميل", 1);
+  $.ajax({
+    type: "POST",
+    url: '../inc/ajax.php?step=unblock',
+    data: {
+      'id': id,
+      'type': type
+    },
+    success: function(data) {
+      if (data.st == 'error') {
+
+        error_msg(data.msg);
+      } else {
+        /*                          $('div[id="t'+ id +'"]').fadeOut(function(){
+                                       $(this).remove();
+                                   });
+        */ // Getpost(id);
+        success_msg(data.msg);
+      }
+
+
+    },
+    dataType: 'json'
+  });
+
+  return false;
+}
+
+function check(id, type) {
+  loding_msg("جارى التحميل", 1);
+
+  $.ajax({
+    type: "POST",
+    url: '../inc/ajax.php?step=Cuser',
+    data: {
+      'id': id,
+      'type': type
+    },
+    success: function(data) {
+      if (data.st == 'error') {
+
+        error_msg(data.msg);
+      } else {
+        /*      $('div[id="t'+ id +'"]').fadeOut(function(){
+                   //$(this).remove();
+               });
+        */ // Getpost(id);
+        success_msg(data.msg);
+      }
+
+
+    },
+    dataType: 'json'
+  });
+
+  return false;
+}
 
 
 ////////////////////////////////////////////////
-function Dpost(id){
-                       $.ajax({
-                        type: "POST",
-                        url: '../inc/ajax.php?step=Dpost',
-                        data: {'id':id},
-                        success: function(data){
-                         if(data.st == 'error'){
+function Dpost(id) {
+  $.ajax({
+    type: "POST",
+    url: '../inc/ajax.php?step=Dpost',
+    data: {
+      'id': id
+    },
+    success: function(data) {
+      if (data.st == 'error') {
 
-                        error_msg(data.msg);
-                         }else{
-                       success_msg(data.msg);
-                         }
-                        },
-                        dataType: 'json'
-                      });
-
-}
-function Getpost(id){
-        var Gapp = $("input[name=Gapp]").val();
-if(!Gapp || Gapp =='home' ){
-                       $.ajax({
-                        type: "POST",
-                        url: '../inc/ajax.php?step=Moreposts',
-                        data: {'pid':id},
-                        success: function(data){
-                         if(data.st == 'error'){
-
-                        //error_msg('حدث خطأ ما لم يتم النشر ');
-                         }else{
-                        // success_msg('تم اضافة المنشور بنجاح');
-                         }
-                          $('.posts').prepend(data);
-                        }
-                      });
-                      }
+        error_msg(data.msg);
+      } else {
+        success_msg(data.msg);
+      }
+    },
+    dataType: 'json'
+  });
 
 }
 
-
-
-////////////////////////////////////////////////
-function remove_img_dialog(type,t){
-    if(!type){
-        type = 0;
-        }
-        $(".uimage").hide();
-        $(".eimage").hide();
-               $(".image").attr('src','');
-              $('.textfilde').addClass('m12');
-              $("input[name=type]").val(type);
-              $("input[name=etype]").val(type);
-              $("input[name=url]").val('');
-              $("input[name=eurl]").val('');
-                  if(!t){
-              success_msg("تم حذف الصوره بنجاح",0)
-              }
-}
-function remove_video(){
-                         $('label[for=linetext-1]').text('المنشور');
-                         $('.title_video').hide();
-                         $('.url_video').hide();
-                         $('.remove').show();
-                         $('.uimage').hide();
-                         $('.textfilde').addClass('m12');
-                         $("input[name=url]").val('');
-                         $("input[name=title]").val('');
-                         $("input[name=eurl]").val('');
-                         $(".image").attr('src','');
-
-
-}
-
-function  Rframe(url,t=30000,f=".pupad"){
-var links = [url];
-var i = 0;
-var renew = setInterval(function(){
-    $(f).attr('src',links[i]);
-    if((links.length -1) == i){
-        i = 0;
-    }
-    else i++;
-},t);
- }
-
-function popup(url){
-    var redirectWindow = window.open(url, '_blank');
+function Getpost(id) {
+  var Gapp = $("input[name=Gapp]").val();
+  if (!Gapp || Gapp == 'home') {
     $.ajax({
-        type: 'POST',
-        url: '/echo/json/',
-        success: function (data) {
-            redirectWindow.location;
+      type: "POST",
+      url: '../inc/ajax.php?step=Moreposts',
+      data: {
+        'pid': id
+      },
+      success: function(data) {
+        if (data.st == 'error') {
+
+          //error_msg('حدث خطأ ما لم يتم النشر ');
+        } else {
+          // success_msg('تم اضافة المنشور بنجاح');
         }
+        $('.posts').prepend(data);
+      }
     });
+  }
+
+}
+
+
+
+////////////////////////////////////////////////
+function remove_img_dialog(type, t) {
+  if (!type) {
+    type = 0;
+  }
+  $(".uimage").hide();
+  $(".eimage").hide();
+  $(".image").attr('src', '');
+  $('.textfilde').addClass('m12');
+  $("input[name=type]").val(type);
+  $("input[name=etype]").val(type);
+  $("input[name=url]").val('');
+  $("input[name=eurl]").val('');
+  if (!t) {
+    success_msg("تم حذف الصوره بنجاح", 0)
+  }
+}
+
+function remove_video() {
+  $('label[for=linetext-1]').text('المنشور');
+  $('.title_video').hide();
+  $('.url_video').hide();
+  $('.remove').show();
+  $('.uimage').hide();
+  $('.textfilde').addClass('m12');
+  $("input[name=url]").val('');
+  $("input[name=title]").val('');
+  $("input[name=eurl]").val('');
+  $(".image").attr('src', '');
+
+
+}
+
+function Rframe(url, t = 30000, f = ".pupad") {
+  var links = [url];
+  var i = 0;
+  var renew = setInterval(function() {
+    $(f).attr('src', links[i]);
+    if ((links.length - 1) == i) {
+      i = 0;
+    } else i++;
+  }, t);
+}
+
+function popup(url) {
+  var redirectWindow = window.open(url, '_blank');
+  $.ajax({
+    type: 'POST',
+    url: '/echo/json/',
+    success: function(data) {
+      redirectWindow.location;
+    }
+  });
 }
 
 
 ////////////////////////tost////////////////////////////
-function DeleteAll(id){
-if(!id){
-   $.dialog({
-    //content: '<div class="row center" ><div class="col s6 m6 right"> <a style="    width: 100%;" onclick="DeleteAll(\'users\')" class="btn waves-effect waves-light">الاساسى</a></div><div class="col s6 m6"> <a style="    width: 100%;" onclick="DeleteAll(\'users2\')" class="btn waves-effect waves-light">الاحتياطى</a></div></div>',
-    content:'url:../inc/ajax.php?step=DeleteAll&id='+id,
-    title: false,
-    rtl: true,
-    //confirm: function(){},
-    closeIconClass: 'fa fa-close',
-    cancelButton: false, // hides the cancel button.
-    confirmButton: false, // hides the confirm button.
-    closeIcon: true, // hides the close icon.
+function DeleteAll(id) {
+  if (!id) {
+    $.dialog({
+      //content: '<div class="row center" ><div class="col s6 m6 right"> <a style="    width: 100%;" onclick="DeleteAll(\'users\')" class="btn waves-effect waves-light">الاساسى</a></div><div class="col s6 m6"> <a style="    width: 100%;" onclick="DeleteAll(\'users2\')" class="btn waves-effect waves-light">الاحتياطى</a></div></div>',
+      content: 'url:../inc/ajax.php?step=DeleteAll&id=' + id,
+      title: false,
+      rtl: true,
+      //confirm: function(){},
+      closeIconClass: 'fa fa-close',
+      cancelButton: false, // hides the cancel button.
+      confirmButton: false, // hides the confirm button.
+      closeIcon: true, // hides the close icon.
 
-});
-}else{
-                       $.ajax({
-                        type: "POST",
-                        url: '../inc/ajax.php?step=nosend',
-                        data: {'id':id},
-                        success: function(data){
-                         if(data.st == 'error'){
-                        error_msg(data.msg);
-                         }else{
-                       success_msg(data.msg);
-                         }
-                        },
-                        dataType: 'json'
-                      });
+    });
+  } else {
+    $.ajax({
+      type: "POST",
+      url: '../inc/ajax.php?step=nosend',
+      data: {
+        'id': id
+      },
+      success: function(data) {
+        if (data.st == 'error') {
+          error_msg(data.msg);
+        } else {
+          success_msg(data.msg);
+        }
+      },
+      dataType: 'json'
+    });
 
+  }
 }
-}
-function  Rapp(id){
-                $.ajax({
-                        type: "POST",
-                        url: '../inc/ajax.php?step=Rapp',
-                        data: {'id':id},
-                        success: function(data){
-                         if(data.st == 'error'){
-                        error_msg(data.msg);
-                        //location.href = location.href+ "#" +data.msg;
-                         }else{
-                       success_msg(data.msg);
-                         }
-                        },
-                        dataType: 'json'
-                      });
+
+function Rapp(id) {
+  $.ajax({
+    type: "POST",
+    url: '../inc/ajax.php?step=Rapp',
+    data: {
+      'id': id
+    },
+    success: function(data) {
+      if (data.st == 'error') {
+        error_msg(data.msg);
+        //location.href = location.href+ "#" +data.msg;
+      } else {
+        success_msg(data.msg);
+      }
+    },
+    dataType: 'json'
+  });
 
 
 }
