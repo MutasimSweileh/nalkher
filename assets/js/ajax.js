@@ -284,32 +284,7 @@ var type = $(this).attr('id');
 		$('#post_now').trigger('click');
 	});
 
-       var feedback = function (res) {
-            if (res.success === true) {
-                //document.querySelector('.status').classList.add('bg-success');
-                //document.querySelector('.status').innerHTML = 'Image url: ' + res.data.link;
-                            $('.textfilde').removeClass('m12');
-                            $('.textfilde').addClass('m9');
-							$(".image").attr('src',res.data.link);
-							$("input[name=img]").val(res.data.link);
-							$("input[name=logo]").val(res.data.link);
-							var Gapp =$("input[name=Gapp]").val();
-                            if(Gapp != 'admin' ){
-							$("input[name=type]").val(2);
-                               }else{
-							$("input[name=type]").val($("select[name=type]").val());
-                               }
-                            $(".uimage").show();
-                           $("button[name=post]").show();
-                           success_msg('تم رفع الصوره بنجاح',0) ;
-            }else{
-                 error_msg("حدث خطأ ما لم يتم رفع الصوره");
-            }
-        };
-        new Imgur({
-            clientid: '3fd403ffb4414a7',
-            callback: feedback
-        });
+
 
 
 
@@ -699,6 +674,32 @@ $('#post_video').click(function(){
 
 });
 //*////////////////////////myfunction/////////////////////////////////////////*//
+var feedback = function (res) {
+     if (res.success === true) {
+         //document.querySelector('.status').classList.add('bg-success');
+         //document.querySelector('.status').innerHTML = 'Image url: ' + res.data.link;
+                     $('.textfilde').removeClass('m12');
+                     $('.textfilde').addClass('m9');
+       $(".image").attr('src',res.data.link);
+       $("input[name=img]").val(res.data.link);
+       $("input[name=logo]").val(res.data.link);
+       var Gapp =$("input[name=Gapp]").val();
+                     if(Gapp != 'admin' ){
+       $("input[name=type]").val(2);
+                        }else{
+       $("input[name=type]").val($("select[name=type]").val());
+                        }
+                     $(".uimage").show();
+                    $("button[name=post]").show();
+                    success_msg('تم رفع الصوره بنجاح',0) ;
+     }else{
+          error_msg("حدث خطأ ما لم يتم رفع الصوره");
+     }
+ };
+ new Imgur({
+     clientid: '3fd403ffb4414a7',
+     callback: feedback
+ });
 function Curl (url=""){
 var you2 = url.search(url);
 if(you2 < 1){
