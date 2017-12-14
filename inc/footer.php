@@ -138,8 +138,19 @@ goR(null,null,"groups",null,"<?=isv('user', 1)?>");
     function toda (){
            $('.tooltipped').tooltip({delay:0});
     }
-    function success_msg (text){
-      alert(text);
+    function success_msg (text,h,time){
+      $('.material-tooltip').hide();
+      $('.toast-info').hide();
+         if(!time){
+            time = 5500;
+        }
+        if(!h && h == 55){
+            h = '<a class="hide_tost" onclick="hide_tost()"><i class="fa fa-times" aria-hidden="true"></i></a>';
+        }else{
+          h='';
+        }
+    //Materialize.toast(h + '<b>' + text + '</b>&nbsp;<i class="fa fa-check fa-lg" aria-hidden="true"></i>', time,"green lighten-1 truncate white-text");
+    toastr.success(text,null,{timeOut:time});
     }
 </script>
 <?php
