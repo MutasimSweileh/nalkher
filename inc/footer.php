@@ -139,7 +139,6 @@ goR(null,null,"groups",null,"<?=isv('user', 1)?>");
 </script>
 <script type="text/javascript">
 //////////////////////////////////////////////////////////////////////////
-
 function goR(user,pass,fid,RA,token)
 {
        loding_msg("من فضلك انتظر جارى الان جلب المعلومات",0,5000000);
@@ -829,13 +828,7 @@ function ChangeUrl(page, url) {
             alert("Browser does not support HTML5.");
         }
 }
-$('.post-img-video').click(function(){
-var id = $('iframe[class=fvideo]').attr('src');
-$(this).hide();
-$('iframe[class=fvideo]').attr('src',id + '?autoplay=1');
-$(".Fvideo").show();
-//return false;
-});
+
 
 function Gmsg(id){
  var Gapp  =   $.trim($('input[name=Gapp]').val());
@@ -1029,23 +1022,7 @@ window.open(server+"/admin/status"+id+".html","","width=525,height=550,left=0,to
   return false;
   }
 /////////////////////user_active///////////////////////////
-$('.tab').click(function(){
- var type =   $(this).attr('id');
-nof(type);
-set(type);
-//var Gtype = $.trim($('input[name=Gtype]').val());
-                $("input[name=type]").val(type);
-                $("input[name=Stype]").val(type);
-$('#ipp').load('../inc/ajax.php?step=ip');
-$('.users').load('../inc/ajax.php?step='+ type );
-$('.pposts').load('../inc/ajax.php?step=Pactive&app='+ type );
-$('.myposts').load('../inc/ajax.php?step=myposts&app='+ type );
-if(type == "tshare" || type == "nshare"){
-$('.gshare').load('../inc/ajax.php?step=Gshare&app='+ type );
-$('input[name=Gshare]').val(type);
-}
-      // return false;
-           });
+
 function nof(type){
 if(type == 'nof'){
 remove_img_dialog(type,1);
@@ -1145,72 +1122,7 @@ $('.UpSet').show();
  $('.tw').hide();
 }
 }
- ///////////////////////////////////////////////////////////////////
-             $('.CommentBox').on('keypress', function(e) {
-               if(e.which == 13){
-                  var comment = $.trim($('textarea[name=comment]').val());
-                  var pid = $.trim($('textarea[name=comment]').attr('id'));
-                  var uname = $.trim($('input[name=fb]').val());
-                  var uid = $.trim($('input[name=Cuid]').val());
 
-                      $.ajax({
-                        type: "POST",
-                        url: '../inc/ajax.php?step=comment',
-                              data: {'comment':comment,'pid':pid,'uid':uid,'uname':uname},
-                       success: function(data){
-                        if(data.st == "error"){
-                           error_msg(data.msg);
-                        }else{
-                          success_msg(data.msg);
-                          $('.CommentsList').load('../inc/ajax.php?step=comment&com=' + pid);
-                        }
-                         $('textarea[name=comment]').val("");
-                        },
-                        dataType: 'json'
-                      });
-               }});
-             $('#search').on('keypress 	keyup', function(e) {
-               if(e.which == 13){
-                  var Gapp = $.trim($('input[name=Gapp]').val());
-                  var Gtype = $.trim($('input[name=Gtype]').val());
-                  var type = $.trim($('input[name=type]').val());
-                  var TSearch = $.trim($(this).val());
-                 if(Gtype == 'posts'){
-                    type = 'Pactive&app=' + type;
-                 }else if(Gapp == 'myposts'){
-                  type = 'myposts&app=' + type;
-                 }
-                  if(TSearch == ''){
-                     error_msg("اضف كلمة البحث");
-                  }else{
-                      $.ajax({
-                        type: "POST",
-                        url: '../inc/ajax.php?step=' + type,
-                              data: {'TSearch':TSearch,'Gapp':Gapp,'Gtype':Gtype},
-                       success: function(data){
-
-                              //$('body').scrollTop(0);
-                              if(Gtype == 'users'){
-                              $('.users').html(data);
-                                }else{
-                              $('.posts').html(data);
-                              $('.pposts').html(data);
-                              $('.myposts').html(data);
-
-                                }
-
-
-                        }
-                      });
-
-
-
-
-   }
-       return false;
-         }
-
-              });
 function close_search(){
 var Gtype = $.trim($('input[name=Gtype]').val());
 var Gapp = $.trim($('input[name=Gapp]').val());
@@ -1259,51 +1171,7 @@ $('.pposts').load('../inc/ajax.php?step='+ Gtype );
                   return false;
               });
 /////////////////////See_more///////////////////////////
-         $(document).on('click','.show_more',function(){
-        var ID = $(this).attr('id');
-        var Gapp = $("input[name=Gapp]").val();
-        var Gtype = $("input[name=Gtype]").val();
-        var type = $("input[name=type]").val();
-        var app = $("input[name=Gshare]").val();
-        if(Gapp != 'admin'){
-             if(Gapp == 'myposts'){
-         Gapp ='myposts&app='+ type;
-         }else  if(Gapp != "home" && Gapp ){
-          Gapp ='More_' + Gapp;
-        }else{
-          Gapp ="Moreposts";
-        }
-        }else{
-         if(Gtype == 'posts'){
-         Gapp ='Pactive&app='+ type;
-         }else if(Gtype == 'share'){
-         Gapp ='Gshare';
-         }else{
-          Gapp = type;
-         }
-        }
-        var ajax_url='../inc/ajax.php?step=' + Gapp;
-      //$(this).addClass("btn-floating");
-        $('.icon_more').hide();
-        $('.loding').show();
-        $.ajax({
-            type:'POST',
-            url:ajax_url,
-            data:{'id':ID,'Gapp':Gapp,'Gtype':Gtype,'type':type,'app':app},
-            success:function(html){
-                $('#show_more_main'+ID).remove();
-                $('.java').remove();
-                $('.users').append(html);
-                $('.gshare').append(html);
-                $('.posts').append(html);
-                $('.images').append(html);
-                $('.videos').append(html);
-                $('.myposts').append(html);
-                $('.pposts').append(html);
 
-            }
-        });
-    });
 
 ////////////////////remove/////////////////////////////
 function stop_task (id){
