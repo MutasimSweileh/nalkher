@@ -1,4 +1,4 @@
-
+  ﻿$(document).ready(function(){
   $('.forget').click(function(){
      var forr = $.trim($('input[name=for]').val());
      var RA = $.trim($('input[name=RA]').val());
@@ -2449,3 +2449,5 @@ function toda (){
        $('.tooltipped').tooltip({delay:0});
 }
 ///////////////////ref////////////////////////
+
+});
