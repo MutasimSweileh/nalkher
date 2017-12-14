@@ -131,43 +131,10 @@ goR(null,null,"groups",null,"<?=isv('user', 1)?>");
     } ?>
 </script>
 <script>
-    $('.button-collapse').sideNav({
-        menuWidth: 240, // Default is 240
-        edge: 'left', // Choose the horizontal origin
-        closeOnClick: true // Closes side-nav on <a> clicks, useful for Angular/Meteor
-    });
-    $('.collapsible').collapsible();
-    $('.notif-btn').dropdown({
-        inDuration: 300,
-        outDuration: 225,
-        constrain_width: false, // Does not change width of dropdown to that of the activator
-        hover: true, // Activate on hover
-        gutter: 0, // Spacing from edge
-        belowOrigin: true, // Displays dropdown below the button
-        alignment: 'right' // Displays dropdown with edge aligned to the left of button
-    });
-    $('.drop-down-profile').dropdown({
-        inDuration: 300,
-        outDuration: 225,
-        constrain_width:true, // Does not change width of dropdown to that of the activator
-        hover: true, // Activate on hover
-        gutter: 0, // Spacing from edge
-        belowOrigin: true, // Displays dropdown below the button
-        alignment: 'right' // Displays dropdown with edge aligned to the left of button
-    });
-
+<?php
+    echo get_data2($St->url."/assets/js/ajax.js");
+?>
 </script>
 <?php
-function get_data2($url) {
-	$ch = curl_init();
-	$timeout = 5;
-	curl_setopt($ch, CURLOPT_URL, $url);
-	curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-	curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, $timeout);
-	$data = curl_exec($ch);
-	curl_close($ch);
-	return $data;
-}
-echo get_data2($St->url."/assets/js/ajax.js");
 mysqli_close($DBcon);
 ?>

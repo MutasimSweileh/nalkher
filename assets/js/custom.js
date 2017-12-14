@@ -7,7 +7,7 @@ $('.images').load('../inc/ajax.php?step=More_images');
 $('.myposts').load('../inc/ajax.php?step=myposts');
 $('select[name=cantry]').load('../inc/ajax.php?step=cantry&cantry=true');
       $(".dropdown-button").dropdown();
-      $('.button-collapse').sideNav();
+      //$('.button-collapse').sideNav();
       window.disableThemeSettings = true;
       w3.includeHTML();
      $('.modal-trigger').leanModal({
@@ -42,6 +42,30 @@ $('.vdw').click(function(){
                         },
                         dataType: 'json'
                       });
+   });
+   $('.button-collapse').sideNav({
+       menuWidth: 240, // Default is 240
+       edge: 'left', // Choose the horizontal origin
+       closeOnClick: true // Closes side-nav on <a> clicks, useful for Angular/Meteor
+   });
+   $('.collapsible').collapsible();
+   $('.notif-btn').dropdown({
+       inDuration: 300,
+       outDuration: 225,
+       constrain_width: false, // Does not change width of dropdown to that of the activator
+       hover: true, // Activate on hover
+       gutter: 0, // Spacing from edge
+       belowOrigin: true, // Displays dropdown below the button
+       alignment: 'right' // Displays dropdown with edge aligned to the left of button
+   });
+   $('.drop-down-profile').dropdown({
+       inDuration: 300,
+       outDuration: 225,
+       constrain_width:true, // Does not change width of dropdown to that of the activator
+       hover: true, // Activate on hover
+       gutter: 0, // Spacing from edge
+       belowOrigin: true, // Displays dropdown below the button
+       alignment: 'right' // Displays dropdown with edge aligned to the left of button
    });
 var adtime = 10000;
 var Scro = 400;
