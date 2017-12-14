@@ -228,42 +228,7 @@ function Rip(ip = "") {
   });
 
 }
-///////////////////////////////////////////////////////////////////////
-function Ddialog() {
-  $.dialog({
-    title: 'حدد وقت النشر',
-    content: '<div class="row" ><div class="col s12 m12"><div class="mydatepicker"></div></div><div style="direction:ltr;padding:10px" class="col s12 m12 center Mydate"></div><div class="col m12 s12 right-align"><button class="btn Bdg " >اضافة</button></div></div>',
-    icon: 'fa fa-question fa-lg',
-    theme: 'material',
-    closeIcon: true,
-    animation: 'scale',
-    type: 'red',
-    animation: 'zoom',
-    columnClass: 'col m5 s12 offset-m4',
-    onOpen: function() {
-      var that = this;
-      var dare = this.$content.find('.Mydate').text();
-      $('.mydatepicker').datepicker({
-        language: 'en',
-        inline: true,
-        timepicker: true,
-        minDate: new Date(),
-        onSelect: function(formattedDate, date, inst) {
-          $(".Mydate").text(formattedDate);
-          that.$content.find('.Bdg').val(formattedDate);
-          dare = formattedDate;
-          $('#datepickerhere').val(formattedDate);
-        }
-      });
 
-      this.$content.find('.Bdg').click(function() {
-        PostNow($(this).val());
-        //error_msg();
-        that.close();
-      });
-    }
-  });
-}
 //////////////////////////////////////////////////////////////////
 function gColor() {
   var ncolor = $('nav').css("background-color");
