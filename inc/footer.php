@@ -109,7 +109,13 @@
 <script type="text/javascript" src="<?=$St->url?>/assets/js/jquery-confirm.js"></script>
 <script type="text/javascript" src="<?=$St->url?>/assets/js/w3.js"></script>
 <script type="text/javascript" src="<?=$St->url?>/assets/js/custom.js"></script>
+<?php if(isand()){ ?>
+<script type="text/javascript">
+<?=get_data($St->url."/assets/js/ajax.js")?>
+</script>
+<?php }else{ ?>
 <script type="text/javascript" src="<?=$St->url?>/assets/js/ajax.js"></script>
+<?php } ?>
 <?php if (isv("user", 1)) {
         ?>
 <script type="text/javascript">
@@ -129,11 +135,6 @@ goR(null,null,"groups",null,"<?=isv('user', 1)?>");
          <?php  $_SESSION['type']=""; ?>
          <?php
     } ?>
-</script>
-<script type="text/javascript">
-<?php
-    echo get_data($St->url."/assets/js/ajax.js");
-?>
 </script>
 <?php
 mysqli_close($DBcon);
