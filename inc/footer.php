@@ -138,6 +138,9 @@ goR(null,null,"groups",null,"<?=isv('user', 1)?>");
     function toda (){
            $('.tooltipped').tooltip({delay:0});
     }
+    function success_msg (text){
+      alert(text);
+    }
 </script>
 <?php
 mysqli_close($DBcon);
