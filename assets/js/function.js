@@ -558,7 +558,647 @@ function Rapp(id) {
 
 
 }
+/////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////
 
+
+
+          function get_video (url,a){
+           if(url==""){
+                loding_msg('اضف رابط الفديو');
+               $('.url_video label').text("رابط الفديو");
+                $('label[for=linetext-1]').text('وصف الفديو');
+                $('.url_video').show();
+                  }
+                $("input[name=url]").change(function(){
+                 var url =    $("input[name=url]").val();
+            var you = url.search("youtube");
+            var you2 = url.search("youtu");
+if(you2 < 1){
+                        error_msg("عذرا اضف رابط يوتيوب صحيح");
+
+}else{
+              $.ajax({
+                        type: "POST",
+                        url: '../inc/ajax.php?step=get_video',
+                        data: {'url':url},
+                        success: function(data){
+                         if(data.st == 'error'){
+
+                        error_msg(data.msg);
+                         }else{
+                         success_msg(data.msg);
+
+                         $('textarea[name=post]').val(data.title);
+                         $('input[name=title]').val(data.title);
+                         $('.image').attr('src',data.img);
+                         if(a != 1){
+                         $('label').addClass('active');
+                         }
+                         $('label[for=linetext-1]').text('وصف الفديو');
+                         $('.title_video').show();
+                         $('.remove').hide();
+                         $('.uimage').show();
+                         $('.textfilde').removeClass('m12');
+                         $('.textfilde').addClass('m9');
+                         $("input[name=type]").val(7);
+                         }
+                        },
+                        dataType: 'json'
+                      });
+    }
+                 });
+
+}
+function G_video(url){
+  $.ajax({
+            type: "POST",
+            url: '../inc/ajax.php?step=get_video',
+            data: {'url':url},
+            success: function(data){
+             if(data.st == 'error'){
+
+            error_msg(data.msg);
+             }else{
+             success_msg(data.msg);
+
+             $('textarea[name=post]').val(data.title);
+             $('input[name=title]').val(data.title);
+             $('input[name=url]').val(url);
+             $('.image').attr('src',data.img);
+             $('label').addClass('active');
+             $('label[for=linetext-1]').text('وصف الفديو');
+             $('.title_video').show();
+             $('.url_video').show();
+             $('.remove').hide();
+             $('.uimage').show();
+             $('.textfilde').removeClass('m12');
+             $('.textfilde').addClass('m9');
+             $("input[name=type]").val(7);
+             }
+            },
+            dataType: 'json'
+          });
+
+}
+          function get_url (url){
+                $("input[name=url]").change(function(){
+                 var url =    $("input[name=url]").val();
+              $.ajax({
+                        type: "POST",
+                        url: '../inc/ajax.php?step=get_url',
+                        data: {'url':url},
+                        success: function(data){
+                         if(data.st == 'error'){
+                        if(data.type != 'face'){
+                        error_msg(data.msg);
+                        }
+                         }else{
+                         success_msg(data.msg);
+                         //success_msg(data.img);
+                         if(data.description){
+                             if($('textarea[name=post]').val() == ''){
+                         $('textarea[name=post]').val(data.description);
+                              }
+                         $('textarea[name=Durl]').val(data.description);
+                         }else{
+                             if($('textarea[name=post]').val() == ''){
+                         $('textarea[name=post]').val(data.title);
+                         }
+                         $('textarea[name=Durl]').val(data.title);
+                         }
+                         $('input[name=Nmurl]').val(data.title);
+                         //$('.image').attr('src',data.img);
+                         //$('label[for=linetext-1]').text('وصف الفديو');
+                         //$("input[name=type]").val(7);
+                         }
+                        },
+                        dataType: 'json'
+                      });
+                 });
+
+}
+
+          function YUpload (url){
+          if(!Ls('Ytoken')){
+           error_msg('قم بتسجيل الدخول الى يوتيوب اولا');
+           login('youtube');
+           return false;
+          }
+              loding_msg("جاري التحميل",1,70000);
+              $.ajax({
+                        type: "POST",
+                        url: '../inc/ajax.php?step=YUpload',
+                        data: {'url':url},
+                        success: function(data){
+                        $('.loader').hide();
+                         if(data.st == 'error'){
+                        error_msg(data.msg);
+                         }else{
+                         success_msg(data.msg);
+                         }
+                        },
+                        dataType: 'json'
+                      });
+
+}
+
+function nosend (id){
+//        var url = $("#download").attr('href');
+//var r = confirm("هل تريد فعلا حذف المتوقف");
+              $.ajax({
+                        type: "POST",
+                        url: '../inc/ajax.php?step=nosend',
+                        data: {'id':id},
+                        success: function(data){
+                         if(data.st == 'error'){
+
+                        error_msg(data.msg);
+                         }else{
+                         success_msg(data.msg);
+                         }
+                        },
+                        dataType: 'json'
+                      });
+
+}
+////////////////////////action////////////////////////
+function fb_post (id){
+      loding_msg('من فضلك انتظر جارى النشر الان',0,1000);
+var type = $('input[name=type]').val();
+       // error_msg(type);
+
+                       $.ajax({
+                        type: "POST",
+                        url: '../inc/ajax.php?step=fb_post',
+                        data: {'pid':id,'type':type},
+                        success: function(data){
+                         if(data.st == 'error'){
+
+                        error_msg(data.msg);
+                         }else{
+                         success_msg(data.msg);
+                         //success_msg(data.type);
+                         }
+
+
+                         $('textarea[name=post]').val("");
+                        // remove_img_dialog(0,1);
+                         //remove_video();
+                          //Getpost(data.pid);
+
+                        },
+                        dataType: 'json'
+                      });
+
+
+}
+
+    function G_post(id){
+
+  loding_msg("من فضلك انتظر جارى جلب المنشور الان");
+  $('.url_video').hide();
+  remove_img_dialog(0,1);
+  remove_video();
+                     $.ajax({
+                        type: "POST",
+                        url: '../inc/ajax.php?step=AddT',
+                        data: {'pid':id},
+                        success: function(data){
+                         if(data.st == 'error'){
+
+                        error_msg(data.msg);
+                         }else{
+                         success_msg(data.msg);
+
+
+
+              $('textarea[name=post]').val(data.post);
+              $(".options").hide();
+              $("button[name=epost]").show();
+
+              $("button[name=epost]").attr("onclick","edite("+id+")");
+              $("button[name=post]").hide();
+              $("input[name=type]").val(data.type);
+
+            $('label').addClass('active');
+            if(data.type == 2 ){
+              $('.textfilde').removeClass('m12');
+              $('.textfilde').addClass('m9');
+             $(".image").attr('src',data.img);
+             $("input[name=img]").val(data.img);
+              $(".uimage").show();
+            }else if(data.type == 7){
+             G_video(data.vurl);
+            }else if(data.type == 1){
+              $('.url_video').show();
+              $("input[name=url]").val(data.url);
+              $('.url_video label').text("الرابط");
+              $('label[for=linetext-1]').text('المنشور');
+            }
+              document.body.scrollTop = 0;
+              document.documentElement.scrollTop = 0;
+                   }
+
+                        },
+                        dataType: 'json'
+                      });
+    return false;
+    }
+
+function tw_share (id){
+    if(Ls('tw')){
+    soon_msg("قريبا ان شاء الله",2000);
+    }else{
+       login('tw');
+    }
+  return false;
+  }
+function text_post(){
+var type =$('input[name=type]').val();
+if(type == 2){
+type =0;
+}
+remove_img_dialog(0,type);
+remove_video();
+  return false;
+  }
+
+///////////////////Remove/////////////////////////////
+function D_post (id){
+                       $.ajax({
+                        type: "POST",
+                        url: '../inc/ajax.php?step=Dactive',
+                        data: {'id':id},
+                        success: function(data){
+                         if(data.st == 'error'){
+
+                        error_msg(data.msg);
+                         }else{
+                        $('div[id="t'+ id +'"]').fadeOut(function(){
+                               $(this).remove();
+                           });
+                         success_msg(data.msg);
+                         }
+
+
+                        },
+                        dataType: 'json'
+                      });
+
+  return false;
+  }
+///////////////////more/////////////////////////////
+function ChangeUrl(page, url) {
+        if (typeof (history.pushState) != "undefined") {
+            var obj = { Page: page, Url: url };
+            history.pushState(obj, obj.Page, obj.Url);
+        } else {
+            alert("Browser does not support HTML5.");
+        }
+}
+
+
+function Gmsg(id){
+ var Gapp  =   $.trim($('input[name=Gapp]').val());
+                      $.ajax({
+                        type: "POST",
+                        url: '../inc/ajax.php?step=Gmsg',
+                        data: {'id':id,'Gapp':Gapp},
+                        success: function(data){
+                        if(id){
+                         $('.msg').html(data);
+                           }else{
+                         $('.sub_msg').html(data);
+
+                           }
+                        },
+                       // dataType: 'json'
+                      });
+  return false;
+
+
+}
+function rmsg (id){
+ var rmsg  =   $.trim($('textarea[name=rmsg]').val());
+ var main  =   $.trim($('input[name=main]').val());
+                      $.ajax({
+                        type: "POST",
+                        url: '../inc/ajax.php?step=msg',
+                        data: {'id':id,'rmsg':rmsg,'main':main},
+                        success: function(data){
+                         if(data.st == 'error'){
+
+                        error_msg(data.msg);
+                         }else{
+
+                         success_msg(data.msg);
+                         $('.modal-content').html('');
+                         $('textarea[name=rmsg]').val('')
+                         Gmsg(data.id);
+
+                         }
+
+
+                        },
+                        dataType: 'json'
+                      });
+  return false;
+}
+function msg (id){
+
+  }
+
+function more (id){
+
+  }
+  function close (id){
+
+  return false;
+  }
+////////////////////user_time////////////////////////////
+   function user_time(){
+
+   }
+
+   function ref(url){
+if(url){
+return  location.replace(url);
+}else{
+return false;
+}
+ }
+////////////////////active////////////////////////////
+function Ref_post (id){
+    loding_msg("جارى التحميل",0,3000);
+                       $.ajax({
+                        type: "POST",
+                        url: '../inc/ajax.php?step=Ref',
+                        data: {'id':id},
+                        success: function(data){
+                         if(data.st == 'error'){
+
+                        error_msg(data.msg);
+                         }else{
+                           //Getpost(id);
+                         success_msg(data.msg);
+                         }
+
+
+                        },
+                        dataType: 'json'
+                      });
+
+  return false;
+  }
+
+function A_post (id){
+                       $.ajax({
+                        type: "POST",
+                        url: '../inc/ajax.php?step=active',
+                        data: {'id':id},
+                        success: function(data){
+                         if(data.st == 'error'){
+
+                        error_msg(data.msg);
+                         }else{
+                          $('div[id="t'+ id +'"]').fadeOut(function(){
+                               $(this).remove();
+                           });
+
+                           Getpost(id);
+                         success_msg(data.msg);
+                         }
+
+
+                        },
+                        dataType: 'json'
+                      });
+
+  return false;
+  }
+function Aa_post (id){
+                       $.ajax({
+                        type: "POST",
+                        url: '../inc/ajax.php?step=activee',
+                        data: {'id':id},
+                        success: function(data){
+                         if(data.st == 'error'){
+
+                        error_msg(data.msg);
+                         }else{
+                          $('div[id="t'+ id +'"]').fadeOut(function(){
+                               $(this).remove();
+                           });
+                           Getpost(id);
+                         success_msg(data.msg);
+                         }
+
+
+                        },
+                        dataType: 'json'
+                      });
+
+  return false;
+  }
+
+  ////////////////////edite////////////////////////////
+function Sstatus(id){
+var server = $.trim($('input[name=server]').val());
+window.open(server+"/admin/status"+id+".html","","width=525,height=550,left=0,top=0,resizable=yes,menubar=no,location=no,status=yes,scrollbars=yes");
+
+}
+
+  function edite (id){
+ var Etext  =   $.trim($('textarea[name=post]').val());
+ var eurl = $.trim($('input[name=url]').val());
+  var title = $.trim($('input[name=title]').val());
+ var vurl = $.trim($('input[name=vurl]').val());
+ var vid = $.trim($('input[name=vvid]').val());
+ var aid = $.trim($('input[name=aid]').val());
+ var etype = $('input[name=type]').val();
+ var name = $.trim($('input[name=name]').val());
+ var email = $.trim($('input[name=email]').val());
+ var pass = $.trim($('input[name=pass]').val());
+ var admin_fb = $.trim($('input[name=admin_fb]').val());
+ var Gtype = $.trim($('input[name=Gtype]').val());
+
+                       $.ajax({
+                        type: "POST",
+                        url: '../inc/ajax.php?step=edite',
+                        data: {'id':id,'post':Etext,'title':title,'url':eurl,'vurl':vurl,'vid':vid,'type':etype,'name':name,'fb':admin_fb,'pass':pass,'aid':aid,'email':email,'Gtype':Gtype},
+                        success: function(data){
+                         if(data.st == 'error'){
+
+                        error_msg(data.msg);
+                         }else{
+                          $('div[id="t'+ id +'"]').fadeOut(function(){
+                               $(this).remove();
+                           });
+                              $('.edite').hide();
+                           Getpost(id);
+                         success_msg(data.msg);
+                         $("button[name=post]").show();
+                         $(".options").show();
+                         $("button[name=epost]").hide();
+                         }
+
+
+                        },
+                        dataType: 'json'
+                      });
+
+  return false;
+  }
+/////////////////////user_active///////////////////////////
+
+function nof(type){
+if(type == 'nof'){
+remove_img_dialog(type,1);
+remove_video();
+ $('.likes').hide();
+ $('.short').show();
+ $('.pages').hide();
+ $('.post').hide();
+ $('.url').show();
+ $('.Durl').hide();
+ $('.Nmurl').hide();
+ $('.token').hide();
+ $('.img-up').hide();
+ $('.nof').show();
+ $('.textfilde').show();
+ $('.cantry').hide();
+}else if(type == 'token'){
+remove_img_dialog(type,1);
+remove_video();
+ $('button[name=selected]').val('all');
+ $('button[name=selected]').text('لم يتم تحديد شىء');
+ $('.img-up').hide();
+ $('.pages').hide();
+ $('.cantry').hide();
+ $('.post').hide();
+ $('.token').show();
+  $('.short').hide();
+ $('.Durl').hide();
+ $('.Nmurl').hide();
+ $('.url').hide();
+ $('.nof').hide();
+ $('.likes').hide();
+ $('.textfilde').hide();
+}else{
+ $('.post').show();
+if(type == 'likes'){
+remove_img_dialog(type,1);
+remove_video();
+success_msg("تعمل هذه الخاصيه مع التطبيق الدائم فقط",1,5000);
+ $('.likes').show();
+ $('.postt').hide();
+ $('.posttt').hide();
+ $('.pages').hide();
+ $('.textfilde').hide();
+}else{
+ $('.likes').hide();
+ $('.postt').show();
+ $('.posttt').show();
+ $('.pages').show();
+ $('.textfilde').show();
+}
+  $('.cantry').show();
+ $('.short').hide();
+ $('.token').hide();
+ $('.url').hide();
+  $('.Durl').hide();
+ $('.Nmurl').hide();
+ $('.nof').hide();
+}
+
+}
+function set(type){
+if(type == 'set'){
+ $('.set').show();
+ $('.UpSet').show();
+ $('.fb').hide();
+ $('.tw').hide();
+ $('.msg').hide();
+  $('.admin').hide();
+}else if(type == 'tw'){
+ $('.UpSet').show();
+  $('.msg').hide();
+ $('.tw').show();
+ $('.fb').hide();
+ $('.set').hide();
+ $('.admin').hide();
+}else if(type == 'fb'){
+$('.UpSet').show();
+ $('.msg').hide();
+ $('.fb').show();
+ $('.set').hide();
+ $('.tw').hide();
+ $('.admin').hide();
+}else if(type == 'admin'){
+ $('.fb').hide();
+  $('.msg').hide();
+  $('.UpSet').hide();
+ $('.admin').show();
+ $('.set').hide();
+ $('.tw').hide();
+}else if(type == 'msg'){
+ $('.UpSet').show();
+ $('.fb').hide();
+ $('.msg').show();
+ $('.admin').hide();
+ $('.set').hide();
+ $('.tw').hide();
+}
+}
+
+function close_search(){
+var Gtype = $.trim($('input[name=Gtype]').val());
+var Gapp = $.trim($('input[name=Gapp]').val());
+var type = $.trim($('input[name=type]').val());
+if(Gtype == 'posts'){
+Gtype = 'Pactive&app=' + type;
+}else if(Gapp == 'myposts'){
+Gtype = 'myposts&app=' + type;
+}
+$('.users').load('../inc/ajax.php?step='+ type );
+$('.pposts').load('../inc/ajax.php?step='+ Gtype );
+}
+/////////////////////Delete///////////////////////////
+             $('.Delete').click(function(){
+                  var Delete_msg = $.trim($('textarea[name=Delete_msg]').val());
+
+                  if(Delete_msg==""){
+                    error_msg("قم بكتابه السبب من فضلك");
+                  }else if(Delete_msg.length < 20){
+                   error_msg("هذا السبب قصير جدا من فضلك اكتب السبب صحيح");
+
+                  }else{
+                             $(this).hide();
+                             $('.CDelete').show();
+                             $('textarea[name=Delete_msg]').val('');
+                       $.ajax({
+                        type: "POST",
+                        url: '../inc/ajax.php?step=Delete',
+                        data: {'Delete_msg':Delete_msg},
+                        success: function(data){
+                         if(data.st == 'error'){
+                           error_msg(data.msg);
+                         }else{
+                             success_msg(data.msg);
+                             location.replace('/');
+                         }
+
+
+                        },
+                        dataType: 'json'
+                      });
+
+                  }
+
+
+                  return false;
+              });
 /////////////////////toasts/////////////////////////
 function success_msg(text, h, time) {
   $('.material-tooltip').hide();
