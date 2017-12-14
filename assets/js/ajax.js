@@ -2451,7 +2451,8 @@ function toda (){
 
 var add33 = (function () {
     var counter = 0;
+    alert("test alert");
   success_msg("test success");
-  error_msg("test Error")
+  error_msg("test Error");
     //return function () { return counter += 1;}
 })();
