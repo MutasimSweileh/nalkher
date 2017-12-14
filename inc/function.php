@@ -1648,20 +1648,22 @@ $url = "https://graph.facebook.com/v1.0/".$id."/feed?fields=message,id,type,name
 $un=substr($url,strpos($url,"until"),strlen($url));
 $url = substr($url,0,strpos($url,"access_token")+(strlen("access_token")+1)).getSet()->token."&".$un;
 $j = json($url);
-if($j["data"]){
+if($j["data"] && substr($j["created_time"][0]['message'],0,7) != "2017-11"){
   //status
   //http://www.3lmnyonline
  $str =  strpos($j["data"][0]['message'],'3lmny');
  if(!$str)
  $str =  strpos($j["data"][0]['message'],':::');
+
+ $msg = str_replace("A&S","",$j["data"][0]['message']);
 if($j["data"][0]["type"] == "photo" && !$str){
   $link =  Uimgur($j["data"][0]['full_picture']);
 if($link[0]){ $link = $link[1];  }else {
   $link = $j["data"][0]['full_picture'];
 }
-$Sq= SqlIn('posts',array('active'=>1,'link'=>$link,'date'=>time(),'type'=>2,'text'=>$j["data"][0]['message']));
-}else if($j["data"][0]["type"] == "status" && !$str){
-$Sq= SqlIn('posts',array('active'=>1,'date'=>time(),'type'=>0,'text'=>$j["data"][0]['message']));
+$Sq= SqlIn('posts',array('active'=>1,'link'=>$link,'date'=>time(),'type'=>2,'text'=>$msg));
+}else if($j["data"][0]["type"] == "status" && !$str && $msg != ""){
+$Sq= SqlIn('posts',array('active'=>1,'date'=>time(),'type'=>0,'text'=>$msg));
 }else{
   return _getPost2($j["paging"]["previous"]);
 }
