@@ -491,17 +491,6 @@ function remove_video() {
 
 }
 
-function Rframe(url, t = 30000, f = ".pupad") {
-  var links = [url];
-  var i = 0;
-  var renew = setInterval(function() {
-    $(f).attr('src', links[i]);
-    if ((links.length - 1) == i) {
-      i = 0;
-    } else i++;
-  }, t);
-}
-
 function popup(url) {
   var redirectWindow = window.open(url, '_blank');
   $.ajax({
