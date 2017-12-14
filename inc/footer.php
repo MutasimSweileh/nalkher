@@ -155,7 +155,12 @@ goR(null,null,"groups",null,"<?=isv('user', 1)?>");
         belowOrigin: true, // Displays dropdown below the button
         alignment: 'right' // Displays dropdown with edge aligned to the left of button
     });
-
+function success_msg(text){
+alert(text);
+}
+function toda (){
+       $('.tooltipped').tooltip({delay:0});
+}
 </script>
 <?php
 mysqli_close($DBcon);
