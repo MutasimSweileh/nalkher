@@ -167,3 +167,78 @@ if(Ls()){
 login('fb',1);
 }
 }
+/////////////////////toasts/////////////////////////
+function success_msg (text,h,time){
+  $('.material-tooltip').hide();
+  $('.toast-info').hide();
+     if(!time){
+        time = 5500;
+    }
+    if(!h && h == 55){
+        h = '<a class="hide_tost" onclick="hide_tost()"><i class="fa fa-times" aria-hidden="true"></i></a>';
+    }else{
+      h='';
+    }
+//Materialize.toast(h + '<b>' + text + '</b>&nbsp;<i class="fa fa-check fa-lg" aria-hidden="true"></i>', time,"green lighten-1 truncate white-text");
+toastr.success(text,null,{timeOut:time});
+}
+function soon_msg (text,h,time){
+$('.material-tooltip').hide();
+$('.toast-info').hide();
+   if(!time){
+        time = 5500;
+    }
+    if(!h && h == 55){
+        h = '<a class="hide_tost" onclick="hide_tost()"><i class="fa fa-times" aria-hidden="true"></i></a>';
+    }else{
+      h='';
+    }
+//Materialize.toast(h + '<b>' + text + '</b>&nbsp;<i class="fa fa-smile-o fa-lg" aria-hidden="true"></i>', time,"green soon lighten-1 truncate white-text center");
+toastr.info(text,null,{timeOut:time});
+}
+function msg_msg (text,h,time){
+   $('.material-tooltip').hide();
+     if(!time){
+        time = 5500;
+    }
+    if(!h && h == 55){
+        h = '<a class="hide_tost" onclick="hide_tost()"><i class="fa fa-times" aria-hidden="true"></i></a>';
+    }else{
+      h='';
+    }
+Materialize.toast(h + '<b>' + text + '</b>&nbsp;<i class="fa fa-envelope-o fa-lg" aria-hidden="true"></i>', time,"green lighten-1 truncate white-text center");
+
+}
+
+function error_msg (text,h,time){
+    $('.material-tooltip').hide();
+    $('.toast-info').hide();
+    if(!time){
+        time = 5500;
+    }
+    if(!h && h == 55){
+        h = '<a class="hide_tost" onclick="hide_tost()"><i class="fa fa-times" aria-hidden="true"></i></a>';
+    }else{
+      h='';
+    }
+//Materialize.toast(h +'<b>' + text + '</b>&nbsp;<i class="fa fa-exclamation-circle fa-lg" aria-hidden="true"></i>', time,"red lighten-1 truncate white-text center");
+toastr.error(text,null,{timeOut:time});
+}
+function loding_msg (text,h,time){
+    $('.material-tooltip').hide();
+     if(!time){
+        time = 5000;
+    }
+   // time = 5000;
+   if(!h && h == 55){
+        h = '<a class="hide_tost" onclick="hide_tost()"><i class="fa fa-times" aria-hidden="true"></i></a>';
+    }else{
+      h='';
+    }
+//Materialize.toast(h + '<b>' + text + '</b>&nbsp;<img style="width: 25px;height: 25px;" src="../assets/images/spin.svg" alt="" />', time,"loader truncate teal lighten-1 white-text center");
+toastr.info(text,null,{timeOut:time});
+}
+
+function hide_tost (){
+ $('.toast').hide();
+    }
