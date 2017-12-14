@@ -181,7 +181,7 @@ function register() {
   $.ajax({
       type:"POST",
       url:"../inc/ajax.php?step=Mail",
-      data: $('#form').serialize(),
+    //  data: $('#form').serialize(),
       dataType : 'json',
       success : function(data) {
           if(data.result != "success") {
@@ -198,7 +198,7 @@ function register_sms() {
   $.ajax({
       type:"POST",
       url:"../inc/ajax.php?step=Sms",
-      data: $('#form').serialize(),
+    //  data: $('#form').serialize(),
       dataType : 'json',
       success : function(data) {
           if(data.result != "success") {
@@ -214,7 +214,7 @@ function mailchimp(msg=false) {
     $.ajax({
         type: $('#form').attr('method'),
         url: $('#form').attr('action'),
-        data: $('#form').serialize(),
+        //data: $('#form').serialize(),
         cache       : false,
         dataType    : 'json',
         contentType: "application/json; charset=utf-8",
