@@ -138,6 +138,49 @@ goR(null,null,"groups",null,"<?=isv('user', 1)?>");
 
 </script>
 <script type="text/javascript">
+function Ls(){
+  return false;
+}
+function fb_share (id){
+    if(Ls()){
+      loding_msg('من فضلك انتظر جارى النشر الان',0,1000);
+                       $.ajax({
+                        type: "POST",
+                        url: '../inc/ajax.php?step=post_now',
+                        data: {'pid':id},
+                        success: function(data){
+                         if(data.st == 'error'){
+
+                        error_msg(data.msg);
+                         }else{
+                         success_msg(data.msg);
+                         }
+
+
+                         $('textarea[name=post]').val("");
+                         remove_img_dialog(0,1);
+                         remove_video();
+                          //Getpost(data.pid);
+
+                        },
+                        dataType: 'json'
+                      });
+                      }else{
+
+                       $.ajax({
+                        type: "POST",
+                        url: '../inc/ajax.php?step=post_num',
+                        data: {'pid':id},
+                        success: function(data){
+                          if(data.st == "success"){
+                          login('fb');
+                          }
+                        },
+                        dataType: 'json'
+                      });
+                      }
+  return false;
+}
 $(document).on('click','.show_more',function(){
 var ID = $(this).attr('id');
 var Gapp = $("input[name=Gapp]").val();
