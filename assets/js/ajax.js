@@ -1,3 +1,4 @@
+﻿$(document).ready(function(){
   $('.forget').click(function(){
      var forr = $.trim($('input[name=for]').val());
      var RA = $.trim($('input[name=RA]').val());
@@ -671,7 +672,7 @@ $('#post_video').click(function(){
 
  });
 
-
+});
 //*////////////////////////myfunction/////////////////////////////////////////*//
 var feedback = function (res) {
      if (res.success === true) {
