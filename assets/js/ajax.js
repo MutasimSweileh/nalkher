@@ -2308,7 +2308,7 @@ function  Rapp(id){
 
 
 }
-﻿$(document).ready(function(){
+
 function success_msg (text,h,time){
   $('.material-tooltip').hide();
   $('.toast-info').hide();
@@ -2388,4 +2388,3 @@ function toda (){
        $('.tooltipped').tooltip({delay:0});
 }
 ///////////////////ref////////////////////////
-});
