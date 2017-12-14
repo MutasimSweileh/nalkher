@@ -176,6 +176,62 @@ function add() {
     login('fb', 1);
   }
 }
+///////////////////////////////////////////////////////
+function register() {
+  $.ajax({
+      type:"POST",
+      url:"../inc/ajax.php?step=Mail",
+      data: $('#form').serialize(),
+      dataType : 'json',
+      success : function(data) {
+          if(data.result != "success") {
+            error_msg(data.msg);
+          } else {
+            success_msg(data.msg);
+            mailchimp();
+            $('#form').find("input,textarea").val("");
+          }
+      }
+  });
+}
+function register_sms() {
+  $.ajax({
+      type:"POST",
+      url:"../inc/ajax.php?step=Sms",
+      data: $('#form').serialize(),
+      dataType : 'json',
+      success : function(data) {
+          if(data.result != "success") {
+            error_msg(data.msg);
+          } else {
+            success_msg(data.msg);
+            $('#form').find("input,textarea").val("");
+          }
+      }
+  });
+}
+function mailchimp(msg=false) {
+    $.ajax({
+        type: $('#form').attr('method'),
+        url: $('#form').attr('action'),
+        data: $('#form').serialize(),
+        cache       : false,
+        dataType    : 'json',
+        contentType: "application/json; charset=utf-8",
+        error       : function(err) { if(msg) error_msg("Could not connect to the registration server. Please try again later."); },
+        success     : function(data) {
+            if (data.result != "success") {
+              if(msg)
+              error_msg(data.msg);
+            } else {
+              if(msg)
+              success_msg(data.msg);
+            }
+        }
+    });
+    return false;
+}
+
 
 ////////////////////////cookie////////////////////////////
 function setCookie(cname, cvalue, exdays,dd) {

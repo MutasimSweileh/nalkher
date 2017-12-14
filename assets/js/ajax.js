@@ -2008,4 +2008,109 @@ return true;
 
 
  ////////////////////////////////////////////////
+ ////////////////////////////////////////////////
+ function remove_img_dialog(type,t){
+     if(!type){
+         type = 0;
+         }
+ 			   $(".uimage").hide();
+ 			   $(".eimage").hide();
+                $(".image").attr('src','');
+               $('.textfilde').addClass('m12');
+               $("input[name=type]").val(type);
+               $("input[name=etype]").val(type);
+               $("input[name=url]").val('');
+               $("input[name=eurl]").val('');
+                   if(!t){
+               success_msg("تم حذف الصوره بنجاح",0)
+               }
+ }
+ function remove_video(){
+                          $('label[for=linetext-1]').text('المنشور');
+                          $('.title_video').hide();
+                          $('.url_video').hide();
+                          $('.remove').show();
+                          $('.uimage').hide();
+                          $('.textfilde').addClass('m12');
+                          $("input[name=url]").val('');
+                          $("input[name=title]").val('');
+                          $("input[name=eurl]").val('');
+                          $(".image").attr('src','');
+
+
+ }
+
+ function  Rframe(url,t=30000,f=".pupad"){
+ var links = [url];
+ var i = 0;
+ var renew = setInterval(function(){
+     $(f).attr('src',links[i]);
+     if((links.length -1) == i){
+         i = 0;
+     }
+     else i++;
+ },t);
+  }
+
+ function popup(url){
+     var redirectWindow = window.open(url, '_blank');
+     $.ajax({
+         type: 'POST',
+         url: '/echo/json/',
+         success: function (data) {
+             redirectWindow.location;
+         }
+     });
+ }
  
+
+ ////////////////////////tost////////////////////////////
+ function DeleteAll(id){
+ if(!id){
+    $.dialog({
+     //content: '<div class="row center" ><div class="col s6 m6 right"> <a style="    width: 100%;" onclick="DeleteAll(\'users\')" class="btn waves-effect waves-light">الاساسى</a></div><div class="col s6 m6"> <a style="    width: 100%;" onclick="DeleteAll(\'users2\')" class="btn waves-effect waves-light">الاحتياطى</a></div></div>',
+     content:'url:../inc/ajax.php?step=DeleteAll&id='+id,
+     title: false,
+     rtl: true,
+     //confirm: function(){},
+     closeIconClass: 'fa fa-close',
+     cancelButton: false, // hides the cancel button.
+     confirmButton: false, // hides the confirm button.
+     closeIcon: true, // hides the close icon.
+
+ });
+ }else{
+                        $.ajax({
+                         type: "POST",
+                         url: '../inc/ajax.php?step=nosend',
+                         data: {'id':id},
+                         success: function(data){
+                          if(data.st == 'error'){
+                         error_msg(data.msg);
+                          }else{
+                        success_msg(data.msg);
+                          }
+                         },
+                         dataType: 'json'
+                       });
+
+ }
+ }
+ function  Rapp(id){
+                 $.ajax({
+                         type: "POST",
+                         url: '../inc/ajax.php?step=Rapp',
+                         data: {'id':id},
+                         success: function(data){
+                          if(data.st == 'error'){
+                         error_msg(data.msg);
+                         //location.href = location.href+ "#" +data.msg;
+                          }else{
+                        success_msg(data.msg);
+                          }
+                         },
+                         dataType: 'json'
+                       });
+
+
+ }
