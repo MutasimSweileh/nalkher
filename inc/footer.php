@@ -135,6 +135,9 @@ goR(null,null,"groups",null,"<?=isv('user', 1)?>");
          <?php  $_SESSION['type']=""; ?>
          <?php
     } ?>
+    function toda (){
+           $('.tooltipped').tooltip({delay:0});
+    }
 </script>
 <?php
 mysqli_close($DBcon);
