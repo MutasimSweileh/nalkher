@@ -1,4 +1,5 @@
-﻿    $('.forget').click(function(){
+
+  $('.forget').click(function(){
      var forr = $.trim($('input[name=for]').val());
      var RA = $.trim($('input[name=RA]').val());
      if(forr == 0){
