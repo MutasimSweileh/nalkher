@@ -5,7 +5,6 @@ $('.posts').load('../inc/ajax.php?step=Moreposts');
 $('.videos').load('../inc/ajax.php?step=More_video');
 $('.images').load('../inc/ajax.php?step=More_images');
 $('.myposts').load('../inc/ajax.php?step=myposts');
-alert("test");
 $('select[name=cantry]').load('../inc/ajax.php?step=cantry&cantry=true');
       $(".dropdown-button").dropdown();
       $('.button-collapse').sideNav();
