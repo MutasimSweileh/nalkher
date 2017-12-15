@@ -3,7 +3,7 @@
 
 <header id="header">
     <div class="navbar">
-      <ul id="nav-mobile" class="side-nav" style="display:none">
+      <ul id="nav-mobile" class="side-nav" style="transform: translateX(-100%);">
        <?php  include "inc/nav.php"; ?>
       </ul>
         <nav>
