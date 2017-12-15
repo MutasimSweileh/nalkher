@@ -98,7 +98,7 @@ $st['btn'] = "تأكيد الاشتراك";
 
 }
 ?>
-<div class="row">
+<div class="row"  style="display:none">
 <div class="social">
 <div class="col s12 m12 quote">
                       <div class="card ">
