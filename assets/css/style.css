@@ -427,7 +427,7 @@ background:rgba(255,255,255,0.65)
       display: none !important;
     }
 .row .col.s12 {
-    width: 98%;
+    width: 95%;
   }
 .timeline-page .timeline .timeline-event::after {
     right: 19px;

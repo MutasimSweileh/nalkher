@@ -98,6 +98,7 @@ $st['btn'] = "تأكيد الاشتراك";
 
 }
 ?>
+<div class="row">
 <div class="social">
 <div class="col s12 m12 quote">
                       <div class="card ">
@@ -115,6 +116,7 @@ $st['btn'] = "تأكيد الاشتراك";
                       </div>
                   </div>
                   </div>
+                </div>
                   <div style="background-color: #ffffffc7;">
  <div class="container">
  <div class="row">
