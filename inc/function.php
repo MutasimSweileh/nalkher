@@ -1402,9 +1402,6 @@ function Uimgur($url="", $client_id = '3fd403ffb4414a7')
     $json_returned = curl_exec($curl); // blank response
     $rep =json_decode($json_returned, true);
     if ($rep['success']) {
-      $link = $rep['data']['link'];
-      if(!strpos($rep['data']['link'],"https"))
-      $link = str_replace("http","https",$rep['data']['link']);
         return  array(true,$link) ;
     } else {
         return  array(false,$rep['data']['error']) ;
