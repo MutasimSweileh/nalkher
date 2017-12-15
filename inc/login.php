@@ -126,8 +126,8 @@ $st['btn'] = "تأكيد الاشتراك";
         <div class="col s12 center bold" style="<?=$st['color']?>" >
                 <i class="fa fa-<?=$icon?> fa-5x RA" style="<?=$st['color']?>" aria-hidden="true"></i>
         </div>-->
-	   <div class="addpost  s12 m12   " id="addpost">
-          <div class="card no-shadow">
+	   <div class="addpost " id="addpost">
+          <div class="card">
 <?php  if(!isv('login',1) or !Sion('htc')){  ?>
             <div class="card-content" style="padding: 10px;" >
  <div class="row">
