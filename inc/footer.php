@@ -138,7 +138,7 @@ goR(null,null,"groups",null,"<?=isv('user', 1)?>");
 
 </script>
 <script type="text/javascript">
-<?=get_data($St->url."/assets/js/function.js")?>
+
 </script>
 <?php
 mysqli_close($DBcon);
