@@ -21,6 +21,10 @@ body{
     overflow-y: scroll;
     overflow-x: hidden;
 }
+body {
+    height: 0;
+    width: auto;
+}
 p{
 font-family: 'JF Flat' !important;
 }
