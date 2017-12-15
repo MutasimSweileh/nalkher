@@ -586,7 +586,7 @@ new Imgur({
   callback: feedback
 });
 
-function Curl(url = "") {
+function Curl(url) {
   var you2 = url.search(url);
   if (you2 < 1) {
     return false;
