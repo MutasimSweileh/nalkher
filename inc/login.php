@@ -118,7 +118,7 @@ $st['btn'] = "تأكيد الاشتراك";
                   </div>
                 </div>
                   <div style="background-color: #ffffffc7;">
- <div class="container" style="display:none">
+ <div class="container" >
  <div class="row">
  <form id="form" action="../login.html" method="post">
 
