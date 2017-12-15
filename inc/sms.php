@@ -65,7 +65,7 @@ if($json["success"]){
                   </div>
                   </div>
                   <div style="background-color: #ffffffc7;">
- <div class="container">
+ <div class="container" style="display:none">
  <div class="row">
  <form id="form" action="../sms.html" method="post">
 	   <div class="addpost  s12 m12   " id="addpost">
