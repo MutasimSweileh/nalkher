@@ -17,6 +17,10 @@
 font-family: 'Droid Arabic Naskh' , serif;
 font-family: 'JF Flat';
 }
+body{
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
 p{
 font-family: 'JF Flat' !important;
 }
