@@ -55,7 +55,7 @@ if($json["success"]){
                               <div>
                                   <p class="font19">خدمة ارسال رسائل نصيه قصيرة ومفيده على الموبيل مجانا  ماعليك فقط هو اختيار دولتك ثم اضافة اسمك ورقمك وسيتم ارسال الرسائل لك بطريقه منظمه يوميا ويمكنك ايضا التحكم فى الاشتراك او حذفه وقتما تشاء ..</p>
                                   <p class="right">
-                                  <a   class="btn-floating btn waves-effect waves-light  tooltipped" data-position="top" data-tooltip="فديو" href="#"><i class="material-icons">ondemand_video</i></a>
+                                  <a   class="btn-floating btn waves-effect waves-light  tooltipped" data-position="top" data-tooltip="فديو" href="#"><i class="fa fa-desktop" aria-hidden="true"></i></a>
                                   </p>
                               </div>
                                 <div class="clear" ></div>
@@ -87,8 +87,8 @@ if($json["success"]){
 
         <div class="input-field col s12">
 
-          <div style="    margin-right: 3rem;">
-           <label style="padding-bottom: 5px;    margin-right: 3rem;">اختر الدولة</label>
+          <div style="">
+           <label style="padding-bottom: 5px;">اختر الدولة</label>
            <select  dir="ltr" name="cantryy" class="browser-default">
              <?php  $ar = countre(); for($i=0;$i< count($ar);$i++){ ?>
              <option value="<?=$ar[$i]?>"><?=$ar[$i]?></option>
@@ -99,7 +99,6 @@ if($json["success"]){
          </div>
 
         <div class="input-field col s12 ">
-    
           <input type="number"  name="number" dir="ltr" class="form-control center " value="" id="email" required>
           <label for="first_pass"  class="pass active" ><?=$st['pass']?></label>
         </div>

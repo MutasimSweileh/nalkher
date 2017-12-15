@@ -107,7 +107,7 @@ $st['btn'] = "تأكيد الاشتراك";
                               <div>
                                   <p class="font19"><?=$St->description?></p>
                                   <p class="right">
-                                  <a   class="btn-floating btn waves-effect waves-light  tooltipped" data-position="top" data-tooltip="فديو" href="#"><i class="material-icons">ondemand_video</i></a>
+                                  <a   class="btn-floating btn waves-effect waves-light  tooltipped" data-position="top" data-tooltip="فديو" href="#"><i class="fa fa-desktop" aria-hidden="true"></i></a>
                                   </p>
                               </div>
                                 <div class="clear" ></div>
@@ -141,13 +141,11 @@ $st['btn'] = "تأكيد الاشتراك";
   ?>
 
         <div class="input-field col s12 ">
-            <i class="material-icons prefix">account_circle</i>
      <input type="text"  name="user" dir="ltr" class="form-control center " value="<?=Sion("user")?>" id="email" required>
           <label for="first_name" ><?=$st['name']?></label>
         </div>
 
         <div class="input-field col s12 ">
-          <i class="material-icons prefix">vpn_key</i>
         <?php if(Sion("Lerror") == 406){  ?>
      <input type="text"  name="pass" dir="ltr" class="form-control center " value="" id="email" required>
         <?php }else{ ?>
