@@ -69,20 +69,43 @@ if($json["success"]){
                   <div class="col s12 m12 quote">
                                         <div class="card ">
                                             <div class="card-content">
-                                                <h5 class="card-title left"><i class="fa fa-<?=$icon?>" aria-hidden="true"></i></h5>
-                                                <div>
-                                                    <p class="font19">خدمة ارسال رسائل نصيه قصيرة ومفيده على الموبيل مجانا  ماعليك فقط هو اختيار دولتك ثم اضافة اسمك ورقمك وسيتم ارسال الرسائل لك بطريقه منظمه يوميا ويمكنك ايضا التحكم فى الاشتراك او حذفه وقتما تشاء ..</p>
-                                                    <p class="right">
-                                                    <a   class="btn-floating btn waves-effect waves-light  tooltipped" data-position="top" data-tooltip="فديو" href="#"><i class="material-icons">ondemand_video</i></a>
-                                                    </p>
-                                                </div>
-                                                  <div class="clear" ></div>
+ <form id="form" action="../sms.html" method="post">
+   <div class="row">
+   <div class="col s12 center bold" style="<?=$st['color']?>" >
+        <div class="center lg title" style="<?=$st['color']?>" ><?=$st['title']?></div>
+   </div>
+   <div class="input-field col s12 ">
+      <i class="material-icons prefix">account_circle</i>
+       <input type="text"  name="user" class="form-control center " value="<?=Sion("user")?>" id="email" required>
+            <label for="first_name" ><?=$st['name']?></label>
+          </div>
+
+          <div class="input-field col s12">
+            <i class="material-icons prefix">location_on</i>
+            <div style="    margin-right: 3rem;">
+             <label style="padding-bottom: 5px;    margin-right: 3rem;">اختر الدولة</label>
+             <select  dir="ltr" name="cantryy" class="browser-default">
+               <?php  $ar = countre(); for($i=0;$i< count($ar);$i++){ ?>
+               <option value="<?=$ar[$i]?>"><?=$ar[$i]?></option>
+             <?php } ?>
+           </select>
+           </div>
+
+           </div>
+
+          <div class="input-field col s12 ">
+            <i class="material-icons prefix">phone</i>
+            <input type="number"  name="number" dir="ltr" class="form-control center " value="" id="email" required>
+            <label for="first_pass"  class="pass active" ><?=$st['pass']?></label>
+          </div>
+      </div>
+ </form>
                                             </div>
                                             <div class="clear" ></div>
                                         </div>
                                     </div>
                                     </div>
-                              
+
 
 
  <div class="container" style="display:none">
