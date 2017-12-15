@@ -65,7 +65,7 @@ if($json["success"]){
                   </div>
                   </div>
 
-                  <div class="social">
+                  <div class="social container">
                   <div class="col s12 m12 quote">
                                         <div class="card ">
                                             <div class="card-content">
@@ -82,6 +82,7 @@ if($json["success"]){
                                         </div>
                                     </div>
                                     </div>
+                              
 
 
  <div class="container" style="display:none">

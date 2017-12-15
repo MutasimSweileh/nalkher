@@ -434,7 +434,7 @@ background:rgba(255,255,255,0.65)
     width: 95%;
   }*/
   .container{
-    width: 100%;
+    /*width: 100%;*/
   }
 .timeline-page .timeline .timeline-event::after {
     right: 19px;
