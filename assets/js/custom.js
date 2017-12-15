@@ -19,7 +19,7 @@ $('select[name=cantry]').load('../inc/ajax.php?step=cantry&cantry=true');
       //complete: function() { alert('Closed'); } // Callback for Modal close
     }
   );
-    $('.select').material_select();
+ $('.select').material_select();
  $('.materialboxed').materialbox();
  $(".timeline").addClass("line");
    	 //Materialize.toast('تم تحميل الصفحه بنجاح  <i class="fa fa-check fa-lg" aria-hidden="true"></i>', 1500,"bold teal lighten-1 white-text");
@@ -43,11 +43,7 @@ $('.vdw').click(function(){
                         dataType: 'json'
                       });
    });
-   $('.button-collapse').sideNav({
-       menuWidth: 240, // Default is 240
-       edge: 'left', // Choose the horizontal origin
-       closeOnClick: true // Closes side-nav on <a> clicks, useful for Angular/Meteor
-   });
+
    $('.collapsible').collapsible();
    $('.notif-btn').dropdown({
        inDuration: 300,

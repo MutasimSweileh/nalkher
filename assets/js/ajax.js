@@ -2565,3 +2565,6 @@ function loding_msg(text, h, time) {
 function hide_tost() {
   $('.toast').hide();
 }
+function toda(){
+ $('.tooltipped').tooltip();  
+}
