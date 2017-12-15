@@ -422,6 +422,9 @@ background:rgba(255,255,255,0.65)
     margin-right: 0;
      margin-left: 0px;
 }
+.boxed-layout .navbar-fixed nav{
+      max-width: 970px;
+}
   @media (max-width: 600px){
 .logo-icon{
       display: none !important;
