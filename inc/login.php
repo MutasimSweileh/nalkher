@@ -98,9 +98,9 @@ $st['btn'] = "تأكيد الاشتراك";
 
 }
 ?>
-<div class="row"  style="display:none">
+<div class="row"  >
 <div class="social">
-<div class="col s12 m12 quote">
+<div class=" s12 m12 quote">
                       <div class="card ">
                           <div class="card-content">
                               <h5 class="card-title left"><i class="fa fa-<?=$icon?>" aria-hidden="true"></i></h5>
@@ -118,7 +118,7 @@ $st['btn'] = "تأكيد الاشتراك";
                   </div>
                 </div>
                   <div style="background-color: #ffffffc7;">
- <div class="container">
+ <div class="container" style="display:none">
  <div class="row">
  <form id="form" action="../login.html" method="post">
 
