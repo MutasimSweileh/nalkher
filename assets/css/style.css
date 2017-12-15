@@ -430,6 +430,9 @@ background:rgba(255,255,255,0.65)
 .row .col.s12 {
     width: 95%;
   }*/
+  .container{
+    width: 100%;
+  }
 .timeline-page .timeline .timeline-event::after {
     right: 19px;
      left: 0px;
