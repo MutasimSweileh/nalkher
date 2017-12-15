@@ -117,8 +117,8 @@ $st['btn'] = "تأكيد الاشتراك";
                   </div>
                   </div>
                 </div>
-                  <div style="background-color: #ffffffc7;">
- <div class="container" >
+
+ <div class="containerrr" >
  <div class="row">
  <form id="form" action="../login.html" method="post">
 
@@ -256,4 +256,3 @@ iSion("Lerror",400);
     </form>
     </div>
     </div>
-      </div>
