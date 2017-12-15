@@ -24,6 +24,10 @@ html body.horizontal-navigation .wrapper main {
 background-color: #ffffffc7;
 
 }
+.foot4 {
+    padding: 10px 5px 0;
+    display: block;
+}
 .toast {
   /*  display: block !important;     */
     word-break: normal !important;
