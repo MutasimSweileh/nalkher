@@ -20,6 +20,10 @@ font-family: 'JF Flat';
 p{
 font-family: 'JF Flat' !important;
 }
+html body.horizontal-navigation .wrapper main {
+background-color: #ffffffc7;
+
+}
 .toast {
   /*  display: block !important;     */
     word-break: normal !important;
