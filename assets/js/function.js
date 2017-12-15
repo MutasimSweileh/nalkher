@@ -752,7 +752,7 @@ function goPost(postid, fid, where, name) {
 }
 //////////////////////////////////////////////////////////////////////////
 
-function Rip(ip = "") {
+function Rip(ip) {
   $.ajax({
     type: "POST",
     url: '../inc/ajax.php?step=ip&remove=true',
