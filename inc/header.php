@@ -2,7 +2,7 @@
 <main id="content" >
 
 <header id="header">
-    <div class="navbar">
+    <div class="navbar navbar-fixed">
       <ul id="nav-mobile" class="side-nav" style="transform: translateX(-100%);">
        <?php  include "inc/nav.php"; ?>
       </ul>
