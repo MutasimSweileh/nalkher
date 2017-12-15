@@ -51,7 +51,7 @@
       </div>
 
 <div class="footer-copyright  copy">
-		<div class="container " style="margin-top: 0px; opacity: 1;     margin-bottom: -35px;">
+		<div class="container " style="">
 <div class="row">
 <div class="col  s12 m12   center-align">
     <a title="Privacy" class="" href="/privacy.html">سياسة الخصوصيه</a>  /  <a title="Contact" href="/contact.html" class="">اتصل بنا</a>
