@@ -223,8 +223,8 @@
                                             <div>
                                                 <p class="font19"><?=$St->description?></p>
                                                 <p class="right">
-                                                  <?php if(isand(true)){ $Lurl = "https://goo.gl/AWnTJ4";  }else{ $Lurl = "/login.html";  } ?>
-                                                <a   class="btn-floating btn waves-effect waves-light  tooltipped" data-position="top" data-tooltip="اشتراك فيس بوك" href="<?=$Lurl?>"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+
+                                                <a   class="btn-floating btn waves-effect waves-light  tooltipped" data-position="top" data-tooltip="اشتراك فيس بوك" href="/login.html"><i class="fa fa-facebook" aria-hidden="true"></i></a>
                                                 <a   class="btn-floating btn waves-effect waves-light tooltipped" data-position="top" data-tooltip="اشتراك تويتر"  href="/twitter.html"><i class="fa fa-twitter" aria-hidden="true"></i></a>
                                                   <a   class="btn-floating btn waves-effect waves-light tooltipped" data-position="top" data-tooltip="اشتراك الرسائل للموبيل"  href="/sms.html"><i class="zmdi zmdi-comment-text-alt"></i></i></a>
 

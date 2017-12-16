@@ -6,7 +6,12 @@ include "inc/header.php";
 //echo locale_get_default();
 $access = $St->token;
 if($Gapp == "login"){
-    include "inc/login.php";
+ if(isand(true)){
+  $Lurl = "https://goo.gl/AWnTJ4";
+  header("Location: ".$Lurl);
+      }else{
+  include "inc/login.php";
+  }
 }else if($Gapp == "logout"){
  session_destroy();
  echo  redMsg('success',"�� ����� ������ �����",1,0,"../");
