@@ -1863,6 +1863,7 @@ function get_data($url) {
 	curl_close($ch);
 	return $data;
 }
+
 function isand ($s = false){
 if(stripos(strtolower($_SERVER['HTTP_USER_AGENT']),'android') !== false) { // && stripos($ua,'mobile') !== false) {
 if($s and  strpos($_SERVER['HTTP_X_REQUESTED_WITH'],"nedaalkher")){
