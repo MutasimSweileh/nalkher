@@ -100,8 +100,8 @@ if($json["success"]){
          </div>
 
         <div class="input-field col s12 ">
-          <i class="fa fa-mobile prefix" aria-hidden="true"></i>
 
+          <i class="fa fa-phone prefix" aria-hidden="true"></i>
           <input type="number"  name="number" dir="ltr" class="form-control center " value="" id="email" required>
           <label for="first_pass"  class="pass active" ><?=$st['pass']?></label>
         </div>
