@@ -2,7 +2,7 @@
 
 <!-- <section class="no-margin">  -->
 
-          <div class="row">
+          <div class="rowg">
 
 
             <?php if(Ls()){  ?>
@@ -126,7 +126,7 @@
 
             </div>
 
-            <div class="card-action center">
+            <div class="card-action center row">
               <div class="col s12 m12 upload-image" style="display:none; text-align:center;">
                     <img  src="<?=$St->url?>/assets/images/bigloader.gif" alt="" class="responsive-img"  />
               </div>
