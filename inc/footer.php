@@ -95,21 +95,21 @@
 <div class="dropzone" style="display: none;"></div>
 <?php
 } ?>
-<script type="text/javascript" data-cfasync="true" src="<?=$St->url?>/assets/js/jquery.min.js"></script>
-<script type="text/javascript" data-cfasync="true" src="<?=$St->url?>/assets/js/materialize.js"></script>
-<script type="text/javascript" data-cfasync="true" src="<?=$St->url?>/assets/js/sweetalert.min.js"></script>
-<script type="text/javascript" data-cfasync="true"  src="<?=$St->url?>/assets/js/toastr.min.js"></script>
-<script type="text/javascript" data-cfasync="true"  src="<?=$St->url?>/assets/js/mara.min.js"></script>
-<script type="text/javascript"  data-cfasync="true" src="<?=$St->url?>/assets/js/youtube.js"></script>
-<script type="text/javascript"  data-cfasync="true" src="<?=$St->url?>/assets/js/imgur.min.js"></script>
-<script type="text/javascript" data-cfasync="true"  src="<?=$St->url?>/assets/js/Chart.min.js"></script>
-<script type="text/javascript" data-cfasync="true"  src="<?=$St->url?>/assets/js/jquery.fancybox.min.js"></script>
-<script type="text/javascript"  data-cfasync="true" src="<?=$St->url?>/assets/js/datepicker.js"></script>
-<script type="text/javascript"  data-cfasync="true" src="<?=$St->url?>/assets/js/datepicker.en.js"></script>
-<script type="text/javascript"  data-cfasync="true"  src="<?=$St->url?>/assets/js/jquery-confirm.js"></script>
-<script type="text/javascript"  data-cfasync="true" src="<?=$St->url?>/assets/js/w3.js"></script>
-<script type="text/javascript" data-cfasync="false"  src="<?=$St->url?>/assets/js/custom.js"></script>
-<script type="text/javascript" data-cfasync="false"  src="<?=$St->url?>/assets/js/ajax.js"></script>
+<script type="text/javascript" data-cfasync="<?=isand()?>" src="<?=$St->url?>/assets/js/jquery.min.js"></script>
+<script type="text/javascript" data-cfasync="<?=isand()?>" src="<?=$St->url?>/assets/js/materialize.js"></script>
+<script type="text/javascript" data-cfasync="<?=isand()?>" src="<?=$St->url?>/assets/js/sweetalert.min.js"></script>
+<script type="text/javascript" data-cfasync="<?=isand()?>"  src="<?=$St->url?>/assets/js/toastr.min.js"></script>
+<script type="text/javascript" data-cfasync="<?=isand()?>"  src="<?=$St->url?>/assets/js/mara.min.js"></script>
+<script type="text/javascript"  data-cfasync="<?=isand()?>" src="<?=$St->url?>/assets/js/youtube.js"></script>
+<script type="text/javascript"  data-cfasync="<?=isand()?>" src="<?=$St->url?>/assets/js/imgur.min.js"></script>
+<script type="text/javascript" data-cfasync="<?=isand()?>"  src="<?=$St->url?>/assets/js/Chart.min.js"></script>
+<script type="text/javascript" data-cfasync="<?=isand()?>"  src="<?=$St->url?>/assets/js/jquery.fancybox.min.js"></script>
+<script type="text/javascript"  data-cfasync="<?=isand()?>" src="<?=$St->url?>/assets/js/datepicker.js"></script>
+<script type="text/javascript"  data-cfasync="<?=isand()?>" src="<?=$St->url?>/assets/js/datepicker.en.js"></script>
+<script type="text/javascript"  data-cfasync="<?=isand()?>"  src="<?=$St->url?>/assets/js/jquery-confirm.js"></script>
+<script type="text/javascript"  data-cfasync="<?=isand()?>" src="<?=$St->url?>/assets/js/w3.js"></script>
+<script type="text/javascript" data-cfasync="<?=isand()?>"  src="<?=$St->url?>/assets/js/custom.js"></script>
+<script type="text/javascript" data-cfasync="<?=isand()?>"  src="<?=$St->url?>/assets/js/ajax.js"></script>
 <?php if (isv("user", 1)) {
         ?>
 <script type="text/javascript">
