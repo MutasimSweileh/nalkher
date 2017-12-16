@@ -1149,6 +1149,7 @@ function add() {
 }
 ///////////////////////////////////////////////////////
 function register() {
+    loding_msg("من فضلك انتظر قليلا جارى الارسال",0,500000000);
   $.ajax({
     type: "POST",
     url: "../inc/ajax.php?step=Mail",
@@ -1167,6 +1168,7 @@ function register() {
 }
 
 function register_sms() {
+    loding_msg("من فضلك انتظر قليلا جارى الارسال",0,500000000);
   $.ajax({
     type: "POST",
     url: "../inc/ajax.php?step=Sms",
