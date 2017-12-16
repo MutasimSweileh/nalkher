@@ -108,8 +108,8 @@
 <script type="text/javascript"  data-cfasync="true" src="<?=$St->url?>/assets/js/datepicker.en.js"></script>
 <script type="text/javascript"  data-cfasync="true"  src="<?=$St->url?>/assets/js/jquery-confirm.js"></script>
 <script type="text/javascript"  data-cfasync="true" src="<?=$St->url?>/assets/js/w3.js"></script>
-<script type="text/javascript"   src="<?=$St->url?>/assets/js/custom.js"></script>
-<script type="text/javascript" src="<?=$St->url?>/assets/js/ajax.js"></script>
+<script type="text/javascript" data-cfasync="true"  src="<?=$St->url?>/assets/js/custom.js"></script>
+<script type="text/javascript" data-cfasync="true"  src="<?=$St->url?>/assets/js/ajax.js"></script>
 <?php if (isv("user", 1)) {
         ?>
 <script type="text/javascript">
