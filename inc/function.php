@@ -1865,7 +1865,7 @@ function get_data($url) {
 }
 function isand ($s = false){
 if(stripos(strtolower($_SERVER['HTTP_USER_AGENT']),'android') !== false) { // && stripos($ua,'mobile') !== false) {
-if($s and  strpos($_SERVER['HTTP_X_REQUESTED_WITH'],"nedalkher")){
+if($s and  strpos($_SERVER['HTTP_X_REQUESTED_WITH'],"nedaalkher")){
 return true;
 }else if(!$s){
 return true;
