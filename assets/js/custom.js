@@ -10,8 +10,8 @@ $('select[name=cantry]').load('../inc/ajax.php?step=cantry&cantry=true');
       $('.button-collapse').sideNav({
        draggable: true,
        onOpen: function(el) {
-      //  $("#nav-mobile").css("transform":"transform: translateY(56px);");
-      success_msg("open");
+       $("#nav-mobile").css("transform","transform: translateY(56px);");
+      //success_msg("open");
        },
       });
       window.disableThemeSettings = true;
