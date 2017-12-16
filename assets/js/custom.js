@@ -12,7 +12,7 @@ $('select[name=cantry]').load('../inc/ajax.php?step=cantry&cantry=true');
        onOpen: function(el) {
        $("#nav-mobile").css("transform","transform: translateY(56px);");
       $("#nav-mobile").addClass("goodman");
-      //success_msg("open");
+      success_msg("open");
        },
       });
       window.disableThemeSettings = true;
