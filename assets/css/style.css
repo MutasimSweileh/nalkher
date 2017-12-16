@@ -468,7 +468,7 @@ div#footer-post .fa {
     margin-right: 0;
      margin-left: 0px;
 }
-html[dir="rtl"] .input-field .prefix ~ div, html[dir="rtl"] .input-field .prefix ~ select , html[dir="rtl"] .input-field .prefix ~ label {
+ html[dir="rtl"] .input-field .prefix ~ select , html[dir="rtl"] .input-field .prefix ~ label {
     margin-right: 3rem;
 }
 [dir="rtl"] .input-field .prefix ~ input, [dir="rtl"] .input-field .prefix ~ textarea{
