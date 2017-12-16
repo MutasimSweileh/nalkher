@@ -80,13 +80,13 @@ if($json["success"]){
       <div class="center lg title" style="<?=$st['color']?>" ><?=$st['title']?></div>
  </div>
  <div class="input-field col s12 ">
-
+   <i class="fa fa-user-circle-o prefix" aria-hidden="true"></i>
      <input type="text"  name="user" class="form-control center " value="<?=Sion("user")?>" id="email" required>
           <label for="first_name" ><?=$st['name']?></label>
         </div>
 
         <div class="input-field col s12">
-
+          <i class="fa fa-globe prefix" aria-hidden="true"></i>
           <div style="">
            <label style="padding-bottom: 5px;">اختر الدولة</label>
            <select  dir="ltr" name="cantryy" class="browser-default">
@@ -99,6 +99,8 @@ if($json["success"]){
          </div>
 
         <div class="input-field col s12 ">
+          <i class="fa fa-mobile prefix" aria-hidden="true"></i>
+
           <input type="number"  name="number" dir="ltr" class="form-control center " value="" id="email" required>
           <label for="first_pass"  class="pass active" ><?=$st['pass']?></label>
         </div>

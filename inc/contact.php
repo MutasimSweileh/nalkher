@@ -83,12 +83,13 @@ if($json["success"]){
         </div>
 
         <div class="input-field col s12 ">
-    
+          <i class="fa fa-envelope prefix" aria-hidden="true"></i>
             <input type="email"  name="EMAIL" class="form-control center " value="<?=Sion("user")?>" id="email" required>
                  <label for="first_name" ><?=$st['email']?></label>
         </div>
 
         <div class="input-field col s12">
+          <i class="fa fa-commenting-o prefix" aria-hidden="true"></i>
 
           <textarea id="icon_prefix2" name="message" class="materialize-textarea"></textarea>
           <label for="icon_prefix2"><?=$st['message']?></label>
