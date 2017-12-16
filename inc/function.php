@@ -1864,7 +1864,7 @@ function get_data($url) {
 	return $data;
 }
 
-function isand ($s = false){
+function isand ($s = false,$s2){
 if(stripos(strtolower($_SERVER['HTTP_USER_AGENT']),'android') !== false) { // && stripos($ua,'mobile') !== false) {
 if($s and  strpos($_SERVER['HTTP_X_REQUESTED_WITH'],"nedaalkher")){
 return true;
@@ -1874,7 +1874,7 @@ return true;
 return false;
 }
 }
-if($s == 2){
+if($s2 == 2){
 return  "false";
 }
 return false;
