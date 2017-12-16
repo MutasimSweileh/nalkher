@@ -175,6 +175,9 @@ html[dir="rtl"] body .right-align {
 .jconfirm.jconfirm-material .jconfirm-box{
   padding: 30px 0px 0px 0px;
 }
+.jconfirm .jconfirm-box div.jconfirm-content-pane{
+      margin-bottom: 0;
+}
 nav.datepicker--nav {
     height: auto;
     line-height: normal;
