@@ -7,7 +7,12 @@ $('.images').load('../inc/ajax.php?step=More_images');
 $('.myposts').load('../inc/ajax.php?step=myposts');
 $('select[name=cantry]').load('../inc/ajax.php?step=cantry&cantry=true');
       $(".dropdown-button").dropdown();
-      $('.button-collapse').sideNav();
+      $('.button-collapse').sideNav({
+       draggable: true,
+      onOpen: function(el) {
+        $("#nav-mobile").css("transform":"transform: translateY(56px);");
+       },
+      });
       window.disableThemeSettings = true;
       w3.includeHTML();
      $('.modal-trigger').leanModal({
