@@ -1874,7 +1874,7 @@ return true;
 return false;
 }
 }
-if(s == 2){
+if($s == 2){
 return  "false";
 }
 return false;
