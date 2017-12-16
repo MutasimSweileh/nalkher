@@ -9,8 +9,9 @@ $('select[name=cantry]').load('../inc/ajax.php?step=cantry&cantry=true');
       $(".dropdown-button").dropdown();
       $('.button-collapse').sideNav({
        draggable: true,
-      onOpen: function(el) {
-        $("#nav-mobile").css("transform":"transform: translateY(56px);");
+       onOpen: function(el) {
+      //  $("#nav-mobile").css("transform":"transform: translateY(56px);");
+      success_msg("open");
        },
       });
       window.disableThemeSettings = true;
