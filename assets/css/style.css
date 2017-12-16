@@ -172,6 +172,9 @@ html[dir="rtl"] body .right-align {
 .input-field label.active{
       margin-top: -23px;
 }
+.jconfirm.jconfirm-material .jconfirm-box{
+  padding: 30px 0px 0px 0px;
+}
 nav.datepicker--nav {
     height: auto;
     line-height: normal;

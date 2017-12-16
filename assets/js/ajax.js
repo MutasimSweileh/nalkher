@@ -1747,7 +1747,7 @@ function Rip(ip) {
 function Ddialog() {
   $.dialog({
     title: 'حدد وقت النشر',
-    content: '<div class="row" ><div class="col s12 m12"><div class="mydatepicker"></div></div><div style="direction:ltr;padding:10px" class="col s12 m12 center Mydate"></div><div class="col m12 s12 right-align"><button class="btn Bdg " >اضافة</button></div></div>',
+    content: '<div class="" ><div class=""><div class="mydatepicker"></div></div><div style="direction:ltr;padding:10px" class=" center Mydate"></div><div class=" right-align"><button class="btn Bdg " >اضافة</button></div></div>',
     icon: 'fa fa-question fa-lg',
     theme: 'material',
     closeIcon: true,
