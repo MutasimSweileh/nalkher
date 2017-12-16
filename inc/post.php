@@ -66,21 +66,10 @@ if($p['id']){
 <div class="main col m12 s12 " >
 <div class="card no-shadow">
 <div class="card-content" style="position: relative;  <?php if($Iv){  ?>  padding: 0;  <?php } ?> ">
-<?php if($Iv or $p['type'] == 2 or $p['type'] == 5){ ?>
+<?php if($Iv){ ?>
 <div class="card-title truncate"><?=html_entity_decode(stripslashes(str_replace('\n','<br>',$p['text'])));?></div>
 <?php } ?>
 <div class="clearfix"></div>
-<?php if(!last_share($app['Atime'][0],$St->last_adf,$app['Atime'][1]) and !empty($St->post_ad) or $app['Adf'] == 0 and !empty($St->post_ad) ){ ?>
-<div class="ad center">
- <center>
-       <?php
-      //echo substr($St->home_ad,strpos($St->home_ad,'<script'),strlen($St->home_ad));
- //       echo $St->post_ad;
-       ?>
-        </center>
-</div>
-<?php } ?>
-
 
             <?php  if($p['type']  == 2){
            $l=  $p['link'];
@@ -98,7 +87,7 @@ if($p['id']){
     border-radius: 0;  width: 100%;"><i class="fa fa-download right" aria-hidden="true"></i><i class="fa fa-download left" aria-hidden="true"></i><i class="fa fa-download" aria-hidden="true"></i></a> <?php } ?>
                 </div>
                 </div>
-                <?php } if(!$Iv and $p['type'] != 2 and $p['type'] != 5){ ?>
+                <?php } if(!$Iv){ ?>
 
                 <div class="textLin">
             <p><?=str_replace(PHP_EOL,"<br />",$p["text"])?></p>
@@ -122,7 +111,7 @@ if($p['id']){
 </div>
             <div class="card-action center" style="border:0;padding:10;">
              <div class="post-action center col s12 m12 waves-effect waves-light">
-             <div class="info-post col s12 m7  bold">
+             <div class="info-post col s12 m7 truncate  bold">
 <i class="fa fa-clock-o" aria-hidden="true"></i> <?=cptime($p['date'])?>   <i class="fa fa-pencil-square-o" aria-hidden="true"></i> <a  style="    margin: 0px;    display: inline-block;" href="<?=Fb($p['userid'])?>"  class=""><?=limit_str($Su['name'],3)?> </a>
 <?php
 if($view){
@@ -170,14 +159,14 @@ if($p['num_dw']){
 
 </div>
 <div class="nx card no-shadow center" style="    padding: 10px;">
-<div class="col m4 s5 " >
+<div class="col m4 s5 truncate" >
 <?=nx($Gapp,$id,1)?>
 </div>
 <div class="col m4 s2" >
 <?=home_nx($Gapp)?>
 </div>
 
-<div class="col m4 s5 " >
+<div class="col m4 s5 truncate" >
 <?=nx($Gapp,$id)?>
 </div>
  <div class="clear"></div>
