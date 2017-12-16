@@ -474,6 +474,7 @@ background:rgba(255,255,255,0.65)
     }
 .addpost-home .input-field label.active{
           margin-top: -23px;
+          transform: translateY(0%);
     }
     /*
 .row .col.s12 {
