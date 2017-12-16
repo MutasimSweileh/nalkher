@@ -76,19 +76,20 @@ if($json["success"]){
       <div class="center lg title" style="<?=$st['color']?>" ><?=$st['title']?></div>
  </div>
  <div class="input-field col s12 ">
-    <i class="material-icons prefix">account_circle</i>
+   <i class="fa fa-user-circle-o prefix" aria-hidden="true"></i>
+
      <input type="text"  name="FNAME" class="form-control center " value="<?=Sion("user")?>" id="email" required>
           <label for="first_name" ><?=$st['name']?></label>
         </div>
 
         <div class="input-field col s12 ">
-           <i class="material-icons prefix">email</i>
+    
             <input type="email"  name="EMAIL" class="form-control center " value="<?=Sion("user")?>" id="email" required>
                  <label for="first_name" ><?=$st['email']?></label>
         </div>
 
         <div class="input-field col s12">
-        <i class="material-icons prefix">message</i>
+
           <textarea id="icon_prefix2" name="message" class="materialize-textarea"></textarea>
           <label for="icon_prefix2"><?=$st['message']?></label>
         </div>
