@@ -7,6 +7,7 @@ $('.images').load('../inc/ajax.php?step=More_images');
 $('.myposts').load('../inc/ajax.php?step=myposts');
 $('select[name=cantry]').load('../inc/ajax.php?step=cantry&cantry=true');
       $(".dropdown-button").dropdown();
+      /*
       $('.button-collapse').sideNav({
        draggable: true,
        onOpen: function(el) {
@@ -14,7 +15,7 @@ $('select[name=cantry]').load('../inc/ajax.php?step=cantry&cantry=true');
       $("#nav-mobile").addClass("goodman");
       success_msg("open");
        },
-      });
+     });*/
       window.disableThemeSettings = true;
       w3.includeHTML();
      $('.modal-trigger').leanModal({
