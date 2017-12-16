@@ -118,7 +118,7 @@ $st['btn'] = "تأكيد الاشتراك";
                   </div>
                 </div>
 
- <div class="containerrr" >
+ <div class="container" >
  <div class="row">
  <form id="form" action="../login.html" method="post">
 
