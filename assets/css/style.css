@@ -181,7 +181,7 @@ html[dir="rtl"] body .right-align {
 .timeline-page .timeline .timeline-milestone .milestone-title{
       padding: 0 1rem;
 }
-.btn, .btn-large, .btn-flat{
+button .btn, button .btn-large{
       padding: 0 1rem;
 }
 nav.datepicker--nav {
