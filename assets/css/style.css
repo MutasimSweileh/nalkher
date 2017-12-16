@@ -166,6 +166,12 @@ a{
 html[dir="rtl"] body .right-align {
     direction: ltr;
 }
+[dir="rtl"] .input-field .prefix ~ label {
+    margin-left:0;
+}
+.input-field label.active{
+      margin-top: -23px;
+}
 nav.datepicker--nav {
     height: auto;
     line-height: normal;
