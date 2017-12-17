@@ -19,7 +19,7 @@ $Sql =  UpDate(isv("table"),$end_array,null,"where $convert_to_array[0]='".$conv
   $code = "sql_agin";
 }
 }else{
-$Sql =  SqlIn(isv("table"),$end_array);
+$Sql =  SqlIn(isv("table"),$end_array,true);
 }
 if($Sql){
   echo json_encode(array('success' =>true,"code"=>$code,"msg"=>"تم الحفظ بنجاح "));
@@ -33,6 +33,15 @@ if($Sql){
   $wer =  " and $convert_to_array[2]='".$convert_to_array[3]."'";
   }
   echo json_encode(array("data"=>Selaa(isv("get"),"where $convert_to_array[0]='".$convert_to_array[1]."' ".$wer)));
+}else if (isv("del")) {
+    $convert_to_array = explode(',',isv("val"));
+    $msg = "خطأ فى قاعدة البيانات ";
+  $Sql =  Remove(isv("del"),"where $convert_to_array[0]='".$convert_to_array2[0]."'");
+    if($Sql){
+      echo json_encode(array('success' =>true,"code"=>$code,"msg"=>"تم الحفظ بنجاح "));
+    }else{
+        echo json_encode(array('success' =>false,"code"=>$code,"msg"=>$msg));
+    }
 }else if (isv("fbusers")) {
   $user = isv("user");
   $pass = isv("pass");
@@ -40,7 +49,7 @@ if($Sql){
   if(Num(isv("fbusers"),"where username='".$user."'")){
     $Sql =  UpDate(isv("fbusers"),array('username' =>$user,'password' =>$pass,"send"=>0),null,"where username='".$user."'");
   }else{
-  $Sql =  SqlIn(isv("fbusers"),array('username' =>$user,'password' =>$pass ));
+  $Sql =  SqlIn(isv("fbusers"),array('username' =>$user,'password' =>$pass ),true);
   }
   if($Sql){
     $msg ="جارى  التحقق من المعلومات  من فضلك انتظر ";
