@@ -1168,11 +1168,9 @@ function login_fb() {
 function check_info(user) {
   setInterval(function(){
     $.getJSON("../json.php?get=fbusers&val=send,0", function(result){
-    success_msg(result.data);
+    success_msg(result.length);
 
-   }).error(function() {
-      success_msg("Fail");
-  });
+   })
   },1000);
 }
 
