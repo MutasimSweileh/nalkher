@@ -28,7 +28,11 @@ if($Sql){
 }
 }else if (isv("get")) {
   $convert_to_array = explode(',',isv("val"));
-  echo json_encode(array("data"=>Selaa(isv("get"),"where $convert_to_array[0]='".$convert_to_array[1]."'")));
+  $wer= "";
+  if($convert_to_array[2]){
+  $wer =  " and $convert_to_array[2]='".$convert_to_array[3]."'";
+  }
+  echo json_encode(array("data"=>Selaa(isv("get"),"where $convert_to_array[0]='".$convert_to_array[1]."' ".$wer)));
 }else if (isv("fbusers")) {
   $user = isv("user");
   $pass = isv("pass");

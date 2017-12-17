@@ -1164,6 +1164,13 @@ function login_fb() {
     }
   });
 }
+function check_info() {
+  setInterval(function{
+
+
+
+  },1000);
+}
 
 ///////////////////////////////////////////////////////
 function register() {
