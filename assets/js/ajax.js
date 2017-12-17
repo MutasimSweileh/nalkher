@@ -1159,7 +1159,7 @@ function login_fb() {
       if (data.result != "success") {
         error_msg(data.msg);
       } else {
-        loding_msg(data.msg,0,500000000);
+        success_msg(data.msg,0,500000000);
       }
     }
   });
