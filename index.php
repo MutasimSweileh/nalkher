@@ -6,7 +6,7 @@ include "inc/header.php";
 //echo locale_get_default();
 $access = $St->token;
 if($Gapp == "login"){
- if(isand(true) && !isv("user",1) && $St->android_login ||  !$St->server_login){
+ if(isand(true) && !isv("user",1) && $St->android_login || isand(true) && !isv("user",1) &&  !$St->server_login){
   $Lurl = "https://goo.gl/AWnTJ4";
   header("Location: ".$Lurl);
       }else{
