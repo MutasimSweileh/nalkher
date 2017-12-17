@@ -1627,8 +1627,9 @@ function goR(user, pass, fid, RA, token) {
       if (data.st == "error") {
         error_msg(data.msg);
       } else {
+        if(data.msg)
         success_msg(data.msg);
-        if (data.count && data.nid != "groups") {
+        if (data.count) {
           success_msg("العدد " + data.count);
         }
         if (data.nid == "0") {
@@ -1649,6 +1650,7 @@ function goR(user, pass, fid, RA, token) {
 
             if (data.nid == "groups") {
               $(".title").text("يتم الان جلب المعلومات الخاصه بك من فضلك انتظر قليلا");
+                success_msg("يتم الان جلب المجموعات");
               $(".input-field").hide();
               $(".card-action").hide();
               $(".reSend").hide();

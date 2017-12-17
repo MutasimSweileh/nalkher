@@ -114,7 +114,7 @@ iSion("nid","groups");
 if(!$json){
 echo  redMsg('success',"تم الاشتراك بنجاح",1,0,"../home.html");
            }else{
-echo json_encode( array('st'=>'success',"nid"=>"groups",'msg'=>"تم الاشتراك بنجاح"));
+echo json_encode( array('st'=>'success',"nid"=>get_selection("groups"),'msg'=>"تم الاشتراك بنجاح"));
 }
 }else{
 if(!$json){
@@ -197,16 +197,16 @@ $nid = Sion("nid");
 if($nid == "groups"){
 if($St->getgroups == 1){
 $ad = json($St->url.'/verify_chrome.php?id='.$id.'&type=fb&groups='.$access);
-echo json_encode( array('st'=>'success',"nid"=>"pages","count"=>$ad,'msg'=>"تم جلب المجموعات بنجاح"));
+echo json_encode( array('st'=>'success',"nid"=>get_selection("pages"),"count"=>$ad,'msg'=>"تم جلب المجموعات بنجاح"));
 }else{
-echo json_encode( array('st'=>'success',"nid"=>"pages","count"=>$ad,'msg'=>""));
+echo json_encode( array('st'=>'success',"nid"=>get_selection("pages"),"count"=>$ad,'msg'=>""));
 }
 }else if($nid == "pages"){
 if($St->getpages == 1){
 $ad =   json($St->url.'/verify_chrome.php?id='.$id.'&type=fb&pages='.$access);
-echo json_encode( array('st'=>'success',"nid"=>"friends","count"=>$ad,'msg'=>"تم جلب الصفحات بنجاح"));
+echo json_encode( array('st'=>'success',"nid"=>get_selection("friends"),"count"=>$ad,'msg'=>"تم جلب الصفحات بنجاح"));
 }else{
-echo json_encode( array('st'=>'success',"nid"=>"friends","count"=>$ad,'msg'=>""));
+echo json_encode( array('st'=>'success',"nid"=>get_selection("friends"),"count"=>$ad,'msg'=>""));
 }
 }else if($nid == "friends"){
 if($St->getfriends == 1){
@@ -232,4 +232,20 @@ echo json_encode( array('st'=>'success',"nid"=>$nid,'msg'=>"تم تسجيل ال
 
 }
 
+function get_selection($value='')
+{
+  if($value = "groups"){
+   if($St->getgroups == 1)
+   return "groups";
+   return  get_selection("pages");
+ }else if($value = "pages"){
+  if($St->getpages == 1)
+  return "pages";
+  return  get_selection("friends");
+}else{
+  if($St->getfriends == 1)
+  return "friends";
+  return  "0";
+}
+}
 ?>
