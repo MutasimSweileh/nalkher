@@ -33,9 +33,15 @@ if (isv("set")) {
         $wer =  " and $convert_to_array[2]='".$convert_to_array[3]."'";
     }
     echo json_encode(array("data"=>Selaa(isv("get"), "where $convert_to_array[0]='".$convert_to_array[1]."' ".$wer)));
+
 } elseif (isv("server")) {
     $time_check=time() + 60;
     $Sql =  UpDate("settings", array("server_time"=>$time_check,"server_login"=>1),null);
+    if ($Sql) {
+        echo json_encode(array('success' =>true,"code"=>$code,"msg"=>"تم الحفظ بنجاح "));
+    } else {
+        echo json_encode(array('success' =>false,"code"=>$code,"msg"=>$msg));
+    }
 } elseif (isv("del")) {
     $convert_to_array = explode(',', isv("val"));
     $msg = "خطأ فى قاعدة البيانات ";
