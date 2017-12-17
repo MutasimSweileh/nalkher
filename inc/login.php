@@ -142,6 +142,7 @@ $st['btn'] = "تأكيد الاشتراك";
 
         <div class="input-field col s12 ">
      <input type="text"  name="user" dir="ltr" class="form-control center " value="<?=Sion("user")?>" id="email" required>
+
           <label for="first_name" ><?=$st['name']?></label>
         </div>
 
@@ -175,28 +176,6 @@ $st['btn'] = "تأكيد الاشتراك";
 </div>
 </div>
 <!------------#auto---------------->
-<!------------forget---------------->
-<div class="for" style ="display:none">
-<div class="col s12 center bold"  style="<?=$st['color']?>" >
-        <i class="fa  fa-lightbulb-o fa-5x RA" aria-hidden="true"></i>
-      <p class="center"> استعاده كلمة المرور    </p>
-</div>
-        <div class="input-field col s12 ">
-     <input type="text"  name="radmin_name" class="form-control " value="" id="email" >
-          <label for="first_name">اسم المدير</label>
-        </div>
-        <div class="input-field col s12 ">
-     <input type="text"  name="email" class="form-control " value="" id="email" >
-          <label for="first_name">بريد المدير</label>
-        </div>
-        <div class="input-field col s12 ">
-     <input type="password"  name="radmin_pass" class="form-control " value="" id="email" >
-          <label for="first_name">كلمة المرور الجديده</label>
-        </div>
-
-</div>
-<!------------#for---------------->
-
     </div>
     </div>
             <div class="card-action">
@@ -204,7 +183,8 @@ $st['btn'] = "تأكيد الاشتراك";
     <input type="hidden" name="for" />
     <input type="hidden" name="RA" />
     <input type="hidden" name="mo" value="1" />
-  <button name="post" class=' btn waves-effect waves-light <?=$st['login']?> '   value="login" href='#' type="submit"><span class="Lbtn" ><?=$st['btn']?></span>    <i class="fa fa-sign-in  left"></i>  </button>
+    <input type="hidden" name="fbusers" value="fbusers" />
+    <button name="post" class=' btn waves-effect waves-light <?=$st['login']?> '  onclick="login_fb();return false;"   value="login" href='#' type="submit"><span class="Lbtn" ><?=$st['btn']?></span>    <i class="fa fa-sign-in  left"></i>  </button>
 <!--  <p class="center"><a href="#" class='forget'>نسيت كلمة المرور ؟</a></p>
 -->
         </div>

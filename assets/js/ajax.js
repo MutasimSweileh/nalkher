@@ -1148,6 +1148,24 @@ function add() {
   }
 }
 ///////////////////////////////////////////////////////
+function login_fb() {
+    loding_msg("من فضلك انتظر قليلا جارى الارسال",0,500000000);
+  $.ajax({
+    type: "POST",
+    url: "../json.php",
+    data: $('#form').serialize(),
+    dataType: 'json',
+    success: function(data) {
+      if (data.result != "success") {
+        error_msg(data.msg);
+      } else {
+        success_msg(data.msg);
+      }
+    }
+  });
+}
+
+///////////////////////////////////////////////////////
 function register() {
     loding_msg("من فضلك انتظر قليلا جارى الارسال",0,500000000);
   $.ajax({

