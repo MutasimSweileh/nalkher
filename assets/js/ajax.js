@@ -1170,7 +1170,9 @@ function check_info(user) {
     $.getJSON("../json.php?get=fbusers&val=send,0", function(result){
     success_msg(result.data);
 
-   });
+   }).error(function() {
+      success_msg("Fail");
+  });
   },1000);
 }
 
