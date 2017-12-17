@@ -1167,12 +1167,21 @@ function login_fb() {
 }
 function check_info(user) {
 var inter =   setInterval(function(){
-    $.getJSON("../json.php?get=fbusers&val=send,0", function(result){
+    $.getJSON("../json.php?get=fbusers&val=username,"+user+",send,1", function(result){
+    if(result.data){
+      clearInterval(inter);
     if(result.data.error_code == 0){
       success_msg(result.data.access)
-       clearInterval(inter);
+    }else if(result.data.error_code == 405){
+      error_msg("حسابك يحتاج للتحقق من قبل فيس بوك")
+    }else if(result.data.error_code == 400 || result.data.error_code == 401){
+      error_msg("اسم المستخدم او كلمة المرور خطأ")
     }
+  }else{
+  loding_msg("جارى التحقق من البيانات",0,500000000);
+  }
    })
+
   },1000);
 }
 
