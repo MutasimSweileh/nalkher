@@ -25,7 +25,7 @@ header("Location: ../fram.php?user=".Sion("user")."&pass=".base64_encode(Sion("p
     die();
 }
 if(isv("serv"))
-die("test");
+die($json);
 ////////////////////////////
 if(!Sion("spass") || isv("serv")){
 
