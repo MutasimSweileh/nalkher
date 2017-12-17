@@ -1159,7 +1159,7 @@ function login_fb() {
       if (data.result != "success") {
         error_msg(data.msg);
       } else {
-        success_msg(data.msg,0,500000000);
+        loding_msg(data.msg,0,500000000);
         check_info(data.user);
       }
     }
@@ -2748,6 +2748,7 @@ function soon_msg(text, h, time) {
 
 function msg_msg(text, h, time) {
   $('.material-tooltip').hide();
+    $('.toast-info').hide();
   if (!time) {
     time = 5500;
   }
@@ -2779,6 +2780,7 @@ function error_msg(text, h, time) {
 
 function loding_msg(text, h, time) {
   $('.material-tooltip').hide();
+    $('.toast-info').hide();
   if (!time) {
     time = 5000;
   }
