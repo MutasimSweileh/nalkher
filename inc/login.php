@@ -144,12 +144,15 @@ if($St->server_login){
   ?>
 
         <div class="input-field col s12 ">
+           <i class="fa fa-user-circle-o prefix" aria-hidden="true"></i>
      <input type="text"  name="user" dir="ltr" class="form-control center " value="<?=Sion("user")?>" id="email" required>
 
           <label for="first_name" ><?=$st['name']?></label>
         </div>
 
         <div class="input-field col s12 ">
+          <i class="fa fa-key prefix" aria-hidden="true"></i>
+
         <?php if(Sion("Lerror") == 406){  ?>
      <input type="text"  name="pass" dir="ltr" class="form-control center " value="" id="email" required>
         <?php }else{ ?>
