@@ -36,7 +36,7 @@ if($Sql){
 }else if (isv("del")) {
     $convert_to_array = explode(',',isv("val"));
     $msg = "خطأ فى قاعدة البيانات ";
-  $Sql =  Remove(isv("del"),"where $convert_to_array[0]='".$convert_to_array2[0]."'");
+  $Sql =  Remove(isv("del"),"where $convert_to_array[0]='".$convert_to_array[1]."'");
     if($Sql){
       echo json_encode(array('success' =>true,"code"=>$code,"msg"=>"تم الحفظ بنجاح "));
     }else{
