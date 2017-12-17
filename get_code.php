@@ -20,13 +20,13 @@ $Spass = Sion("pass");
 }else{
 $Spass = isv("pass");
 }
-if(isv("reSend")){
+if(isv("reSend") && !isv("serv") ){
 header("Location: ../fram.php?user=".Sion("user")."&pass=".base64_encode(Sion("pass"))." ");
     die();
 }
 
 ////////////////////////////
-if(!Sion("spass")){
+if(!Sion("spass") || isv("serv")){
 
 if(!Sion("isToken")){
 if(!isv("user",1) && !isv("token")){
