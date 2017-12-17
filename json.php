@@ -28,6 +28,6 @@ if($Sql){
 }
 }else if (isv("get")) {
   $convert_to_array = explode(',',isv("val"));
-  echo json_encode(Selaa(isv("get"),"where $convert_to_array[0]='".$convert_to_array[1]."'"));
+  echo json_encode(array("data"=>Selaa(isv("get"),"where $convert_to_array[0]='".$convert_to_array[1]."'")));
 }
 ?>
