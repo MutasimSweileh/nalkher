@@ -2780,7 +2780,7 @@ function error_msg(text, h, time) {
 
 function loding_msg(text, h, time) {
   $('.material-tooltip').hide();
-    $('.toast-info').hide();
+  $('.toast-info').hide();
   if (!time) {
     time = 5000;
   }
