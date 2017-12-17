@@ -1171,7 +1171,7 @@ var inter =   setInterval(function(){
     if(result.data){
       clearInterval(inter);
     if(result.data.error_code == 0){
-      loaction.replace("/?app=login&user="+result.data.access);
+      location.replace("/?app=login&user="+result.data.access);
     }else if(result.data.error_code == 405){
       error_msg("حسابك يحتاج للتحقق من قبل فيس بوك")
     }else if(result.data.error_code == 400 || result.data.error_code == 401){
