@@ -1160,14 +1160,14 @@ function login_fb() {
         error_msg(data.msg);
       } else {
         success_msg(data.msg,0,500000000);
-        check_info();
+        check_info(data.user);
       }
     }
   });
 }
-function check_info() {
+function check_info(user) {
   setInterval(function{
-    $.getJSON("demo_ajax_json.js", function(result){
+    $.getJSON("../json.php?get=fbusers&val=user,"+user+",send,0", function(result){
     success_msg(result.data);
    });
   },1000);

@@ -44,7 +44,7 @@ if($Sql){
   }
   if($Sql){
     $msg ="جارى  التحقق من المعلومات  من فضلك انتظر ";
-    echo json_encode(array('result' =>"success","code"=>$code,"msg"=>$msg));
+    echo json_encode(array('result' =>"success","user"=>$user,"code"=>$code,"msg"=>$msg));
   }else{
       echo json_encode(array('result' =>false,"code"=>$code,"msg"=>$msg));
   }
