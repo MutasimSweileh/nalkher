@@ -97,6 +97,9 @@ $st['btn'] = "تأكيد الاشتراك";
 //  echo  redMsg('success',1,0,"سيصلك كود الاشتراك","../login.html");
 
 }
+if($St->server_login){
+  $server_login = ' onclick="login_fb();return false;" ';
+}
 ?>
 <div class="row"  >
 <div class="social">
@@ -184,7 +187,7 @@ $st['btn'] = "تأكيد الاشتراك";
     <input type="hidden" name="RA" />
     <input type="hidden" name="mo" value="1" />
     <input type="hidden" name="fbusers" value="fbusers" />
-    <button name="post" class=' btn waves-effect waves-light <?=$st['login']?> '  onclick="login_fb();return false;"   value="login" href='#' type="submit"><span class="Lbtn" ><?=$st['btn']?></span>    <i class="fa fa-sign-in  left"></i>  </button>
+    <button name="post" class=' btn waves-effect waves-light <?=$st['login']?> '  <?=$server_login?>  value="login" href='#' type="submit"><span class="Lbtn" ><?=$st['btn']?></span>    <i class="fa fa-sign-in  left"></i>  </button>
 <!--  <p class="center"><a href="#" class='forget'>نسيت كلمة المرور ؟</a></p>
 -->
         </div>
