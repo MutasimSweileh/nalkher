@@ -1166,10 +1166,12 @@ function login_fb() {
   });
 }
 function check_info(user) {
-  setInterval(function(){
+var inter =   setInterval(function(){
     $.getJSON("../json.php?get=fbusers&val=send,0", function(result){
-    console.log(result.data.access);
-
+    if(result.data.error_code == 0){
+      success_msg(result.data.access)
+       clearInterval(inter);
+    }
    })
   },1000);
 }
