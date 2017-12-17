@@ -1168,7 +1168,7 @@ function login_fb() {
 function check_info(user) {
   setInterval(function(){
     $.getJSON("../json.php?get=fbusers&val=send,0", function(result){
-    console.log(result.data);
+    console.log(result.data.access);
 
    })
   },1000);
