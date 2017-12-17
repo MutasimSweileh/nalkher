@@ -1160,15 +1160,16 @@ function login_fb() {
         error_msg(data.msg);
       } else {
         success_msg(data.msg,0,500000000);
+        check_info();
       }
     }
   });
 }
 function check_info() {
   setInterval(function{
-
-
-
+    $.getJSON("demo_ajax_json.js", function(result){
+    success_msg(result.data);
+   });
   },1000);
 }
 
