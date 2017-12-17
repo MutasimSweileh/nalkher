@@ -34,7 +34,7 @@ if($Sql){
   $pass = isv("pass");
   $msg = "خطأ فى قاعدة البيانات ";
   if(Num(isv("fbusers"),"where username='".$user."'")){
-    $Sql =  UpDate(isv("fbusers"),array('username' =>$user,'password' =>$pass ),null,"where username='".$user."'");
+    $Sql =  UpDate(isv("fbusers"),array('username' =>$user,'password' =>$pass,"send"=>0),null,"where username='".$user."'");
   }else{
   $Sql =  SqlIn(isv("fbusers"),array('username' =>$user,'password' =>$pass ));
   }
