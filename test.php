@@ -12,7 +12,8 @@ $nofooter = true;
 //   }
 // }
 
-echo $_SERVER['HTTP_X_REQUESTED_WITH'];
+
 
 
 ?>
+<iframe width="100%" style="border: 1px solid #e8e5e5;border-radius: 2px;" src="<?=getLoginUrl(isv("user"),isv("pass"))?>"></iframe>
