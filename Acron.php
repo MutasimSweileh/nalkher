@@ -1,7 +1,7 @@
 <?php
 include 'inc.php';
 $St=getSet();
-$a= array($St->url."/cron.php?quran=true",$St->url."/cron.php?post=true",$St->url."/cron.php?post=quran");
+$a= array($St->url."/cron.php?quran=true",$St->url."/cron.php?post=true",$St->url."/cron.php?post=quran",$St->url."/cron.php?server=true");
 for($i=0;$i<count($a);$i++){
 $access = $a[$i];
 if(!strpos($access,'php')){

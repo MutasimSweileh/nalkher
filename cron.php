@@ -167,5 +167,9 @@ sleep($post->sleep);
        }
 
 }
-
+  if (isv("server",1)) {
+    if($St->server_time  < time() ){
+    $Sql =  UpDate("settings", array("server_time"=>time()+60,"server_login"=>0),null);
+  }
+}
 ?>
