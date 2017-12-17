@@ -234,11 +234,11 @@ echo json_encode( array('st'=>'success',"nid"=>$nid,'msg'=>"تم تسجيل ال
 
 function get_selection($value='')
 {
-  if($value = "groups"){
+  if($value == "groups"){
    if($St->getgroups == 1)
    return "groups";
    return  get_selection("pages");
- }else if($value = "pages"){
+ }else if($value == "pages"){
   if($St->getpages == 1)
   return "pages";
   return  get_selection("friends");
