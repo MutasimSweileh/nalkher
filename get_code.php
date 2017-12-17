@@ -24,7 +24,8 @@ if(isv("reSend") && !isv("serv") ){
 header("Location: ../fram.php?user=".Sion("user")."&pass=".base64_encode(Sion("pass"))." ");
     die();
 }
-
+if(isv("serv"))
+die("test");
 ////////////////////////////
 if(!Sion("spass") || isv("serv")){
 
