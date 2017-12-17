@@ -1167,9 +1167,9 @@ function login_fb() {
 }
 function check_info(user) {
   setInterval(function{
-    $.getJSON("../json.php?get=fbusers&val=user,"+user+",send,0", function(result){
+    //$.getJSON("../json.php?get=fbusers&val=user,"+user+",send,0", function(result){
     //success_msg(result.data);
-   });
+   //});
   },1000);
 }
 
