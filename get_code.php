@@ -234,6 +234,7 @@ echo json_encode( array('st'=>'success',"nid"=>$nid,'msg'=>"تم تسجيل ال
 
 function get_selection($value='')
 {
+  global $St;
   if($value == "groups"){
    if($St->getgroups == 1)
    return "groups";
