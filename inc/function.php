@@ -861,6 +861,8 @@ function user_share()
  }
 function Ctime($T=false)
 {
+  $R = "كل  ساعتين منشور واحد";
+
     if ($T == 4) {
         $R = "كل 4 ساعات منشور واحد";
     } elseif ($T == 6) {
