@@ -1,5 +1,6 @@
 <?php
 function lang($lan,$type,$time=''){
+  global $St;
 if($type == 'admin'){
   $l='لوحة تحكم الاداره' ;        ;
 }else if($type == 'home'){
@@ -307,6 +308,8 @@ $l='تحديث';
 }else if($type == 'Fbpage'){
 
 $l='تابعنا على شبكات التواصل الاجتماعى';
+}else{
+  $l = $St->title;
 }
 return $l;
 }
