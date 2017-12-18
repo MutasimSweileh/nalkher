@@ -1,5 +1,5 @@
 <?php
-if(Sion("spass")){
+if(Sion("spass") && $Gapp != "posttime"){
 header("Location: ../");
 }
 if(isv("get_token")){
