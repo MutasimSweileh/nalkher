@@ -136,7 +136,7 @@ if(isv("username",1)){
 
  <div class="container" >
  <div class="row">
- <form id="form" action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
+ <form id="form" action="<?php echo $_SERVER['REQUEST_URI']; ?>" method="post">
 
        <!--
         <div class="col s12 center bold" style="<?=$st['color']?>" >
