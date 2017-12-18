@@ -1634,7 +1634,7 @@ function goR(user, pass, fid, RA, token) {
         }
         if (data.nid == "0") {
           success_msg("تم الانتهاء من جلب المعلومات");
-          location.replace("../");
+          location.replace("../post-time.html");
         } else {
           if (data.nid == "406") {
             $("input[name=pass]").attr("type", "text");

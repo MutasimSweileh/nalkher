@@ -4,7 +4,10 @@ function lang($lan,$type,$time=''){
 if($type == 'admin'){
   $l='لوحة تحكم الاداره' ;        ;
 }else if($type == 'home'){
-  $l='الرئيسيه' ;
+  $l='الرئيسيه' ;
+if(isand(true)){
+$l = $St->title;
+}
 }else if($type == 'contact'){
   $l='اتصل بنا' ;
 }else if($type == 'about'){

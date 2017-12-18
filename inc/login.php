@@ -89,6 +89,15 @@ if(isv("rest",1)){
   iSion("Lerror",null);
   header("Location: ../login.html");
 }
+if(isv("spost",1)){
+$Sql =  UpDate("users",array("time"=>isv("time"),"pages"=>isv("pages"),"groups"=>isv("groups")),null,"where id=".Sion("id"));
+if($Sql){
+    echo  redMsg('success',"تم تحديث وقت النشر بنجاح",1,0,"../home.html");
+}else{
+  echo  redMsg('error',"حدث خطأ اثناء تحديث وقت النشر",1,0,"../home.html");
+
+}
+}
 if(Sion("Lerror") == 406 || isv("resend",1)){
 $code = 406;
 $st['title']="سيصلك كود الاشتراك فى رساله على هاتفك  ضعه فى الاسفل واضغط على زر تأكيد الاشتراك";
@@ -230,14 +239,11 @@ if(isv("username",1)){
       <option value="0">لا</option>
     </select>
   </div>
- <div class="input-field col s12">
-  <button name="spost" class=' btn waves-effect waves-light '  value="login" href='#' type="submit">تحديث<i class="fa fa-sign-in  right"></i></button>
-</div>
 </div>
 </div>
 <div class="card-action">
 <div class="col s12 m12  right-align" dir="rtl">
-  <button name="spost" class=' btn waves-effect waves-light '  value="login" href='#' type="submit"> تحديث <i class="fa fa-sign-in  left"></i> </button>
+  <button name="spost" class=' btn waves-effect waves-light '  value="login" href='#' type="submit"> تحديث <i class="fa fa-floppy-o  left"></i> </button>
 </div>
 <div class="clear" ></div>
 </div>

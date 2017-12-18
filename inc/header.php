@@ -15,7 +15,14 @@
                 <ul class="left">
                     <li>
                         <a href="/" class="brand-logor logo-text">
-                        <?=lang('ar',$Gapp)?>
+                        <?php
+                        if(isand(true)){
+                      echo  lang($lg,$Gapp);
+                      }else{
+                        echo $St->title;
+                      }
+
+                        ?>
 
                         </a>
                     </li>
