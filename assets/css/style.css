@@ -1,4 +1,4 @@
-@import url("font-awesome.css");
+@import url(font-awesome.css);
 @import url(font.css);
 @import url(https://fonts.googleapis.com/icon?family=Material+Icons);
 @import url(material-design-iconic-font.min.css);
@@ -12,6 +12,7 @@
 @import url(jquery-confirm.css);
 @import url(jquery.fancybox.min.css);
 @import url(datepicker.css);
+@import url(w3.css);
 /*@import url(flaticon/flaticon.css);*/
 *,p{
 font-family: 'Droid Arabic Naskh' , serif;
