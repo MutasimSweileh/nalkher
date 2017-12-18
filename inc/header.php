@@ -1,6 +1,5 @@
 <div  class="wrapper vertical-sidebar" id="full-page">
 <main id="content" >
-
 <header id="header">
     <div class="navbar navbar-fixed">
       <ul id="nav-mobile" class="side-nav" style="transform: translateX(-100%);">
@@ -16,7 +15,8 @@
                 <ul class="left">
                     <li>
                         <a href="/" class="brand-logor logo-text">
-                        <?=$St->title?>
+                        <?=lang('ar',$Gapp)?>
+
                         </a>
                     </li>
                 </ul>
