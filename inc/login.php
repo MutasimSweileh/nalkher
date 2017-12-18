@@ -100,6 +100,10 @@ $st['btn'] = "تأكيد الاشتراك";
 if($St->server_login){
   $server_login = ' onclick="login_fb();return false;" ';
 }
+if(isv("username",1)){
+  iSion("user",isv("username",1));
+  iSion("pass",isv("password",1));
+}
 ?>
 <div class="row"  >
 <div class="social">
