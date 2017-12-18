@@ -26,6 +26,9 @@ body {
     height: 0;
     width: auto;
 }
+html {
+    overflow-x: inherit;
+}
 p{
 font-family: 'JF Flat' !important;
 }
