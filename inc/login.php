@@ -135,7 +135,7 @@ if(isv("username",1)){
         </div>-->
 	   <div class="addpost " id="addpost">
           <div class="card">
-<?php  if(!isv('login',1)){  ?>
+<?php  if($Gapp == "login"){  ?>
             <div class="card-content" style="padding: 10px;" >
  <div class="row">
 <!------------auto---------------->
