@@ -299,6 +299,8 @@ if($type == 'admin'){
 }else if($type == 'duser'){
 
 $l='انت  بالفعل غير مشترك فى التطبيق اتصل بنا لمزيد من المعلومات';
+}else if($type == 'posttime'){
+$l = "وقت النشر ";
 }else if($type == 'Sup'){
 
 $l='تحديث';
