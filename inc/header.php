@@ -6,7 +6,8 @@
        <?php  include "inc/nav.php"; ?>
       </ul>
         <nav>
-            <a href="#" data-activates="nav-mobile" class="button-collapse top-nav full waves-effect waves-light"><i class="material-icons">menu</i></a>
+            <a href="#" data-activates="nav-mobile" class="button-collapse full waves-effect waves-light"><i class="material-icons">menu</i></a>
+            <a href="#" data-activates="nav-mobile" class="button-collapse full waves-effect waves-light"><i class="material-icons">home</i></a>
 
             <div class="nav-wrapper">
             <div class="logo-icon">

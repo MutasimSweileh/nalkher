@@ -121,7 +121,10 @@ $l = $St->title;
 }else if($type == 'ttype_post'){
   $l='نوع العمليه'         ;
 }else if($type == 'post'){
-  $l='اضافه'         ;
+  $l='اضافه'         ;
+if(isand("true"))
+  $l= $St->title;
+
 }else if($type == 'fb'){
   $l='فيس بوك'         ;
 }else if($type == 'rvideo'){
