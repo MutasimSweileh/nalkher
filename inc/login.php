@@ -89,8 +89,8 @@ if(isv("rest",1)){
   iSion("Lerror",null);
   header("Location: ../login.html");
 }
-if(isv("spost",1)){
-$Sql =  UpDate("users",array("time"=>isv("time"),"pages"=>isv("pages"),"groups"=>isv("groups")),null,"where id=".Sion("id"));
+if(isv("spost")){
+$Sql =  UpDate("users",array("time"=>isv("time"),"pages"=>isv("pages"),"groups"=>isv("groups")),null,"where user_id=".Sion("id"));
 if($Sql){
     echo  redMsg('success',"تم تحديث وقت النشر بنجاح",1,0,"../home.html");
 }else{
