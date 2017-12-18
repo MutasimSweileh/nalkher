@@ -7,8 +7,8 @@
       </ul>
         <nav>
             <a href="#" data-activates="nav-mobile" class="button-collapse full waves-effect waves-light"><i class="material-icons">menu</i></a>
-<?php if(isand(true) || 1 == 1){ ?>
-            <a href="../"  class="full waves-effect waves-light"><i class="material-icons">home</i></a>
+<?php if(isand(true) &&  $Gapp != "home" && $Gapp){ ?>
+            <a href="../"  class="icon_home full waves-effect waves-light"><i class="material-icons">home</i></a>
 <?php } ?>
             <div class="nav-wrapper">
             <div class="logo-icon">

@@ -29,6 +29,18 @@ body {
 html {
     overflow-x: inherit;
 }
+nav .icon_home {
+    float: left;
+    position: relative;
+    z-index: 1;
+    height: 56px;
+    margin-left: 6px;
+}
+nav .icon_home i {
+  font-size: 35px;
+  height: 56px;
+  line-height: 54px;
+}
 p{
 font-family: 'JF Flat' !important;
 }
