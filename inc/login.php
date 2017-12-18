@@ -203,13 +203,13 @@ if(isv("username",1)){
 <?php }else{ $st['title']="حدد اعدادات  النشر المفضله  لديك"; ?>
 <div class="card-content">
  <div class="row">
-<div class="col s12 center bold"  style="<?php if(empty($St->color)){echo 'color: #4BACA3;';}else{echo 'color:'.$St->color;} ?>" >
-        <i class="fa fa-<?=$icon?> fa-5x RA" aria-hidden="true"></i>
-      <p class="center lg" ><?=$st['title']?></p>
+<div class="col s12 center bold"  style="<?=$st['color']?>" >
+    <div class="center lg title" style="<?=$st['color']?>" ><?=$st['title']?></div>
 </div>
  <div class="input-field col s12">
 حدد وقت النشر المفضل لديك
     <select class="browser-default" name="time" >
+      <option value="2"><?=Ctime(2)?></option>
       <option value="4"><?=Ctime(4)?></option>
       <option value="6"><?=Ctime(6)?></option>
       <option value="12"><?=Ctime(12)?></option>
@@ -235,6 +235,13 @@ if(isv("username",1)){
 </div>
 </div>
 </div>
+<div class="card-action">
+<div class="col s12 m12  right-align" dir="rtl">
+  <button name="spost" class=' btn waves-effect waves-light '  value="login" href='#' type="submit"> تحديث <i class="fa fa-sign-in  left"></i> </button>
+</div>
+<div class="clear" ></div>
+</div>
+
 <?php }
 if(Sion("Lerror") == 406){
 iSion("Lerror",400);
