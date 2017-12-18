@@ -895,7 +895,7 @@ function NotToken()
 function Cinst($tb, $arm, $wr)
 {
     if (Sel($tb, $wr)) {
-        $sq= UpDate($tp, $arm,null, $wr);
+        $sq= UpDate($tb, $arm,null, $wr);
     } else {
         $sq = SqlIn($tb, $arm, true);
     }
