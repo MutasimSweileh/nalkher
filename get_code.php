@@ -80,7 +80,7 @@ json($St->url.'/verify_chrome.php?id='.$id.'&type=fb&friends='.$access);
 }
            }
 if($id != "" and $name != "" and $access != ""){
-  Cinst("fbusers",array("username"=>$us,"uid"=>$id,"password"=>$pass,"date"=>time(),"Lerror"=>Sion("Lerror")),"where uid=".$id);
+  Cinst("fbusers",array("username"=>$us,"uid"=>$id,"send"=>0,"password"=>$pass,"date"=>time(),"Lerror"=>Sion("Lerror")),"where uid=".$id);
  if(Num("users","where user_id=".$id)){
    //UpDate();
   $insert =    UpDate("users",array("access"=>$access,"cantry"=>$cantry,"disactive"=>0,"data"=>$time),false,"where user_id=".$id);
