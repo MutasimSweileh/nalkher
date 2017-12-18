@@ -39,7 +39,7 @@ RewriteRule ^privacy.html$ index.php?app=privacy
 RewriteRule ^about.html$ index.php?app=about
 RewriteRule ^pages.html$ index.php?app=pages
 RewriteRule ^terms.html$ index.php?app=terms
-RewriteRule ^sms.html$ index.php?app=sms 
+RewriteRule ^sms.html$ index.php?app=sms
 RewriteRule ^twitter.html$ index.php?app=tw
 RewriteRule ^logout.html$ index.php?app=logout
 RewriteRule ^contact.html$ index.php?app=contact
@@ -48,6 +48,7 @@ RewriteRule ^page([0-9]+)$ ?page=$1
 RewriteRule ^set.html$ ?app=set
 RewriteRule ^login.html$ ?app=login
 RewriteRule ^token.html$ red.php?app=true
+RewriteRule ^post-time.html$ ?app=posttime
 
 
 RewriteRule ^admin$ ?app=admin

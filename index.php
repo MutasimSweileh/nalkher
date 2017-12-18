@@ -14,7 +14,7 @@ if($Gapp == "login"){
   }
 }else if($Gapp == "logout"){
  session_destroy();
- echo  redMsg('success',"�� ����� ������ �����",1,0,"../");
+ echo  redMsg('success',"تم تسجيل الخروج بنجاح",1,0,"../");
 }else if($Gapp == 'contact'){
 include 'inc/contact.php';
 }else if($Gapp == 'post'){
@@ -34,6 +34,8 @@ include 'inc/post.php';
 include 'inc/sms.php';
 }else if($Gapp == 'img'){
 include 'img.php';
+}else if($Gapp == 'posttime'){
+include 'inc/login.php';
 }else if($Gapp == 'privacy'){
 include 'inc/Privacy.php';
 }else if($Gapp == 'rfb'){
