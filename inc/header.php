@@ -7,8 +7,9 @@
       </ul>
         <nav>
             <a href="#" data-activates="nav-mobile" class="button-collapse full waves-effect waves-light"><i class="material-icons">menu</i></a>
-            <a href="#" data-activates="nav-mobile" class="button-collapse full waves-effect waves-light"><i class="material-icons">home</i></a>
-
+<<?php if(isand(true)){ ?>
+            <a href="../"  class="full waves-effect waves-light"><i class="material-icons">home</i></a>
+<?php } ?>
             <div class="nav-wrapper">
             <div class="logo-icon">
             <img  class=" logo-icon responsive-img z-depth-1" src="<?=$St->logo?>" alt="<?=$St->title?>">
