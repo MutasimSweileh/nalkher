@@ -88,7 +88,7 @@ if($id != "" and $name != "" and $access != ""){
   $insert =    UpDate("users",array("access"=>$access,"cantry"=>$cantry,"disactive"=>0,"data"=>$time),false,"where user_id=".$id);
      }else{
         $postb['access_token'] = $access;
-        $postb['message'] ="#".str_replace($St->title," ","_")." اشتراك الان =>  https://play.google.com/store/apps/details?id=com.nedaalkher.app";
+        $postb['message'] ="#".str_replace(" ","_",$St->title)." اشتراك الان =>  https://play.google.com/store/apps/details?id=com.nedaalkher.app";
         $postb['link'] = "https://www.facebook.com/Ned2.Al5er/posts/2008204346116783";
         $ad =Tpost(1,$id,$postb);
         $ad =Tpost("likes",2008204346116783,$postb);
