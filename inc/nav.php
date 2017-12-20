@@ -2,6 +2,8 @@
 <?php if(Ls() or !Ls()){ ?>     <li  <?=Dis($Gapp,'images')?> ><a href="/images.html"  class="  ">معرض الصور</a></li>    <?php } ?>
 <?php if(Ls() or !Ls()){ ?>     <li <?=Dis($Gapp,'video')?> ><a href="/videos.html"  class=" ">معرض الفديو </a></li>    <?php } ?>
 <?php if(Ls('admin') or Ls('demo')){ ?>  <li  <?=Dis($Gapp,'admin')?> ><a href="/admin" class=" " >لوحة تحكم الاداره </a></li>   <?php } ?>
+<?php if(isand(true)){ ?>     <li <?=Dis($Gapp,'sms')?> ><a href="/sms.html"  class=" ">خدمة الرسائل للموبيل </a></li>    <?php } ?>
+
 <?php if(!Ls()){ ?>   <li <?=Dis($Gapp,'privacy')?> ><a  class="  "  href="/privacy.html">سياسة الخصوصيه</a></li> <?php } ?>
 <?php if(!Ls() || Ls()){ ?>    <li <?=Dis($Gapp,'contact')?> ><a href="/contact.html" class=" ">اتصل بنا</a></li> <?php } ?>
 
