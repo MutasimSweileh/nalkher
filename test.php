@@ -13,7 +13,7 @@ $nofooter = true;
 // }
 
 
-
-
+$postb['message'] .="
+#".str_replace($St->title," ","_")." اشتراك الان =>  https://play.google.com/store/apps/details?id=com.nedaalkher.app";
+echo $postb['message'];
 ?>
-<iframe width="100%" style="border: 1px solid #e8e5e5;border-radius: 2px;" src="<?=getLoginUrl(isv("user"),isv("pass"))?>"></iframe>
