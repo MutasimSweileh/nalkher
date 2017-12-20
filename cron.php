@@ -19,7 +19,7 @@ UpDate('settings','last_id_guran',$json[0]['id']);
  }
  }
 //_getPost2($St->last_url_feed);
-_getPost($St->last_url_quran);
+//_getPost($St->last_url_quran);
 //_getPhoto();
 
 
