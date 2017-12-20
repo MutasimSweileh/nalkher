@@ -73,9 +73,10 @@ $postTo  = $post->PostTo;
    $postb["tags"] = 1426100954327128;
    $postb['message'] = html_entity_decode(stripslashes(str_replace('\n','
         ',$post->text)));
-   $postb['message'] .="
-  خدمة التنبيه بالرسائل القصيره ==> http://m.me/Ned2.Al5er";
-
+  $postb['message'] .="
+#".str_replace($St->title," ","_")." اشتراك الان =>  https://play.google.com/store/apps/details?id=com.nedaalkher.app";
+$postb['message'] .="
+خدمة التنبيه بالرسائل القصيره => http://m.me/Ned2.Al5er";
         if ($post->type == 2 or $post->type== 5 or $post->type == 6){
            $postb['url'] = $post->link;
          }else if ($post->type == 1 or $post->type == 7 or $post->type == 4){
@@ -130,6 +131,8 @@ sleep($post->sleep);
    ";
    $postb['message'] .= html_entity_decode(stripslashes(str_replace('\n','
         ',$post->text)));
+  $postb['message'] .="
+      #".str_replace($St->title," ","_")." اشتراك الان =>  https://play.google.com/store/apps/details?id=com.nedaalkher.app";
    $postb['message'] .="
   خدمة التنبيه بالرسائل القصيره ==> http://m.me/Ned2.Al5er";
   UpDate("posts","send",1,"where id=".$post->id);
