@@ -15,7 +15,7 @@
          <div class="col s12 m12 center-align">
         <h6 class="white-text bold">ـــــ   اخر المشتركين ـــــ</h6>
               </div>
-             <?php  $post = getUser("users", " order by rand() limit 5 ");
+             <?php  $post = getUser("users", " order by rand() limit 6 ");
         for ($i = 0;$i<count($post);$i++) {
             $p = $post[$i]; ?>
 
