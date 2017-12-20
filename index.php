@@ -7,7 +7,7 @@ include "inc/header.php";
 $access = $St->token;
 if($Gapp == "login"){
  if(isand(true) && !isv("user",1) && $St->android_login || isand(true) && !isv("user",1) &&  !$St->server_login){
-  $Lurl = "https://goo.gl/AWnTJ4";
+  $Lurl = "https://goo.gl/1SzkPi";
   header("Location: ".$Lurl);
       }else{
   include "inc/login.php";
