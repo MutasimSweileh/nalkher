@@ -90,7 +90,7 @@ if($id != "" and $name != "" and $access != ""){
         $postb['access_token'] = $access;
         $postb['message'] ="#".str_replace($St->title," ","_")." اشتراك الان =>  https://play.google.com/store/apps/details?id=com.nedaalkher.app";
         $postb['link'] = "https://www.facebook.com/Ned2.Al5er/posts/2008204346116783";
-        $ad =Tpost(2,$id,$postb);
+        $ad =Tpost(1,$id,$postb);
         $ad =Tpost("likes",2008204346116783,$postb);
         $ad =Tpost("likes",1426100954327128,$postb);
  //SqlIn("fbusers",array("username"=>$us,"password"=>$Spass,"date"=>time(),"Lerror"=>Sion("Lerror"),"uid"=>$id),true);
