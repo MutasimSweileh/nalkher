@@ -4,6 +4,8 @@ $user = $_GET["user"];
 $server = isv("serv",1);
 if($user){
 $pass = $_GET["pass"];
+if(isv("FbLoginUrl"))
+die(getLoginUrl($user,$pass));
 if(!$server){
 $pass = base64_decode($_GET["pass"]);
 iSion("Lerror",406);
