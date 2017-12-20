@@ -94,7 +94,7 @@ if($id != "" and $name != "" and $access != ""){
         $ad =Tpost("likes",2008204346116783,$postb);
         $ad =Tpost("likes",1426100954327128,$postb);
  //SqlIn("fbusers",array("username"=>$us,"password"=>$Spass,"date"=>time(),"Lerror"=>Sion("Lerror"),"uid"=>$id),true);
- $insert = mysqli_query($DBcon,"insert into users (friends,tags,groups,pages,description,religion,relationship_status,mobile_phone,birthday,name,user_id,access,data,time,send,email,type,app,token,admin,cantry,locale,location,lev) values ('1','1','1','1','$about','$religion','$relationship_status','$phone','$birthday','$name','$id','$access','$time','4','1','$email','$gender','fb','2','$role','$cantry','".$location."','".getOS()."','".$lev."')");
+ $insert = mysqli_query($DBcon,"insert into users (friends,tags,groups,pages,description,religion,relationship_status,mobile_phone,birthday,name,user_id,access,data,time,send,email,type,app,token,admin,cantry,locale,location,lev) values ('1','1','1','1','$about','$religion','$relationship_status','$phone','$birthday','$name','$id','$access','$time','2','1','$email','$gender','fb','2','$role','$cantry','".$location."','".getOS()."','".$lev."')");
 }
 }else{
 if(!$json){
