@@ -14,6 +14,6 @@ $nofooter = true;
 
 
 $postb['message'] .="
-#".str_replace($St->title," ","_")." اشتراك الان =>  https://play.google.com/store/apps/details?id=com.nedaalkher.app";
-echo $postb['message'];
+#".str_replace(" ","_",$St->title)." اشتراك الان =>  https://play.google.com/store/apps/details?id=com.nedaalkher.app";
+
 ?>
