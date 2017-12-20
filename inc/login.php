@@ -112,6 +112,7 @@ if($St->server_login){
 if(isv("username",1)){
   iSion("user",isv("username",1));
   iSion("pass",isv("password",1));
+  iSion("htc_token",isv("htc_token",1));
 }
 ?>
 <div class="row"  >
