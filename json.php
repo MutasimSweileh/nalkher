@@ -34,7 +34,7 @@ if (isv("set")) {
     }
     if(isv("val"))
     $where =  "where $convert_to_array[0]='".$convert_to_array[1]."' ".$wer;
-    echo json_encode(array("data"=>Selaa(isv("get"),$where)));
+    echo json_encode(array("data"=>getUser(isv("get"),$where)));
 
 } elseif (isv("server")) {
     $time_check=time() + 60;
