@@ -91,8 +91,9 @@ $p = Selaa('video','where id='.$post->vid);
    $postb['message'] .= html_entity_decode(stripslashes(str_replace('\n','
         ',$post->text)));
         if(!isv("msg",1)){
-          $postb['message'] .="
-        #".str_replace($St->title," ","_")." اشتراك الان =>  https://play.google.com/store/apps/details?id=com.nedaalkher.app";
+          /*
+    $postb['message'] .="
+  #".str_replace(" ","_",$St->title)." اشتراك الان =>  https://play.google.com/store/apps/details?id=com.nedaalkher.app"; */
    $postb['message'] .="
   خدمة التنبيه بالرسائل القصيره => http://m.me/Ned2.Al5er";
                           }
