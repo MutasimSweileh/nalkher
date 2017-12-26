@@ -118,7 +118,7 @@ $postb['message'] .="
 sleep($post->sleep);
            }
        }
-echo "string";
+//echo "string";
      if(last_share(24,$St->last_share_werd) || last_share(10,$St->last_share_azkar)){
 
        $azkar = last_share(10,$St->last_share_azkar);
