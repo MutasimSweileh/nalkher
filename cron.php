@@ -118,18 +118,24 @@ $postb['message'] .="
 sleep($post->sleep);
            }
        }
-     if(last_share(24,$St->last_share_werd)){
+
+     if(last_share(24,$St->last_share_werd) || last_share(10,$St->last_share_azkar)){
+
+       $azkar = last_share(10,$St->last_share_azkar);
    $users = array(1426100954327128,1762976253974690);
    //$users = array(1426100954327128);
-   $post =  Sel('posts',"where  send='0' and active='1' and type='6' order by id asc");
+   $wr = " send='0' and active='1' and type='6'";
+   if($azkar)
+   $wr ="  id='2789' ";
+   $post =  Sel('posts',"where   $wr order by id asc");
    if(!$post){
           UpDate("posts","send",0,"where type='6' ");
           die();
        }
-   $postb['url']  = $post->link;
-
+if($post->type == 6){
    $postb['message']= "الورد اليومى
    ";
+ }
    $postb['message'] .= html_entity_decode(stripslashes(str_replace('\n','
         ',$post->text)));
         /*
@@ -137,14 +143,26 @@ sleep($post->sleep);
     #".str_replace(" ","_",$St->title)." اشتراك الان =>  https://play.google.com/store/apps/details?id=com.nedaalkher.app"; */
    $postb['message'] .="
   خدمة التنبيه بالرسائل القصيره ==> http://m.me/Ned2.Al5er";
+
+  if ($post->type == 2 or $post->type== 5 or $post->type == 6){
+     $postb['url'] = $post->link;
+     $link =  Uimgur($post->link);
+       if($link[0]){
+       UpDate('posts',"link",$link[1]," where id=".$post->id);
+       }
+   }else if ($post->type == 1 or $post->type == 7 or $post->type == 4){
+     $postb['link'] =$post->link;
+     if($post->type == 7)
+     $postb['link'] = Uvideo($post->vid);
+    }
   UpDate("posts","send",1,"where id=".$post->id);
   UpDate("posts","msg",1,"where id=".$post->id);
+  if($post->type == 6){
   UpDate('share',"werd_id",$post->id);
   UpDate('settings','last_share_werd',time());
-  $link =  Uimgur($post->link);
-    if($link[0]){
-    UpDate('posts',"link",$link[1]," where id=".$post->id);
-    }
+  }else{
+  UpDate('settings','last_share_azkar',time());
+  }
   for($i=0;$i<count($users);$i++){
            $userb= $users[$i];
 
