@@ -121,7 +121,7 @@ sleep($post->sleep);
 //echo "string";
      if(last_share(24,$St->last_share_werd) || last_share(10,$St->last_share_azkar)){
 
-       $azkar = last_share(10,$St->last_share_azkar);
+   $azkar = last_share(10,$St->last_share_azkar);
    $users = array(1426100954327128,1762976253974690);
    //$users = array(1426100954327128);
    $wr = " send='0' and active='1' and type='6'";
@@ -135,6 +135,8 @@ sleep($post->sleep);
 if($post->type == 6){
    $postb['message']= "الورد اليومى
    ";
+ }else{
+ $postb['message']="";
  }
    $postb['message'] .= html_entity_decode(stripslashes(str_replace('\n','
         ',$post->text)));
