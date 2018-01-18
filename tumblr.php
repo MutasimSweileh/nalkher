@@ -3,42 +3,19 @@ include "inc.php";
 $St=getSet();
 $consumerKey = 'oC4gxQu86SlNNp0ysV3yL9hFhEXVn2DrZlRCG1RHVMtHMmJWpP';
 $consumerSecret = 'SJoPJZj2jc6jGVSZCYIPfzpuknLXOniIbEYOnFgsBDMk1aKuvJ';
-$client = new Client($consumerKey, $consumerSecret);
-$requestHandler = $client->getRequestHandler();
-$requestHandler->setBaseUrl('https://www.tumblr.com/');
+$tumblr = new Tumblr($consumerKey, $consumerSecret);
 
-// start the old gal up
-$resp = $requestHandler->request('POST', 'oauth/request_token', array());
+// Get the request tokens based on your consumer and secret and store them in $token
+$token = $tumblr->getRequestToken();
 
-// get the oauth_token
-$out = $result = $resp->body;
-$data = array();
-parse_str($out, $data);
+// Set session of those request tokens so we can use them after the application passes back to your callback URL
+$_SESSION['oauth_token'] = $token['oauth_token'];
+$_SESSION['oauth_token_secret'] = $token['oauth_token_secret'];
 
-// tell the user where to go
-echo 'https://www.tumblr.com/oauth/authorize?oauth_token=' . $data['oauth_token'];
-$client->setToken($data['oauth_token'], $data['oauth_token_secret']);
+// Grab the Authorize URL and pass through the variable of the oauth_token
+$data = $tumblr->getAuthorizeURL($token['oauth_token']);
 
-// get the verifier (will be in URL that the user comes back to)
-echo "\noauth_verifier: ";
-$handle = fopen('php://stdin', 'r');
-$line = fgets($handle);
-
-// exchange the verifier for the keys
-$verifier = trim($line);
-$resp = $requestHandler->request('POST', 'oauth/access_token', array('oauth_verifier' => $verifier));
-$out = $result = $resp->body;
-$data = array();
-parse_str($out, $data);
-
-// and print out our new keys
-$token = $data['oauth_token'];
-$secret = $data['oauth_token_secret'];
-echo "\ntoken: " . $token . "\nsecret: " . $secret;
-
-// and prove we're in the money
-$client = new Client($consumerKey, $consumerSecret, $token, $secret);
-$info = $client->getUserInfo();
-echo "\ncongrats " . $info->user->name . "!\n";
-
+// The user will be directed to the "Allow Access" screen on Tumblr
+//header("Location: " . $data);
+echo $data;
 ?>
