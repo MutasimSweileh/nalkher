@@ -1,10 +1,12 @@
 <?php
 
-namespace src\Tumblr\API;
+//namespace src\Tumblr\API;
 
 /**
  * A client to access the Tumblr API
  */
+require_once('RequestException.php');
+require_once('RequestHandler.php');
 class Client
 {
 

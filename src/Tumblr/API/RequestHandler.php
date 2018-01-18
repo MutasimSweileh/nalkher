@@ -1,6 +1,6 @@
 <?php
 
-namespace src\Tumblr\API;
+//namespace src\Tumblr\API;
 
 /**
  * A request handler for Tumblr authentication
