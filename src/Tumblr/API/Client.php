@@ -1,6 +1,6 @@
 <?php
 
-namespace Tumblr\API;
+namespace src\Tumblr\API;
 
 /**
  * A client to access the Tumblr API
