@@ -37,7 +37,7 @@ $secret = $data['oauth_token_secret'];
 echo "\ntoken: " . $token . "\nsecret: " . $secret;
 
 // and prove we're in the money
-$client = new Tumblr\API\Client($consumerKey, $consumerSecret, $token, $secret);
+$client = new Client($consumerKey, $consumerSecret, $token, $secret);
 $info = $client->getUserInfo();
 echo "\ncongrats " . $info->user->name . "!\n";
 
