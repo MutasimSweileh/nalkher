@@ -6,6 +6,7 @@ $lg='ar';
 include "inc/config.php";
 include "inc/lang.php";
 include "inc/function.php";
+include_once 'src/Tumblr/API/Client.php';
 include_once 'src/facebook.php';
 require_once('src/oauth/twitteroauth.php');
 require_once 'src/API/src/Google/Client.php';
