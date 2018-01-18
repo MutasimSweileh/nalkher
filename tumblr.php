@@ -3,7 +3,7 @@ include "inc.php";
 $St=getSet();
 $consumerKey = 'oC4gxQu86SlNNp0ysV3yL9hFhEXVn2DrZlRCG1RHVMtHMmJWpP';
 $consumerSecret = 'SJoPJZj2jc6jGVSZCYIPfzpuknLXOniIbEYOnFgsBDMk1aKuvJ';
-$client = new Tumblr\API\Client($consumerKey, $consumerSecret);
+$client = new Client($consumerKey, $consumerSecret);
 $requestHandler = $client->getRequestHandler();
 $requestHandler->setBaseUrl('https://www.tumblr.com/');
 
