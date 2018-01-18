@@ -1,9 +1,8 @@
 <?php
-include "inc.php";
-$St=getSet();
+require_once('vendor/autoload.php');
 $consumerKey = 'oC4gxQu86SlNNp0ysV3yL9hFhEXVn2DrZlRCG1RHVMtHMmJWpP';
 $consumerSecret = 'SJoPJZj2jc6jGVSZCYIPfzpuknLXOniIbEYOnFgsBDMk1aKuvJ';
-$TUMBLR_OAUTH_CALLBACK = $St->url."/tumbler.php";
+//$TUMBLR_OAUTH_CALLBACK = $St->url."/tumbler.php";
 $client = new Tumblr\API\Client(
   'oC4gxQu86SlNNp0ysV3yL9hFhEXVn2DrZlRCG1RHVMtHMmJWpP',
   'SJoPJZj2jc6jGVSZCYIPfzpuknLXOniIbEYOnFgsBDMk1aKuvJ',
