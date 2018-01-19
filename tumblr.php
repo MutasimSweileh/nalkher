@@ -23,7 +23,8 @@ $_SESSION['oauth_token_secret'] = $request_token['oauth_token_secret'];
 switch ($connection->http_code) {
   case 200:
     $url = $connection->getAuthorizeURL($token);
-     header('Location: ' . $url);
+    die($url);
+    // header('Location: ' . $url);
     break;
   default:
     echo 'Could not connect to Tumblr. Refresh the page or try again later.';
