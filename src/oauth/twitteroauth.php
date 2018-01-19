@@ -93,8 +93,8 @@ class TwitterOAuth {
     }
   }
 function getrtype() {
-    global $rtype;
-return $rtype;
+    //global $rtype;
+    return $rtype;
 }
 
   /**
