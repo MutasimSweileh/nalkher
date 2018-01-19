@@ -5,7 +5,7 @@ $consumerSecret = 'SJoPJZj2jc6jGVSZCYIPfzpuknLXOniIbEYOnFgsBDMk1aKuvJ';
 $TUMBLR_OAUTH_CALLBACK = $St->url."/tumbler.php";
 
 /* Build TumblrOAuth object with client credentials. */
-$connection = new TwitterOAuth($consumerKey, $consumerSecret);
+$connection = new TwitterOAuth($consumerKey, $consumerSecret,null,null,"tm");
 
 /* Get temporary credentials. */
 $request_token = $connection->getRequestToken($TUMBLR_OAUTH_CALLBACK);
