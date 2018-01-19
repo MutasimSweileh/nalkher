@@ -13,12 +13,12 @@ if (isset($_REQUEST['oauth_token'])) {
   $access_token = $connection->getAccessToken($_REQUEST['oauth_verifier']);
    print_r($access_token);
    echo "<br><br>";
-   $user_info = $connection->post('user/info');
+   $user_info = $connection->post('http://api.tumblr.com/v2/user/info');
     print_r($user_info);
 }else{
 $connection = new TwitterOAuth($consumerKey, $consumerSecret,null,null,"tm");
 $request_token = $connection->getRequestToken($TUMBLR_OAUTH_CALLBACK);
-$_SESSION['oauth_token'] = $token = $request_token['oauth_token'];
+$_SESSION['oauth_token'] = $request_token['oauth_token'];
 $_SESSION['oauth_token_secret'] = $request_token['oauth_token_secret'];
 switch ($connection->http_code) {
   case 200:
