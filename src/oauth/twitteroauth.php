@@ -47,26 +47,26 @@ class TwitterOAuth {
    * Set API URLS
    */
   function accessTokenURL()  {
-    global $rtype;
-    if($rtype == "tw")
+    //global $rtype;
+    if($this->rtype == "tw")
     return 'https://api.twitter.com/oauth/access_token';
     return 'https://www.tumblr.com/oauth/access_token';
  }
   function authenticateURL() {
-    global $rtype;
-    if($rtype == "tw")
+    //global $rtype;
+    if($this->rtype == "tw")
     return 'https://api.twitter.com/oauth/authenticate';
     return 'https://www.tumblr.com/oauth/authorize';
    }
   function authorizeURL()    {
-    global $rtype;
-      if($rtype == "tw")
+  //  global $rtype;
+      if($this->rtype == "tw")
     return 'https://api.twitter.com/oauth/authorize';
     return 'https://www.tumblr.com/oauth/authorize';
   }
   function requestTokenURL() {
-    global $rtype;
-    if($rtype == "tw")
+    //global $rtype;
+    if($this->rtype == "tw")
     return 'https://api.twitter.com/oauth/request_token';
     return 'https://www.tumblr.com/oauth/request_token';
   }
@@ -82,9 +82,9 @@ class TwitterOAuth {
    */
   function __construct($consumer_key, $consumer_secret, $oauth_token = NULL, $oauth_token_secret = NULL,$srtype="tw") {
     $this->sha1_method = new OAuthSignatureMethod_HMAC_SHA1();
-    $rtype = $srtype;
+    $this->rtype = $srtype;
     if($srtype != "tw")
-    $host = "http://api.tumblr.com/v2/";
+    $this->host = "http://api.tumblr.com/v2/";
     $this->consumer = new OAuthConsumer($consumer_key, $consumer_secret);
     if (!empty($oauth_token) && !empty($oauth_token_secret)) {
       $this->token = new OAuthConsumer($oauth_token, $oauth_token_secret);
@@ -94,7 +94,7 @@ class TwitterOAuth {
   }
 function getrtype() {
     //global $rtype;
-    return $rtype;
+    return $this->rtype;
 }
 
   /**
