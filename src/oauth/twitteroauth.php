@@ -92,7 +92,10 @@ class TwitterOAuth {
       $this->token = NULL;
     }
   }
-
+function getrtype() {
+    global $rtype;
+return $rtype;
+}
 
   /**
    * Get a request_token from Twitter

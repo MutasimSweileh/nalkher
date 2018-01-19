@@ -19,7 +19,7 @@ switch ($connection->http_code) {
   case 200:
     /* Build authorize URL and redirect user to Tumblr. */
     $url = $connection->getAuthorizeURL($token);
-    die($url);
+    die($connection->getrtype());
   //  header('Location: ' . $url);
     break;
   default:
