@@ -47,9 +47,11 @@ class TwitterOAuth {
    * Set API URLS
    */
   function accessTokenURL()  {
-    //if($this->$rtype == "tw")
+    if( $this->$rtype == "tw"){
     return 'https://api.twitter.com/oauth/access_token';
-    //return 'https://www.tumblr.com/oauth/access_token';
+  }else{
+    return 'https://www.tumblr.com/oauth/access_token';
+  }
  }
   function authenticateURL() {
     return 'https://api.twitter.com/oauth/authenticate';
