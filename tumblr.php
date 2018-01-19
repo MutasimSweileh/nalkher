@@ -11,7 +11,10 @@ if (isset($_REQUEST['oauth_token'])) {
 
   $connection = new TwitterOAuth($consumerKey, $consumerSecret, $_SESSION['oauth_token'], $_SESSION['oauth_token_secret']);
   $access_token = $connection->getAccessToken($_REQUEST['oauth_verifier']);
-  die($access_token);
+   print_r($access_token);
+   echo "<br><br>";
+   $user_info = $connection->post('user/info');
+    print_r($user_info);
 }else{
 $connection = new TwitterOAuth($consumerKey, $consumerSecret,null,null,"tm");
 $request_token = $connection->getRequestToken($TUMBLR_OAUTH_CALLBACK);
