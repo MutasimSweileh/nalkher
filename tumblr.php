@@ -13,7 +13,7 @@ if (isset($_REQUEST['oauth_token'])) {
   $access_token = $connection->getAccessToken($_REQUEST['oauth_verifier']);
    print_r($access_token);
    echo "<br><br>";
-   $user_info = $connection->post('http://api.tumblr.com/v2/user/info');
+   $user_info = $connection->get('http://api.tumblr.com/v2/user/info');
     print_r($user_info);
 }else{
 $connection = new TwitterOAuth($consumerKey, $consumerSecret,null,null,"tm");
