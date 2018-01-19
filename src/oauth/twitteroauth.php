@@ -17,7 +17,6 @@ class TwitterOAuth {
   public $http_code;
   /* Contains the last API call. */
   public $url;
-  public $rtype="tw";
   /* Set up the API root URL. */
   public $host = "https://api.twitter.com/1.1/";
   /* Set timeout default. */
@@ -46,28 +45,10 @@ class TwitterOAuth {
   /**
    * Set API URLS
    */
-  function accessTokenURL()  {
-    if($this->$rtype == "tw")
-    return 'https://api.twitter.com/oauth/access_token';
-    return 'https://www.tumblr.com/oauth/access_token';
-
-  }
-  function authenticateURL() {
-    if($this->$rtype == "tw")
-return 'https://api.twitter.com/oauth/authenticate';
- return 'https://www.tumblr.com/oauth/authorize';
- }
-  function authorizeURL()    {
-    if($this->$rtype == "tw")
-    return 'https://api.twitter.com/oauth/authorize';
-    return 'https://www.tumblr.com/oauth/authorize';
-  }
-  function requestTokenURL() {
-    if($this->$rtype == "tw")
-    return 'https://api.twitter.com/oauth/request_token';
-    return 'https://www.tumblr.com/oauth/request_token';
-
-  }
+  function accessTokenURL()  { return 'https://api.twitter.com/oauth/access_token'; }
+  function authenticateURL() { return 'https://api.twitter.com/oauth/authenticate'; }
+  function authorizeURL()    { return 'https://api.twitter.com/oauth/authorize'; }
+  function requestTokenURL() { return 'https://api.twitter.com/oauth/request_token'; }
 
   /**
    * Debug helpers
@@ -78,11 +59,8 @@ return 'https://api.twitter.com/oauth/authenticate';
   /**
    * construct TwitterOAuth object
    */
-  function __construct($consumer_key, $consumer_secret, $oauth_token = NULL, $oauth_token_secret = NULL,$rtype="tw") {
+  function __construct($consumer_key, $consumer_secret, $oauth_token = NULL, $oauth_token_secret = NULL) {
     $this->sha1_method = new OAuthSignatureMethod_HMAC_SHA1();
-    $this->$rtype=$rtype;
-    if($rtype != "tw")
-    $this->$host ="http://api.tumblr.com/v2/";
     $this->consumer = new OAuthConsumer($consumer_key, $consumer_secret);
     if (!empty($oauth_token) && !empty($oauth_token_secret)) {
       $this->token = new OAuthConsumer($oauth_token, $oauth_token_secret);
