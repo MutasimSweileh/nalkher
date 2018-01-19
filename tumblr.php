@@ -11,7 +11,7 @@ if (isset($_REQUEST['oauth_token'])) {
 
   $connection = new TwitterOAuth($consumerKey, $consumerSecret, $_SESSION['oauth_token'], $_SESSION['oauth_token_secret'],"tm");
   $access_token = $connection->getAccessToken($_REQUEST['oauth_verifier']);
-   print_r($access_token);
+   echo $access_token;
    echo "<br><br>";
   // $user_info = $connection->get('/user/info');
   //  print_r($user_info);
