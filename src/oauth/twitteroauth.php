@@ -47,21 +47,25 @@ class TwitterOAuth {
    * Set API URLS
    */
   function accessTokenURL()  {
+    global $rtype;
     if($rtype == "tw")
     return 'https://api.twitter.com/oauth/access_token';
     return 'https://www.tumblr.com/oauth/access_token';
  }
   function authenticateURL() {
+    global $rtype;
     if($rtype == "tw")
     return 'https://api.twitter.com/oauth/authenticate';
     return 'https://www.tumblr.com/oauth/authorize';
    }
   function authorizeURL()    {
+    global $rtype;
       if($rtype == "tw")
     return 'https://api.twitter.com/oauth/authorize';
     return 'https://www.tumblr.com/oauth/authorize';
   }
   function requestTokenURL() {
+    global $rtype;
     if($rtype == "tw")
     return 'https://api.twitter.com/oauth/request_token';
     return 'https://www.tumblr.com/oauth/request_token';
