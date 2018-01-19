@@ -52,13 +52,19 @@ class TwitterOAuth {
     return 'https://www.tumblr.com/oauth/access_token';
  }
   function authenticateURL() {
+    if($rtype == "tw")
     return 'https://api.twitter.com/oauth/authenticate';
+    return 'https://www.tumblr.com/oauth/authorize';
    }
   function authorizeURL()    {
+      if($rtype == "tw")
     return 'https://api.twitter.com/oauth/authorize';
+    return 'https://www.tumblr.com/oauth/authorize';
   }
   function requestTokenURL() {
+    if($rtype == "tw")
     return 'https://api.twitter.com/oauth/request_token';
+    return 'https://www.tumblr.com/oauth/request_token';
   }
 
   /**
