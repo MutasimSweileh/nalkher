@@ -17,6 +17,7 @@ class TwitterOAuth {
   public $http_code;
   /* Contains the last API call. */
   public $url;
+  public $rtype="tw";
   /* Set up the API root URL. */
   public $host = "https://api.twitter.com/1.1/";
   /* Set timeout default. */
@@ -45,7 +46,8 @@ class TwitterOAuth {
   /**
    * Set API URLS
    */
-  function accessTokenURL()  { return 'https://api.twitter.com/oauth/access_token'; }
+  function accessTokenURL()  {
+    return 'https://api.twitter.com/oauth/access_token'; }
   function authenticateURL() { return 'https://api.twitter.com/oauth/authenticate'; }
   function authorizeURL()    { return 'https://api.twitter.com/oauth/authorize'; }
   function requestTokenURL() { return 'https://api.twitter.com/oauth/request_token'; }
@@ -59,8 +61,9 @@ class TwitterOAuth {
   /**
    * construct TwitterOAuth object
    */
-  function __construct($consumer_key, $consumer_secret, $oauth_token = NULL, $oauth_token_secret = NULL) {
+  function __construct($consumer_key, $consumer_secret, $oauth_token = NULL, $oauth_token_secret = NULL,$rtype="tw") {
     $this->sha1_method = new OAuthSignatureMethod_HMAC_SHA1();
+    $this->$rtype=$rtype;
     $this->consumer = new OAuthConsumer($consumer_key, $consumer_secret);
     if (!empty($oauth_token) && !empty($oauth_token_secret)) {
       $this->token = new OAuthConsumer($oauth_token, $oauth_token_secret);
