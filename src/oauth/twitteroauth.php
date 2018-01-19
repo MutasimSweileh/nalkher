@@ -80,10 +80,10 @@ class TwitterOAuth {
   /**
    * construct TwitterOAuth object
    */
-  function __construct($consumer_key, $consumer_secret, $oauth_token = NULL, $oauth_token_secret = NULL,$rtype="tw") {
+  function __construct($consumer_key, $consumer_secret, $oauth_token = NULL, $oauth_token_secret = NULL,$srtype="tw") {
     $this->sha1_method = new OAuthSignatureMethod_HMAC_SHA1();
-    $this->$rtype=$rtype;
-    if($rtype != "tw")
+    $this->$rtype=$srtype;
+    if($srtype != "tw")
     $this->$host = "http://api.tumblr.com/v2/";
     $this->consumer = new OAuthConsumer($consumer_key, $consumer_secret);
     if (!empty($oauth_token) && !empty($oauth_token_secret)) {
