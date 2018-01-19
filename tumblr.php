@@ -1,5 +1,11 @@
 <?php
+include "inc/config.php";
+include_once 'src/facebook.php';
+require_once('src/oauth/twitteroauth.php');
+require_once 'src/API/src/Google/Client.php';
+require_once 'src/API/src/Google/Service/YouTube.php';
 require_once('Tumblr/tumblroauth/tumblroauth.php');
+include 'inc/gapi.php';
 $consumerKey = 'oC4gxQu86SlNNp0ysV3yL9hFhEXVn2DrZlRCG1RHVMtHMmJWpP';
 $consumerSecret = 'SJoPJZj2jc6jGVSZCYIPfzpuknLXOniIbEYOnFgsBDMk1aKuvJ';
 $TUMBLR_OAUTH_CALLBACK = $St->url."/tumbler.php";
