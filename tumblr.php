@@ -21,7 +21,6 @@ $_SESSION['oauth_token_secret'] = $request_token['oauth_token_secret'];
 switch ($connection->http_code) {
   case 200:
     $url = $connection->getAuthorizeURL($token);
-    //die($url);
     header('Location: ' . $url);
     break;
   default:
