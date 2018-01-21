@@ -14,7 +14,7 @@ if (isset($_REQUEST['oauth_token'])) {
   $user_info = $connection->get('user/info');
   SqlIn("Tumblr",array("oauth_username"=>$user_info->response->user->name,"oauth_token"=>$access_token['oauth_token'],"oauth_secret"=>$access_token['oauth_token_secret']));
   //print_r($user_info);
- $res =  $connection->post('blog/how2beadad/post', array('type' => 'photo',"source"=>"https://www.baldingbeards.com/wp-content/uploads/2016/09/best-body-hair-trimmer-1-768x512.jpg","link"=>$St->url, 'caption' => 'Text of post here'));
+ $res =  $connection->post('blog/'.$user_info->response->user->name.'/post', array('type' => 'photo',"source"=>"https://www.baldingbeards.com/wp-content/uploads/2016/09/best-body-hair-trimmer-1-768x512.jpg","link"=>$St->url, 'caption' => 'Text of post here'));
  print_r($res);
 }else{
 $connection = new TumblrOAuth($consumerKey, $consumerSecret);
