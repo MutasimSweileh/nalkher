@@ -16,7 +16,7 @@ if (isset($_REQUEST['oauth_token'])) {
    $user_info = $connection->get('/user/info');
    print_r($user_info);
 }else{
-$connection = new TwitterOAuth($consumerKey, $consumerSecret,null,null,"tm");
+$connection = new TumblrOAuth($consumerKey, $consumerSecret);
 $request_token = $connection->getRequestToken($TUMBLR_OAUTH_CALLBACK);
 $_SESSION['oauth_token'] = $request_token['oauth_token'];
 $_SESSION['oauth_token_secret'] = $request_token['oauth_token_secret'];
