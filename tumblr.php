@@ -10,10 +10,9 @@ if (isset($_REQUEST['oauth_token'])) {
   $access_token = $_SESSION['access_token_tumblr'];
   $connection = new TumblrOAuth($consumerKey, $consumerSecret, $_SESSION['oauth_token'], $_SESSION['oauth_token_secret']);
   $access_token = $connection->getAccessToken($_REQUEST['oauth_verifier']);
-   print_r($access_token);
-   echo "<br><br>";
-  // $user_info = $connection->get('/user/info');
-   //print_r($user_info);
+  $connection = new TumblrOAuth(CONSUMER_KEY, CONSUMER_SECRET, $access_token['oauth_token'], $access_token['oauth_token_secret']);
+  $user_info = $connection->get('/user/info');
+  print_r($user_info);
 }else{
 $connection = new TumblrOAuth($consumerKey, $consumerSecret);
 $request_token = $connection->getRequestToken($TUMBLR_OAUTH_CALLBACK);
