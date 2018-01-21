@@ -9,7 +9,7 @@ if (isset($_REQUEST['oauth_token'])) {
   header('Location: '.$TUMBLR_OAUTH_CALLBACK);
 
 
-  $connection = new TwitterOAuth($consumerKey, $consumerSecret, $_SESSION['oauth_token'], $_SESSION['oauth_token_secret'],"tm");
+  $connection = new TumblrOAuth($consumerKey, $consumerSecret, $_SESSION['oauth_token'], $_SESSION['oauth_token_secret']);
   $access_token = $connection->getAccessToken($_REQUEST['oauth_verifier']);
    echo $access_token;
    echo "<br><br>";
