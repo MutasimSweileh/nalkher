@@ -6,7 +6,8 @@
 
 /* Load required lib files. */
 session_start();
-require_once('tumblroauth/tumblroauth.php');
+//require_once('tumblroauth/tumblroauth.php');
+include "../inc.php";
 require_once('config.php');
 
 /* If access tokens are not available redirect to connect page. */

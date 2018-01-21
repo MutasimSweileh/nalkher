@@ -7,6 +7,7 @@ if (isset($_REQUEST['oauth_token'])) {
   $_SESSION['oauth_status'] = 'oldtoken';
   if ($_SESSION['oauth_token'] !== $_REQUEST['oauth_token'])
   header('Location: '.$TUMBLR_OAUTH_CALLBACK);
+  $access_token = $_SESSION['access_token_tumblr'];
   $connection = new TumblrOAuth($consumerKey, $consumerSecret, $_SESSION['oauth_token'], $_SESSION['oauth_token_secret']);
   $access_token = $connection->getAccessToken($_REQUEST['oauth_verifier']);
    echo $access_token;
