@@ -2,8 +2,8 @@
 
 /* Start session and load library. */
 session_start();
-require_once('tumblroauth/tumblroauth.php');
-//include "../inc.php";
+//require_once('tumblroauth/tumblroauth.php');
+include "../inc.php";
 require_once('config.php');
 
 /* Build TumblrOAuth object with client credentials. */
