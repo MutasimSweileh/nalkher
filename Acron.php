@@ -11,6 +11,6 @@ echo readURL($access);
 }
 //echo $access.'/cron.php';
 }
-echo Json("https://app.restoviebelle.com/cron.php?tumblr2=true");   
+//echo Json("https://app.restoviebelle.com/cron.php?tumblr2=true");   
 die();
 ?>
